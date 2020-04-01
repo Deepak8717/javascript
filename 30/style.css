@@ -43,6 +43,10 @@ body {
   grid-template-rows: auto 1fr;
 }
 
+#root {
+  min-height: 100vh;
+}
+
 body.in #root {
   display: grid;
   grid-template-columns: 1fr;
@@ -115,8 +119,24 @@ header h1 {
   font-size: 1.25rem;
 }
 
-.message__date {
-  font-size: 0.9rem;
+.message__user {
+  display: flex;
+  align-items: center;
+}
+
+.message__meta {
+  font-size: .8rem;
+}
+
+.message__user-name {
+  margin: 0 0 .25rem;
+}
+
+.message__user-image img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin: 0 .75rem 0 0;
 }
 
 .form {

@@ -15,12 +15,14 @@ auth.onAuthStateChanged(user => {
     document.getElementById("button-logout").style.display = "block";
     document.querySelector(".profile-buttons").style.display = "grid";
     document.querySelector(".form").style.display = `grid`;
-    signedInUserDetails.displayName = user.displayName.trim();
-    signedInUserDetails.image = user.photoURL.trim();
+    signedInUserDetails.displayName = user.displayName === null ? `Anonymous` : user.displayName.trim();
+    signedInUserDetails.image = user.photoURL === null ? `https://placekitten.com/100/100` : user.photoURL.trim();
     if (user.emailVerified) {
       document.querySelectorAll("#form__input, #form__button").forEach(i => {
         i.removeAttribute("disabled");
       });
+      user.displayName = `Anonymous`;
+      user.image = `https://placekitten.com/100/100`
     } else {
       document.querySelectorAll("#form__input, #form__button").forEach(i => {
         i.setAttribute("disabled", "disabled");
@@ -53,9 +55,17 @@ const handleMessageView = message => {
     html += `
       <div key=${key} class="message">
         <div class="message__content">${value.message}</div>
-        <div class="message__date">${moment(value.createdAt).format(
-          "LLLL"
-        )}</div>
+        <div class="message__user">
+          <div class="message__user-image">
+            <img src="${value.user ? value.user.image : 'https://placekitten.com/100/100'}">
+          </div>
+          <div class="message__meta">
+            <div class="message__user-name">${value.user ? value.user.name : 'Anonymous'}</div>
+            <div class="message__date">${moment(value.createdAt).format(
+              "LLLL"
+            )}</div>
+          </div> 
+        </div>
       </div>
     `;
   }
@@ -191,13 +201,15 @@ const handleButtonsEvents = () => {
       message: "Following is your account name and profile picture:",
       input: [
         `<div style="margin:0 0 .5rem;"><label id="label">${
-          signedInUserDetails.displayName &&
-          signedInUserDetails.displayName.trim() !== ""
-            ? signedInUserDetails.displayName
-            : "Hello, Random User!"
+          signedInUserDetails.displayName
+          // signedInUserDetails.displayName &&
+          // signedInUserDetails.displayName.trim() !== ""
+          //   ? signedInUserDetails.displayName
+          //   : "Hello, Anonymous!"
         }</label></div>`,
-        `<div><img id="image" src=${signedInUserDetails.photoURL ||
-          "https://placekitten.com/100/100"}></div>`
+        `<div><img id="image" src=${signedInUserDetails.image}></div>`
+        // `<div><img id="image" src=${signedInUserDetails.photoURL ||
+        //   "https://placekitten.com/100/100"}></div>`
       ].join(""),
       buttons: [$.extend({}, vex.dialog.buttons.NO, { text: "Exit" })],
       callback: data => {}
@@ -221,17 +233,17 @@ const handleButtonsEvents = () => {
             data.editProfileName.trim() === "" ||
             data.editProfilePicture.trim() === ""
           ) {
-            vex.dialog.alert("Pleaes enter a valid name and photo URL.");
+            vex.dialog.alert("Please enter a valid name and photo URL.");
             return;
           }
           const changeNameAndPhoto = (user, newNameAndPhoto) => {
             const { newDisplayName, newPhoto } = newNameAndPhoto;
             user
-              .updateProfile({
-                displayName: newDisplayName,
-                photoURL: newPhoto
-              })
-              .then(
+            .updateProfile({
+              displayName: newDisplayName,
+              photoURL: newPhoto
+            })
+            .then(
                 vex.dialog.alert(
                   "Display Name and Profile Picture has been made successfully."
                 )
@@ -244,6 +256,8 @@ const handleButtonsEvents = () => {
           };
           const user = auth.currentUser;
           changeNameAndPhoto(user, newNameAndPhoto);
+          signedInUserDetails.displayName = newNameAndPhoto.newDisplayName;
+          signedInUserDetails.image = newNameAndPhoto.newPhoto;
         }
       }
     });
@@ -293,8 +307,8 @@ const handleFormView = () => {
   let html = `
     <div class="messages"></div>
     <form id="form" class="form">
-      <input type="text" placeholder="Send a Message" id="form__input">
-      <button type="submit" id="form__button">Send Message</button>
+      <input type="text" placeholder="Type your Message" id="form__input">
+      <button type="submit" id="form__button">Send</button>
     </form>
   `;
   app.innerHTML = html;
@@ -315,13 +329,24 @@ const sendMessage = newMessage => {
 };
 
 const handleSubmit = e => {
+  console.log(signedInUserDetails);
+  // let auth = firebase.auth();
+  // auth.onAuthStateChanged(user => {
+  //   if(user.emailVerified) {
+  //     console.log(user.displayName);
+  //   }
+  // });
   const message = e.target[0].value;
   if (!message || message.trim() === "") {
-    alert("Please type a message!");
+    vex.modal.alert("Please type a message!");
     return;
   }
   document.querySelector("form").reset();
   const newMessage = {
+    user: {
+      name: signedInUserDetails.displayName,
+      image: signedInUserDetails.image
+    },
     message,
     createdAt: new Date().toUTCString()
   };
