@@ -195,6 +195,7 @@ button {
   line-height: 1;
   font-size: 1rem;
   border-radius: 0.25rem;
+  padding: .75rem .25rem;
   border: none;
   display: inline-block;
   cursor: pointer;
