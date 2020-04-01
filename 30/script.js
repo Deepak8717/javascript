@@ -227,12 +227,12 @@ const handleButtonsEvents = () => {
   viewProfileButton.addEventListener("click", e => {
     e.target.classList.add("in-focus");
     const dialog = vex.dialog.open({
-      message: "Following is your account name and profile picture:",
+      message: "Following is your profile name and associated picture:",
       input: [
-        `<div style="margin:0 0 .5rem;"><label id="label">${signedInUserDetails.displayName}</label></div>`,
+        `<div style="margin:0 0 .5rem;"><strong><label id="label">${signedInUserDetails.displayName}</strong></label></div>`,
         `<div><img id="image" src=${signedInUserDetails.image} alt="" aria-hidden="true"></div>`
       ].join(""),
-      // buttons: [$.extend({}, vex.dialog.buttons.NO, { text: "Exit" })],
+      buttons: [],
       callback: () => {
         e.target.classList.remove("in-focus");
       }
@@ -301,8 +301,7 @@ const handleButtonsEvents = () => {
         '<input name="confirmPassword" type="password" placeholder="Enter Password" required />'
       ].join(""),
       buttons: [
-        $.extend({}, vex.dialog.buttons.YES, { text: "Proceed" }),
-        $.extend({}, vex.dialog.buttons.NO, { text: "Cancel" })
+        $.extend({}, vex.dialog.buttons.YES, { text: "Proceed" })
       ],
       callback: data => {
         if (!data) {
