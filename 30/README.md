@@ -8,6 +8,7 @@
 
 ## Version
 
+- *1.1*: Add/Delete/Edit a user profile
 - *1.0*: Send/Read a message
 
 Built with love.
