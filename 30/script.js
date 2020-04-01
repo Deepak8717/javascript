@@ -1,16 +1,44 @@
 const app = document.getElementById("root");
 const db = firebase.database();
 const auth = firebase.auth();
+let signedInUserDetails = {};
+
+// Page
+
+auth.onAuthStateChanged(user => {
+  if (user) {
+    document.querySelector("body").classList.add("in");
+    document.querySelector("body").classList.remove("out");
+    document.querySelector("header").classList.add("in");
+    document.querySelector("header").classList.remove("out");
+    document.getElementById("button-login").style.display = "none";
+    document.getElementById("button-logout").style.display = "block";
+    document.querySelector(".profile-buttons").style.display = "grid";
+    document.querySelector(".form").style.display = `grid`;
+    signedInUserDetails.displayName = user.displayName.trim();
+    signedInUserDetails.image = user.photoURL.trim();
+    if (user.emailVerified) {
+      document.querySelectorAll("#form__input, #form__button").forEach(i => {
+        i.removeAttribute("disabled");
+      });
+    } else {
+      document.querySelectorAll("#form__input, #form__button").forEach(i => {
+        i.setAttribute("disabled", "disabled");
+      });
+    }
+  } else {
+    document.querySelector("body").classList.add("out");
+    document.querySelector("body").classList.remove("in");
+    document.querySelector("header").classList.add("out");
+    document.querySelector("header").classList.remove("in");
+    document.getElementById("button-login").style.display = "block";
+    document.getElementById("button-logout").style.display = "none";
+    document.querySelector(".profile-buttons").style.display = "none";
+    document.querySelector(".form").style.display = `none`;
+  }
+});
 
 // VIEW
-
-// auth.onAuthStateChanged(user => {
-//   currentName.textContent = user.displayName || "Hello, Unknown Human!";
-//   currentPicture.setAttribute(
-//     "src",
-//     user.photoURL || "https://placekitten.com/100/100"
-//   );
-// });
 
 const handleMessageView = message => {
   let html = ``;
@@ -48,8 +76,10 @@ const handleAppView = () => {
 
 const handleButtonsEvents = () => {
   const loginButton = document.getElementById("button-login");
+  const logoutButton = document.getElementById("button-logout");
   const subscribeButton = document.getElementById("button-subscribe");
   const resetButton = document.getElementById("button-reset");
+  const viewProfileButton = document.getElementById("button-view-profile");
   const editProfileButton = document.getElementById("button-edit-profile");
   const deleteProfileButton = document.getElementById("button-delete-profile");
   loginButton.addEventListener("click", () => {
@@ -66,25 +96,28 @@ const handleButtonsEvents = () => {
       ],
       callback: data => {
         if (!data) {
-          // console.log("Cancelled");
         } else {
-          console.log(
-            "Username",
-            data.loginEmail,
-            "Password",
-            data.loginPassword
-          );
           let auth = firebase.auth();
           auth
             .signInWithEmailAndPassword(data.loginEmail, data.loginPassword)
             .then(() => {
               console.log("Signed in");
-              // window.location.assign("./profile.html");
             })
             .catch(error => vex.dialog.alert(error.message));
         }
       }
     });
+  });
+  logoutButton.addEventListener("click", () => {
+    let auth = firebase.auth();
+    auth
+      .signOut()
+      .then(() => {
+        vex.dialog.alert(
+          `You have successfully logged out! We will see you soon.`
+        );
+      })
+      .catch(error => vex.dialog.alert(error.message));
   });
   subscribeButton.addEventListener("click", () => {
     vex.dialog.open({
@@ -153,12 +186,29 @@ const handleButtonsEvents = () => {
       }
     });
   });
+  viewProfileButton.addEventListener("click", () => {
+    vex.dialog.open({
+      message: "Following is your account name and profile picture:",
+      input: [
+        `<div style="margin:0 0 .5rem;"><label id="label">${
+          signedInUserDetails.displayName &&
+          signedInUserDetails.displayName.trim() !== ""
+            ? signedInUserDetails.displayName
+            : "Hello, Random User!"
+        }</label></div>`,
+        `<div><img id="image" src=${signedInUserDetails.photoURL ||
+          "https://placekitten.com/100/100"}></div>`
+      ].join(""),
+      buttons: [$.extend({}, vex.dialog.buttons.NO, { text: "Exit" })],
+      callback: data => {}
+    });
+  });
   editProfileButton.addEventListener("click", () => {
     vex.dialog.open({
       message: "Please edit your account name and profile picture.",
       input: [
-        '<input name="editProfileName" type="text" placeholder="Enter Name" required />',
-        '<input name="editProfilePicture" type="url" placeholder="Enter Profile Picture URL" required />'
+        `<input id="editProfileName" value="${signedInUserDetails.displayName}" name="editProfileName" type="text" placeholder="Enter Name" required />`,
+        `<input id="editProfilePicture" value="${signedInUserDetails.image}" name="editProfilePicture" type="url" placeholder="Enter Profile Picture URL" required />`
       ].join(""),
       buttons: [
         $.extend({}, vex.dialog.buttons.YES, { text: "Edit" }),
@@ -166,35 +216,27 @@ const handleButtonsEvents = () => {
       ],
       callback: data => {
         if (!data) {
-          // console.log("Cancelled");
         } else {
+          if (
+            data.editProfileName.trim() === "" ||
+            data.editProfilePicture.trim() === ""
+          ) {
+            vex.dialog.alert("Pleaes enter a valid name and photo URL.");
+            return;
+          }
           const changeNameAndPhoto = (user, newNameAndPhoto) => {
             const { newDisplayName, newPhoto } = newNameAndPhoto;
-            if (newDisplayName && newPhoto) {
-              user
-                .updateProfile({
-                  displayName: newDisplayName,
-                  photoURL: newPhoto
-                })
-                .then(
-                  vex.dialog.alert(
-                    "Display Name and Profile Picture has been made successfully."
-                  )
+            user
+              .updateProfile({
+                displayName: newDisplayName,
+                photoURL: newPhoto
+              })
+              .then(
+                vex.dialog.alert(
+                  "Display Name and Profile Picture has been made successfully."
                 )
-                .catch(error => vex.dialog.alert(error.message));
-            } else if (newDisplayName) {
-              user
-                .updateProfile({ displayName: newDisplayName })
-                .then(vex.dialog.alert("Display name has been updated."))
-                .catch(error => vex.dialog.alert(error.message));
-            } else if (newPhoto) {
-              user
-                .updateProfile({ photoURL: newPhoto })
-                .then(
-                  vex.dialog.alert("Profile Picture has been made successfully")
-                )
-                .catch(error => vex.dialog.alert(error.message));
-            }
+              )
+              .catch(error => vex.dialog.alert(error.message));
           };
           const newNameAndPhoto = {
             newDisplayName: data.editProfileName,
@@ -207,45 +249,39 @@ const handleButtonsEvents = () => {
     });
   });
   deleteProfileButton.addEventListener("click", () => {
-    // const createCredential = user => {
-    //   const password = vex.dialog.open({
-    //     message: "Please enter your password to confirm deletion of account.",
-    //     input: [
-    //       '<input name="confirmPassword" type="password" placeholder="Enter Password" required />',
-    //     ].join(""),
-    //     buttons: [
-    //       $.extend({}, vex.dialog.buttons.YES, { text: "Proceed" }),
-    //       $.extend({}, vex.dialog.buttons.NO, { text: "Cancel" })
-    //     ],
-    //     callback: data => {
-    //       console.log(data);
-    //     }
-    //   });
-    //   // const password = vex.dialog.prompt({
-    //   //   message: "Please enter your password to confirm deletion of account.",
-    //   //   placeholder: "Enter Password",
-    //   //   callback: (value) => {
-    //   //     console.log(value);
-    //   //   }
-    //   // });
-    //   const email = user.email;
-    //   const credential = firebase.auth.EmailAuthProvider.credential(
-    //     email,
-    //     password.confirmPassword
-    //   );
-    //   return credential;
-    // };
-    // const user = auth.currentUser;
-    // const credential = createCredential(user);
-    // console.log(credential);
-    // user
-    //   .reauthenticateWithCredential(credential)
-    //   .then(() => {
-    //     user.delete();
-    //     vex.dialog.alert("Your account has been deleted.");
-    //     window.location.reload();
-    //   })
-    //   .catch(error => vex.dialog.alert(error.message));
+    vex.dialog.open({
+      message: "Please enter your password to confirm deletion of account.",
+      input: [
+        '<input name="confirmPassword" type="password" placeholder="Enter Password" required />'
+      ].join(""),
+      buttons: [
+        $.extend({}, vex.dialog.buttons.YES, { text: "Proceed" }),
+        $.extend({}, vex.dialog.buttons.NO, { text: "Cancel" })
+      ],
+      callback: data => {
+        if (!data) return;
+        else {
+          let user = auth.currentUser;
+          let password = data.confirmPassword;
+          let createCredential = user => {
+            let email = user.email;
+            let credential = firebase.auth.EmailAuthProvider.credential(
+              email,
+              password
+            );
+            return credential;
+          };
+          let credential = createCredential(user);
+          user
+            .reauthenticateWithCredential(credential)
+            .then(() => {
+              user.delete();
+              vex.dialog.alert("Your account has been deleted.");
+            })
+            .catch(error => vex.dialog.alert(error.message));
+        }
+      }
+    });
   });
 };
 

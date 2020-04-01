@@ -34,30 +34,28 @@ html {
   background: var(--secondary);
   font-size: 16px;
   font-family: "Nunito", serif;
-  min-height: 100vh;
 }
 
 body {
   font-size: 1rem;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 6rem 1fr;
-  height: 100vh;
+  grid-template-rows: auto 1fr;
 }
 
-#root {
+body.in #root {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   grid-gap: 1rem;
-  max-height: calc(100vh - 6rem);
+}
+
+body.out #root {
+  display: block;
 }
 
 header {
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: sticky;
   top: 0;
   left: 0;
@@ -66,15 +64,34 @@ header {
   box-shadow: 0 0 1rem 1rem var(--water);
 }
 
+header.in {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr;
+}
+
+header.out {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+}
+
 header h1 {
   margin: 0;
   padding: 0;
+  justify-self: center;
+  align-self: center;
+  word-break: break-all;
 }
 
-.buttons,
-.profile-buttons {
-  display: flex;
-  align-items: center;
+.user-buttons,
+.profile-buttons  {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 1rem;
 }
 
 .messages {
@@ -127,8 +144,15 @@ header h1 {
 }
 
 @media screen and (min-width: 50rem) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
+  header.in {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+  header.out {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  header h1 {
+    justify-self: flex-start;
   }
 }
