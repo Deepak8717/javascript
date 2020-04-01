@@ -244,7 +244,7 @@ const handleButtonsEvents = () => {
   editProfileButton.addEventListener("click", e => {
     e.target.classList.add("in-focus");
     const dialog = vex.dialog.open({
-      message: "Please edit your account name and profile picture.",
+      message: "Please edit your profile name and associated picture.",
       input: [
         `<input id="editProfileName" value="${signedInUserDetails.displayName}" name="editProfileName" type="text" placeholder="Enter Name" required />`,
         `<input id="editProfilePicture" value="${signedInUserDetails.image}" name="editProfilePicture" type="url" placeholder="Enter Profile Picture URL" required />`
