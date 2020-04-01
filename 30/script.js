@@ -159,8 +159,7 @@ const handleButtonsEvents = () => {
         '<input name="subscribePassword" type="password" placeholder="Create Password" required />'
       ].join(""),
       buttons: [
-        $.extend({}, vex.dialog.buttons.YES, { text: "Subscribe" }),
-        $.extend({}, vex.dialog.buttons.NO, { text: "Cancel" })
+        $.extend({}, vex.dialog.buttons.YES, { text: "Subscribe" })
       ],
       callback: data => {
         if (!data) {
@@ -202,8 +201,7 @@ const handleButtonsEvents = () => {
         '<input name="resetEmail" type="email" placeholder="Enter Email Address" required />'
       ].join(""),
       buttons: [
-        $.extend({}, vex.dialog.buttons.YES, { text: "Reset Password" }),
-        $.extend({}, vex.dialog.buttons.NO, { text: "Cancel" })
+        $.extend({}, vex.dialog.buttons.YES, { text: "Reset Password" })
       ],
       callback: data => {
         if (!data) {
@@ -234,8 +232,8 @@ const handleButtonsEvents = () => {
         `<div style="margin:0 0 .5rem;"><label id="label">${signedInUserDetails.displayName}</label></div>`,
         `<div><img id="image" src=${signedInUserDetails.image} alt="" aria-hidden="true"></div>`
       ].join(""),
-      buttons: [$.extend({}, vex.dialog.buttons.NO, { text: "Exit" })],
-      callback: data => {
+      // buttons: [$.extend({}, vex.dialog.buttons.NO, { text: "Exit" })],
+      callback: () => {
         e.target.classList.remove("in-focus");
       }
     });
@@ -252,8 +250,7 @@ const handleButtonsEvents = () => {
         `<input id="editProfilePicture" value="${signedInUserDetails.image}" name="editProfilePicture" type="url" placeholder="Enter Profile Picture URL" required />`
       ].join(""),
       buttons: [
-        $.extend({}, vex.dialog.buttons.YES, { text: "Edit" }),
-        $.extend({}, vex.dialog.buttons.NO, { text: "Cancel" })
+        $.extend({}, vex.dialog.buttons.YES, { text: "Edit" })
       ],
       callback: data => {
         if (!data) {
