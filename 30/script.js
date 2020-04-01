@@ -368,7 +368,7 @@ const sendMessage = newMessage => {
 const handleSubmit = e => {
   const message = e.target[0].value;
   if (!message || message.trim() === "") {
-    vex.modal.alert("Please type a message!");
+    vex.dialog.alert("Please type a message!");
     return;
   }
   document.querySelector("form").reset();
