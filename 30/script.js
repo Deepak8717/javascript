@@ -15,14 +15,18 @@ auth.onAuthStateChanged(user => {
     document.getElementById("button-logout").style.display = "block";
     document.querySelector(".profile-buttons").style.display = "grid";
     document.querySelector(".form").style.display = `grid`;
-    signedInUserDetails.displayName = user.displayName === null ? `Anonymous` : user.displayName.trim();
-    signedInUserDetails.image = user.photoURL === null ? `https://placekitten.com/100/100` : user.photoURL.trim();
+    signedInUserDetails.displayName =
+      user.displayName === null ? `Anonymous` : user.displayName.trim();
+    signedInUserDetails.image =
+      user.photoURL === null
+        ? `https://placekitten.com/100/100`
+        : user.photoURL.trim();
     if (user.emailVerified) {
       document.querySelectorAll("#form__input, #form__button").forEach(i => {
         i.removeAttribute("disabled");
       });
       user.displayName = `Anonymous`;
-      user.image = `https://placekitten.com/100/100`
+      user.image = `https://placekitten.com/100/100`;
     } else {
       document.querySelectorAll("#form__input, #form__button").forEach(i => {
         i.setAttribute("disabled", "disabled");
@@ -57,10 +61,14 @@ const handleMessageView = message => {
         <div class="message__content">${value.message}</div>
         <div class="message__user">
           <div class="message__user-image">
-            <img src="${value.user ? value.user.image : 'https://placekitten.com/100/100'}">
+            <img src="${
+              value.user ? value.user.image : "https://placekitten.com/100/100"
+            }" alt="" aria-hidden="true">
           </div>
           <div class="message__meta">
-            <div class="message__user-name">${value.user ? value.user.name : 'Anonymous'}</div>
+            <div class="message__user-name">${
+              value.user ? value.user.name : "Anonymous"
+            }</div>
             <div class="message__date">${moment(value.createdAt).format(
               "LLLL"
             )}</div>
@@ -92,7 +100,8 @@ const handleButtonsEvents = () => {
   const viewProfileButton = document.getElementById("button-view-profile");
   const editProfileButton = document.getElementById("button-edit-profile");
   const deleteProfileButton = document.getElementById("button-delete-profile");
-  loginButton.addEventListener("click", () => {
+  loginButton.addEventListener("click", e => {
+    e.target.classList.add("in-focus");
     vex.dialog.open({
       message:
         "Welcome to AntiChat! Please enter your Email address you registered with us and given password for that account.",
@@ -106,30 +115,33 @@ const handleButtonsEvents = () => {
       ],
       callback: data => {
         if (!data) {
+          e.target.classList.remove("in-focus");
         } else {
+          e.target.classList.remove("in-focus");
           let auth = firebase.auth();
           auth
             .signInWithEmailAndPassword(data.loginEmail, data.loginPassword)
-            .then(() => {
-              console.log("Signed in");
-            })
+            .then(() => {})
             .catch(error => vex.dialog.alert(error.message));
         }
       }
     });
   });
-  logoutButton.addEventListener("click", () => {
+  logoutButton.addEventListener("click", e => {
+    e.target.classList.add("in-focus");
     let auth = firebase.auth();
     auth
       .signOut()
       .then(() => {
+        e.target.classList.remove("in-focus");
         vex.dialog.alert(
           `You have successfully logged out! We will see you soon.`
         );
       })
       .catch(error => vex.dialog.alert(error.message));
   });
-  subscribeButton.addEventListener("click", () => {
+  subscribeButton.addEventListener("click", e => {
+    e.target.classList.add("in-focus");
     vex.dialog.open({
       message:
         "Would you like to join AntiChat community? We will help you with that. Please enter your desired Email address and  choose password of choice for that account.",
@@ -143,8 +155,9 @@ const handleButtonsEvents = () => {
       ],
       callback: data => {
         if (!data) {
-          // console.log("Cancelled");
+          e.target.classList.remove("in-focus");
         } else {
+          e.target.classList.remove("in-focus");
           let auth = firebase.auth();
           auth.useDeviceLanguage();
           const sendVerificationEmail = () => {
@@ -168,7 +181,8 @@ const handleButtonsEvents = () => {
       }
     });
   });
-  resetButton.addEventListener("click", () => {
+  resetButton.addEventListener("click", e => {
+    e.target.classList.add("in-focus");
     vex.dialog.open({
       message:
         "Did you forget your account password? We will help you with that at AntiChat. Please enter your registered Email address and check your inbox to proceed.",
@@ -181,8 +195,9 @@ const handleButtonsEvents = () => {
       ],
       callback: data => {
         if (!data) {
-          // console.log("Cancelled");
+          e.target.classList.remove("in-focus");
         } else {
+          e.target.classList.remove("in-focus");
           let auth = firebase.auth();
           auth
             .sendPasswordResetEmail(data.resetEmail)
@@ -196,26 +211,22 @@ const handleButtonsEvents = () => {
       }
     });
   });
-  viewProfileButton.addEventListener("click", () => {
+  viewProfileButton.addEventListener("click", e => {
+    e.target.classList.add("in-focus");
     vex.dialog.open({
       message: "Following is your account name and profile picture:",
       input: [
-        `<div style="margin:0 0 .5rem;"><label id="label">${
-          signedInUserDetails.displayName
-          // signedInUserDetails.displayName &&
-          // signedInUserDetails.displayName.trim() !== ""
-          //   ? signedInUserDetails.displayName
-          //   : "Hello, Anonymous!"
-        }</label></div>`,
-        `<div><img id="image" src=${signedInUserDetails.image}></div>`
-        // `<div><img id="image" src=${signedInUserDetails.photoURL ||
-        //   "https://placekitten.com/100/100"}></div>`
+        `<div style="margin:0 0 .5rem;"><label id="label">${signedInUserDetails.displayName}</label></div>`,
+        `<div><img id="image" src=${signedInUserDetails.image} alt="" aria-hidden="true"></div>`
       ].join(""),
       buttons: [$.extend({}, vex.dialog.buttons.NO, { text: "Exit" })],
-      callback: data => {}
+      callback: data => {
+        e.target.classList.remove("in-focus");
+      }
     });
   });
-  editProfileButton.addEventListener("click", () => {
+  editProfileButton.addEventListener("click", e => {
+    e.target.classList.add("in-focus");
     vex.dialog.open({
       message: "Please edit your account name and profile picture.",
       input: [
@@ -228,7 +239,9 @@ const handleButtonsEvents = () => {
       ],
       callback: data => {
         if (!data) {
+          e.target.classList.remove("in-focus");
         } else {
+          e.target.classList.remove("in-focus");
           if (
             data.editProfileName.trim() === "" ||
             data.editProfilePicture.trim() === ""
@@ -239,11 +252,11 @@ const handleButtonsEvents = () => {
           const changeNameAndPhoto = (user, newNameAndPhoto) => {
             const { newDisplayName, newPhoto } = newNameAndPhoto;
             user
-            .updateProfile({
-              displayName: newDisplayName,
-              photoURL: newPhoto
-            })
-            .then(
+              .updateProfile({
+                displayName: newDisplayName,
+                photoURL: newPhoto
+              })
+              .then(
                 vex.dialog.alert(
                   "Display Name and Profile Picture has been made successfully."
                 )
@@ -262,7 +275,8 @@ const handleButtonsEvents = () => {
       }
     });
   });
-  deleteProfileButton.addEventListener("click", () => {
+  deleteProfileButton.addEventListener("click", e => {
+    e.target.classList.add("in-focus");
     vex.dialog.open({
       message: "Please enter your password to confirm deletion of account.",
       input: [
@@ -273,8 +287,11 @@ const handleButtonsEvents = () => {
         $.extend({}, vex.dialog.buttons.NO, { text: "Cancel" })
       ],
       callback: data => {
-        if (!data) return;
-        else {
+        if (!data) {
+          e.target.classList.remove("in-focus");
+          return;
+        } else {
+          e.target.classList.remove("in-focus");
           let user = auth.currentUser;
           let password = data.confirmPassword;
           let createCredential = user => {
@@ -330,12 +347,6 @@ const sendMessage = newMessage => {
 
 const handleSubmit = e => {
   console.log(signedInUserDetails);
-  // let auth = firebase.auth();
-  // auth.onAuthStateChanged(user => {
-  //   if(user.emailVerified) {
-  //     console.log(user.displayName);
-  //   }
-  // });
   const message = e.target[0].value;
   if (!message || message.trim() === "") {
     vex.modal.alert("Please type a message!");
