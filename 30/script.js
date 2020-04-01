@@ -3,6 +3,9 @@ const db = firebase.database();
 const auth = firebase.auth();
 let signedInUserDetails = {};
 
+// VEX Settings
+vex.defaultOptions.className = "vex-theme-plain";
+
 // Page
 
 auth.onAuthStateChanged(user => {
@@ -12,6 +15,8 @@ auth.onAuthStateChanged(user => {
     document.querySelector("header").classList.add("in");
     document.querySelector("header").classList.remove("out");
     document.getElementById("button-login").style.display = "none";
+    document.getElementById("button-subscribe").style.display = "none";
+    document.getElementById("button-reset").style.display = "none";
     document.getElementById("button-logout").style.display = "block";
     document.querySelector(".profile-buttons").style.display = "grid";
     document.querySelector(".form").style.display = `grid`;
@@ -38,6 +43,8 @@ auth.onAuthStateChanged(user => {
     document.querySelector("header").classList.add("out");
     document.querySelector("header").classList.remove("in");
     document.getElementById("button-login").style.display = "block";
+    document.getElementById("button-subscribe").style.display = "block";
+    document.getElementById("button-reset").style.display = "block";
     document.getElementById("button-logout").style.display = "none";
     document.querySelector(".profile-buttons").style.display = "none";
     document.querySelector(".form").style.display = `none`;
@@ -346,7 +353,6 @@ const sendMessage = newMessage => {
 };
 
 const handleSubmit = e => {
-  console.log(signedInUserDetails);
   const message = e.target[0].value;
   if (!message || message.trim() === "") {
     vex.modal.alert("Please type a message!");
