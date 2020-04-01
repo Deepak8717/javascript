@@ -109,7 +109,7 @@ const handleButtonsEvents = () => {
   const deleteProfileButton = document.getElementById("button-delete-profile");
   loginButton.addEventListener("click", e => {
     e.target.classList.add("in-focus");
-    vex.dialog.open({
+    const dialog = vex.dialog.open({
       message:
         "Welcome to AntiChat! Please enter your Email address you registered with us and given password for that account.",
       input: [
@@ -117,8 +117,7 @@ const handleButtonsEvents = () => {
         '<input name="loginPassword" type="password" placeholder="Enter Password" required />'
       ].join(""),
       buttons: [
-        $.extend({}, vex.dialog.buttons.YES, { text: "Login" }),
-        $.extend({}, vex.dialog.buttons.NO, { text: "Cancel" })
+        $.extend({}, vex.dialog.buttons.YES, { text: "Login" })
       ],
       callback: data => {
         if (!data) {
@@ -133,6 +132,9 @@ const handleButtonsEvents = () => {
         }
       }
     });
+    const original = dialog.form.innerHTML;
+    const revision = `<focus-trap>${original}</focus-trap>`;
+    dialog.form.innerHTML = revision;
   });
   logoutButton.addEventListener("click", e => {
     e.target.classList.add("in-focus");
@@ -149,7 +151,7 @@ const handleButtonsEvents = () => {
   });
   subscribeButton.addEventListener("click", e => {
     e.target.classList.add("in-focus");
-    vex.dialog.open({
+    const dialog = vex.dialog.open({
       message:
         "Would you like to join AntiChat community? We will help you with that. Please enter your desired Email address and  choose password of choice for that account.",
       input: [
@@ -187,10 +189,13 @@ const handleButtonsEvents = () => {
         }
       }
     });
+    const original = dialog.form.innerHTML;
+    const revision = `<focus-trap>${original}</focus-trap>`;
+    dialog.form.innerHTML = revision;
   });
   resetButton.addEventListener("click", e => {
     e.target.classList.add("in-focus");
-    vex.dialog.open({
+    const dialog = vex.dialog.open({
       message:
         "Did you forget your account password? We will help you with that at AntiChat. Please enter your registered Email address and check your inbox to proceed.",
       input: [
@@ -217,10 +222,13 @@ const handleButtonsEvents = () => {
         }
       }
     });
+    const original = dialog.form.innerHTML;
+    const revision = `<focus-trap>${original}</focus-trap>`;
+    dialog.form.innerHTML = revision;
   });
   viewProfileButton.addEventListener("click", e => {
     e.target.classList.add("in-focus");
-    vex.dialog.open({
+    const dialog = vex.dialog.open({
       message: "Following is your account name and profile picture:",
       input: [
         `<div style="margin:0 0 .5rem;"><label id="label">${signedInUserDetails.displayName}</label></div>`,
@@ -231,10 +239,13 @@ const handleButtonsEvents = () => {
         e.target.classList.remove("in-focus");
       }
     });
+    const original = dialog.form.innerHTML;
+    const revision = `<focus-trap>${original}</focus-trap>`;
+    dialog.form.innerHTML = revision;
   });
   editProfileButton.addEventListener("click", e => {
     e.target.classList.add("in-focus");
-    vex.dialog.open({
+    const dialog = vex.dialog.open({
       message: "Please edit your account name and profile picture.",
       input: [
         `<input id="editProfileName" value="${signedInUserDetails.displayName}" name="editProfileName" type="text" placeholder="Enter Name" required />`,
@@ -281,10 +292,13 @@ const handleButtonsEvents = () => {
         }
       }
     });
+    const original = dialog.form.innerHTML;
+    const revision = `<focus-trap>${original}</focus-trap>`;
+    dialog.form.innerHTML = revision;
   });
   deleteProfileButton.addEventListener("click", e => {
     e.target.classList.add("in-focus");
-    vex.dialog.open({
+    const dialog = vex.dialog.open({
       message: "Please enter your password to confirm deletion of account.",
       input: [
         '<input name="confirmPassword" type="password" placeholder="Enter Password" required />'
@@ -320,6 +334,9 @@ const handleButtonsEvents = () => {
         }
       }
     });
+    const original = dialog.form.innerHTML;
+    const revision = `<focus-trap>${original}</focus-trap>`;
+    dialog.form.innerHTML = revision;
   });
 };
 

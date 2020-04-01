@@ -63,10 +63,10 @@ body.out #root {
   max-width: 8rem;
 }
 
-.button.in-focus,
-.button:active,
-.button:focus {
-  outline: .25rem solid var(--primary-dark);
+button.in-focus,
+button:active,
+button:focus {
+  outline: .25rem solid var(--primary-dark) !important;
 }
 
 header {
