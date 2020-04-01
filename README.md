@@ -34,6 +34,7 @@
 - Project 29: Dark Internet: [View Source](https://github.com/tpkahlon/javascript) | [View Demo](https://tpkahlon.github.io/javascript/26)
 - Project 30: Humans: [View Source](https://github.com/tpkahlon/javascript) | [View Demo](https://tpkahlon.github.io/javascript/27A)
 - Project 31: Alarm: [View Source](https://github.com/tpkahlon/javascript) | [View Demo](https://tpkahlon.github.io/javascript/23)
+- Project 32: AntiChat: [View Source](https://github.com/tpkahlon/javascript) | [View Demo](https://tpkahlon.github.io/javascript/30)
 
 ## React
 
