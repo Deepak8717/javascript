@@ -60,6 +60,7 @@ body.out #root {
 
 #image {
   width: 100%;
+  max-width: 8rem;
 }
 
 header {
