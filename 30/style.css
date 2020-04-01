@@ -58,6 +58,10 @@ body.out #root {
   display: block;
 }
 
+#image {
+  width: 100%;
+}
+
 header {
   padding: 1rem;
   position: sticky;
