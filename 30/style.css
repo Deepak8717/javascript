@@ -132,6 +132,9 @@ header h1 {
 }
 
 .message {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 1rem;
   border-radius: 0.25rem;
   color: var(--black);
@@ -191,7 +194,7 @@ button {
   margin: 0;
   line-height: 1;
   font-size: 1rem;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   border: none;
   display: inline-block;
   cursor: pointer;
@@ -209,7 +212,20 @@ button:focus {
   background: var(--primary-dark);
 }
 
+@media screen and (min-width: 30rem) {
+  .messages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 40rem) {
+  .messages {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 @media screen and (min-width: 50rem) {
+  .messages {
+    grid-template-columns: repeat(4, 1fr);
+  }
   header.in {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
@@ -220,5 +236,15 @@ button:focus {
   }
   header h1 {
     justify-self: flex-start;
+  }
+}
+@media screen and (min-width: 60rem) {
+  .messages {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media screen and (min-width: 70rem) {
+  .messages {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
