@@ -1,14 +1,17 @@
-# AntiChat
+# NaMo Memes
 
-## Plan
+## Features
 
-- Build chat room
-- Talk with people interested in that chat room
-- User will require email authentication to create account in the application
+- Infinite Scrolling
+- Filter to detect broken images and hide them for seamless browsing
+- Usage of intuitive CSS grid for better viewing
 
-## Version
+## Versions
 
-- *1.1*: Add/Delete/Edit a user profile
-- *1.0*: Send/Read a message
+- *1.0*: Launch the application
+
+## API
+
+- [NaMo Memes](https://github.com/theIYD/NaMoMemes)
 
 Built with love.
