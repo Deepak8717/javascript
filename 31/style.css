@@ -42,15 +42,8 @@ body {
   padding: 1rem;
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: auto;
   grid-template-rows: auto;
-}
-
-.meme-box {
-  display: grid;
-  grid-gap: 1rem;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: auto;
 }
 
 .meme {
@@ -77,12 +70,25 @@ body {
 }
 
 @media screen and (min-width: 60rem) {
-  .meme-box {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  #root {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    grid-auto-flow: dense;
   }
-}
-@media screen and (min-width: 80rem) {
-  .meme-box {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .meme--wide {
+    grid-column-end: span 2;
+  }
+
+  .meme--big {
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+  }
+
+  .meme--tall {
+    grid-row-end: span 2;
+  }
+
+  .meme--fixed {
+    grid-row: 4;
+    grid-column: 1 / -1;
   }
 }

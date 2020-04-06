@@ -7,36 +7,56 @@ class Memes {
     this.isBottom = false;
   }
   async getMemes() {
-    const URL = `https://cors-anywhere.herokuapp.com/https://namo-memes.herokuapp.com/memes/page/${
-      this.count - 10
-    }/${this.count}`;
+    const URL = `https://cors-anywhere.herokuapp.com/https://namo-memes.herokuapp.com/memes/latest/${this.count}`;
     try {
       const response = await fetch(URL);
       const json = await response.json();
-      this.memes = json;
+      if (this.count === 10) {
+        this.memes = json;
+      } else {
+        const data = json;
+        const oldData = this.memes;
+        const revisedData = _.xorBy(oldData, data, "url");
+        const isEq = _.some(revisedData, "url");
+        this.memes = revisedData;
+      }
     } catch (error) {
       console.log(error);
     }
   }
   makeMemes() {
-    const memeBox = document.createElement("div");
-    memeBox.classList.add("meme-box");
+    const originalContent = root.innerHTML;
     let html = ``;
     this.memes.map((meme, index) => {
-      html += `<div class="meme"><img class="meme__img" src="${meme.url}" alt="Meme number ${index}" /></div>`;
+      let range = Math.floor(Math.random() * 100);
+      let randomClass =
+        range < 1
+          ? "meme meme--fixed"
+          : range < 20
+          ? "meme meme--tall"
+          : range < 40
+          ? "meme meme--big"
+          : range < 60
+          ? "meme meme--wide"
+          : "meme";
+      html += `<div class="${randomClass}" key=${meme._id}><img class="meme__img" src="${meme.url}" alt="Meme number ${index}" /></div>`;
     });
-    memeBox.innerHTML = html;
-    root.appendChild(memeBox);
+    root.innerHTML = originalContent + html;
     this.testImages();
   }
   testImages() {
-    document.querySelectorAll("img").forEach((image) => image.addEventListener("error", (e) => e.target.parentElement.classList.add("error")));
+    document
+      .querySelectorAll("img")
+      .forEach((image) =>
+        image.addEventListener("error", (e) =>
+          e.target.parentElement.classList.add("error")
+        )
+      );
   }
   makeTenMemes() {
-    this.getMemes()
-      .then(() => {
-        this.makeMemes();
-      });
+    this.getMemes().then(() => {
+      this.makeMemes();
+    });
   }
   automate() {
     if (this.isBottom) {
