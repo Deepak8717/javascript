@@ -39,29 +39,31 @@
 
 ## React
 
-1. Project 1 / Boredom : [View Demo](https://wonderful-swanson-2233c4.netlify.com/)
-2. Project 2 / CWC19 : [View Demo](https://youthful-bassi-42a1e5.netlify.com/)
-3. Project 3 / Dog Breeds : [View Demo](https://kind-meninsky-ae7cc3.netlify.com/)
-4. Project 4 / FCCFC : [View Demo](https://compassionate-dubinsky-2d2555.netlify.com/)
-5. Project 5 / GitUD : [View Demo](https://happy-lewin-3ff6a4.netlify.com/)
-6. Project 6 / Gyaan : [View Demo](https://dazzling-volhard-b5528e.netlify.com/)
-7. Project 7 / HackerNews : [View Demo](https://jovial-fermi-0158b7.netlify.com/)
-8. Project 8 / Hukamnama : [View Demo](https://elastic-hodgkin-cc54dc.netlify.com/)
-9. Project 9 / Indian Geography : [View Demo](https://amazing-murdock-0805dc.netlify.com/)
-10. Project 10 / Numbers : [View Demo](https://blissful-cray-bf15cc.netlify.com/)
-11. Project 11 / Singers : [View Demo](https://awesome-shirley-28fade.netlify.com/)
-12. Project 12 / React Store : [View Demo](https://stoic-aryabhata-28792d.netlify.com/)
-13. Project 13 / Reminder : [View Demo](https://cocky-nightingale-3a6e72.netlify.com/)
-14. Project 14 / Sikh Gurus : [View Demo](https://eager-shockley-41b58e.netlify.com/)
-15. Project 15 / Surnames : [View Demo](https://sad-heisenberg-f93eac.netlify.com/)
-16. Project 16 / Toronto Festivals : [View Demo](https://determined-roentgen-84b6db.netlify.com/)
-17. Project 17 / TPL Events : [View Demo](https://keen-babbage-e81c71.netlify.com/)
-18. Project 18 / TTC Stations : [View Demo](https://distracted-mestorf-486189.netlify.com/)
-19. Project 19 / TV Series : [View Demo](https://quizzical-davinci-670359.netlify.com/)
-20. Project 20 / Weather : [View Demo](https://elastic-hodgkin-a00af3.netlify.com/)
-21. Project 21 / WWE Superstars : [View Demo](https://flamboyant-euler-c6c228.netlify.com/)
-22. Project 22 / Web Jokes (Random) : [View Demo](https://sad-haibt-f5ecd8.netlify.com/)
-23. Project 23 / Web Jokes (Norris) : [View Demo](https://cocky-bohr-541c8f.netlify.com/)
-24. Project 24 / Waste Wizard : [View Demo](https://peaceful-euclid-06fc35.netlify.com/)
-25. Project 25 / Radio Stations (Punjabi Edition) : [View Demo](https://nifty-elion-3c0ba6.netlify.com/)
-26. Project 26 / Radio Stations (Toronto Edition) : [View Demo](https://jolly-newton-ec1afa.netlify.com/)
+| Project Title                    | Project Link                                                    |
+| -------------------------------- | --------------------------------------------------------------- |
+| Boredom                          | [View Demo](https://wonderful-swanson-2233c4.netlify.com/)      |
+| CWC19                            | [View Demo](https://youthful-bassi-42a1e5.netlify.com/)         |
+| Dog Breeds                       | [View Demo](https://kind-meninsky-ae7cc3.netlify.com/)          |
+| fccFC                            | [View Demo](https://compassionate-dubinsky-2d2555.netlify.com/) |
+| GitUD                            | [View Demo](https://happy-lewin-3ff6a4.netlify.com/)            |
+| Gyaan                            | [View Demo](https://dazzling-volhard-b5528e.netlify.com/)       |
+| HackerNews                       | [View Demo](https://jovial-fermi-0158b7.netlify.com/)           |
+| Hukamama                         | [View Demo](https://elastic-hodgkin-cc54dc.netlify.com/)        |
+| Indian Geography                 | [View Demo](https://amazing-murdock-0805dc.netlify.com/)        |
+| Numbers                          | [View Demo](https://blissful-cray-bf15cc.netlify.com/)          |
+| Singers                          | [View Demo](https://awesome-shirley-28fade.netlify.com/)        |
+| Store                            | [View Demo](https://stoic-aryabhata-28792d.netlify.com/)        |
+| Reminder                         | [View Demo](https://cocky-nightingale-3a6e72.netlify.com/)      |
+| Sikh Gurus                       | [View Demo](https://eager-shockley-41b58e.netlify.com/)         |
+| Surnames                         | [View Demo](https://sad-heisenberg-f93eac.netlify.com/)         |
+| Festivals in Toronto             | [View Demo](https://determined-roentgen-84b6db.netlify.com/)    |
+| Events in Toronto                | [View Demo](https://keen-babbage-e81c71.netlify.com/)           |
+| Stations in Toronto              | [View Demo](https://distracted-mestorf-486189.netlify.com/)     |
+| TV Series                        | [View Demo](https://quizzical-davinci-670359.netlify.com/)      |
+| Weather                          | [View Demo](https://elastic-hodgkin-a00af3.netlify.com/)        |
+| WWE Superstars                   | [View Demo](https://flamboyant-euler-c6c228.netlify.com/)       |
+| Web Jokes (Random)               | [View Demo](https://sad-haibt-f5ecd8.netlify.com/)              |
+| Web Jokes (Norris)               | [View Demo](https://cocky-bohr-541c8f.netlify.com/)             |
+| Waste Wizard                     | [View Demo](https://peaceful-euclid-06fc35.netlify.com/)        |
+| Radio Stations (Punjabi Edition) | [View Demo](https://nifty-elion-3c0ba6.netlify.com/)            |
+| Radio Stations (Toronto Edition) | [View Demo](https://jolly-newton-ec1afa.netlify.com/)           |
