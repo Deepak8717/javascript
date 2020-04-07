@@ -31,7 +31,11 @@ class Memes {
   makeMemes() {
     // const originalContent = root.innerHTML;
     let html = ``;
+    let j = 2;
     this.memes.map((meme, index) => {
+      if (j > 20) {
+        j = 2
+      };
       let range = Math.floor(Math.random() * 100);
       let randomClass =
         range < 1
@@ -43,7 +47,8 @@ class Memes {
           : range < 60
           ? "meme meme--wide"
           : "meme";
-      html += `<div class="${randomClass} animated fade" key=${meme._id}><img class="meme__img animated fadeIn delay-2s" src="${meme.url}" alt="Meme number ${index}" /></div>`;
+      html += `<div class="${randomClass} animated fadeIn animate-${j}s" key=${meme._id}><img class="meme__img animated fadeIn delay-2s" src="${meme.url}" alt="Meme number ${index}" /></div>`;
+      j += 2;
     });
     root.innerHTML = html;
     // window.scrollTo(0, 0);
