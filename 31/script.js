@@ -20,14 +20,17 @@ class Memes {
         const data = json;
         const oldData = this.memes;
         const revisedData = _.xorBy(data, oldData, "url");
-        this.memes = revisedData;
+        let total = [...oldData, ...revisedData];
+        // total = total.sort((a,b) => a._id > b._id ? -1 : 1);
+        // console.table(total);
+        this.memes = total;
       }
     } catch (error) {
       console.log(error);
     }
   }
   makeMemes() {
-    const originalContent = root.innerHTML;
+    // const originalContent = root.innerHTML;
     let html = ``;
     this.memes.map((meme, index) => {
       let range = Math.floor(Math.random() * 100);
@@ -43,7 +46,9 @@ class Memes {
           : "meme";
       html += `<div class="${randomClass}" key=${meme._id}><img class="meme__img" src="${meme.url}" alt="Meme number ${index}" /></div>`;
     });
-    root.innerHTML = originalContent + html;
+    root.innerHTML = html;
+    window.scrollTo(0, 0);
+    // root.innerHTML = originalContent + html;
     this.testImages();
   }
   testImages() {
