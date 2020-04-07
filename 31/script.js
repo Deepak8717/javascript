@@ -1,10 +1,13 @@
 const root = document.getElementById(`root`);
+const loading = document.querySelector(`.loading`);
+const loadButton = document.getElementById(`load`);
 
 class Memes {
   constructor(count) {
     this.count = count;
     this.memes = null;
     this.isBottom = false;
+    this.isLoading = false;
   }
   async getMemes() {
     const URL = `https://cors-anywhere.herokuapp.com/https://namo-memes.herokuapp.com/memes/latest/${this.count}`;
@@ -16,8 +19,7 @@ class Memes {
       } else {
         const data = json;
         const oldData = this.memes;
-        const revisedData = _.xorBy(oldData, data, "url");
-        const isEq = _.some(revisedData, "url");
+        const revisedData = _.xorBy(data, oldData, "url");
         this.memes = revisedData;
       }
     } catch (error) {
@@ -53,9 +55,19 @@ class Memes {
         )
       );
   }
+  isLoadingMessage() {
+    this.isLoading = !this.isLoading;
+    if (this.isLoading) {
+      loading.classList.add("active");
+    } else {
+      loading.classList.remove("active");
+    }
+  }
   makeTenMemes() {
+    this.isLoadingMessage();
     this.getMemes().then(() => {
       this.makeMemes();
+      this.isLoadingMessage();
     });
   }
   automate() {
@@ -70,14 +82,22 @@ class Memes {
 const init = new Memes(10);
 init.makeTenMemes();
 
+const next = () => {
+  init.isLoadingMessage();
+  init.isBottom = true;
+  init.count += 10;
+  init.automate();
+  init.isBottom = false;
+  init.isLoadingMessage();
+};
+
 window.onscroll = () => {
   const meta = root.getBoundingClientRect();
   const condition =
     Math.ceil(window.innerHeight + window.scrollY) >= Math.floor(meta.height);
   if (condition) {
-    init.isBottom = true;
-    init.count += 10;
-    init.automate();
-    init.isBottom = false;
+    next();
   }
 };
+
+loadButton.addEventListener("click", next);
