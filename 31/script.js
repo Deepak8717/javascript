@@ -21,7 +21,7 @@ class Memes {
         const oldData = this.memes;
         const revisedData = _.xorBy(data, oldData, "url");
         let total = [...oldData, ...revisedData];
-        total = total.sort((a, b) => (a.createdDate > b.createdDate ? -1 : 1));
+        // total = total.sort((a, b) => (a.createdDate > b.createdDate ? -1 : 1));
         this.memes = total;
       }
     } catch (error) {
@@ -46,7 +46,7 @@ class Memes {
       html += `<div class="${randomClass}" key=${meme._id}><img class="meme__img" src="${meme.url}" alt="Meme number ${index}" /></div>`;
     });
     root.innerHTML = html;
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     // root.innerHTML = originalContent + html;
     this.testImages();
   }
