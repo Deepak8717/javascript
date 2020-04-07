@@ -79,3 +79,4 @@
 | Waste Wizard 📕                       | [View Demo](https://peaceful-euclid-06fc35.netlify.com/)        |
 | Radio Stations (Punjabi Edition) 🔥📕 | [View Demo](https://nifty-elion-3c0ba6.netlify.com/)            |
 | Radio Stations (Toronto Edition) 🔥📕 | [View Demo](https://jolly-newton-ec1afa.netlify.com/)           |
+| University List                       | [View Demo](https://zen-ptolemy-fb42ee.netlify.com/)            |
