@@ -21,8 +21,7 @@ class Memes {
         const oldData = this.memes;
         const revisedData = _.xorBy(data, oldData, "url");
         let total = [...oldData, ...revisedData];
-        // total = total.sort((a,b) => a._id > b._id ? -1 : 1);
-        // console.table(total);
+        total = total.sort((a, b) => (a.createdDate > b.createdDate ? -1 : 1));
         this.memes = total;
       }
     } catch (error) {
