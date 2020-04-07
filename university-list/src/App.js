@@ -17,7 +17,6 @@ const Listing = ({ listing, data }) => {
   let filteredList = data
     .filter((i) => i.country === listing)
     .sort((a, b) => (a.name > b.name ? 1 : -1));
-  console.log(filteredList);
   return (
     <>
       {filteredList.map((i, index) => (
