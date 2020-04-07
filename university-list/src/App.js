@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { uniqBy } from "lodash";
 import "./App.css";
 
-const URL = `http://universities.hipolabs.com/search`;
+const URL = `https://cors-anywhere.herokuapp.com/http://universities.hipolabs.com/search`;
 
 const ErrorMessage = ({ error }) => (
   <p>
