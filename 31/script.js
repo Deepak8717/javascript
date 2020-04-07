@@ -81,8 +81,10 @@ class Memes {
   }
   automate() {
     if (this.isBottom) {
+      this.isLoadingMessage();
       this.getMemes().then(() => {
         this.makeMemes();
+        this.isLoadingMessage();
       });
     }
   }
