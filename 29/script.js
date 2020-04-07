@@ -8,7 +8,7 @@ let span = document.getElementsByClassName("close")[0];
 span.onclick = () => {
   modal.style.display = "none";
 };
-window.onclick = event => {
+window.onclick = (event) => {
   if (event.target == modal) {
     modal.style.display = "none";
   }
@@ -34,70 +34,72 @@ const handleForm = () => {
   form.appendChild(deathsButton);
   form.appendChild(nameButton);
   app.appendChild(form);
-  confirmedButton.addEventListener("click", e => {
+  confirmedButton.addEventListener("click", (e) => {
     e.preventDefault();
     let newData = _.clone(data);
     const sortedCountryList = _.orderBy(
       newData.country,
-      i => i.confirmed
+      (i) => i.confirmed
     ).reverse();
     document.querySelector("main").remove();
     handleBody(sortedCountryList);
     handleEmojis();
   });
-  recoveredButton.addEventListener("click", e => {
+  recoveredButton.addEventListener("click", (e) => {
     e.preventDefault();
     let newData = _.clone(data);
     const sortedCountryList = _.orderBy(
       newData.country,
-      i => i.recovered
+      (i) => i.recovered
     ).reverse();
     document.querySelector("main").remove();
     handleBody(sortedCountryList);
     handleEmojis();
   });
-  deathsButton.addEventListener("click", e => {
+  deathsButton.addEventListener("click", (e) => {
     e.preventDefault();
     let newData = _.clone(data);
     const sortedCountryList = _.orderBy(
       newData.country,
-      i => i.deaths
+      (i) => i.deaths
     ).reverse();
     document.querySelector("main").remove();
     handleBody(sortedCountryList);
     handleEmojis();
   });
-  nameButton.addEventListener("click", e => {
+  nameButton.addEventListener("click", (e) => {
     e.preventDefault();
     let newData = _.clone(data);
-    const sortedCountryList = _.orderBy(newData.country, i => i.name);
+    const sortedCountryList = _.orderBy(newData.country, (i) => i.name);
     document.querySelector("main").remove();
     handleBody(sortedCountryList);
     handleEmojis();
   });
 };
 
-const handleHead = data => {
+const handleHead = (data) => {
   const headArea = document.createElement("header");
   let html = ``;
   for (let key in data) {
-    if (key === "updated" || key === "affectedCountries") {
-      continue;
-    }
-    html += `
+    if (key === "cases" || key === "deaths" || key === "recovered" || key === "active") {
+      html += `
       <div class="total">
-        <div class=${key.toLowerCase()}>
-          <span>${key}:</span>
-          <span>${data[key]}</span>
-        </div>
+      <div class=${key.toLowerCase()}>
+      <span>${key}:</span>
+      <span>${data[key]}</span>
       </div>
-    `;
+      </div>
+      `;
+    } else {
+      continue;
+      console.log("asd", key);
+    }
   }
   headArea.innerHTML = html;
   app.appendChild(headArea);
 };
 
-const handleBody = data => {
+const handleBody = (data) => {
   const mainArea = document.createElement("main");
   let html = ``;
   for (let key in data) {
@@ -135,7 +137,7 @@ const handleBody = data => {
   app.appendChild(mainArea);
 };
 
-const handleData = data => {
+const handleData = (data) => {
   handleHead(data.total);
   handleBody(data.country);
   handleEmojis();
@@ -152,15 +154,15 @@ const getData = async () => {
     );
     const sortedCountryList = _.orderBy(
       revisedFirstJson,
-      i => i.deaths
+      (i) => i.deaths
     ).reverse();
     data = {
       country: sortedCountryList,
-      total: secondJson
+      total: secondJson,
     };
     return {
       country: sortedCountryList,
-      total: secondJson
+      total: secondJson,
     };
   } catch (err) {
     console.log(err);
@@ -168,7 +170,7 @@ const getData = async () => {
 };
 
 const handleEmojis = () => {
-  document.querySelectorAll(".country").forEach(place => {
+  document.querySelectorAll(".country").forEach((place) => {
     let originalCounter;
     let newPostKey = place.dataset.country;
     let countRef = firebase.database().ref(newPostKey);
@@ -182,7 +184,7 @@ const handleEmojis = () => {
     doveButton.classList.add("dove__button");
     doveButton.setAttribute("title", "Send a Message");
     doveCounter.classList.add("dove__count");
-    doveButton.innerHTML = `<img src="https://image.flaticon.com/icons/svg/1530/1530844.svg" alt="Dove">`;
+    doveButton.innerHTML = `<img src="https://image.flaticon.com/icons/svg/2741/2741203.svg" alt="Support">`;
     doveButton.setAttribute("href", "#");
     doveBox.appendChild(doveButton);
     doveBox.appendChild(doveCounter);
@@ -254,8 +256,8 @@ const handleEmojis = () => {
     box.appendChild(boredBox);
     box.appendChild(doveBox);
     place.appendChild(box);
-    place.querySelectorAll(".emojis a").forEach(item => {
-      item.addEventListener("click", e => {
+    place.querySelectorAll(".emojis a").forEach((item) => {
+      item.addEventListener("click", (e) => {
         e.preventDefault();
         let currentButton = e.currentTarget.parentElement;
         let selectedCountry =
@@ -264,7 +266,7 @@ const handleEmojis = () => {
         handleClick(currentButton, selectedCountry);
       });
     });
-    countRef.on("child_added", data => {
+    countRef.on("child_added", (data) => {
       if (data.key === "messages") {
         doveCounter.textContent = data.val().length;
       }
@@ -284,7 +286,7 @@ const handleEmojis = () => {
         boredCounter.textContent = data.val();
       }
     });
-    countRef.on("child_changed", data => {
+    countRef.on("child_changed", (data) => {
       if (data.key === "messages") {
         doveCounter.textContent = data.val().length;
       }
@@ -306,7 +308,7 @@ const handleEmojis = () => {
     });
     countRef
       .once("value")
-      .then(snapshot => {
+      .then((snapshot) => {
         originalCounter = snapshot.val()
           ? snapshot.val()
           : { messages: [], crying: 0, angry: 0, sick: 0, ninja: 0, bored: 0 };
@@ -321,8 +323,8 @@ const handleEmojis = () => {
         ninjaCounter.textContent = originalCounter.ninja;
         boredCounter.textContent = originalCounter.bored;
       })
-      .catch(err => alert(err.message));
-    const handleAddMessageClick = selectedCountry => {
+      .catch((err) => alert(err.message));
+    const handleAddMessageClick = (selectedCountry) => {
       let postData;
       const message = prompt("Send your message!");
       if (!message || message.trim() === "") {
@@ -330,17 +332,18 @@ const handleEmojis = () => {
         return;
       }
       let getMessages = firebase.database().ref(`${newPostKey}/messages`);
-      getMessages.on("value", snap => {
-        const originalMessages = snap.val() === null || snap.val() === undefined ? [] : snap.val();
+      getMessages.on("value", (snap) => {
+        const originalMessages =
+          snap.val() === null || snap.val() === undefined ? [] : snap.val();
         postData = {
           ...originalCounter,
-          messages: originalMessages.concat(message)
+          messages: originalMessages.concat(message),
         };
       });
       firebase
         .database()
         .ref(selectedCountry)
-        .set(postData, error => {
+        .set(postData, (error) => {
           if (error) {
             alert(error.message);
           }
@@ -352,17 +355,17 @@ const handleEmojis = () => {
         let html = ``;
         html += `<button id="addMessage" class="confirmed">Send your Message</button><div><h1>Messages:</h1>`;
         let getMessages = firebase.database().ref(`${newPostKey}/messages`);
-        getMessages.on("value", snap => {
+        getMessages.on("value", (snap) => {
           snap.val() === null ||
           snap.val() === undefined ||
           snap.val().length === 0
             ? (html += "<p>No messages available.</p>")
-            : snap.val().map(i => (html += `<p>${i}</p>`));
+            : snap.val().map((i) => (html += `<p>${i}</p>`));
         });
         html += `</div>`;
         modal.style.display = "block";
         modal.querySelector(".modal-body").innerHTML = html;
-        modal.querySelector("button").addEventListener("click", e => {
+        modal.querySelector("button").addEventListener("click", (e) => {
           e.preventDefault();
           handleAddMessageClick(selectedCountry);
         });
@@ -371,37 +374,37 @@ const handleEmojis = () => {
       if (currentButton.classList.contains("crying")) {
         postData = {
           ...originalCounter,
-          crying: ++originalCounter.crying
+          crying: ++originalCounter.crying,
         };
       }
       if (currentButton.classList.contains("angry")) {
         postData = {
           ...originalCounter,
-          angry: ++originalCounter.angry
+          angry: ++originalCounter.angry,
         };
       }
       if (currentButton.classList.contains("sick")) {
         postData = {
           ...originalCounter,
-          sick: ++originalCounter.sick
+          sick: ++originalCounter.sick,
         };
       }
       if (currentButton.classList.contains("ninja")) {
         postData = {
           ...originalCounter,
-          ninja: ++originalCounter.ninja
+          ninja: ++originalCounter.ninja,
         };
       }
       if (currentButton.classList.contains("bored")) {
         postData = {
           ...originalCounter,
-          bored: ++originalCounter.bored
+          bored: ++originalCounter.bored,
         };
       }
       firebase
         .database()
         .ref(selectedCountry)
-        .set(postData, error => {
+        .set(postData, (error) => {
           if (error) {
             alert(error.message);
           }
@@ -412,7 +415,7 @@ const handleEmojis = () => {
 
 getData()
   .then(handleData)
-  .catch(error => console.log(error));
+  .catch((error) => console.log(error));
 
 window.addEventListener("load", () => {
   handleForm();

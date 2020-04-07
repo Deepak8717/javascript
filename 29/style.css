@@ -10,11 +10,13 @@
   --recovered-dark: #0080a8;
   --deaths-dark: #a62000;
   --primary-dark: #613fb2;
-  --primary-light: #1d1929;
-  --secondary: #0a0a23;
+  --primary-light: #dad2bc;
+  --secondary: #a99985;
+  --secondary-dark: #BFB18B ;
   --black: #000;
   --white: #ddd;
   --water: rgba(0, 0, 0, 0.8);
+  --shadow: rgba(0, 0, 0, 0.25);
 }
 
 *,
@@ -40,7 +42,7 @@ html {
 body {
   font-size: 1rem;
   font-family: "Nunito", serif;
-  color: var(--white);
+  color: var(--black);
   background: var(--secondary);
   min-height: 100vh;
   margin-top: 9.5rem;
@@ -71,8 +73,9 @@ main {
   left: 0;
   right: 0;
   padding: 1rem;
-  background: var(--water);
+  background: var(--secondary-dark);
   z-index: 2;
+  box-shadow: 0 0 .4rem .2rem var(--shadow);
 }
 
 .total {
@@ -85,10 +88,10 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 0.25rem solid var(--primary);
   border-radius: 0.75rem;
   padding: 1rem;
   background: var(--primary-light);
+  box-shadow: 0 0 .4rem .2rem var(--shadow);
 }
 
 .country span:last-of-type {
@@ -98,7 +101,12 @@ main {
 .country__name {
   font-size: 1.5rem;
   color: var(--primary);
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.25rem;
+  max-width: 80%;
+}
+
+.total {
+  font-weight: bold;
 }
 
 .total .cases,
@@ -108,7 +116,7 @@ main {
 
 .total .recovered,
 .country__recovered {
-  color: var(--recovered);
+  color: var(--recovered-dark);
 }
 
 .total .deaths,
@@ -206,8 +214,8 @@ button.name:focus {
 
 .emojis img:hover,
 .emojis img:focus {
-  box-shadow: 0 0 2rem 1rem rgba(255, 255, 255, 0.25);
   transform: scale(1.25);
+  /* box-shadow: 0 0 2rem 1rem var(--shadow); */
 }
 
 .emojis img {
@@ -216,12 +224,14 @@ button.name:focus {
   max-height: 2rem;
   max-width: 2rem;
   border-radius: 50%;
+  box-shadow: 0 0 .4rem .2rem var(--shadow);
 }
 
 .emojis p {
   margin: 0;
   padding: 0;
   word-break: break-all;
+  font-size: .85rem;
 }
 
 .dove {
