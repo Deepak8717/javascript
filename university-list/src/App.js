@@ -4,18 +4,35 @@ import "./App.css";
 
 const URL = `https://cors-anywhere.herokuapp.com/http://universities.hipolabs.com/search`;
 
-const ErrorMessage = ({ error }) => (
-  <p>
-    {error.message} <span className="error">${error.content}</span>
-  </p>
+const ErrorMessage = ({ meta }) => (
+  <div className="container">
+    <div className="row">
+      <div className="col col-12 my-3">
+        <p>
+          {meta.error.message}&nbsp;
+          <span className="error">{meta.error.content}.</span>
+        </p>
+      </div>
+    </div>
+  </div>
 );
 
-const Loading = () => <p>Loading</p>;
+const Loading = () => {
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col col-12 my-3">
+          <p>Loading...</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-const Listing = ({ listing, data }) => {
-  if (!listing) return;
-  let filteredList = data
-    .filter((i) => i.country === listing)
+const Listing = ({ meta }) => {
+  if (!meta.listing) return;
+  let filteredList = meta.data
+    .filter((i) => i.country === meta.listing)
     .sort((a, b) => (a.name > b.name ? 1 : -1));
   if (filteredList.length === 0)
     return (
@@ -33,7 +50,8 @@ const Listing = ({ listing, data }) => {
         <div className="row">
           <div className="col col-12">
             <p className="text-muted">
-              Total institutes available in API for selected country: <strong>{filteredList.length}</strong>
+              Total institutes available in API for selected country:{" "}
+              <strong>{filteredList.length}</strong>
             </p>
           </div>
         </div>
@@ -79,8 +97,8 @@ const Listing = ({ listing, data }) => {
   );
 };
 
-const Select = ({ data, handleChange }) => {
-  let allCountryObjectList = uniqBy(data, "country");
+const Select = ({ meta, handleChange }) => {
+  let allCountryObjectList = uniqBy(meta.data, "country");
   let allCountryList = allCountryObjectList
     .map((i, index) => ({
       id: index,
@@ -108,25 +126,27 @@ const Select = ({ data, handleChange }) => {
 };
 
 const App = () => {
-  const [data, setData] = useState([]);
-  const [listing, setListing] = useState([]);
-  const [error, setError] = useState(null);
+  const [meta, setMeta] = useState({ data: [], listing: [], error: null });
   const handleChange = (e) => {
-    setListing(e.target.value);
+    setMeta({ ...meta, listing: e.target.value });
   };
   useEffect(() => {
     (async () => {
       try {
         const request = await fetch(URL);
         const response = await request.json();
-        setData(response);
+        setMeta({ ...meta, data: response });
       } catch (error) {
-        setError({ content: error.message, message: "There was an error." });
+        setMeta({
+          ...meta,
+          error: { content: error.message, message: "There was an error." },
+        });
       }
     })();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  if (error) return <ErrorMessage error={error} />;
-  if (!data) return <Loading />;
+  if (!meta.data) return <Loading />;
+  if (meta.error) return <ErrorMessage meta={meta} />;
   return (
     <div className="container">
       <div className="row">
@@ -136,10 +156,10 @@ const App = () => {
       </div>
       <div className="row">
         <div className="col col-12">
-          <Select data={data} handleChange={handleChange} />
+          <Select meta={meta} handleChange={handleChange} />
         </div>
       </div>
-      <Listing listing={listing} data={data} />
+      <Listing meta={meta} />
     </div>
   );
 };

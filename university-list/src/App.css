@@ -16,3 +16,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+
+.error {
+  color: #f00;
+}
