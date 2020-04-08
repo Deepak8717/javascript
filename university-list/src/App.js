@@ -17,40 +17,64 @@ const Listing = ({ listing, data }) => {
   let filteredList = data
     .filter((i) => i.country === listing)
     .sort((a, b) => (a.name > b.name ? 1 : -1));
+  if (filteredList.length === 0)
+    return (
+      <div className="row">
+        <div className="col col-12">
+          <p className="text-muted">
+            Please select a country to view available institutes.
+          </p>
+        </div>
+      </div>
+    );
   return (
     <>
-      {filteredList.map((i, index) => (
-        <div key={index} className="col col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-          <div key={index} className="card h-100">
-            <div className="card-body d-flex flex-column justify-content-between">
-              <div className="mb-3">
-                <h5 className="card-title">{i.name}</h5>
-                <h6 className="card-subtitle mb-2 text-muted">
-                  {i["state-province"] && (
-                    <div className="university__name">
-                      {i["state-province"]}
-                    </div>
-                  )}
-                </h6>
-              </div>
-              <ul className="list-group">
-                {i.domains &&
-                  i.domains.map((i, index) => (
-                    <a
-                      className="list-group-item list-group-item-action"
-                      key={index}
-                      href={`https://${i}`}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      Link {index+1}
-                    </a>
-                  ))}
-              </ul>
-            </div>
+      {filteredList.length !== 0 && (
+        <div className="row">
+          <div className="col col-12">
+            <p className="text-muted">
+              Total institutes available in API for selected country: <strong>{filteredList.length}</strong>
+            </p>
           </div>
         </div>
-      ))}
+      )}
+      <div className="row">
+        {filteredList.map((i, index) => (
+          <div
+            key={index}
+            className="col col-12 col-sm-6 col-md-4 col-lg-3 mb-3"
+          >
+            <div key={index} className="card h-100">
+              <div className="card-body d-flex flex-column justify-content-between">
+                <div className="mb-3">
+                  <h5 className="card-title">{i.name}</h5>
+                  <h6 className="card-subtitle mb-2 text-muted">
+                    {i["state-province"] && (
+                      <div className="university__name">
+                        {i["state-province"]}
+                      </div>
+                    )}
+                  </h6>
+                </div>
+                <ul className="list-group">
+                  {i.domains &&
+                    i.domains.map((i, index) => (
+                      <a
+                        className="list-group-item list-group-item-action shadow"
+                        key={index}
+                        href={`https://${i}`}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Check Site {index + 1}
+                      </a>
+                    ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </>
   );
 };
@@ -71,7 +95,7 @@ const Select = ({ data, handleChange }) => {
         defaultValue=""
       >
         <option disabled value="">
-          Select a University
+          Select a Country
         </option>
         {allCountryList.map((i) => (
           <option key={i.id} value={i.country}>
@@ -115,9 +139,7 @@ const App = () => {
           <Select data={data} handleChange={handleChange} />
         </div>
       </div>
-      <div className="row">
-        <Listing listing={listing} data={data} />
-      </div>
+      <Listing listing={listing} data={data} />
     </div>
   );
 };
