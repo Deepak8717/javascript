@@ -47,7 +47,7 @@ class Memes {
           : range < 60
           ? "meme meme--wide"
           : "meme";
-      html += `<div class="${randomClass} animated fadeIn animate-${j}s" key=${meme._id}><img class="meme__img animated fadeIn delay-2s" src="${meme.url}" alt="Meme number ${index}" /></div>`;
+      html += `<div class="${randomClass} animated fade animate-${j}s" key=${meme._id}><img class="meme__img animated fadeIn delay-30s" src="${meme.url}" alt="Meme number ${index}" /></div>`;
       j += 2;
     });
     root.innerHTML = html;

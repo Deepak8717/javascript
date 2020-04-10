@@ -54,6 +54,7 @@ body {
 }
 
 .meme {
+  animation-duration: 6s;
   display: flex;
   align-items: center;
   align-self: stretch;
@@ -124,40 +125,43 @@ body {
 }
 
 .loading__image {
-  max-width: 16rem;
-  border-radius: 0.5rem;
+  max-width: 10rem;
+  border-radius: 50%;
   box-shadow: 0 0 2rem 1rem var(--water);
 }
 
 .delay-2s {
-  animation-delay: .2s !important;
-}
-.delay-4s {
-  animation-delay: .4s !important;
-}
-.delay-6s {
   animation-delay: .6s !important;
 }
-.delay-8s {
-  animation-delay: .8s !important;
-}
-.delay-10s {
-  animation-delay: 1s !important;
-}
-.delay-12s {
+.delay-4s {
   animation-delay: 1.2s !important;
 }
-.delay-14s {
-  animation-delay: 1.4s !important;
-}
-.delay-16s {
-  animation-delay: 1.6s !important;
-}
-.delay-18s {
+.delay-6s {
   animation-delay: 1.8s !important;
 }
+.delay-8s {
+  animation-delay: 2.4s !important;
+}
+.delay-10s {
+  animation-delay: 3s !important;
+}
+.delay-12s {
+  animation-delay: 3.6s !important;
+}
+.delay-14s {
+  animation-delay: 4.2s !important;
+}
+.delay-16s {
+  animation-delay: 4.8s !important;
+}
+.delay-18s {
+  animation-delay: 5.4s !important;
+}
 .delay-20s {
-  animation-delay: 2s !important;
+  animation-delay: 6s !important;
+}
+.delay-30s {
+  animation-delay: 7s !important;
 }
 
 @media screen and (min-width: 60rem) {
