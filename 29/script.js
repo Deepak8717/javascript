@@ -30,8 +30,8 @@ const handleForm = () => {
   nameButton.classList.add("name");
   nameButton.textContent = `Name`;
   form.appendChild(confirmedButton);
-  form.appendChild(recoveredButton);
   form.appendChild(deathsButton);
+  form.appendChild(recoveredButton);
   form.appendChild(nameButton);
   app.appendChild(form);
   confirmedButton.addEventListener("click", (e) => {
@@ -81,7 +81,12 @@ const handleHead = (data) => {
   const headArea = document.createElement("header");
   let html = ``;
   for (let key in data) {
-    if (key === "cases" || key === "deaths" || key === "recovered" || key === "active") {
+    if (
+      key === "cases" ||
+      key === "deaths" ||
+      key === "recovered" ||
+      key === "active"
+    ) {
       html += `
       <div class="total">
       <div class=${key.toLowerCase()}>
