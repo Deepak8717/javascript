@@ -126,16 +126,25 @@ const handleBody = (data) => {
       return key === country;
       // return _.includes(key, country);
     });
+    const fixDate = (currentDate) => {
+      let dateParts = currentDate.split("-");
+      let currentYear = dateParts[0];
+      let currentMonth = dateParts[1].padStart(2, 0);
+      let currentDay = dateParts[2].padStart(2, 0);
+      let revisedDate = `${currentYear}-${currentMonth}-${currentDay}`;
+      return revisedDate;
+    };
     for (let item in countryObj) {
       const chartData = countryObj[item];
       const chartConfirmed = chartData.map((o) => {
-        return { time: o.date, value: o.confirmed };
+        // console.log(dateParts);
+        return { time: fixDate(o.date), value: o.confirmed };
       });
       const chartDeaths = chartData.map((o) => {
-        return { time: o.date, value: o.deaths };
+        return { time: fixDate(o.date), value: o.deaths };
       });
       const chartRecovered = chartData.map((o) => {
-        return { time: o.date, value: o.recovered };
+        return { time: fixDate(o.date), value: o.recovered };
       });
       let chart = LightweightCharts.createChart(chartArea, {
         width: 240,
