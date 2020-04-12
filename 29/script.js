@@ -97,7 +97,6 @@ const handleHead = (data) => {
       `;
     } else {
       continue;
-      console.log("asd", key);
     }
   }
   headArea.innerHTML = html;
@@ -106,16 +105,75 @@ const handleHead = (data) => {
 
 const handleBody = (data) => {
   const mainArea = document.createElement("main");
-  let html = ``;
-  for (let key in data) {
-    const latestFigure = data[key];
+  for (let key in data.country) {
+    const latestFigure = data.country[key];
+    const country = data.country[key].name;
     let url = latestFigure.name
       .split(" ")
       .join("-")
       .toLowerCase()
       .replace(/[,{1,}|({1,}|){1,}|*{1,}|'{1,}]/g, "");
-    html += `
-    <div class="country" data-country="${url}">
+    const countryHTML = document.createElement("div");
+    countryHTML.classList.add("country");
+    countryHTML.setAttribute(`data-country`, url);
+    const chartArea = document.createElement("div");
+    chartArea.classList.add("country__chart");
+    const countryObj = _.pickBy(data.original, function (value, key) {
+      return _.startsWith(key, country);
+    });
+    for (let item in countryObj) {
+      const chartData = countryObj[item];
+      const chartConfirmed = chartData.map((o) => {
+        return { time: o.date, value: o.confirmed };
+      });
+      const chartDeaths = chartData.map((o) => {
+        return { time: o.date, value: o.deaths };
+      });
+      const chartRecovered = chartData.map((o) => {
+        return { time: o.date, value: o.recovered };
+      });
+      let chart = LightweightCharts.createChart(chartArea, {
+        width: 300,
+        height: 300,
+      });
+      chart.applyOptions({
+        layout: {
+          backgroundColor: "#dad2bc",
+          textColor: "#000",
+          fontSize: 10,
+          fontFamily: "Nunito",
+        },
+      });
+      let lineSeries1 = chart.addLineSeries({
+        color: "#215d47",
+        lineStyle: 0,
+        lineWidth: 2,
+        // crosshairMarkerVisible: true,
+        // crosshairMarkerRadius: 6,
+        lineType: 0,
+      });
+      let lineSeries2 = chart.addLineSeries({
+        color: "#a62000",
+        lineStyle: 0,
+        lineWidth: 2,
+        // crosshairMarkerVisible: true,
+        // crosshairMarkerRadius: 6,
+        lineType: 0,
+      });
+      let lineSeries3 = chart.addLineSeries({
+        color: "#0080a8",
+        lineStyle: 0,
+        lineWidth: 2,
+        // crosshairMarkerVisible: true,
+        // crosshairMarkerRadius: 6,
+        lineType: 0,
+      });
+      lineSeries1.setData(chartConfirmed);
+      lineSeries2.setData(chartDeaths);
+      lineSeries3.setData(chartRecovered);
+      chart.timeScale().fitContent();
+    }
+    countryHTML.innerHTML = `
       <div class="country__name">
         <span>${latestFigure.name}</span>
       </div>
@@ -135,16 +193,16 @@ const handleBody = (data) => {
         <span>Deaths:</span>
         <span>${latestFigure.deaths}</span>
       </div>
-    </div>
-  `;
+    `;
+    countryHTML.appendChild(chartArea);
+    mainArea.appendChild(countryHTML);
   }
-  mainArea.innerHTML = html;
   app.appendChild(mainArea);
 };
 
 const handleData = (data) => {
   handleHead(data.total);
-  handleBody(data.country);
+  handleBody(data);
   handleEmojis();
 };
 
@@ -162,10 +220,12 @@ const getData = async () => {
       (i) => i.deaths
     ).reverse();
     data = {
+      original: firstJson,
       country: sortedCountryList,
       total: secondJson,
     };
     return {
+      original: firstJson,
       country: sortedCountryList,
       total: secondJson,
     };

@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>COVID-19 Reaction Tracker</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      href="https://image.flaticon.com/icons/svg/2659/2659980.svg"
+      type="image/svg"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <title>COVID-19 Reaction Tracker</title>
-  <link rel="stylesheet" href="./style.css" />
-  <link rel="icon" href="https://image.flaticon.com/icons/svg/2659/2659980.svg" type="image/svg" />
-</head>
-
-<body>
-  <div id="root"></div>
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div class="modal-body"></div>
+  <body>
+    <div id="root"></div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-body"></div>
+      </div>
     </div>
-  </div>
-  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-database.js"></script>
-  <script>
-    var firebaseConfig = {
-      apiKey: "AIzaSyBco7CLaH0KOwVa3fnGMLkIRG0FVzfaK78",
-      authDomain: "covid-tracker-cea5c.firebaseapp.com",
-      databaseURL: "https://covid-tracker-cea5c.firebaseio.com",
-      projectId: "covid-tracker-cea5c",
-      storageBucket: "covid-tracker-cea5c.appspot.com",
-      messagingSenderId: "795422645581",
-      appId: "1:795422645581:web:2054ad5d32d8839c8c6b04",
-      measurementId: "G-PHVDKH3YZX"
-    };
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
-  <script src="./script.js"></script>
-</body>
-
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-database.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyBco7CLaH0KOwVa3fnGMLkIRG0FVzfaK78",
+        authDomain: "covid-tracker-cea5c.firebaseapp.com",
+        databaseURL: "https://covid-tracker-cea5c.firebaseio.com",
+        projectId: "covid-tracker-cea5c",
+        storageBucket: "covid-tracker-cea5c.appspot.com",
+        messagingSenderId: "795422645581",
+        appId: "1:795422645581:web:2054ad5d32d8839c8c6b04",
+        measurementId: "G-PHVDKH3YZX",
+      };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <script src="./script.js"></script>
+  </body>
 </html>
