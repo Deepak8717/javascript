@@ -41,8 +41,9 @@ const handleForm = () => {
       newData.country,
       (i) => i.confirmed
     ).reverse();
+    revisedData = { ...newData, country: sortedCountryList };
     document.querySelector("main").remove();
-    handleBody(sortedCountryList);
+    handleBody(revisedData);
     handleEmojis();
   });
   recoveredButton.addEventListener("click", (e) => {
@@ -52,8 +53,9 @@ const handleForm = () => {
       newData.country,
       (i) => i.recovered
     ).reverse();
+    revisedData = { ...newData, country: sortedCountryList };
     document.querySelector("main").remove();
-    handleBody(sortedCountryList);
+    handleBody(revisedData);
     handleEmojis();
   });
   deathsButton.addEventListener("click", (e) => {
@@ -63,16 +65,18 @@ const handleForm = () => {
       newData.country,
       (i) => i.deaths
     ).reverse();
+    revisedData = { ...newData, country: sortedCountryList };
     document.querySelector("main").remove();
-    handleBody(sortedCountryList);
+    handleBody(revisedData);
     handleEmojis();
   });
   nameButton.addEventListener("click", (e) => {
     e.preventDefault();
     let newData = _.clone(data);
     const sortedCountryList = _.orderBy(newData.country, (i) => i.name);
+    revisedData = { ...newData, country: sortedCountryList };
     document.querySelector("main").remove();
-    handleBody(sortedCountryList);
+    handleBody(revisedData);
     handleEmojis();
   });
 };
