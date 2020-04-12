@@ -137,7 +137,6 @@ const handleBody = (data) => {
     for (let item in countryObj) {
       const chartData = countryObj[item];
       const chartConfirmed = chartData.map((o) => {
-        // console.log(dateParts);
         return { time: fixDate(o.date), value: o.confirmed };
       });
       const chartDeaths = chartData.map((o) => {
