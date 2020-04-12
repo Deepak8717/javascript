@@ -119,9 +119,11 @@ const handleBody = (data) => {
     const chartArea = document.createElement("div");
     chartArea.classList.add("country__chart");
     const countryObj = _.pickBy(data.original, function (value, key) {
-      return _.startsWith(key, country);
+      return key === country;
+      // return _.includes(key, country);
     });
     for (let item in countryObj) {
+      console.log(item);
       const chartData = countryObj[item];
       const chartConfirmed = chartData.map((o) => {
         return { time: o.date, value: o.confirmed };
