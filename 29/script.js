@@ -37,11 +37,11 @@ const handleForm = () => {
   confirmedButton.addEventListener("click", (e) => {
     e.preventDefault();
     let newData = _.clone(data);
-    const sortedCountryList = _.orderBy(
+    let sortedCountryList = _.orderBy(
       newData.country,
       (i) => i.confirmed
     ).reverse();
-    revisedData = { ...newData, country: sortedCountryList };
+    let revisedData = { ...newData, country: sortedCountryList };
     document.querySelector("main").remove();
     handleBody(revisedData);
     handleEmojis();
@@ -49,11 +49,11 @@ const handleForm = () => {
   recoveredButton.addEventListener("click", (e) => {
     e.preventDefault();
     let newData = _.clone(data);
-    const sortedCountryList = _.orderBy(
+    let sortedCountryList = _.orderBy(
       newData.country,
       (i) => i.recovered
     ).reverse();
-    revisedData = { ...newData, country: sortedCountryList };
+    let revisedData = { ...newData, country: sortedCountryList };
     document.querySelector("main").remove();
     handleBody(revisedData);
     handleEmojis();
@@ -61,11 +61,11 @@ const handleForm = () => {
   deathsButton.addEventListener("click", (e) => {
     e.preventDefault();
     let newData = _.clone(data);
-    const sortedCountryList = _.orderBy(
+    let sortedCountryList = _.orderBy(
       newData.country,
       (i) => i.deaths
     ).reverse();
-    revisedData = { ...newData, country: sortedCountryList };
+    let revisedData = { ...newData, country: sortedCountryList };
     document.querySelector("main").remove();
     handleBody(revisedData);
     handleEmojis();
@@ -73,8 +73,8 @@ const handleForm = () => {
   nameButton.addEventListener("click", (e) => {
     e.preventDefault();
     let newData = _.clone(data);
-    const sortedCountryList = _.orderBy(newData.country, (i) => i.name);
-    revisedData = { ...newData, country: sortedCountryList };
+    let sortedCountryList = _.orderBy(newData.country, (i) => i.name);
+    let revisedData = { ...newData, country: sortedCountryList };
     document.querySelector("main").remove();
     handleBody(revisedData);
     handleEmojis();
