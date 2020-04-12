@@ -36,46 +36,46 @@ const handleForm = () => {
   app.appendChild(form);
   confirmedButton.addEventListener("click", (e) => {
     e.preventDefault();
+    document.querySelector("main").remove();
     let newData = _.clone(data);
     let sortedCountryList = _.orderBy(
       newData.country,
       (i) => i.confirmed
     ).reverse();
     let revisedData = { ...newData, country: sortedCountryList };
-    document.querySelector("main").remove();
     handleBody(revisedData);
     handleEmojis();
   });
   recoveredButton.addEventListener("click", (e) => {
     e.preventDefault();
+    document.querySelector("main").remove();
     let newData = _.clone(data);
     let sortedCountryList = _.orderBy(
       newData.country,
       (i) => i.recovered
     ).reverse();
     let revisedData = { ...newData, country: sortedCountryList };
-    document.querySelector("main").remove();
     handleBody(revisedData);
     handleEmojis();
   });
   deathsButton.addEventListener("click", (e) => {
     e.preventDefault();
+    document.querySelector("main").remove();
     let newData = _.clone(data);
     let sortedCountryList = _.orderBy(
       newData.country,
       (i) => i.deaths
     ).reverse();
     let revisedData = { ...newData, country: sortedCountryList };
-    document.querySelector("main").remove();
     handleBody(revisedData);
     handleEmojis();
   });
   nameButton.addEventListener("click", (e) => {
     e.preventDefault();
+    document.querySelector("main").remove();
     let newData = _.clone(data);
     let sortedCountryList = _.orderBy(newData.country, (i) => i.name);
     let revisedData = { ...newData, country: sortedCountryList };
-    document.querySelector("main").remove();
     handleBody(revisedData);
     handleEmojis();
   });
@@ -161,24 +161,18 @@ const handleBody = (data) => {
         color: "#215d47",
         lineStyle: 0,
         lineWidth: 2,
-        // crosshairMarkerVisible: true,
-        // crosshairMarkerRadius: 6,
         lineType: 0,
       });
       let lineSeries2 = chart.addLineSeries({
         color: "#a62000",
         lineStyle: 0,
         lineWidth: 2,
-        // crosshairMarkerVisible: true,
-        // crosshairMarkerRadius: 6,
         lineType: 0,
       });
       let lineSeries3 = chart.addLineSeries({
         color: "#0080a8",
         lineStyle: 0,
         lineWidth: 2,
-        // crosshairMarkerVisible: true,
-        // crosshairMarkerRadius: 6,
         lineType: 0,
       });
       lineSeries1.setData(chartConfirmed);
