@@ -185,6 +185,7 @@ const handleBody = (data) => {
       lineSeries2.setData(chartDeaths);
       lineSeries3.setData(chartRecovered);
       chart.timeScale().fitContent();
+      chart.timeScale().resetTimeScale();
     }
     countryHTML.innerHTML = `
       <div class="country__name">
