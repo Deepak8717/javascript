@@ -138,7 +138,7 @@ const handleBody = (data) => {
         return { time: o.date, value: o.recovered };
       });
       let chart = LightweightCharts.createChart(chartArea, {
-        width: 300,
+        width: 240,
         height: 300,
       });
       chart.applyOptions({
