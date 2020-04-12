@@ -123,7 +123,6 @@ const handleBody = (data) => {
       // return _.includes(key, country);
     });
     for (let item in countryObj) {
-      console.log(item);
       const chartData = countryObj[item];
       const chartConfirmed = chartData.map((o) => {
         return { time: o.date, value: o.confirmed };
