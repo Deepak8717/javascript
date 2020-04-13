@@ -1,0 +1,23 @@
+.list-group-item:first-child ul {
+  margin-bottom: 10px;
+}
+
+.list-group-item:first-child p {
+  margin-bottom: 10px;
+}
+
+.list-group-item:first-child p:last-child {
+  margin-bottom: 0;
+}
+
+.list-group-item:first-child + li p {
+  margin-bottom: 0;
+}
+
+.list-group-item:last-child p {
+  margin-bottom: 0;
+}
+
+.card-img-top {
+  max-height: 15rem;
+}
