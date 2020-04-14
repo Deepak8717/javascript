@@ -10,6 +10,7 @@ module.exports = {
       behance: `tpkahlon`,
       devto: `tpkahlon`,
       linkedin: `tpkahlon`,
+      codepen: `tpkahlon`,
       portfolio: `lucid-hopper-f9ed06.netlify.com`,
     },
   },
