@@ -1,15 +1,25 @@
 import C from "./constants";
-import { loading, users } from "./initialState.json";
+import { loading } from "./store/reducers";
 
 console.log(
   `
-    Redux Basics
-    ============
-    The loading setting is ${loading}.
-    Total number of default users are ${users.length}.
+  Constants
+  =========
+  ${Object.keys(C).join(" / ")}
+  `
+);
 
-    Constants
-    =========
-    ${Object.keys(C).join(" / ")}
+// LOADING
+const state = false;
+const action = {
+  type: C.TOGGLE_LOADING,
+  payload: !state,
+};
+const nextState = loading(state, action);
+console.log(
+  `
+  Initial state: ${state}
+  Action: ${JSON.stringify(action)}
+  New state: ${nextState}
   `
 );
