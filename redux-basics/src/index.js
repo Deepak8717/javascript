@@ -1,5 +1,5 @@
 import C from "./constants";
-import { loading } from "./store/reducers";
+import { loading, user } from "./store/reducers";
 
 console.log(
   `
@@ -10,16 +10,35 @@ console.log(
 );
 
 // LOADING
-const state = false;
-const action = {
+const loadingState = false;
+const loadingAction = {
   type: C.TOGGLE_LOADING,
-  payload: !state,
+  payload: !loadingState,
 };
-const nextState = loading(state, action);
+const nextLoadingState = loading(loadingState, loadingAction);
 console.log(
   `
-  Initial state: ${state}
-  Action: ${JSON.stringify(action)}
-  New state: ${nextState}
+  Initial state: ${loadingState}
+  Action: ${JSON.stringify(loadingAction)}
+  New state: ${nextLoadingState}
+  `
+);
+
+// USER
+const userState = null;
+const userAction = {
+  type: C.CREATE_USER,
+  payload: {
+    name: "Dummy",
+    age: 18,
+    isEmployed: false,
+  },
+};
+const nextUserState = user(userState, userAction);
+console.log(
+  `
+  Initial state: ${userState}
+  Action: ${JSON.stringify(userAction)}
+  New state: ${JSON.stringify(nextUserState)}
   `
 );
