@@ -62,7 +62,7 @@
 | Indian Geography 📕                   | [View Demo](https://amazing-murdock-0805dc.netlify.com/)        |
 | Numbers 📕                            | [View Demo](https://blissful-cray-bf15cc.netlify.com/)          |
 | Singers 📕                            | [View Demo](https://awesome-shirley-28fade.netlify.com/)        |
-| Store 📕                              | [View Demo](https://stoic-aryabhata-28792d.netlify.com/)        |
+| TV Channel Employees 📕               | [View Demo](https://stoic-aryabhata-28792d.netlify.app/)        |
 | Reminder 📕                           | [View Demo](https://cocky-nightingale-3a6e72.netlify.com/)      |
 | Sikh Gurus 📕                         | [View Demo](https://eager-shockley-41b58e.netlify.com/)         |
 | Surnames 📕                           | [View Demo](https://sad-heisenberg-f93eac.netlify.com/)         |
