@@ -33,6 +33,10 @@ function getVideos(url) {
       let id = data.items[0].snippet.resourceId.videoId;
       getFeaturedVideo(id);
       getAllVideos(data);
+    })
+    .catch((err) => {
+      mainSection.innerHTML =
+        "<p class='error'>This is a free application. We have reached limit of 3,000,000 units for the day. Please try again tomorrow.</p>";
     });
 }
 
