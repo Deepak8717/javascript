@@ -1,7 +1,6 @@
 import C from "./constants";
 import appReducer from "./store/reducers";
 import initialState from "./initialState.json";
-// import { loading, user, errors } from "./store/reducers";
 
 let state = initialState;
 
@@ -53,12 +52,19 @@ state = appReducer(state, {
 });
 
 state = appReducer(state, {
+  type: C.DELETE_USER,
+  payload: {
+    id: 2,
+  },
+});
+
+state = appReducer(state, {
   type: C.ADD_ERROR,
   payload: "Database not found",
 });
 
 state = appReducer(state, {
-  type: C.CLEAR_ERROR,
+  type: C.DELETE_ERROR,
   payload: 0,
 });
 

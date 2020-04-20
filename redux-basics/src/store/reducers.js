@@ -9,13 +9,22 @@ export const users = (state = [], action) => {
     case C.ADD_USER:
       return state.concat(action.payload);
     case C.EDIT_USER:
-      const userToEdit = state.filter((i) => i.id === action.payload.id);
-      const revisedUser = Object.assign(
+      const originalState = [...state];
+      const userToEdit = originalState.filter(
+        (i) => i.id === action.payload.id
+      );
+      const userToEditIndex = originalState.findIndex(
+        (i) => i.id === action.payload.id
+      );
+      const revisedObject = Object.assign(
         {},
         ...userToEdit,
         action.payload.revision
       );
-      return revisedUser;
+      originalState.splice(userToEditIndex, 1, revisedObject);
+      return originalState;
+    case C.DELETE_USER:
+      return state.filter((i) => i.id !== action.payload.id);
     default:
       return state;
   }
@@ -25,7 +34,7 @@ export const errors = (state = [], action) => {
   switch (action.type) {
     case C.ADD_ERROR:
       return state.concat(action.payload);
-    case C.CLEAR_ERROR:
+    case C.DELETE_ERROR:
       return state.filter((i, index) => index !== action.payload);
     default:
       return state;
