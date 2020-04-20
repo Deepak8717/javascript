@@ -31,7 +31,7 @@
 | Toronto 🔥                                 | [View Demo](https://tpkahlon.github.io/javascript/toronto)               |
 | Stars 🔥                                   | [View Demo](https://tpkahlon.github.io/javascript/stars)                 |
 | Daylight Saving Timezone                   | [View Demo](https://tpkahlon.github.io/javascript/1)                     |
-| Happy Birthday Playlist Tracker 🔥         | [View Demo](https://tpkahlon.github.io/javascript/2)                     |
+| Happy Birthday Playlist Tracker 🔥         | [View Demo](https://sleepy-jang-7abe58.netlify.app/)                     |
 | One Month Weather Tracker 🔥               | [View Demo](https://tpkahlon.github.io/javascript/3)                     |
 | News 🔥                                    | [View Demo](https://tpkahlon.github.io/javascript/21)                    |
 | Windows XP Screensaver 🔥                  | [View Demo](https://tpkahlon.github.io/javascript/15)                    |
