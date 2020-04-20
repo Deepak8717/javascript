@@ -34,7 +34,7 @@ class App extends Component {
       });
       const { name, value } = event.target;
       const query = event.target.value.toLocaleLowerCase().replace(/ |-/g, "+");
-      const API_KEY = `AIzaSyBhce_xN92Hlk2AKaJ7aoJaKepRIpgLE5s`;
+      const API_KEY = process.env.REACT_APP_KEY;
       const { data: videos } = await axios.get(
         `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&maxResults=10&order=viewCount&q=${query}`
       );
