@@ -17,7 +17,7 @@
 | Calculator 📕                              | [View Demo](https://tpkahlon.github.io/javascript/calculator)            |
 | CWC19 Team Directory 📕                    | [View Demo](https://upbeat-golick-be5f11.netlify.com/#!/)                |
 | Dinky 💡                                   | [View Demo](https://tpkahlon.github.io/javascript/dinky)                 |
-| YouTube Channel API 🔥                     | [View Demo](https://tpkahlon.github.io/javascript/jaanmahal-vlogs)       |
+| YouTube Channel API 🔥                     | [View Demo](https://quirky-euclid-5569bd.netlify.app/#)                  |
 | News Fetch API 🔥                          | [View Demo](https://tpkahlon.github.io/javascript/news-fetch-api)        |
 | Random Text Generator 💡                   | [View Demo](https://tpkahlon.github.io/javascript/random-text-generator) |
 | Blog 👶                                    | [View Demo](https://quirky-benz-c762ef.netlify.com/)                     |
