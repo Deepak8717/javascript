@@ -22,9 +22,7 @@
 | Random Text Generator 💡                   | [View Demo](https://tpkahlon.github.io/javascript/random-text-generator) |
 | Blog 👶                                    | [View Demo](https://quirky-benz-c762ef.netlify.com/)                     |
 | Radio Stations                             | [View Demo](https://tpkahlon.github.io/javascript/radio-app)             |
-| Punjabi Singers (Top 50 Songs) 🔥          | [View Demo](https://awesome-shirley-28fade.netlify.com/)                 |
 | Check Unicode of a String                  | [View Demo](https://tpkahlon.github.io/javascript/check-unicode)         |
-| Reminder 🔥                                | [View Demo](https://cocky-nightingale-3a6e72.netlify.com/)               |
 | Program Structure 📝                       | [View Demo](https://tpkahlon.github.io/javascript/program-structure)     |
 | Functions 📝                               | [View Demo](https://tpkahlon.github.io/javascript/functions)             |
 | Cat Me                                     | [View Demo](https://tpkahlon.github.io/javascript/cat-gallery)           |

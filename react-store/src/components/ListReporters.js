@@ -5,12 +5,12 @@ const Reporter = ({ reporter, handleDeleteReporter, updateReporter }) => {
   const { channel, name, notes, date, image, id } = reporter;
   return (
     <div className="col-12 col-lg-6 mb-3">
-      <div className="card h-100">
+      <div className="card">
         <div className="card-header">
           <h1
             contentEditable
             suppressContentEditableWarning
-            onBlur={e => updateReporter("name", e.target.innerText, id)}
+            onBlur={(e) => updateReporter("name", e.target.innerText, id)}
           >
             {name}
           </h1>
@@ -26,14 +26,14 @@ const Reporter = ({ reporter, handleDeleteReporter, updateReporter }) => {
           <p
             contentEditable
             suppressContentEditableWarning
-            onBlur={e => updateReporter("channel", e.target.innerText, id)}
+            onBlur={(e) => updateReporter("channel", e.target.innerText, id)}
           >
             {channel}
           </p>
           <p
             contentEditable
             suppressContentEditableWarning
-            onBlur={e => updateReporter("notes", e.target.innerText, id)}
+            onBlur={(e) => updateReporter("notes", e.target.innerText, id)}
           >
             {notes}
           </p>
@@ -56,7 +56,7 @@ const ListReporters = ({ reporters, handleDeleteReporter, updateReporter }) => {
   if (!reporters) return;
   return (
     <>
-      {reporters.map(reporter => (
+      {reporters.map((reporter) => (
         <Reporter
           key={reporter.id}
           reporter={reporter}
