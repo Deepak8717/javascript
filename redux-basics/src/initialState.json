@@ -1,15 +1,5 @@
 {
-  "users": [{
-      "name": "John",
-      "age": 20,
-      "isEmployed": false
-    },
-    {
-      "name": "Bob",
-      "age": 17,
-      "isEmployed": true
-    }
-  ],
-  "error": null,
+  "users": [],
+  "errors": ["Error 1", "Error 2"],
   "loading": false
 }
