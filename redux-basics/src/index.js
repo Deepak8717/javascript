@@ -1,5 +1,5 @@
 import C from "./constants";
-import { loading, user } from "./store/reducers";
+import { loading, user, errors } from "./store/reducers";
 
 console.log(
   `
@@ -18,6 +18,8 @@ const loadingAction = {
 const nextLoadingState = loading(loadingState, loadingAction);
 console.log(
   `
+  TOGGLE LOADING
+  ==============
   Initial state: ${loadingState}
   Action: ${JSON.stringify(loadingAction)}
   New state: ${nextLoadingState}
@@ -37,8 +39,44 @@ const userAction = {
 const nextUserState = user(userState, userAction);
 console.log(
   `
+  CREATE USER
+  ===========
   Initial state: ${userState}
   Action: ${JSON.stringify(userAction)}
   New state: ${JSON.stringify(nextUserState)}
+  `
+);
+
+// ERRORS
+// ADD ERROR
+const addErrorState = ["Not Found", "Something happened"];
+const addErrorAction = {
+  type: C.ADD_ERROR,
+  payload: "Database not found",
+};
+const nextAddErrorState = errors(addErrorState, addErrorAction);
+console.log(
+  `
+  ADD ERROR
+  =========
+  Initial state: ${addErrorState}
+  Action: ${JSON.stringify(addErrorAction)}
+  New state: ${nextAddErrorState}
+  `
+);
+// CLEAR ERROR
+const clearErrorState = ["Not Found", "Something happened"];
+const clearErrorAction = {
+  type: C.CLEAR_ERROR,
+  payload: 0,
+};
+const nextClearErrorState = errors(clearErrorState, clearErrorAction);
+console.log(
+  `
+  CLEAR ERROR
+  ===========
+  Initial state: ${clearErrorState}
+  Action: ${JSON.stringify(clearErrorAction)}
+  New state: ${nextClearErrorState}
   `
 );

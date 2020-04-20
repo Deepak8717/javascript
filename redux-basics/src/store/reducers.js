@@ -6,3 +6,14 @@ export const loading = (state = false, action) => {
 
 export const user = (state = null, action) =>
   action.type === C.CREATE_USER ? action.payload : state;
+
+export const errors = (state = [], action) => {
+  switch (action.type) {
+    case C.ADD_ERROR:
+      return state.concat(action.payload);
+    case C.CLEAR_ERROR:
+      return state.filter((i, index) => index !== action.payload);
+    default:
+      return state;
+  }
+};
