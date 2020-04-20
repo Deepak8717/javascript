@@ -27,23 +27,46 @@ console.log(
 );
 
 // USER
-const userState = null;
-const userAction = {
-  type: C.CREATE_USER,
+// ADD USER
+const addUserState = null;
+const addUserAction = {
+  type: C.ADD_USER,
   payload: {
     name: "Dummy",
     age: 18,
     isEmployed: false,
   },
 };
-const nextUserState = user(userState, userAction);
+const nextAddUserState = user(addUserState, addUserAction);
 console.log(
   `
-  CREATE USER
-  ===========
-  Initial state: ${userState}
-  Action: ${JSON.stringify(userAction)}
-  New state: ${JSON.stringify(nextUserState)}
+  ADD USER
+  ========
+  Initial state: ${addUserState}
+  Action: ${JSON.stringify(addUserAction)}
+  New state: ${JSON.stringify(nextAddUserState)}
+  `
+);
+// EDIT USER
+const editUserState = {
+  name: "John",
+  age: 18,
+  isEmployed: false,
+};
+const editUserAction = {
+  type: C.EDIT_USER,
+  payload: {
+    age: 22,
+  },
+};
+const nextEditUserState = user(editUserState, editUserAction);
+console.log(
+  `
+  EDIT USER
+  =========
+  Initial state: ${JSON.stringify(editUserState)}
+  Action: ${JSON.stringify(editUserAction)}
+  New state: ${JSON.stringify(nextEditUserState)}
   `
 );
 
