@@ -5,7 +5,7 @@ let screen = document.querySelector(".screen");
 
 refreshScreen();
 
-document.querySelector(".app").addEventListener("click", event => {
+document.querySelector(".app").addEventListener("click", (event) => {
   if (event.target.tagName === "A") handleButton(event.target.textContent);
 });
 

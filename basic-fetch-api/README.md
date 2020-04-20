@@ -1,3 +1,3 @@
 # Zomato (Collections)
 
-### Use plain JS and Fetch to get collections and bind to DOM
+Use pure JavaScript and Fetch API to get collections and bind to DOM
