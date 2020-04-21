@@ -1,0 +1,39 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+}
+
+#root {
+  padding: 1rem;
+  height: 100vh;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr auto;
+}
+
+.placeholder {
+  background: #eee;
+}
+
+.placeholder > div {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
