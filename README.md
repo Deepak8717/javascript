@@ -82,6 +82,6 @@
 
 ## Redux
 
-| Project Title   | Project Link                                                    |
-| --------------- | --------------------------------------------------------------- |
-| Redux Basics 📝 | [View Demo](https://tpkahlon.github.io/javascript/redux-basics) |
+| Project Title   | Project Link                                             |
+| --------------- | -------------------------------------------------------- |
+| Redux Basics 📝 | [View Demo](https://tpkahlon.github.io/javascript/redux) |
