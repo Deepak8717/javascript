@@ -79,7 +79,7 @@
 | Radio Stations (Toronto Edition) 🔥📕 | [View Demo](https://jolly-newton-ec1afa.netlify.com/)           |
 | University List                       | [View Demo](https://zen-ptolemy-fb42ee.netlify.com/)            |
 | Gindeed                               | [View Demo](https://relaxed-bhaskara-f6d4a8.netlify.com/)       |
-| Booster                               | [View Demo]()                                                   |
+| Booster                               | [View Demo](https://nifty-jones-19ae51.netlify.app/)            |
 
 ## Redux
 
