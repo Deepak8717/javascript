@@ -103,7 +103,7 @@ const CurrentLib = ({ data, setData }) => {
           )}
         </div>
         <div>
-          {currentLib.keywords ? (
+          {currentLib.keywords && currentLib.keywords.length !== 0 ? (
             <p>
               <strong>Keywords:</strong> {currentLib.keywords.join(", ")}
             </p>
