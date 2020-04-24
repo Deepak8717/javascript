@@ -12,7 +12,7 @@ const Library = ({ data, setData }) => {
     .sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1));
   return (
     <>
-      <div className="container">
+      <div className="container mb-3">
         <div className="row">
           <div className="col col-12">
             <CurrentLib

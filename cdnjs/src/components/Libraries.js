@@ -23,11 +23,10 @@ const Libraries = ({ set, data, setData }) => {
           key={index}
           className="list-group-item d-flex justify-content-between align-items-center text-capitalize"
         >
-          {lib.name}
-          <div>
+          <span>{lib.name}</span>
+          <div className="btn-group">
             <button
-              href="#"
-              className="btn btn-link badge badge-primary badge-pill text-white text-decoration-none"
+              className="btn btn-primary btn-sm"
               onClick={(e) => handleClick(e)}
               name={lib.name}
             >
@@ -37,7 +36,7 @@ const Libraries = ({ set, data, setData }) => {
               href={lib.latest}
               target="_blank"
               rel="noopener noreferrer"
-              className="badge badge-secondary badge-pill ml-3"
+              className="btn btn-secondary btn-sm"
             >
               Source
             </a>

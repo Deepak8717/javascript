@@ -97,7 +97,7 @@ const CurrentLib = ({ data }) => {
         </div>
         <div>
           {currentLib.assets ? (
-            <table className="table table-striped table-bordered table-hover table-sm">
+            <table className="table table-striped table-bordered table-hover table-sm mb-0">
               <thead className="thead-dark">
                 <th>Files</th>
                 <th>Version</th>
