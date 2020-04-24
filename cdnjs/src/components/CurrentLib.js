@@ -1,24 +1,40 @@
 import React from "react";
 
-const CurrentLib = ({ data }) => {
+const CurrentLib = ({ data, setData }) => {
   const { currentLib } = data;
+  const handleClose = () => {
+    setData({ ...data, currentLib: [] });
+  };
   if (!currentLib || currentLib.length === 0) return <></>;
   return (
-    <div className="card my-3">
+    <div className="card my-3 position-relative">
+      <button
+        type="button"
+        onClick={handleClose}
+        className="close position-absolute"
+        style={{ top: ".5rem", right: ".75rem" }}
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
       <div className="card-body">
         <div className="text-capitalize">
           {currentLib.name ? (
-            <div>{currentLib.name}</div>
+            <div className="font-weight-bold mb-2">{currentLib.name}</div>
           ) : (
             <div>No name available</div>
           )}
           {currentLib.author ? (
-            <div>{currentLib.author}</div>
+            <div className="mb-2">
+              <small>{currentLib.author}</small>
+            </div>
           ) : (
-            <div>No author available</div>
+            <div>
+              <small>No author available</small>
+            </div>
           )}
         </div>
-        <div>
+        <div className="text-muted">
           {currentLib.description ? (
             <p>{currentLib.description}</p>
           ) : (
@@ -97,17 +113,20 @@ const CurrentLib = ({ data }) => {
         </div>
         <div>
           {currentLib.assets ? (
-            <table className="table table-striped table-bordered table-hover table-sm mb-0">
+            <table className="table table-striped table-bordered table-hover table-sm table-responsive-sm mb-0">
               <thead className="thead-dark">
-                <th>Files</th>
-                <th>Version</th>
+                <tr>
+                  <th>Files</th>
+                  <th>Version</th>
+                </tr>
               </thead>
               <tbody>
                 {currentLib.assets.map((i, index) => (
                   <tr key={index}>
                     <td>
-                      {i.files.map((j) => (
+                      {i.files.map((j, innerIndex) => (
                         <a
+                          key={innerIndex}
                           className="currentLibLink badge badge-pill"
                           rel="noopener noreferrer"
                           target="_blank"

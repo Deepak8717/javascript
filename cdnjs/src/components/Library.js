@@ -15,7 +15,7 @@ const Library = ({ data, setData }) => {
       <div className="container mb-3">
         <div className="row">
           <div className="col col-12">
-            <CurrentLib data={data} />
+            <CurrentLib data={data} setData={setData} />
             <h1 className="my-3">CSS</h1>
             <Libraries set={cssFiles} data={data} setData={setData} />
             <h1 className="my-3">JavaScript</h1>

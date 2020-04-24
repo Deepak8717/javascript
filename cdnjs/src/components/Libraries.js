@@ -2,7 +2,6 @@ import React from "react";
 
 const Libraries = ({ set, data, setData }) => {
   const handleClick = (e) => {
-    window.scrollTo(0, 0);
     setData({ ...data, loading: true });
     (async () => {
       try {
@@ -11,6 +10,7 @@ const Libraries = ({ set, data, setData }) => {
         );
         const json = await request.json();
         setData({ ...data, loading: false, currentLib: json });
+        window.scrollTo(0, 0);
       } catch (err) {
         setData({ ...data, error: true });
       }
@@ -23,7 +23,7 @@ const Libraries = ({ set, data, setData }) => {
           key={index}
           className="list-group-item d-flex justify-content-between align-items-center text-capitalize"
         >
-          <span>{lib.name}</span>
+          <span className="text-break mr-3 text-truncate">{lib.name}</span>
           <div className="btn-group">
             <button
               className="btn btn-primary btn-sm"
