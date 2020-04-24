@@ -80,6 +80,7 @@
 | University List                       | [View Demo](https://zen-ptolemy-fb42ee.netlify.com/)            |
 | Gindeed                               | [View Demo](https://relaxed-bhaskara-f6d4a8.netlify.com/)       |
 | Booster                               | [View Demo](https://nifty-jones-19ae51.netlify.app/)            |
+| CDNJS                                 | [View Demo]()                                                   |
 
 ## Redux
 
