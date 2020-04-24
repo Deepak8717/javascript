@@ -12,15 +12,15 @@
 
 | Project Title                              | Project Link                                                             |
 | ------------------------------------------ | ------------------------------------------------------------------------ |
-| Angular 💡                                 | [View Demo](https://elegant-mccarthy-ef40e6.netlify.com/#!/)             |
+| Angular 💡                                 | [View Demo](https://crudinangularjs.netlify.app)                         |
 | Basic Fetch API 📕                         | [View Demo](https://tpkahlon.github.io/javascript/basic-fetch-api)       |
 | Calculator 📕                              | [View Demo](https://tpkahlon.github.io/javascript/calculator)            |
-| CWC19 Team Directory 📕                    | [View Demo](https://upbeat-golick-be5f11.netlify.com/#!/)                |
+| CWC19 Team Directory 📕                    | [View Demo](https://cwctd.netlify.app)                                   |
 | Dinky 💡                                   | [View Demo](https://tpkahlon.github.io/javascript/dinky)                 |
-| YouTube Channel API 🔥                     | [View Demo](https://quirky-euclid-5569bd.netlify.app/#)                  |
+| YouTube Channel API 🔥                     | [View Demo](https://jaanmahal.netlify.app)                               |
 | News Fetch API 🔥                          | [View Demo](https://tpkahlon.github.io/javascript/news-fetch-api)        |
 | Random Text Generator 💡                   | [View Demo](https://tpkahlon.github.io/javascript/random-text-generator) |
-| Blog 👶                                    | [View Demo](https://quirky-benz-c762ef.netlify.com/)                     |
+| Blog 👶                                    | [View Demo](https://satrangi.netlify.app)                                |
 | Radio Stations                             | [View Demo](https://tpkahlon.github.io/javascript/radio-app)             |
 | Check Unicode of a String                  | [View Demo](https://tpkahlon.github.io/javascript/check-unicode)         |
 | Program Structure 📝                       | [View Demo](https://tpkahlon.github.io/javascript/program-structure)     |
@@ -29,7 +29,7 @@
 | Toronto 🔥                                 | [View Demo](https://tpkahlon.github.io/javascript/toronto)               |
 | Stars 🔥                                   | [View Demo](https://tpkahlon.github.io/javascript/stars)                 |
 | Daylight Saving Timezone                   | [View Demo](https://tpkahlon.github.io/javascript/1)                     |
-| Happy Birthday Playlist Tracker 🔥         | [View Demo](https://sleepy-jang-7abe58.netlify.app/)                     |
+| Happy Birthday Playlist Tracker 🔥         | [View Demo](https://hbdsongs.netlify.app)                                |
 | One Month Weather Tracker 🔥               | [View Demo](https://tpkahlon.github.io/javascript/3)                     |
 | News 🔥                                    | [View Demo](https://tpkahlon.github.io/javascript/21)                    |
 | Windows XP Screensaver 🔥                  | [View Demo](https://tpkahlon.github.io/javascript/15)                    |
