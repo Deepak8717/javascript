@@ -1,32 +1,23 @@
 import React from "react";
+import CurrentLib from "./CurrentLib";
+import Libraries from "./Libraries";
 
-const Set = ({ set }) => {
-  return (
-    <div className="libs">
-      {set
-        .sort((a, b) => (a.name < b.name ? -1 : 1))
-        .map((lib, index) => (
-          <div key={index} className="lib">
-            <div>{lib.name}</div>
-            <a href={lib.latest} target="_blank" rel="noopener noreferrer">
-              {lib.latest}
-            </a>
-          </div>
-        ))}
-    </div>
-  );
-};
-
-const Library = ({ library }) => {
-  const { results } = library;
+const Library = ({ data, setData }) => {
+  const { results, currentLib } = data.content;
   const cssFiles = results.filter((i) => i.latest.includes(`.css`));
   const jsFiles = results.filter((i) => i.latest.includes(`.js`));
   return (
     <>
+      <CurrentLib
+        data={data}
+        className={`currentLib ${
+          currentLib && currentLib.length !== 0 ? "foo" : "boo"
+        }`}
+      />
       <h1>CSS</h1>
-      <Set set={cssFiles} />
+      <Libraries set={cssFiles} data={data} setData={setData} />
       <h1>JavaScript</h1>
-      <Set set={jsFiles} />
+      <Libraries set={jsFiles} data={data} setData={setData} />
     </>
   );
 };

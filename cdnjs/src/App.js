@@ -9,6 +9,7 @@ const App = () => {
     error: false,
     loading: false,
     content: [],
+    currentLib: [],
   });
   useEffect(() => {
     setData({ ...data, loading: true });
@@ -25,7 +26,7 @@ const App = () => {
   }, []);
   if (data.error) return <ErrorMessage />;
   if (!data.content || data.content.length === 0) return <Loading />;
-  return <Library library={data.content} />;
+  return <Library data={data} setData={setData} />;
 };
 
 export default App;
