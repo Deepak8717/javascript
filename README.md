@@ -49,38 +49,38 @@
 
 ## React
 
-| Project Title                         | Project Link                                                    |
-| ------------------------------------- | --------------------------------------------------------------- |
-| Boredom 📕                            | [View Demo](https://wonderful-swanson-2233c4.netlify.com/)      |
-| CWC19 📕                              | [View Demo](https://youthful-bassi-42a1e5.netlify.com/)         |
-| Dog Breeds 📕                         | [View Demo](https://kind-meninsky-ae7cc3.netlify.com/)          |
-| fccFC 🔥                              | [View Demo](https://compassionate-dubinsky-2d2555.netlify.com/) |
-| GitUD 📕                              | [View Demo](https://happy-lewin-3ff6a4.netlify.com/)            |
-| Gyaan 📕                              | [View Demo](https://dazzling-volhard-b5528e.netlify.com/)       |
-| HackerNews 📕                         | [View Demo](https://jovial-fermi-0158b7.netlify.com/)           |
-| Hukamama 🔥                           | [View Demo](https://elastic-hodgkin-cc54dc.netlify.com/)        |
-| Indian Geography 📕                   | [View Demo](https://amazing-murdock-0805dc.netlify.com/)        |
-| Numbers 📕                            | [View Demo](https://blissful-cray-bf15cc.netlify.com/)          |
-| Singers 📕                            | [View Demo](https://awesome-shirley-28fade.netlify.com/)        |
-| TV Channel Employees 📕               | [View Demo](https://stoic-aryabhata-28792d.netlify.app/)        |
-| Reminder 📕                           | [View Demo](https://cocky-nightingale-3a6e72.netlify.com/)      |
-| Sikh Gurus 📕                         | [View Demo](https://eager-shockley-41b58e.netlify.com/)         |
-| Surnames 📕                           | [View Demo](https://sad-heisenberg-f93eac.netlify.com/)         |
-| Festivals in Toronto 📕               | [View Demo](https://determined-roentgen-84b6db.netlify.com/)    |
-| Events in Toronto 📕                  | [View Demo](https://keen-babbage-e81c71.netlify.com/)           |
-| Stations in Toronto 📕                | [View Demo](https://distracted-mestorf-486189.netlify.com/)     |
-| TV Series 📕                          | [View Demo](https://quizzical-davinci-670359.netlify.com/)      |
-| Weather 📕                            | [View Demo](https://elastic-hodgkin-a00af3.netlify.com/)        |
-| WWE Superstars 📕                     | [View Demo](https://flamboyant-euler-c6c228.netlify.com/)       |
-| Web Jokes (Random) 📕                 | [View Demo](https://sad-haibt-f5ecd8.netlify.com/)              |
-| Web Jokes (Norris) 📕                 | [View Demo](https://cocky-bohr-541c8f.netlify.com/)             |
-| Waste Wizard 📕                       | [View Demo](https://peaceful-euclid-06fc35.netlify.com/)        |
-| Radio Stations (Punjabi Edition) 🔥📕 | [View Demo](https://nifty-elion-3c0ba6.netlify.com/)            |
-| Radio Stations (Toronto Edition) 🔥📕 | [View Demo](https://jolly-newton-ec1afa.netlify.com/)           |
-| University List                       | [View Demo](https://zen-ptolemy-fb42ee.netlify.com/)            |
-| Gindeed                               | [View Demo](https://relaxed-bhaskara-f6d4a8.netlify.com/)       |
-| Booster                               | [View Demo](https://nifty-jones-19ae51.netlify.app/)            |
-| CDNJS                                 | [View Demo](https://jscdn.netlify.app/)                         |
+| Project Title                         | Project Link                                                |
+| ------------------------------------- | ----------------------------------------------------------- |
+| Boredom 📕                            | [View Demo](https://boredom.netlify.app)                    |
+| CWC19 📕                              | [View Demo](https://crudwithcwc19.netlify.app)              |
+| Dog Breeds 📕                         | [View Demo](https://breedsofdogs.netlify.app)               |
+| fccFC 🔥                              | [View Demo](https://fccfc.netlify.app)                      |
+| GitUD 📕                              | [View Demo](https://gitud.netlify.app)                      |
+| Gyaan 📕                              | [View Demo](https://gyaan.netlify.app)                      |
+| HackerNews 📕                         | [View Demo](https://top10hackernews.netlify.app)            |
+| Hukamama 🔥                           | [View Demo](https://hukamnama.netlify.app/)                 |
+| Indian Geography 📕                   | [View Demo](https://amazing-murdock-0805dc.netlify.app)     |
+| Numbers 📕                            | [View Demo](https://blissful-cray-bf15cc.netlify.app)       |
+| Singers 📕                            | [View Demo](https://awesome-shirley-28fade.netlify.app)     |
+| TV Channel Employees 📕               | [View Demo](https://stoic-aryabhata-28792d.netlify.app)     |
+| Reminder 📕                           | [View Demo](https://cocky-nightingale-3a6e72.netlify.app)   |
+| Sikh Gurus 📕                         | [View Demo](https://eager-shockley-41b58e.netlify.app)      |
+| Surnames 📕                           | [View Demo](https://sad-heisenberg-f93eac.netlify.app)      |
+| Festivals in Toronto 📕               | [View Demo](https://determined-roentgen-84b6db.netlify.app) |
+| Events in Toronto 📕                  | [View Demo](https://keen-babbage-e81c71.netlify.app)        |
+| Stations in Toronto 📕                | [View Demo](https://distracted-mestorf-486189.netlify.app)  |
+| TV Series 📕                          | [View Demo](https://quizzical-davinci-670359.netlify.app)   |
+| Weather 📕                            | [View Demo](https://elastic-hodgkin-a00af3.netlify.app)     |
+| WWE Superstars 📕                     | [View Demo](https://flamboyant-euler-c6c228.netlify.app)    |
+| Web Jokes (Random) 📕                 | [View Demo](https://sad-haibt-f5ecd8.netlify.app)           |
+| Web Jokes (Norris) 📕                 | [View Demo](https://cocky-bohr-541c8f.netlify.app)          |
+| Waste Wizard 📕                       | [View Demo](https://peaceful-euclid-06fc35.netlify.app)     |
+| Radio Stations (Punjabi Edition) 🔥📕 | [View Demo](https://nifty-elion-3c0ba6.netlify.app)         |
+| Radio Stations (Toronto Edition) 🔥📕 | [View Demo](https://jolly-newton-ec1afa.netlify.app)        |
+| University List                       | [View Demo](https://zen-ptolemy-fb42ee.netlify.app)         |
+| Gindeed                               | [View Demo](https://relaxed-bhaskara-f6d4a8.netlify.app)    |
+| Booster                               | [View Demo](https://nifty-jones-19ae51.netlify.app)         |
+| CDNJS                                 | [View Demo](https://jscdn.netlify.app)                      |
 
 ## Redux
 
