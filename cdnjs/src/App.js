@@ -1,8 +1,9 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import React, { useState, useEffect } from "react";
 import Library from "./components/Library";
 import ErrorMessage from "./components/ErrorMessage";
 import Loading from "./components/Loading";
-import "./App.css";
 
 const App = () => {
   const [data, setData] = useState({

@@ -17,26 +17,33 @@ const Libraries = ({ set, data, setData }) => {
     })();
   };
   return (
-    <div className="libs">
-      {set
-        .sort((a, b) => (a.name < b.name ? -1 : 1))
-        .map((lib, index) => (
-          <div key={index} className="lib">
-            <div className="name">
-              <div className="name__title">{lib.name}</div>
-              <button
-                className="name__button"
-                onClick={(e) => handleClick(e)}
-                name={lib.name}
-              >
-                View
-              </button>
-            </div>
-            <a href={lib.latest} target="_blank" rel="noopener noreferrer">
-              {lib.latest}
+    <div className="list-group">
+      {set.map((lib, index) => (
+        <div
+          key={index}
+          className="list-group-item d-flex justify-content-between align-items-center text-capitalize"
+        >
+          {lib.name}
+          <div>
+            <button
+              href="#"
+              className="btn btn-link badge badge-primary badge-pill text-white text-decoration-none"
+              onClick={(e) => handleClick(e)}
+              name={lib.name}
+            >
+              View
+            </button>
+            <a
+              href={lib.latest}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="badge badge-secondary badge-pill ml-3"
+            >
+              Source
             </a>
           </div>
-        ))}
+        </div>
+      ))}
     </div>
   );
 };
