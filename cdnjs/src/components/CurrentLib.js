@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const CurrentLib = ({ data, setData }) => {
   const { currentLib } = data;
@@ -148,6 +149,37 @@ const CurrentLib = ({ data, setData }) => {
       </div>
     </div>
   );
+};
+
+CurrentLib.defaultProps = {
+  name: `Google`,
+  author: `Bill Gates`,
+  description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nam nostrum blanditiis dolorem dolorum necessitatibus quia quae laboriosam exercitationem deserunt aut itaque, molestias obcaecati quibusdam natus expedita. Necessitatibus, nam aperiam!`,
+  homepage: `https://google.com`,
+  repository: `https://github.com`,
+  filename: `test.html`,
+  version: `1.0.0`,
+  license: `MIT`,
+  keywords: [`microsoft`, `google`],
+  assets: [
+    {
+      files: [`android`, `apple`],
+      version: `1.0.0`,
+    },
+  ],
+};
+
+CurrentLib.propTypes = {
+  name: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  homepage: PropTypes.string.isRequired,
+  repository: PropTypes.string.isRequired,
+  filename: PropTypes.string.isRequired,
+  version: PropTypes.string.isRequired,
+  license: PropTypes.string.isRequired,
+  keywords: PropTypes.array.isRequired,
+  assets: PropTypes.array.isRequired,
 };
 
 export default CurrentLib;
