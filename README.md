@@ -59,12 +59,12 @@
 | Gyaan 📕                              | [View Demo](https://gyaan.netlify.app)                      |
 | HackerNews 📕                         | [View Demo](https://top10hackernews.netlify.app)            |
 | Hukamama 🔥                           | [View Demo](https://hukamnama.netlify.app/)                 |
-| Indian Geography 📕                   | [View Demo](https://amazing-murdock-0805dc.netlify.app)     |
-| Numbers 📕                            | [View Demo](https://blissful-cray-bf15cc.netlify.app)       |
-| Singers 📕                            | [View Demo](https://awesome-shirley-28fade.netlify.app)     |
-| TV Channel Employees 📕               | [View Demo](https://stoic-aryabhata-28792d.netlify.app)     |
-| Reminder 📕                           | [View Demo](https://cocky-nightingale-3a6e72.netlify.app)   |
-| Sikh Gurus 📕                         | [View Demo](https://eager-shockley-41b58e.netlify.app)      |
+| Indian Geography 📕                   | [View Demo](https://indiangeography.netlify.app)            |
+| Numbers 📕                            | [View Demo](https://numbersapi.netlify.app)                 |
+| Singers 📕                            | [View Demo](https://punjabitopten.netlify.app)              |
+| TV Channel Employees 📕               | [View Demo](https://crudwithemployees.netlify.app)          |
+| Reminder 📕                           | [View Demo](https://myreminders.netlify.app)                |
+| Sikh Gurus 📕                         | [View Demo](https://sikhism.netlify.app)                    |
 | Surnames 📕                           | [View Demo](https://sad-heisenberg-f93eac.netlify.app)      |
 | Festivals in Toronto 📕               | [View Demo](https://determined-roentgen-84b6db.netlify.app) |
 | Events in Toronto 📕                  | [View Demo](https://keen-babbage-e81c71.netlify.app)        |
