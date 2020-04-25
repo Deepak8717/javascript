@@ -49,38 +49,38 @@
 
 ## React
 
-| Project Title                         | Project Link                                                |
-| ------------------------------------- | ----------------------------------------------------------- |
-| Boredom 📕                            | [View Demo](https://boredom.netlify.app)                    |
-| CWC19 📕                              | [View Demo](https://crudwithcwc19.netlify.app)              |
-| Dog Breeds 📕                         | [View Demo](https://breedsofdogs.netlify.app)               |
-| fccFC 🔥                              | [View Demo](https://fccfc.netlify.app)                      |
-| GitUD 📕                              | [View Demo](https://gitud.netlify.app)                      |
-| Gyaan 📕                              | [View Demo](https://gyaan.netlify.app)                      |
-| HackerNews 📕                         | [View Demo](https://top10hackernews.netlify.app)            |
-| Hukamama 🔥                           | [View Demo](https://hukamnama.netlify.app/)                 |
-| Indian Geography 📕                   | [View Demo](https://indiangeography.netlify.app)            |
-| Numbers 📕                            | [View Demo](https://numbersapi.netlify.app)                 |
-| Singers 📕                            | [View Demo](https://punjabitopten.netlify.app)              |
-| TV Channel Employees 📕               | [View Demo](https://crudwithemployees.netlify.app)          |
-| Reminder 📕                           | [View Demo](https://myreminders.netlify.app)                |
-| Sikh Gurus 📕                         | [View Demo](https://sikhism.netlify.app)                    |
-| Surnames 📕                           | [View Demo](https://sad-heisenberg-f93eac.netlify.app)      |
-| Festivals in Toronto 📕               | [View Demo](https://determined-roentgen-84b6db.netlify.app) |
-| Events in Toronto 📕                  | [View Demo](https://keen-babbage-e81c71.netlify.app)        |
-| Stations in Toronto 📕                | [View Demo](https://distracted-mestorf-486189.netlify.app)  |
-| TV Series 📕                          | [View Demo](https://quizzical-davinci-670359.netlify.app)   |
-| Weather 📕                            | [View Demo](https://elastic-hodgkin-a00af3.netlify.app)     |
-| WWE Superstars 📕                     | [View Demo](https://flamboyant-euler-c6c228.netlify.app)    |
-| Web Jokes (Random) 📕                 | [View Demo](https://sad-haibt-f5ecd8.netlify.app)           |
-| Web Jokes (Norris) 📕                 | [View Demo](https://cocky-bohr-541c8f.netlify.app)          |
-| Waste Wizard 📕                       | [View Demo](https://peaceful-euclid-06fc35.netlify.app)     |
-| Radio Stations (Punjabi Edition) 🔥📕 | [View Demo](https://nifty-elion-3c0ba6.netlify.app)         |
-| Radio Stations (Toronto Edition) 🔥📕 | [View Demo](https://jolly-newton-ec1afa.netlify.app)        |
-| University List                       | [View Demo](https://zen-ptolemy-fb42ee.netlify.app)         |
-| Gindeed                               | [View Demo](https://relaxed-bhaskara-f6d4a8.netlify.app)    |
-| Booster                               | [View Demo](https://nifty-jones-19ae51.netlify.app)         |
-| CDNJS                                 | [View Demo](https://jscdn.netlify.app)                      |
+| Project Title                         | Project Link                                        |
+| ------------------------------------- | --------------------------------------------------- |
+| Boredom 📕                            | [View Demo](https://boredom.netlify.app)            |
+| CWC19 📕                              | [View Demo](https://crudwithcwc19.netlify.app)      |
+| Dog Breeds 📕                         | [View Demo](https://breedsofdogs.netlify.app)       |
+| fccFC 🔥                              | [View Demo](https://fccfc.netlify.app)              |
+| GitUD 📕                              | [View Demo](https://gitud.netlify.app)              |
+| Gyaan 📕                              | [View Demo](https://gyaan.netlify.app)              |
+| HackerNews 📕                         | [View Demo](https://top10hackernews.netlify.app)    |
+| Hukamama 🔥                           | [View Demo](https://hukamnama.netlify.app/)         |
+| Indian Geography 📕                   | [View Demo](https://indiangeography.netlify.app)    |
+| Numbers 📕                            | [View Demo](https://numbersapi.netlify.app)         |
+| Singers 📕                            | [View Demo](https://punjabitopten.netlify.app)      |
+| TV Channel Employees 📕               | [View Demo](https://crudwithemployees.netlify.app)  |
+| Reminder 📕                           | [View Demo](https://myreminders.netlify.app)        |
+| Sikh Gurus 📕                         | [View Demo](https://sikhism.netlify.app)            |
+| Surnames 📕                           | [View Demo](https://surnames.netlify.app)           |
+| Festivals in Toronto 📕               | [View Demo](https://festivalsto.netlify.app)        |
+| Events in Toronto 📕                  | [View Demo](https://eventsto.netlify.app)           |
+| Stations in Toronto 📕                | [View Demo](https://stationsto.netlify.app)         |
+| TV Series 📕                          | [View Demo](https://tvshowsapi.netlify.app/)        |
+| Weather 📕                            | [View Demo](https://monthlyweather.netlify.app)     |
+| WWE Superstars 📕                     | [View Demo](https://wwestars.netlify.app)           |
+| Web Jokes (Random) 📕                 | [View Demo](https://morejokes.netlify.app)          |
+| Web Jokes (Norris) 📕                 | [View Demo](https://jokesbychucknorris.netlify.app) |
+| Waste Wizard 📕                       | [View Demo](https://wasteto.netlify.app)            |
+| Radio Stations (Punjabi Edition) 🔥📕 | [View Demo](https://japji.netlify.app)              |
+| Radio Stations (Toronto Edition) 🔥📕 | [View Demo](https://radioto.netlify.app)            |
+| University List                       | [View Demo](https://universities.netlify.app)       |
+| Gindeed                               | [View Demo](https://gindeed.netlify.app)            |
+| Booster                               | [View Demo](https://boostmeup.netlify.app)          |
+| CDNJS                                 | [View Demo](https://jscdn.netlify.app)              |
 
 ## Redux
 
