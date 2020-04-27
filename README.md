@@ -82,7 +82,7 @@
 | Booster                               | [View Demo](https://boostmeup.netlify.app)          |
 | CDNJS                                 | [View Demo](https://jscdn.netlify.app)              |
 | LearnYou                              | [View Demo](https://learnyou.netlify.app)           |
-| TikTok                                | [View Demo](https://tiktok.netlify.app)             |
+| TikTok                                | [View Demo](https://tiktoks.netlify.app)            |
 
 ## Redux
 
