@@ -81,6 +81,7 @@
 | Gindeed                               | [View Demo](https://gindeed.netlify.app)            |
 | Booster                               | [View Demo](https://boostmeup.netlify.app)          |
 | CDNJS                                 | [View Demo](https://jscdn.netlify.app)              |
+| LearnYou                              | [View Demo](https://learnyou.netlify.app)           |
 
 ## Redux
 
