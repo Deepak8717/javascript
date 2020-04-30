@@ -1,6 +1,6 @@
 const app = document.getElementById("root");
 const URL = `https://pomber.github.io/covid19/timeseries.json`;
-const TOTAL_STAT = `https://corona.lmao.ninja/all`;
+const TOTAL_STAT = `https://corona.lmao.ninja/v2/all`;
 let data;
 
 let modal = document.getElementById("myModal");
