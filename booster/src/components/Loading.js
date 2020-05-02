@@ -1,8 +1,9 @@
 import React from "react";
+import styles from "../styles/App.module.css";
 
 const Loading = () => {
   return (
-    <div className="modal">
+    <div className={styles.modal}>
       <p>Loading...</p>
     </div>
   );

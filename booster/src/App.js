@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Video from "./components/Video";
 import Loading from "./components/Loading";
 import ErrorMessage from "./components/ErrorMessage";
-import "./App.css";
 
 const App = () => {
   const KEY = process.env.REACT_APP_KEY;
