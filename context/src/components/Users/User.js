@@ -2,24 +2,24 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Consumer } from '../../Context';
 
-const Item = ({ item }) => {
+const User = ({ user }) => {
   const [toggle, setToggle] = useState(false);
   const handleSettings = () => {
     setToggle(!toggle);
   };
   const handleDelete = (e, id, dispatch) =>
-    dispatch({ type: 'DELETE_ITEM', payload: id });
+    dispatch({ type: 'DELETE_USER', payload: id });
   return (
     <Consumer>
       {(value) => {
         const { dispatch } = value;
         return (
           <div>
-            <div>{item.name}</div>
-            <div>{item.age}</div>
+            <div>{user.name}</div>
+            <div>{user.phone}</div>
             <button onClick={handleSettings}>Settings</button>
             {toggle ? <div>These are my settings...</div> : null}
-            <button onClick={(e) => handleDelete(e, item.id, dispatch)}>
+            <button onClick={(e) => handleDelete(e, user.id, dispatch)}>
               Delete
             </button>
           </div>
@@ -29,8 +29,8 @@ const Item = ({ item }) => {
   );
 };
 
-Item.propTypes = {
-  item: PropTypes.object.isRequired,
+User.propTypes = {
+  user: PropTypes.object.isRequired,
 };
 
-export default Item;
+export default User;

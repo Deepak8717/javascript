@@ -3,31 +3,31 @@ import { Consumer } from '../../Context';
 import { v4 as uuidv4 } from 'uuid';
 import InputField from '../Layouts/InputField';
 
-const AddItem = ({ history }) => {
-  const initialItemState = { name: '', age: '', error: null };
-  const [addItem, setAddItem] = useState(initialItemState);
+const AddUser = ({ history }) => {
+  const initialUserState = { name: '', phone: '', error: null };
+  const [addUser, setAddUser] = useState(initialUserState);
   const handleSubmit = (e, dispatch) => {
     e.preventDefault();
-    const { name, age } = addItem;
-    if (name.trim() === '' || age === '' || Number(age) === 0) {
-      setAddItem({
-        ...addItem,
+    const { name, phone } = addUser;
+    if (name.trim() === '' || phone === '' || Number(phone) === 0) {
+      setAddUser({
+        ...addUser,
         error: 'This field is required',
       });
       return;
     }
-    const newItem = {
+    const newUser = {
       id: uuidv4(),
       name,
-      age,
+      phone,
     };
-    dispatch({ type: 'ADD_ITEM', payload: newItem });
-    setAddItem(initialItemState);
+    dispatch({ type: 'ADD_USER', payload: newUser });
+    setAddUser(initialUserState);
     history.push('/');
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setAddItem({ ...addItem, [name]: value });
+    setAddUser({ ...addUser, [name]: value });
   };
   return (
     <Consumer>
@@ -39,16 +39,16 @@ const AddItem = ({ history }) => {
               placeholder="Enter Name"
               onChange={handleChange}
               name="name"
-              value={addItem.name}
-              error={addItem.error}
+              value={addUser.name}
+              error={addUser.error}
             />
             <InputField
-              placeholder="Enter Age"
+              placeholder="Enter Phone"
               onChange={handleChange}
-              name="age"
-              value={addItem.age}
+              name="phone"
+              value={addUser.phone}
               type="number"
-              error={addItem.error}
+              error={addUser.error}
             />
             <button type="submit">Add</button>
           </form>
@@ -58,4 +58,4 @@ const AddItem = ({ history }) => {
   );
 };
 
-export default AddItem;
+export default AddUser;

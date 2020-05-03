@@ -1,22 +1,22 @@
 import React, { useRef } from 'react';
 
-const AddItem = ({ name, age }) => {
-  const itemName = useRef();
-  const itemAge = useRef();
+const AddUser = ({ name, phone }) => {
+  const userName = useRef();
+  const userPhone = useRef();
   const handleSubmit = (e) => {
     e.preventDefault();
-    const addItem = {
-      name: itemName.current.value,
-      age: itemAge.current.value,
+    const addUser = {
+      name: userName.current.value,
+      phone: userPhone.current.value,
     };
-    console.log(addItem);
+    console.log(addUser);
   };
   return (
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="name">Enter Name:</label>
         <input
-          ref={itemName}
+          ref={userName}
           defaultValue={name}
           id="name"
           type="text"
@@ -26,14 +26,14 @@ const AddItem = ({ name, age }) => {
         />
       </div>
       <div>
-        <label htmlFor="age">Enter Age:</label>
+        <label htmlFor="phone">Enter Phone:</label>
         <input
-          ref={itemAge}
-          defaultValue={age}
-          id="age"
+          ref={userPhone}
+          defaultValue={phone}
+          id="phone"
           type="number"
-          name="age"
-          placeholder="Age"
+          name="phone"
+          placeholder="phone"
           required
         />
       </div>
@@ -42,9 +42,9 @@ const AddItem = ({ name, age }) => {
   );
 };
 
-AddItem.defaultProps = {
+AddUser.defaultProps = {
   name: 'John',
-  age: 21,
+  phone: 21,
 };
 
-export default AddItem;
+export default AddUser;
