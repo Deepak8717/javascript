@@ -3,7 +3,7 @@ import { Consumer } from '../../Context';
 import { v4 as uuidv4 } from 'uuid';
 import InputField from '../Layouts/InputField';
 
-const AddItem = () => {
+const AddItem = ({ history }) => {
   const initialItemState = { name: '', age: '', error: null };
   const [addItem, setAddItem] = useState(initialItemState);
   const handleSubmit = (e, dispatch) => {
@@ -23,6 +23,7 @@ const AddItem = () => {
     };
     dispatch({ type: 'ADD_ITEM', payload: newItem });
     setAddItem(initialItemState);
+    history.push('/');
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
