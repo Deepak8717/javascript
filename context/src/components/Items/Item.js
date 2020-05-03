@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Consumer } from '../Context';
+import { Consumer } from '../../Context';
 
 const Item = ({ item }) => {
   const [toggle, setToggle] = useState(false);

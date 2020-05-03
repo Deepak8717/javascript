@@ -1,6 +1,6 @@
 import React from 'react';
 import Item from './Item';
-import { Consumer } from '../Context';
+import { Consumer } from '../../Context';
 
 const Items = () => {
   return (
