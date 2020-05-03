@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Consumer } from '../../Context';
-import { v4 as uuidv4 } from 'uuid';
 import InputField from '../Layouts/InputField';
+import axios from 'axios';
 
 const AddUser = ({ history }) => {
   const initialUserState = { name: '', phone: '', error: null };
   const [addUser, setAddUser] = useState(initialUserState);
-  const handleSubmit = (e, dispatch) => {
+  const handleSubmit = async (e, dispatch) => {
     e.preventDefault();
     const { name, phone } = addUser;
     if (name.trim() === '' || phone === '' || Number(phone) === 0) {
@@ -17,11 +17,14 @@ const AddUser = ({ history }) => {
       return;
     }
     const newUser = {
-      id: uuidv4(),
       name,
       phone,
     };
-    dispatch({ type: 'ADD_USER', payload: newUser });
+    const response = await axios.post(
+      `https://jsonplaceholder.typicode.com/users/`,
+      newUser
+    );
+    dispatch({ type: 'ADD_USER', payload: response.data });
     setAddUser(initialUserState);
     history.push('/');
   };

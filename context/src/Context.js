@@ -15,6 +15,15 @@ const Reducer = (state, action) => {
         ...state,
         users: state.users.concat(action.payload),
       };
+    case 'EDIT_USER':
+      return {
+        ...state,
+        users: state.users.map((contact) =>
+          contact.id === action.payload.id
+            ? (contact = action.payload)
+            : contact
+        ),
+      };
     default:
       return state;
   }
@@ -32,8 +41,7 @@ export default ({ children }) => {
       const request = await axios.get(
         `https://jsonplaceholder.typicode.com/users`
       );
-      const data = await request.data;
-      return data;
+      return request.data;
     })()
       .then((resp) => {
         setData({ ...data, users: resp });
