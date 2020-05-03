@@ -90,3 +90,4 @@
 | Project Title   | Project Link                                             |
 | --------------- | -------------------------------------------------------- |
 | Redux Basics 📝 | [View Demo](https://tpkahlon.github.io/javascript/redux) |
+| Context 📝      | **Run Project Locally inside `context` folder**          |
