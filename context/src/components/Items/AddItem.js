@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Consumer } from '../../Context';
 import { v4 as uuidv4 } from 'uuid';
+import InputField from '../Layouts/InputField';
 
 const AddItem = () => {
   const initialItemState = { name: '', age: '' };
@@ -26,30 +27,19 @@ const AddItem = () => {
         const { dispatch } = value;
         return (
           <form onSubmit={(e) => handleSubmit(e, dispatch)}>
-            <div>
-              <label htmlFor="name">Enter Name:</label>
-              <input
-                value={addItem.name}
-                onChange={handleChange}
-                id="name"
-                type="text"
-                name="name"
-                placeholder="Name"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="age">Enter Age:</label>
-              <input
-                value={addItem.age}
-                onChange={handleChange}
-                id="age"
-                type="number"
-                name="age"
-                placeholder="Age"
-                required
-              />
-            </div>
+            <InputField
+              placeholder="Enter Name"
+              onChange={handleChange}
+              name="name"
+              value={addItem.name}
+            />
+            <InputField
+              placeholder="Enter Age"
+              onChange={handleChange}
+              name="age"
+              value={addItem.age}
+              type="number"
+            />
             <button type="submit">Add</button>
           </form>
         );
