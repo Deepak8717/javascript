@@ -87,7 +87,7 @@
 
 ## Redux
 
-| Project Title   | Project Link                                             |
-| --------------- | -------------------------------------------------------- |
-| Redux Basics 📝 | [View Demo](https://tpkahlon.github.io/javascript/redux) |
-| Context 📝      | **Run Project Locally inside `context` folder**          |
+| Project Title                          | Project Link                                             |
+| -------------------------------------- | -------------------------------------------------------- |
+| Redux Basics 📝                        | [View Demo](https://tpkahlon.github.io/javascript/redux) |
+| CRUD Operations using React Context 📝 | [View Demo](https://react-context-crud.netlify.app)]     |
