@@ -90,4 +90,4 @@
 | Project Title                          | Project Link                                             |
 | -------------------------------------- | -------------------------------------------------------- |
 | Redux Basics 📝                        | [View Demo](https://tpkahlon.github.io/javascript/redux) |
-| CRUD Operations using React Context 📝 | [View Demo](https://react-context-crud.netlify.app)]     |
+| CRUD Operations using React Context 📝 | [View Demo](https://react-context-crud.netlify.app)      |
