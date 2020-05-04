@@ -1,11 +1,14 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i');
+@import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+
 :root {
   --color-primary: black;
   --color-secondary: white;
   --color-tertiary: #87e023;
-  --color-primary-light: rgba(10,10,10,0.5);
+  --color-primary-light: rgba(10, 10, 10, 0.5);
 }
-
-@import 'https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i';
 
 html {
   font-size: 16px;
@@ -90,6 +93,10 @@ img {
 }
 
 .card__image {
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 50%;
+  object-fit: cover;
   margin: 0 0 1rem;
   border: 0.25rem solid var(--color-tertiary);
   background: var(--color-primary-light);
@@ -133,7 +140,8 @@ a.skip-main {
   overflow: hidden;
   z-index: -999;
 }
-a.skip-main:focus, a.skip-main:active {
+a.skip-main:focus,
+a.skip-main:active {
   color: var(--color-primary);
   background-color: var(--color-secondary);
   left: auto;
