@@ -1,48 +1,31 @@
-import { config } from "./config.js";
+'use strict';
+import { config } from './config.js';
 
-("use strict");
-
-// Primitive Declarations
-let url = config.url;
-let key = config.apiKey;
-let container = document.querySelector(".container");
-
-// Function Declarations
-let createNode = (node) => document.createElement(node);
-let appendNode = (parent, node) => parent.appendChild(node);
-
-let createCollection = (element) => {
-  let card = createNode("section");
-  let cardTitle = createNode("h2");
-  let cardInfo = createNode("p");
-  let cardImg = createNode("img");
-  let cardLink = createNode("a");
-  appendNode(container, card);
-  appendNode(card, cardImg);
-  appendNode(card, cardTitle);
-  appendNode(card, cardInfo);
-  appendNode(card, cardLink);
-  cardImg.src = element.collection.image_url;
-  cardTitle.textContent = element.collection.title;
-  cardInfo.textContent = element.collection.description;
-  cardLink.target = `_blank`;
-  cardLink.textContent = `View`;
-  cardLink.href = element.collection.share_url;
-};
-
-let getCollection = () => {
-  fetch(url, {
+(async () => {
+  const url = config.url;
+  const key = config.apiKey;
+  const options = {
     headers: {
-      "user-key": key,
+      'user-key': key,
     },
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      return json.collections.forEach((element) => {
-        createCollection(element);
-      });
+  };
+  const r = await fetch(url, options);
+  const j = await r.json();
+  return j;
+})()
+  .then((d) => {
+    let html = ``;
+    const container = document.querySelector('.container');
+    d.collections.forEach((i) => {
+      html += `
+        <section>
+        <h2>${i.collection.title}</h2>
+        <p>${i.collection.description}</p>
+        <img src=${i.collection.image_url} alt=${i.collection.title} />
+        <p><a href=${i.collection.share_url} target="_blank">View</a></p>
+        </section>
+      `;
     });
-};
-
-// Function Callbacks
-getCollection();
+    container.innerHTML = html;
+  })
+  .catch((e) => console.log(e));
