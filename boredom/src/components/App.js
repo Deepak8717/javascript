@@ -1,64 +1,43 @@
-import React, {Fragment, Component} from 'react';
+import React, { useState, useEffect } from 'react';
 import Item from './Item';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      content: [],
-      isLoaded: false,
-      changedValue: null,
-      isChanged: false,
-      error: null
-    }
-    this.handleClick = this.handleClick.bind(this);
-    this.getData = this.getData.bind(this);
-  }
-  async componentDidMount() {
-    this.setState({ isLoading: true });
-    this.getData();
-  }
-  async getData() {
-    try {
+const App = () => {
+  const initialState = {
+    content: [],
+    loading: false,
+    changedValue: null,
+    isChanged: false,
+    error: null,
+  };
+  const [data, setData] = useState(initialState);
+  const handleClick = () => {
+    getData();
+  };
+  const getData = () => {
+    setData({ ...data, loading: true });
+    (async () => {
       let url = 'https://www.boredapi.com/api/activity/';
-      await fetch(url)
-      .then(response => {
-        if(response.ok) return response.json()
-        else throw new Error('Something is wrong...')
-      })
-      .then(data => this.setState({
-        content: data,
-        isLoaded: false,
-        isChanged: false,
-        changedValue: null
-      }));
-    }
-    catch(error) {
-      this.setState({
-        error,
-        isLoaded: false
-      });
-    }
-  }
-  handleClick() {
-    this.getData();
-    this.setState({
-      isChanged: false,
-      changedValue: null
-    });
-  }
-  render() {
-    const {isLoaded, content, error} = this.state;
-    const onClick = this.handleClick;
-    if(error) return <p>{error.message}</p>;
-    if(isLoaded) return <p>Loading...</p>;
-    return (
-      <Fragment>
-        <Item content={content} key={this.state.content.key} />
-        <button className='pure-button pure-button-primary' onClick={onClick}>See another activity</button>
-      </Fragment>
-    );
-  }
-}
+      const response = await fetch(url);
+      const json = await response.json();
+      return json;
+    })()
+      .then((d) => setData({ ...data, content: d, loading: false }))
+      .catch(() => setData({ ...data, error: true }));
+  };
+  useEffect(() => {
+    getData();
+    // eslint-disable-next-line
+  }, []);
+  if (data.error) return <p>Something went wrong!</p>;
+  if (data.loading) return <p>Loading...</p>;
+  return (
+    <>
+      <Item content={data.content} key={data.content.key} />
+      <button className="pure-button pure-button-primary" onClick={handleClick}>
+        See another activity
+      </button>
+    </>
+  );
+};
 
 export default App;

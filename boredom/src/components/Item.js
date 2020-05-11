@@ -1,17 +1,41 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Item extends Component {
-  render(props) {
-    return (
-      <div className='activity'>
-        <h1 className='activity__name'>{this.props.content.activity}</h1>
-        <p className='activity__type'><strong><span role='img' aria-label='Type'>💡</span> Type:</strong> {this.props.content.type}</p>
-        <p className='activity__price'><strong><span role='img' aria-label='Funds'>💰</span> Funds needed:</strong> ${this.props.content.price * 100}</p>
-        <p className='activity__participants'><strong><span role='img' aria-label='Participants'>👯</span> Participants needed:</strong> {this.props.content.participants}</p>
-        <p className='activity__accessibility'><strong><span role='img' aria-label='Accessibility'>♿</span> Accessibility scale:</strong> {this.props.content.accessibility}</p>
-      </div>
-    );
-  }
-}
+const Text = ({ emoji, name, content }) => {
+  return (
+    <p className="activity__item">
+      <span role="img" aria-label="Type">
+        {emoji}
+      </span>
+      <span>
+        <strong>{name}</strong>
+      </span>
+      <span>{content}</span>
+    </p>
+  );
+};
+
+const Item = ({ content }) => {
+  return (
+    <div className="activity">
+      <h1 className="activity__name">{content.activity}</h1>
+      <Text
+        emoji="💰"
+        name="Funds needed:"
+        content={`${content.price * 100}`}
+      />
+      <Text
+        emoji="👯"
+        name="Participants needed:"
+        content={`${content.participants}`}
+      />
+      <Text
+        emoji="♿"
+        name="Accessibility needed:"
+        content={`${content.accessibility}`}
+      />
+      <Text emoji="📊" name="Category:" content={`${content.type}`} />
+    </div>
+  );
+};
 
 export default Item;
