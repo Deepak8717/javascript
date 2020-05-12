@@ -46,6 +46,7 @@
 | Alarm                                      | [View Demo](https://tpkahlon.github.io/javascript/23)                    |
 | Anti Chat 🔥                               | [View Demo](https://tpkahlon.github.io/javascript/30)                    |
 | NaMo Memes 🔥                              | [View Demo](https://tpkahlon.github.io/javascript/31)                    |
+| Bareek 📝                                  | [View Demo](https://bareek.netlify.app)                                  |
 
 ## React
 
