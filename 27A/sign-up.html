@@ -1,81 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Create Account | Humans</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="icon"
+      href="https://image.flaticon.com/icons/svg/1256/1256650.svg"
+      type="image/svg"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <title>Create Account | Humans</title>
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="icon" href="https://image.flaticon.com/icons/svg/1256/1256650.svg" type="image/svg">
-</head>
-
-<body>
-  <nav class="navigation">
-    <div class="container">
-      <div class="navigation__wrap">
-        <a class="navigation__logo" href="./">
-          <img class="navigation__logo__thumbnail" src="https://image.flaticon.com/icons/svg/1256/1256650.svg"
-            alt="Image of the logo" />
-          <div class="navigation__logo__text">
-            Humans
-          </div>
-        </a>
-        <ul>
-          <li>
-            <a target="_blank" href="https://github.com/tpkahlon/javascript100/tree/master/27A">Source</a>
-          </li>
-        </ul>
+  <body>
+    <nav class="navigation">
+      <div class="container">
+        <div class="navigation__wrap">
+          <a class="navigation__logo" href="./">
+            <img
+              class="navigation__logo__thumbnail"
+              src="https://image.flaticon.com/icons/svg/1256/1256650.svg"
+              alt="Image of the logo"
+            />
+            <div class="navigation__logo__text">
+              Humans
+            </div>
+          </a>
+          <ul>
+            <li>
+              <a
+                target="_blank"
+                href="https://github.com/tpkahlon/javascript100/tree/master/27A"
+                >Source</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
+    </nav>
+    <div class="container container--full-height">
+      <h1>Join the Humans family!</h1>
+      <form id="signUpForm">
+        <div>
+          <label for="email">Enter your Email Address:</label>
+          <input
+            class="input"
+            type="email"
+            placeholder="Enter Email"
+            id="email"
+          />
+        </div>
+        <div>
+          <label for="password">Enter your Password:</label>
+          <input
+            class="input"
+            type="password"
+            placeholder="Enter Password"
+            id="password"
+          />
+        </div>
+        <div class="buttons">
+          <a href="./" class="input"
+            ><i class="fa fa-arrow-left"></i><span>Back</span></a
+          >
+          <button type="submit" class="input">
+            <i class="fa fa-address-card-o"></i><span>Sign Up</span>
+          </button>
+        </div>
+      </form>
     </div>
-  </nav>
-  <div class="container container--full-height">
-    <h1>Join the Humans family!</h1>
-    <form id="signUpForm">
-      <div>
-        <label for="email">Enter your Email Address:</label>
-        <input class="input" type="email" placeholder="Enter Email" id="email" />
+    <footer class="footer">
+      <div class="stack">
+        <p class="stack__text">Built with:</p>
+        <div class="stack__list">
+          <img
+            src="https://cdn.svgporn.com/logos/firebase.svg"
+            alt="Image of Firebase"
+          />
+          <img
+            src="https://cdn.svgporn.com/logos/javascript.svg"
+            alt="Image of JavaScript"
+          />
+          <img
+            src="https://cdn.svgporn.com/logos/html-5.svg"
+            alt="Image of HTML5"
+          />
+          <img
+            src="https://cdn.svgporn.com/logos/css-3.svg"
+            alt="Image of CSS3"
+          />
+        </div>
       </div>
-      <div>
-        <label for="password">Enter your Password:</label>
-        <input class="input" type="password" placeholder="Enter Password" id="password" />
-      </div>
-      <div class="buttons">
-        <a href="./" class="input"><i class="fa fa-arrow-left"></i><span>Back</span></a>
-        <button type="submit" class="input"><i class="fa fa-address-card-o"></i><span>Sign Up</span></button>
-      </div>
-    </form>
-  </div>
-  <footer class="footer">
-    <div class="stack">
-      <p class="stack__text">Built with:</p>
-      <div class="stack__list">
-        <img src="https://cdn.svgporn.com/logos/firebase.svg" alt="Image of Firebase">
-        <img src="https://cdn.svgporn.com/logos/javascript.svg" alt="Image of JavaScript">
-        <img src="https://cdn.svgporn.com/logos/html-5.svg" alt="Image of HTML5">
-        <img src="https://cdn.svgporn.com/logos/css-3.svg" alt="Image of CSS3">
-      </div>
-    </div>
-    <p class="footer__text">&copy; Humans!</p>
-  </footer>
-  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
-  <script>
-    let firebaseConfig = {
-      apiKey: "AIzaSyDj7H4ryjrFYhcUyr43rvlg71y45-U48OE",
-      authDomain: "testing-3f1e1.firebaseapp.com",
-      databaseURL: "https://testing-3f1e1.firebaseio.com",
-      projectId: "testing-3f1e1",
-      storageBucket: "testing-3f1e1.appspot.com",
-      messagingSenderId: "759240881021",
-      appId: "1:759240881021:web:3282f2cb036fdc478a1214",
-      measurementId: "G-YBG70MMC3Z"
-    };
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  </script>
-  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
-  <script src="./js/sign-up.js"></script>
-</body>
-
+      <p class="footer__text">&copy; Humans!</p>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyDe8h8tXqLB-vACYI6szYRNNcbUv93IBRw',
+        authDomain: 'humans-fb4c3.firebaseapp.com',
+        databaseURL: 'https://humans-fb4c3.firebaseio.com',
+        projectId: 'humans-fb4c3',
+        storageBucket: 'humans-fb4c3.appspot.com',
+        messagingSenderId: '455484851098',
+        appId: '1:455484851098:web:375c870b777c71066cf023',
+        measurementId: 'G-HF7519T1QS',
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+    <script src="./js/sign-up.js"></script>
+  </body>
 </html>
