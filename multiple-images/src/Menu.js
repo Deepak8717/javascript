@@ -13,7 +13,7 @@ const Menu = () => {
       <Navbar.Brand href='/'>Multiple Images</Navbar.Brand>
       <Nav className='ml-auto'>
         <Nav.Link
-          href='https://github.com/tpkahlon/javascript/tree/master/multiply-images'
+          href='https://github.com/tpkahlon/javascript/tree/master/multiple-images'
           target='_blank'
         >
           Source
