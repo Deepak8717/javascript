@@ -17,12 +17,20 @@ const Footer = () => {
                 Brad Traversy
               </a>
               <a
+                href='https://twitter.com/DenisLukov'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-decoration-none text-white'
+              >
+                Denis Lukov
+              </a>
+              <a
                 href='https://multiple.js.org/'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='ml-3 text-decoration-none text-white'
               >
-                Multiply.js
+                Multiple.js
               </a>
               <span className='ml-3 text-muted'>Peace!</span>
             </div>

@@ -10,7 +10,7 @@ const Menu = () => {
       className='shadow-lg'
       fixed='top'
     >
-      <Navbar.Brand href='/'>Multiply Images</Navbar.Brand>
+      <Navbar.Brand href='/'>Multiple Images</Navbar.Brand>
       <Nav className='ml-auto'>
         <Nav.Link
           href='https://github.com/tpkahlon/javascript/tree/master/multiply-images'
