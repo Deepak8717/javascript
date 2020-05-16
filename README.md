@@ -85,7 +85,7 @@
 | LearnYou                              | [View Demo](https://learnyou.netlify.app)           |
 | TikTok                                | [View Demo](https://tiktoks.netlify.app)            |
 | TTC                                   | [View Demo](https://ttcinc.netlify.app)             |
-| Multiply Images                       | [View Demo](https://multiply-images.netlify.app)    |
+| Multiple Images                       | [View Demo](https://multiple-images.netlify.app)    |
 
 ## Redux
 
