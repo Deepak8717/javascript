@@ -20,7 +20,7 @@ const Footer = () => {
                 href='https://twitter.com/DenisLukov'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-decoration-none text-white'
+                className='ml-3 text-decoration-none text-white'
               >
                 Denis Lukov
               </a>
