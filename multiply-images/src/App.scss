@@ -1,0 +1,15 @@
+main {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  background-size: cover;
+  background-attachment: fixed;
+}
