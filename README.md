@@ -86,6 +86,7 @@
 | TikTok                                | [View Demo](https://tiktoks.netlify.app)            |
 | TTC                                   | [View Demo](https://ttcinc.netlify.app)             |
 | Multiple Images                       | [View Demo](https://multiple-images.netlify.app)    |
+| Harvard Art Museum                    | [View Demo](https://harvard-art-museum.netlify.app) |
 
 ## Redux
 
