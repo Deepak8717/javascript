@@ -11,7 +11,7 @@ const App = () => {
     loading: false,
     content: null,
     page: 1,
-    resource: 'object',
+    resource: 'image',
   });
   const { error, loading, resource, content, page } = actions;
   const url = `https://api.harvardartmuseums.org/${resource}?apikey=${process.env.REACT_APP_KEY}&page=${page}`;
@@ -60,7 +60,9 @@ const App = () => {
         handlePrevious={handlePrevious}
       />
       {content ? (
-        resource === 'object' || resource === 'person' ? (
+        resource === 'image' ||
+        resource === 'object' ||
+        resource === 'person' ? (
           <Resource actions={actions} />
         ) : (
           <Message message='Please select a resource and get some information.' />

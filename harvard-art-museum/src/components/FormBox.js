@@ -29,6 +29,7 @@ const FormBox = ({
                 value={resource}
                 onChange={handleChange}
               >
+                <option value='image'>Image</option>
                 <option value='object'>Object</option>
                 <option value='person'>Person</option>
               </Form.Control>

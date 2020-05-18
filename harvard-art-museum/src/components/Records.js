@@ -2,11 +2,17 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 import RecordObject from './RecordObject';
 import RecordPerson from './RecordPerson';
+import RecordImage from './RecordImage';
 
 const Records = ({ resource, records }) => {
   return (
     <Table responsive striped bordered hover>
       <thead>
+        {resource === 'image' && (
+          <tr>
+            <th>Image</th>
+          </tr>
+        )}
         {resource === 'person' && (
           <tr>
             <th>Date End</th>
@@ -88,6 +94,7 @@ const Records = ({ resource, records }) => {
         )}
       </thead>
       <tbody>
+        {resource === 'image' && <RecordImage records={records} />}
         {resource === 'object' && <RecordObject records={records} />}
         {resource === 'person' && <RecordPerson records={records} />}
       </tbody>
