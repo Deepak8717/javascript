@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-162341061-11"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <title>Alarm</title>
-  <link rel="stylesheet" href="./style.css" />
-  <link rel="icon" href="https://image.flaticon.com/icons/svg/541/541509.svg" type="image/svg" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pickerjs@1.2.1/dist/picker.min.css">
-</head>
+      gtag('config', 'UA-162341061-11');
+    </script>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Alarm</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      href="https://image.flaticon.com/icons/svg/541/541509.svg"
+      type="image/svg"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/pickerjs@1.2.1/dist/picker.min.css"
+    />
+  </head>
 
-<body>
-  <div id="app">
-    <div id="box">
-      <input type="text" id="time" placeholder="Pick your alarm">
-      <button id="set">Set</button>
-      <div id="counter"></div>
+  <body>
+    <div id="app">
+      <div id="box">
+        <input type="text" id="time" placeholder="Pick your alarm" />
+        <button id="set">Set</button>
+        <div id="counter"></div>
+      </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/pickerjs@1.2.1/dist/picker.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="./script.js"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/pickerjs@1.2.1/dist/picker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
 </html>
