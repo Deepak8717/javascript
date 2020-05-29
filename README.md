@@ -22,6 +22,7 @@
 | CWC19 Team Directory 📝                    | [View Demo](https://cwctd.netlify.app)                                   |
 | Calculator 📕                              | [View Demo](https://tpkahlon.github.io/javascript/calculator)            |
 | Cat Me                                     | [View Demo](https://tpkahlon.github.io/javascript/cat-gallery)           |
+| Cat in Space                               | [View Demo](https://tpkahlon.github.io/javascript/32)                    |
 | Check Unicode of a String                  | [View Demo](https://tpkahlon.github.io/javascript/check-unicode)         |
 | Checkout page 📝                           | [View Demo](https://tpkahlon.github.io/javascript/17)                    |
 | Corona Virus Cases Tracker 🔥              | [View Demo](https://tpkahlon.github.io/javascript/29)                    |

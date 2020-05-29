@@ -1,0 +1,84 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #eee;
+  --black: #100e17;
+  --black-light: #3f3e45;
+  --limit: 10000px;
+  --silver: #ddd;
+}
+
+* {
+  transition: all 1s ease;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  color: var(--white);
+  background: var(--black);
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+
+span {
+  margin-top: 2rem;
+  color: var(--silver);
+}
+
+section {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+img {
+  max-width: 6rem;
+  animation: rotating 10s linear infinite;
+  border-radius: 0.5rem;
+}
+
+main {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  height: 100vh;
+  background-image: url('https://i.stack.imgur.com/cGIFX.jpg');
+  background-repeat: repeat;
+  /*   background-attachment: fixed; */
+  background-size: cover;
+  animation: backgroundScroll 500s linear infinite;
+}
+
+@keyframes backgroundScroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: var(--limit) 0;
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
