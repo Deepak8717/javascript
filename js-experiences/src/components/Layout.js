@@ -1,12 +1,12 @@
 import '../styles/index.scss'
 import React from 'react'
-import Navigation from '../components/Navigation'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const Layout = ({ children }) => {
   return (
     <>
-      <Navigation />
+      <Header />
       {children}
       <Footer />
     </>
