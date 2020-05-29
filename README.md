@@ -15,7 +15,6 @@
 | Alarm                                      | [View Demo](https://tpkahlon.github.io/javascript/23)                    |
 | Angular 💡                                 | [View Demo](https://crudinangularjs.netlify.app)                         |
 | Anti Chat 📝                               | [View Demo](https://tpkahlon.github.io/javascript/30)                    |
-| Bareek 📝                                  | [View Demo](https://bareek.netlify.app)                                  |
 | Basic Fetch API 📕                         | [View Demo](https://tpkahlon.github.io/javascript/basic-fetch-api)       |
 | Basic Web Crawler 🔥                       | [View Demo](https://tpkahlon.github.io/javascript/16)                    |
 | Blog 👶                                    | [View Demo](https://satrangi.netlify.app)                                |
