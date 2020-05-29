@@ -1,5 +1,11 @@
 # JavaScript
 
+JavaScript Experiences allows you to get familiar with various JavaScript concepts through small straight-forward projects. Fork/Clone the repository and kick off your journey of understanding JavaScript.
+
+- [Demo / Version: 1.0.0](https://js-experiences.netlify.app)
+
+Current Status: Work in progress...
+
 | Symbol | Description                                        |
 | ------ | -------------------------------------------------- |
 | 💡     | Project developed in order to understand a concept |
