@@ -15,6 +15,7 @@ module.exports = {
     author: `Tej Kahlon`,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     {
