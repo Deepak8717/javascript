@@ -17,6 +17,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-162341061-15',
+        cookieDomain: 'jsxp.netlify.app',
+      },
+    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-transformer-remark`,

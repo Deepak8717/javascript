@@ -2,7 +2,7 @@
 
 JavaScript Experiences allows you to get familiar with various JavaScript concepts through small straight-forward projects. Fork/Clone the repository and kick off your journey of understanding JavaScript.
 
-- [Demo / Version: 1.0.0](https://js-experiences.netlify.app)
+- [Demo / Version: 1.0.0](https://jsxp.netlify.app)
 
 Current Status: Work in progress...
 
