@@ -17,11 +17,20 @@ export const query = graphql`
 
 export default function Blog({ data }) {
   const { title, publishedDate, body } = data.contentfulPost
+  const options = {
+    renderNode: {
+      'embedded-asset-block': node => {
+        const alt = node.data.target.fields.title['en-US']
+        const url = node.data.target.fields.file['en-US'].url
+        return <img alt={alt} src={url} />
+      },
+    },
+  }
   return (
     <Layout>
       <h1>{title}</h1>
       <p>{publishedDate}</p>
-      {documentToReactComponents(body.json)}
+      {documentToReactComponents(body.json, options)}
     </Layout>
   )
 }
