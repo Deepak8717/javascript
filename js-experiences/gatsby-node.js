@@ -17,26 +17,24 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
-      allMarkdownRemark {
+      allContentfulPost {
         edges {
           node {
-            fields {
-              slug
-            }
+            slug
           }
         }
       }
     }
   `)
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  result.data.allContentfulPost.edges.forEach(({ node }) => {
     createPage({
-      path: `/blog${node.fields.slug}`,
+      path: `/blog${node.slug}`,
       component: path.resolve(`./src/templates/blog.js`),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
-        slug: node.fields.slug,
+        slug: node.slug,
       },
     })
   })
