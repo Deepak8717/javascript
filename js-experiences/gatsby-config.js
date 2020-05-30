@@ -12,7 +12,7 @@ require('dotenv').config({
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `JavaScript Experiences`,
+    title: `#JSXP`,
     author: `Tej Kahlon`,
   },
   plugins: [

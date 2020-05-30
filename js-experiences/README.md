@@ -5,13 +5,13 @@
   </a>
 </p>
 
-# JavaScript Experiences
+# #JSXP
 
 Get familiar with various JavaScript concepts through small straight-forward projects. Fork/Clone the repository and kick off your journey of understanding JavaScript.
 
 ## Resources
 
-- [Demo](https://js-experiences.netlify.app)
+- [Demo](https://jsxp.netlify.app)
 
 ## Version
 

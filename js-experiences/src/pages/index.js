@@ -9,7 +9,7 @@ const index = () => {
       <Head title='Home' />
       <div className='my-3'>
         <Jumbotron className='m-0'>
-          <h1 className='m-0 mb-3'>#JavaScriptExperiences</h1>
+          <h1 className='m-0 mb-3'>#JSXP</h1>
           <p>
             Get familiar with various JavaScript concepts through small projects
             based. Fork/Clone the repository and kick off your journey to
@@ -29,7 +29,8 @@ const index = () => {
             There is no requirement for any sign ups etc. Ideal recommendation
             is to take on one project a day/week and solve it in your own way.
             Once you are confident with JavaScript, try building a major project
-            that involves routing, styling, data.
+            that involves routing, styling, data. Complement it with LeetCode,
+            CodeWars.
           </p>
         </Jumbotron>
       </div>

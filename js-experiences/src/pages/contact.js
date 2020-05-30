@@ -8,6 +8,7 @@ const Contact = () => {
       <Head title='Contact' />
       <div className='my-3'>
         <h1>Contact</h1>
+        <p>We will get a Contact page in near future...</p>
       </div>
     </Layout>
   )

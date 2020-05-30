@@ -8,6 +8,7 @@ const About = () => {
       <Head title='About' />
       <div className='my-3'>
         <h1>About</h1>
+        <p>We will get an About page in near future...</p>
       </div>
     </Layout>
   )
