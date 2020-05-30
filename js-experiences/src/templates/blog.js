@@ -16,12 +16,12 @@ export const query = graphql`
 `
 
 export default function Blog({ data }) {
-  const { title, date } = data.contentfulPost
+  const { title, publishedDate, body } = data.contentfulPost
   return (
     <Layout>
       <h1>{title}</h1>
-      <p>{date}</p>
-      {documentToReactComponents(data.contentfulPost.body.json)}
+      <p>{publishedDate}</p>
+      {documentToReactComponents(body.json)}
     </Layout>
   )
 }
