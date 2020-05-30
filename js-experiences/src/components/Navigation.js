@@ -1,21 +1,35 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Navbar, Nav } from 'react-bootstrap'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 
 const Navigation = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+  const { title } = data.site.siteMetadata
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to='/about'>About</Link>
-        </li>
-        <li>
-          <Link to='/contact'>Contact</Link>
-        </li>
-        <li>
-          <Link to='/blog'>Blog</Link>
-        </li>
-      </ul>
-    </nav>
+    <Navbar bg='dark' variant='dark' fixed='top'>
+      <Navbar.Brand as={Link} to='/'>
+        {title}
+      </Navbar.Brand>
+      <Nav className='ml-auto'>
+        <Nav.Link as={Link} to='/about' activeClassName='active'>
+          About
+        </Nav.Link>
+        <Nav.Link as={Link} to='/contact' activeClassName='active'>
+          Contact
+        </Nav.Link>
+        <Nav.Link as={Link} to='/blog' activeClassName='active'>
+          Projects
+        </Nav.Link>
+      </Nav>
+    </Navbar>
   )
 }
 

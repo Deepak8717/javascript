@@ -17,7 +17,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-transformer-remark`,

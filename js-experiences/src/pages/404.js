@@ -7,9 +7,11 @@ export default function NotFound() {
   return (
     <Layout>
       <Head title='Sorry' />
-      <h1>Page Not Found</h1>
-      <p>Oops, we couldn't find this page!</p>
-      <Link to='/'>Go Home</Link>
+      <div className='my-3'>
+        <h1>Page Not Found</h1>
+        <p>Oops, we couldn't find this page!</p>
+        <Link to='/'>Go Home</Link>
+      </div>
     </Layout>
   )
 }

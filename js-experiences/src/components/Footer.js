@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
+import { Container, Row, Col } from 'react-bootstrap'
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -13,8 +14,20 @@ const Footer = () => {
   `)
   const { author } = data.site.siteMetadata
   return (
-    <footer>
-      &copy; {new Date().getFullYear()} by {author}
+    <footer className='bg-dark text-muted py-5 text-center'>
+      <Container>
+        <Row>
+          <Col xs={12}>
+            <p>
+              &copy; {new Date().getFullYear()} by {author}
+            </p>
+            <p className='m-0'>
+              Thanks to <strong>Andrew Mead</strong> for his amazing lecture on
+              Gatsby
+            </p>
+          </Col>
+        </Row>
+      </Container>
     </footer>
   )
 }

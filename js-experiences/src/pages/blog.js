@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Head from '../components/Head'
+import { ListGroup, Badge } from 'react-bootstrap'
 
 const Blog = () => {
   const data = useStaticQuery(graphql`
@@ -21,19 +22,22 @@ const Blog = () => {
   return (
     <Layout>
       <Head title='Blog' />
-      <ul>
-        {edges.map((i, idx) => {
-          const { title, publishedDate, slug } = i.node
-          return (
-            <li key={idx}>
-              <Link to={`/blog/${slug}`}>
-                <h1>{title}</h1>
-                <p>{publishedDate}</p>
-              </Link>
-            </li>
-          )
-        })}
-      </ul>
+      <div className='my-3'>
+        <h1>Projects</h1>
+        <ListGroup>
+          {edges.map((i, idx) => {
+            const { title, publishedDate, slug } = i.node
+            return (
+              <ListGroup.Item key={idx} action as={Link} to={`/blog/${slug}`}>
+                <div className='d-flex justify-content-between align-items-center'>
+                  <span>{title}</span>
+                  <Badge variant='secondary'>{publishedDate}</Badge>
+                </div>
+              </ListGroup.Item>
+            )
+          })}
+        </ListGroup>
+      </div>
     </Layout>
   )
 }
