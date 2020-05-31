@@ -14,7 +14,7 @@ const Navigation = () => {
   `)
   const { title } = data.site.siteMetadata
   return (
-    <Navbar bg='dark' variant='dark' fixed='top'>
+    <Navbar bg='dark' variant='dark' fixed='top' className='shadow-lg'>
       <Navbar.Brand as={Link} to='/'>
         {title}
       </Navbar.Brand>

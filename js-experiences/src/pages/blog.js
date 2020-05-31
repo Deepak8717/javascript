@@ -31,7 +31,7 @@ const Blog = () => {
               <ListGroup.Item key={idx} action as={Link} to={`/blog/${slug}`}>
                 <div className='d-flex justify-content-between align-items-center'>
                   <span>{title}</span>
-                  <Badge variant='secondary'>{publishedDate}</Badge>
+                  <Badge variant='primary'>{publishedDate}</Badge>
                 </div>
               </ListGroup.Item>
             )

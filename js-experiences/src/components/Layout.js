@@ -1,4 +1,3 @@
-import 'bootstrap/scss/bootstrap.scss'
 import '../styles/index.scss'
 import appStyles from '../styles/app.module.scss'
 import React from 'react'
