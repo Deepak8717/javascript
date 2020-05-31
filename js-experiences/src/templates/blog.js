@@ -30,9 +30,11 @@ export default function Blog({ data }) {
   return (
     <Layout>
       <Head title={data.contentfulPost.title} />
-      <h1>{title}</h1>
-      <p>{publishedDate}</p>
-      {documentToReactComponents(body.json, options)}
+      <div className='my-3'>
+        <h1>{title}</h1>
+        <p>{publishedDate}</p>
+        {documentToReactComponents(body.json, options)}
+      </div>
     </Layout>
   )
 }
