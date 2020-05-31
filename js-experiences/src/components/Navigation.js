@@ -19,12 +19,6 @@ const Navigation = () => {
         {title}
       </Navbar.Brand>
       <Nav className='ml-auto'>
-        <Nav.Link as={Link} to='/about' activeClassName='active'>
-          About
-        </Nav.Link>
-        <Nav.Link as={Link} to='/contact' activeClassName='active'>
-          Contact
-        </Nav.Link>
         <Nav.Link as={Link} to='/blog' activeClassName='active'>
           Projects
         </Nav.Link>

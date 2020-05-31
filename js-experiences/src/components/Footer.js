@@ -23,7 +23,7 @@ const Footer = () => {
             </p>
             <p className='m-0'>
               Thanks to <strong>Andrew Mead</strong> for his amazing lecture on
-              Gatsby
+              Gatsby that helped me build this page
             </p>
           </Col>
         </Row>
