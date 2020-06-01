@@ -8,7 +8,7 @@ const index = () => {
     <Layout>
       <Head title='Home' />
       <div className='my-3'>
-        <Jumbotron className='m-0 mb-3'>
+        <Jumbotron className='m-0 mb-3 shadow'>
           <h1 className='m-0 mb-3'>#JSXP</h1>
           <p>
             Get familiar with various JavaScript concepts through small
@@ -64,8 +64,8 @@ const index = () => {
         <hr />
         <h3>Requirements</h3>
         <p>Download following things before you proceed:</p>
-        <ListGroup>
-          <ListGroup.Item action>
+        <ListGroup className='shadow'>
+          <ListGroup.Item className='shadow' action>
             <a
               href='https://code.visualstudio.com/download'
               target='_blank'
@@ -74,7 +74,7 @@ const index = () => {
               VSCode
             </a>
           </ListGroup.Item>
-          <ListGroup.Item action>
+          <ListGroup.Item className='shadow' action>
             <a
               href='https://github.com/prettier/prettier-vscode'
               target='_blank'
@@ -83,7 +83,7 @@ const index = () => {
               Prettier Extension
             </a>
           </ListGroup.Item>
-          <ListGroup.Item action>
+          <ListGroup.Item className='shadow' action>
             <a
               href='https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer'
               target='_blank'
@@ -92,7 +92,7 @@ const index = () => {
               Live Server
             </a>
           </ListGroup.Item>
-          <ListGroup.Item action>
+          <ListGroup.Item className='shadow' action>
             <a
               href='https://github.com/dsznajder/vscode-es7-javascript-react-snippets/blob/master/README.md'
               target='_blank'
@@ -101,7 +101,7 @@ const index = () => {
               ES6 Syntax Formatter
             </a>
           </ListGroup.Item>
-          <ListGroup.Item action>
+          <ListGroup.Item className='shadow' action>
             <a
               href='http://vscode-hacks.herokuapp.com/'
               target='_blank'
@@ -115,7 +115,7 @@ const index = () => {
         <h3>References</h3>
         <p>Following are some of the recommended reference links:</p>
         <ListGroup>
-          <ListGroup.Item action>
+          <ListGroup.Item className='shadow' action>
             <a
               href='https://eloquentjavascript.net/'
               target='_blank'
@@ -124,7 +124,7 @@ const index = () => {
               Eloquent JavaScript
             </a>
           </ListGroup.Item>
-          <ListGroup.Item action>
+          <ListGroup.Item className='shadow' action>
             <a
               href='https://www.udemy.com/course/modern-javascript-from-the-beginning/'
               target='_blank'
@@ -133,7 +133,7 @@ const index = () => {
               Brad Traversy
             </a>
           </ListGroup.Item>
-          <ListGroup.Item action>
+          <ListGroup.Item className='shadow' action>
             <a
               href='https://www.youtube.com/playlist?list=PLWKjhJtqVAbk2qRZtWSzCIN38JC_NdhW5'
               target='_blank'

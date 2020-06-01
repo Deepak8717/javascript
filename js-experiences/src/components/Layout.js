@@ -4,10 +4,11 @@ import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import { Container, Row, Col } from 'react-bootstrap'
+import classNames from 'classnames'
 
 const Layout = ({ children }) => {
   return (
-    <div className={appStyles.app}>
+    <div className={classNames(appStyles.app, appStyles.bg)}>
       <Header />
       <main className={appStyles.fullHeight}>
         <Container>

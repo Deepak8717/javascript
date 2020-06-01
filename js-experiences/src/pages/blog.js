@@ -28,7 +28,13 @@ const Blog = () => {
           {edges.map((i, idx) => {
             const { title, publishedDate, slug } = i.node
             return (
-              <ListGroup.Item key={idx} action as={Link} to={`/blog/${slug}`}>
+              <ListGroup.Item
+                key={idx}
+                action
+                as={Link}
+                to={`/blog/${slug}`}
+                className='shadow'
+              >
                 <div className='d-flex justify-content-between align-items-center'>
                   <span>{title}</span>
                   <Badge variant='primary'>{publishedDate}</Badge>
