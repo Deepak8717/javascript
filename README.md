@@ -6,7 +6,7 @@ JavaScript Experiences (#JSXP) allows you to get familiar with various JavaScrip
 
 ## Version
 
-Current Status: 1.0.0
+Current Status: 1.0.1
 
 - _1.0.1_ / Added Disqus plugin to receive user feedback
 - _1.0.0_ / Added React Bootstrap, ClassNames, React Icons, React Google Analytics, React Helmet, ContentFul
