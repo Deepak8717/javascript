@@ -7,7 +7,7 @@ import { ListGroup, Badge } from 'react-bootstrap'
 const Blog = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulPost(sort: { fields: publishedDate, order: DESC }) {
+      allContentfulPost(sort: { fields: publishedDate, order: ASC }) {
         edges {
           node {
             title
