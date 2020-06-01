@@ -6,4 +6,8 @@ JavaScript Experiences (#JSXP) allows you to get familiar with various JavaScrip
 
 ## Version
 
-Current Status: Project links are functional, Project description pending...
+Current Status: 1.0.0
+
+- Added React Bootstrap, ClassNames, React Icons, React Google Analytics, React Helmet, ContentFul
+
+Send me a PR if you notice any broken links or other underlying bug.
