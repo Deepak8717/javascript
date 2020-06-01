@@ -1,3 +1,4 @@
+import appStyles from '../styles/app.module.scss'
 import React from 'react'
 import Layout from '../components/Layout'
 import { graphql, Link } from 'gatsby'
@@ -5,7 +6,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Head from '../components/Head'
 import { FiClock } from 'react-icons/fi'
 import { GrLinkNext, GrLinkPrevious } from 'react-icons/gr'
-import { Row, Col, Card } from 'react-bootstrap'
+import { ButtonGroup, Button } from 'react-bootstrap'
 
 export const query = graphql`
   query($slug: String!) {
@@ -41,36 +42,18 @@ export default function Blog({ data, pageContext }) {
           <span className='ml-2'>{publishedDate}</span>
         </p>
         {documentToReactComponents(body.json, options)}
-        <Row>
+        <ButtonGroup className={`buttons shadow-lg ${appStyles.buttons}`}>
           {prev && (
-            <Col>
-              <Card
-                bg='light'
-                className='shadow'
-                as={Link}
-                to={`/blog/${prev.slug}`}
-              >
-                <Card.Body>
-                  <GrLinkPrevious />
-                </Card.Body>
-              </Card>
-            </Col>
+            <Button variant='primary' as={Link} to={`/blog/${prev.slug}`}>
+              <GrLinkPrevious />
+            </Button>
           )}
           {next && (
-            <Col>
-              <Card
-                bg='light'
-                className='shadow'
-                as={Link}
-                to={`/blog/${next.slug}`}
-              >
-                <Card.Body>
-                  <GrLinkNext />
-                </Card.Body>
-              </Card>
-            </Col>
+            <Button variant='success' as={Link} to={`/blog/${next.slug}`}>
+              <GrLinkNext />
+            </Button>
           )}
-        </Row>
+        </ButtonGroup>
       </div>
     </Layout>
   )

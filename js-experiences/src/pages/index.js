@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Head from '../components/Head'
-import { Jumbotron } from 'react-bootstrap'
+import { Jumbotron, ListGroup } from 'react-bootstrap'
 
 const index = () => {
   return (
@@ -64,8 +64,8 @@ const index = () => {
         <hr />
         <h3>Requirements</h3>
         <p>Download following things before you proceed:</p>
-        <ul>
-          <li>
+        <ListGroup>
+          <ListGroup.Item>
             <a
               href='https://code.visualstudio.com/download'
               target='_blank'
@@ -73,8 +73,8 @@ const index = () => {
             >
               VSCode
             </a>
-          </li>
-          <li>
+          </ListGroup.Item>
+          <ListGroup.Item>
             <a
               href='https://github.com/prettier/prettier-vscode'
               target='_blank'
@@ -82,8 +82,8 @@ const index = () => {
             >
               Prettier Extension
             </a>
-          </li>
-          <li>
+          </ListGroup.Item>
+          <ListGroup.Item>
             <a
               href='https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer'
               target='_blank'
@@ -91,8 +91,8 @@ const index = () => {
             >
               Live Server
             </a>
-          </li>
-          <li>
+          </ListGroup.Item>
+          <ListGroup.Item>
             <a
               href='https://github.com/dsznajder/vscode-es7-javascript-react-snippets/blob/master/README.md'
               target='_blank'
@@ -100,8 +100,8 @@ const index = () => {
             >
               ES6 Syntax Formatter
             </a>
-          </li>
-          <li>
+          </ListGroup.Item>
+          <ListGroup.Item>
             <a
               href='http://vscode-hacks.herokuapp.com/'
               target='_blank'
@@ -109,12 +109,12 @@ const index = () => {
             >
               VSCode Hacks
             </a>
-          </li>
-        </ul>
+          </ListGroup.Item>
+        </ListGroup>
         <hr />
         <h3>References</h3>
-        <ul>
-          <li>
+        <ListGroup>
+          <ListGroup.Item>
             <a
               href='https://eloquentjavascript.net/'
               target='_blank'
@@ -122,8 +122,8 @@ const index = () => {
             >
               Eloquent JavaScript
             </a>
-          </li>
-          <li>
+          </ListGroup.Item>
+          <ListGroup.Item>
             <a
               href='https://www.udemy.com/course/modern-javascript-from-the-beginning/'
               target='_blank'
@@ -131,8 +131,8 @@ const index = () => {
             >
               Brad Traversy
             </a>
-          </li>
-          <li>
+          </ListGroup.Item>
+          <ListGroup.Item>
             <a
               href='https://www.youtube.com/playlist?list=PLWKjhJtqVAbk2qRZtWSzCIN38JC_NdhW5'
               target='_blank'
@@ -140,8 +140,8 @@ const index = () => {
             >
               Beau Carnes
             </a>
-          </li>
-        </ul>
+          </ListGroup.Item>
+        </ListGroup>
       </div>
     </Layout>
   )
