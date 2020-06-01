@@ -7,6 +7,7 @@ import Head from '../components/Head'
 import { FiClock } from 'react-icons/fi'
 import { GrLinkNext, GrLinkPrevious } from 'react-icons/gr'
 import { ButtonGroup, Button } from 'react-bootstrap'
+import { DiscussionEmbed } from 'disqus-react'
 
 export const query = graphql`
   query($slug: String!) {
@@ -21,7 +22,7 @@ export const query = graphql`
 `
 
 export default function Blog({ data, pageContext }) {
-  const { next, prev } = pageContext
+  const { next, prev, slug } = pageContext
   const { title, publishedDate, body } = data.contentfulPost
   const options = {
     renderNode: {
@@ -31,6 +32,10 @@ export default function Blog({ data, pageContext }) {
         return <img alt={alt} src={url} className='img-fluid rounded' />
       },
     },
+  }
+  const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUS_NAME,
+    config: { identifier: slug, title },
   }
   return (
     <Layout>
@@ -54,6 +59,7 @@ export default function Blog({ data, pageContext }) {
             </Button>
           )}
         </ButtonGroup>
+        <DiscussionEmbed {...disqusConfig} />
       </div>
     </Layout>
   )
