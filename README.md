@@ -1,6 +1,6 @@
 # JavaScript
 
-JavaScript Experiences (#JSXP) allows you to get familiar with various JavaScript concepts through small straight-forward projects. Fork/Clone the repository and kick off your journey of understanding JavaScript.
+JavaScript Experiences (#JSXP) allows you to get familiar with various JavaScript concepts through small straight-forward projects built using Vanilla JavaScript or Create React App. Fork/Clone the repository and kick off your journey of understanding JavaScript.
 
 - [Visit Page](https://jsxp.netlify.app)
 
