@@ -8,6 +8,8 @@ const App = () => {
     content: null,
     error: false,
     loading: false,
+    city: '',
+    filter: '',
   });
   const getRestaurants = (city) => {
     setData({ ...data, loading: true });
@@ -21,6 +23,10 @@ const App = () => {
       .then((d) => setData({ ...data, content: d }))
       .catch(() => setData({ ...data, error: true }));
   };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({ ...data, [name]: value });
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     const city = e.target.elements['city'].value;
@@ -29,7 +35,13 @@ const App = () => {
       e.target.reset();
     }
   };
-  return <Restaurants data={data} handleSubmit={handleSubmit} />;
+  return (
+    <Restaurants
+      data={data}
+      handleChange={handleChange}
+      handleSubmit={handleSubmit}
+    />
+  );
 };
 
 export default hot(App);
