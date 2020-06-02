@@ -95,7 +95,9 @@ Send me a PR if you notice any broken links or other underlying bug.
 
 ## Redux
 
-| Project Title                       | Project Link                                             |
-| ----------------------------------- | -------------------------------------------------------- |
-| CRUD Operations using React Context | [View Demo](https://react-context-crud.netlify.app)      |
-| Redux Basics                        | [View Demo](https://tpkahlon.github.io/javascript/redux) |
+| Project Title                             | Project Link                                             |
+| ----------------------------------------- | -------------------------------------------------------- |
+| CRUD Operations using React Context       | [View Demo](https://react-context-crud.netlify.app)      |
+| Redux Basics                              | [View Demo](https://tpkahlon.github.io/javascript/redux) |
+| Redux Basics                              | [View Demo](https://tpkahlon.github.io/javascript/redux) |
+| Engineering (Modern React+Redux Workflow) | Clone Locally                                            |
