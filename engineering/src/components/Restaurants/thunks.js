@@ -8,7 +8,7 @@ export const loadRestaurants = (city) => async (dispatch, getState) => {
   try {
     dispatch(loadRestaurantsInProgress());
     const request = await fetch(
-      `http://opentable.herokuapp.com/api/restaurants?city=${city}`
+      `https://cors-anywhere.herokuapp.com/http://opentable.herokuapp.com/api/restaurants?city=${city}`
     );
     const response = await request.json();
     dispatch(loadRestaurantsSuccess(city, response));

@@ -51,7 +51,7 @@ describe('The load restaurants thunk', () => {
       ],
     };
     fetchMock.get(
-      `http://opentable.herokuapp.com/api/restaurants?city=toronto`,
+      `https://cors-anywhere.herokuapp.com/http://opentable.herokuapp.com/api/restaurants?city=toronto`,
       fakeRestaurants
     );
     const expectedFirstAction = {
