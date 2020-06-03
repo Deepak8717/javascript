@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { filterRestaurants } from '../Restaurants/actions';
+//import { hello } from '../Restaurants/thunks';
 
 const Form = ({
   data,
@@ -8,6 +9,7 @@ const Form = ({
   handleSubmit,
   //restaurants,
   onFilterChanged,
+  //onDisplayAlert,
 }) => {
   const { city } = data;
   const handleFilterChange = (e) => {
@@ -44,6 +46,7 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   onFilterChanged: (text) => dispatch(filterRestaurants(text)),
+  //onDisplayAlert: () => dispatch(hello()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);
