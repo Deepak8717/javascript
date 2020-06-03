@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { getRestaurants } from '../Restaurants/selectors';
 import { filterRestaurants } from '../Restaurants/actions';
 
 const Form = ({ startLoadingRestaurants, onFilterChanged }) => {
@@ -41,7 +42,7 @@ const Form = ({ startLoadingRestaurants, onFilterChanged }) => {
 };
 
 const mapStateToProps = (state) => ({
-  restaurants: state.restaurants,
+  restaurants: getRestaurants(state),
 });
 const mapDispatchToProps = (dispatch) => ({
   onFilterChanged: (text) => dispatch(filterRestaurants(text)),

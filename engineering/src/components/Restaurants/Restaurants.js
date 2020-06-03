@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Form from '../Form/Form';
 import Restaurant from './Restaurant';
+import { getRestaurants, getRestaurantsLoading } from './selectors';
 import { loadRestaurants } from './thunks';
 
 const Restaurants = ({
@@ -26,8 +27,8 @@ const Restaurants = ({
 };
 
 const mapStateToProps = (state) => ({
-  isLoading: state.isLoading,
-  restaurants: state.restaurants,
+  isLoading: getRestaurantsLoading(state),
+  restaurants: getRestaurants(state),
 });
 const mapDispatchToProps = (dispatch) => ({
   startLoadingRestaurants: (text) => dispatch(loadRestaurants(text)),
