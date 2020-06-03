@@ -1,27 +1,7 @@
 import React, { useState } from 'react';
-// import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import {
-  addRestaurant,
-  // getRestaurants,
-  // filterRestaurants,
-} from '../Restaurants/actions';
-//import { hello } from '../Restaurants/thunks';
 
-const Form = ({
-  restaurants,
-  onCreatePressed,
-  // onFormSubmit,
-  // onFilterChanged,
-  // handleChange,
-  // handleSubmit,
-  //onDisplayAlert,
-}) => {
-  // const { city } = data;
-  // const handleFilterChange = (e) => {
-  //   const { value } = e.target;
-  //   onFilterChanged(value);
-  // };
+const Form = () => {
   const [fields, setFields] = useState({ city: '', filter: '' });
   const { city, filter } = fields;
   const handleChange = (e) => {
@@ -30,11 +10,7 @@ const Form = ({
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    onFormSubmit(city);
   };
-  // useEffect(() => {
-  //   onFilterChanged(filter);
-  // }, [filter]);
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -54,16 +30,6 @@ const Form = ({
           onChange={handleChange}
         />
       </div>
-      <button
-        onClick={() => {
-          const hasDuplicates = restaurants.some((i) => i.text === city);
-          if (!hasDuplicates) {
-            onCreatePressed(city);
-          }
-        }}
-      >
-        Add
-      </button>
       <button type='submit'>Search</button>
     </form>
   );
@@ -74,9 +40,6 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   onCreatePressed: (text) => dispatch(addRestaurant(text)),
-  // onFormSubmit: (text) => dispatch(getRestaurants(text)),
-  // onFilterChanged: (text) => dispatch(filterRestaurants(text)),
-  //onDisplayAlert: () => dispatch(hello()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);

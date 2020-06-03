@@ -1,12 +1,12 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { restaurants } from './components/Restaurants/reducers';
+import { restaurants, isLoading } from './components/Restaurants/reducers';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-const reducers = { restaurants };
+const reducers = { restaurants, isLoading };
 
 const persistConfig = {
   key: 'root',

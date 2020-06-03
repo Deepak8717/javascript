@@ -1,43 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import {
-  removeRestaurant,
-  markRestaurantAsClosed,
-  // getRestaurants,
-  // filterRestaurants,
-} from '../Restaurants/actions';
 import Form from '../Form/Form';
 import Restaurant from './Restaurant';
+import { loadRestaurants } from './thunks';
 
 const Restaurants = ({
   restaurants = [],
-  onRemovePressed,
-  onClosedPressed,
+  isLoading,
+  startLoadingRestaurants,
 }) => {
-  return (
+  useEffect(() => {
+    startLoadingRestaurants();
+  }, []);
+  const loadingMessage = <div>Loading Restaurants...</div>;
+  const content = (
     <>
       <Form />
-      {restaurants.map((i, index) => (
-        <Restaurant
-          key={index}
-          restaurant={i}
-          onRemovePressed={onRemovePressed}
-          onClosedPressed={onClosedPressed}
-        />
+      {restaurants.restaurants.map((i) => (
+        <Restaurant key={i.id} restaurant={i} />
       ))}
     </>
   );
+  return isLoading ? loadingMessage : content;
 };
 
 const mapStateToProps = (state) => ({
+  isLoading: state.isLoading,
   restaurants: state.restaurants,
 });
 const mapDispatchToProps = (dispatch) => ({
-  onRemovePressed: (text) => dispatch(removeRestaurant(text)),
-  onClosedPressed: (text) => dispatch(markRestaurantAsClosed(text)),
-  // onFormSubmit: (text) => dispatch(getRestaurants(text)),
-  // onFilterChanged: (text) => dispatch(filterRestaurants(text)),
-  //onDisplayAlert: () => dispatch(hello()),
+  startLoadingRestaurants: () => dispatch(loadRestaurants()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Restaurants);
