@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "npx webpack-dev-server --mode development",
-    "build:dev": "npx webpack --mode development",
-    "build": "yarn build:dev && cp public/index.html dist",
+    "build": "npx webpack --mode development",
     "start": "yarn start:dev",
     "test": "mocha \"src/**/*.test.js\"  --require @babel/register --recursive"
   },
