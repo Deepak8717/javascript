@@ -11,7 +11,7 @@ export const loadRestaurants = (city) => async (dispatch, getState) => {
       `http://opentable.herokuapp.com/api/restaurants?city=${city}`
     );
     const response = await request.json();
-    dispatch(loadRestaurantsSuccess(response));
+    dispatch(loadRestaurantsSuccess(city, response));
   } catch (e) {
     dispatch(loadRestaurantsFail());
     dispatch(displayAlert(e));

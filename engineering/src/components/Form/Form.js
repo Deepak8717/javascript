@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { getRestaurants } from '../Restaurants/selectors';
+import { getCity } from '../Restaurants/selectors';
 import { filterRestaurants } from '../Restaurants/actions';
 
-const Form = ({ startLoadingRestaurants, onFilterChanged }) => {
+const Form = ({ selectedCity, startLoadingRestaurants, onFilterChanged }) => {
   const [fields, setFields] = useState({ city: '', filter: '' });
   const { city, filter } = fields;
   const handleChange = (e) => {
@@ -25,16 +25,18 @@ const Form = ({ startLoadingRestaurants, onFilterChanged }) => {
           onChange={handleChange}
           required
         />
-        <input
-          type='text'
-          placeholder='Filter i.e. Name, Address, Area'
-          name='filter'
-          value={filter}
-          onChange={(e) => {
-            setFields({ ...fields, filter: e.target.value });
-            onFilterChanged(e.target.value);
-          }}
-        />
+        {selectedCity && selectedCity !== '' && (
+          <input
+            type='text'
+            placeholder='Filter i.e. Name, Address, Area'
+            name='filter'
+            value={filter}
+            onChange={(e) => {
+              setFields({ ...fields, filter: e.target.value });
+              onFilterChanged(e.target.value);
+            }}
+          />
+        )}
       </div>
       <button type='submit'>Search</button>
     </form>
@@ -42,7 +44,7 @@ const Form = ({ startLoadingRestaurants, onFilterChanged }) => {
 };
 
 const mapStateToProps = (state) => ({
-  restaurants: getRestaurants(state),
+  selectedCity: getCity(state),
 });
 const mapDispatchToProps = (dispatch) => ({
   onFilterChanged: (text) => dispatch(filterRestaurants(text)),

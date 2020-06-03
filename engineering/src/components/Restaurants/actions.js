@@ -8,9 +8,9 @@ export const loadRestaurantsInProgress = (restaurants) => ({
   payload: { restaurants },
 });
 
-export const loadRestaurantsSuccess = (restaurants) => ({
+export const loadRestaurantsSuccess = (selectedCity, restaurants) => ({
   type: LOAD_RESTAURANTS_SUCCESS,
-  payload: { restaurants },
+  payload: { selectedCity, restaurants },
 });
 
 export const loadRestaurantsFail = (restaurants) => ({

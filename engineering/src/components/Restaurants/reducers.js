@@ -8,41 +8,25 @@ import {
 const initialState = {
   isLoading: false,
   data: [],
+  searchParam: '',
+  selectedCity: '',
 };
-
-// export const isLoading = (state = false, action) => {
-//   const { type } = action;
-//   switch (type) {
-//     case LOAD_RESTAURANTS_IN_PROGRESS:
-//       return true;
-//     case LOAD_RESTAURANTS_SUCCESS:
-//     case LOAD_RESTAURANTS_FAIL:
-//       return false;
-//     default:
-//       return state;
-//   }
-// };
 
 export const restaurants = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case FILTER_RESTAURANTS: {
       const { filter } = payload;
-      const filteredItems = state.data.restaurants.filter(
-        (i) =>
-          i.name.toLowerCase().includes(filter) ||
-          i.address.toLowerCase().includes(filter) ||
-          i.area.toLowerCase().includes(filter)
-      );
-      const newRestaurantsState = {
-        ...state.data,
-        restaurants: filteredItems,
+      const newState = {
+        ...state,
+        isLoading: false,
+        searchParam: filter,
       };
-      return { ...state, isLoading: false, data: newRestaurantsState };
+      return newState;
     }
     case LOAD_RESTAURANTS_SUCCESS: {
-      const { restaurants } = payload;
-      return { ...state, isLoading: false, data: restaurants };
+      const { restaurants, selectedCity } = payload;
+      return { ...state, isLoading: false, data: restaurants, selectedCity };
     }
     case LOAD_RESTAURANTS_IN_PROGRESS:
       return {

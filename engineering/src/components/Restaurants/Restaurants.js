@@ -6,8 +6,8 @@ import { getRestaurants, getRestaurantsLoading } from './selectors';
 import { loadRestaurants } from './thunks';
 
 const Restaurants = ({
-  restaurants = [],
   isLoading,
+  restaurants = [],
   startLoadingRestaurants,
 }) => {
   const loadingMessage = <div>Loading Restaurants...</div>;
@@ -15,11 +15,15 @@ const Restaurants = ({
     <>
       <Form startLoadingRestaurants={startLoadingRestaurants} />
       {restaurants.length !== 0 ? (
-        restaurants.restaurants.map((i) => (
-          <Restaurant key={i.id} restaurant={i} />
-        ))
+        restaurants.restaurants.length === 0 ? (
+          'No restaurant found with the matching keyword.'
+        ) : (
+          restaurants.restaurants.map((i) => (
+            <Restaurant key={i.id} restaurant={i} />
+          ))
+        )
       ) : (
-        <p>Hello, Enter a city to get restaurants.</p>
+        <p>Enter a city to get restaurants.</p>
       )}
     </>
   );
