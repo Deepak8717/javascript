@@ -3,9 +3,9 @@ export const getRestaurants = (state) => {
   if (searchParam !== '' && searchParam !== undefined) {
     const filteredItems = data.restaurants.filter((i) => {
       return (
-        i.name.toLowerCase().includes(searchParam) ||
-        i.address.toLowerCase().includes(searchParam) ||
-        i.area.toLowerCase().includes(searchParam)
+        i.name.toLowerCase().includes(searchParam.toLowerCase()) ||
+        i.address.toLowerCase().includes(searchParam.toLowerCase()) ||
+        i.area.toLowerCase().includes(searchParam.toLowerCase())
       );
     });
     const newRestaurantsState = {

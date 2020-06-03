@@ -14,7 +14,7 @@ const Restaurants = ({
   const content = (
     <>
       <div>
-        <h1>Restaurants using React+Redux</h1>
+        <h1>Restaurants Store using React+Redux</h1>
         <p>
           This application is built using custom Webpack Boilerplate, React,
           Redux, Selectors, Redux Thunk with sample Test cases.

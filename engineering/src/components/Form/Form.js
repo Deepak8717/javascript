@@ -21,7 +21,7 @@ const Form = ({ selectedCity, startLoadingRestaurants, onFilterChanged }) => {
   };
   return (
     <form onSubmit={handleSubmit} role='search'>
-      <div>
+      <main>
         <label htmlFor='city' aria-label='Enter City' className='sr-only'>
           Enter City
         </label>
@@ -52,25 +52,27 @@ const Form = ({ selectedCity, startLoadingRestaurants, onFilterChanged }) => {
             tabIndex='0'
           />
         )}
-      </div>
-      <button
-        tabIndex='0'
-        type='button'
-        role='button'
-        type='submit'
-        className='btn btn-light'
-      >
-        Search
-      </button>
-      <button
-        tabIndex='0'
-        type='button'
-        role='button'
-        onClick={handleReset}
-        className='btn btn-tertiary'
-      >
-        Reset
-      </button>
+      </main>
+      <aside>
+        <button
+          tabIndex='0'
+          type='button'
+          role='button'
+          type='submit'
+          className='btn btn-light'
+        >
+          Search
+        </button>
+        <button
+          tabIndex='0'
+          type='button'
+          role='button'
+          onClick={handleReset}
+          className='btn btn-tertiary'
+        >
+          Reset
+        </button>
+      </aside>
     </form>
   );
 };
