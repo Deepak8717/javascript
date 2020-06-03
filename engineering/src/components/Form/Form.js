@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { filterRestaurants } from '../Restaurants/actions';
 
-const Form = () => {
+const Form = ({ startLoadingRestaurants, onFilterChanged }) => {
   const [fields, setFields] = useState({ city: '', filter: '' });
   const { city, filter } = fields;
   const handleChange = (e) => {
@@ -10,6 +11,7 @@ const Form = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    startLoadingRestaurants(city);
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -27,7 +29,10 @@ const Form = () => {
           placeholder='Filter i.e. Name, Address, Area'
           name='filter'
           value={filter}
-          onChange={handleChange}
+          onChange={(e) => {
+            setFields({ ...fields, filter: e.target.value });
+            onFilterChanged(e.target.value);
+          }}
         />
       </div>
       <button type='submit'>Search</button>
@@ -39,7 +44,7 @@ const mapStateToProps = (state) => ({
   restaurants: state.restaurants,
 });
 const mapDispatchToProps = (dispatch) => ({
-  onCreatePressed: (text) => dispatch(addRestaurant(text)),
+  onFilterChanged: (text) => dispatch(filterRestaurants(text)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);

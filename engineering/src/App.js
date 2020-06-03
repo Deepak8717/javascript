@@ -4,8 +4,7 @@ import { hot } from 'react-hot-loader/root';
 import Restaurants from './components/Restaurants/Restaurants';
 
 const App = () => {
-  const restaurants = [];
-  return <Restaurants restaurants={restaurants} />;
+  return <Restaurants />;
 };
 
 export default hot(App);

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Form from '../Form/Form';
 import Restaurant from './Restaurant';
@@ -9,16 +9,17 @@ const Restaurants = ({
   isLoading,
   startLoadingRestaurants,
 }) => {
-  useEffect(() => {
-    startLoadingRestaurants();
-  }, []);
   const loadingMessage = <div>Loading Restaurants...</div>;
   const content = (
     <>
-      <Form />
-      {restaurants.restaurants.map((i) => (
-        <Restaurant key={i.id} restaurant={i} />
-      ))}
+      <Form startLoadingRestaurants={startLoadingRestaurants} />
+      {restaurants.length !== 0 ? (
+        restaurants.restaurants.map((i) => (
+          <Restaurant key={i.id} restaurant={i} />
+        ))
+      ) : (
+        <p>Hello, Enter a city to get restaurants.</p>
+      )}
     </>
   );
   return isLoading ? loadingMessage : content;
@@ -29,7 +30,7 @@ const mapStateToProps = (state) => ({
   restaurants: state.restaurants,
 });
 const mapDispatchToProps = (dispatch) => ({
-  startLoadingRestaurants: () => dispatch(loadRestaurants()),
+  startLoadingRestaurants: (text) => dispatch(loadRestaurants(text)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Restaurants);

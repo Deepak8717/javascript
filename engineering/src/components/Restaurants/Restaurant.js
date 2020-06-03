@@ -7,16 +7,7 @@ const Restaurant = ({ restaurant }) => {
       <div>Name: {name}</div>
       <div>Area: {area}</div>
       <div>Address: {address}</div>
-      <div>
-        Price:{' '}
-        {price === 4
-          ? 'Expensive'
-          : price === 3
-          ? 'Moderate'
-          : price === 2
-          ? 'Affordable'
-          : 'Cheaper'}
-      </div>
+      <div>Price: {price}</div>
     </div>
   );
 };
