@@ -3,6 +3,9 @@
 :root {
   --bg: #100e17;
   --text: #ddd;
+  --silver-light: #999;
+  --silver-dark: #555;
+  --black: #000;
 }
 
 * {
@@ -42,6 +45,28 @@ form {
 input,
 button {
   border-radius: 0.2rem;
+}
+
+/* Source: https://gist.github.com/MoOx/9137295 */
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: var(--silver-light);
+  color: var(--black);
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+
+button:hover {
+  color: var(--black);
+  cursor: pointer;
+  background: var(--silver-dark);
 }
 
 input {

@@ -33,7 +33,7 @@ const Form = ({ selectedCity, startLoadingRestaurants, onFilterChanged }) => {
           value={city}
           onChange={handleChange}
           required
-          tabindex='0'
+          tabIndex='0'
         />
         <label htmlFor='filter' aria-label='Enter Filter' className='sr-only'>
           Enter Filter
@@ -49,14 +49,26 @@ const Form = ({ selectedCity, startLoadingRestaurants, onFilterChanged }) => {
               setFields({ ...fields, filter: e.target.value });
               onFilterChanged(e.target.value);
             }}
-            tabindex='0'
+            tabIndex='0'
           />
         )}
       </div>
-      <button tabindex='0' type='button' role='button' type='submit'>
+      <button
+        tabIndex='0'
+        type='button'
+        role='button'
+        type='submit'
+        className='btn btn-light'
+      >
         Search
       </button>
-      <button tabindex='0' type='button' role='button' onClick={handleReset}>
+      <button
+        tabIndex='0'
+        type='button'
+        role='button'
+        onClick={handleReset}
+        className='btn btn-tertiary'
+      >
         Reset
       </button>
     </form>
