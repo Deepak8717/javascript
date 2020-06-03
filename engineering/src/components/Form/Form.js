@@ -14,19 +14,33 @@ const Form = ({ selectedCity, startLoadingRestaurants, onFilterChanged }) => {
     e.preventDefault();
     startLoadingRestaurants(city);
   };
+  const handleReset = (e) => {
+    e.preventDefault();
+    localStorage.removeItem('persist:root');
+    window.location.reload();
+  };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} role='search'>
       <div>
+        <label htmlFor='city' aria-label='Enter City' className='sr-only'>
+          Enter City
+        </label>
         <input
+          id='city'
           type='text'
           placeholder='Enter City'
           name='city'
           value={city}
           onChange={handleChange}
           required
+          tabindex='0'
         />
+        <label htmlFor='filter' aria-label='Enter Filter' className='sr-only'>
+          Enter Filter
+        </label>
         {selectedCity && selectedCity !== '' && (
           <input
+            id='filter'
             type='text'
             placeholder='Filter i.e. Name, Address, Area'
             name='filter'
@@ -35,10 +49,16 @@ const Form = ({ selectedCity, startLoadingRestaurants, onFilterChanged }) => {
               setFields({ ...fields, filter: e.target.value });
               onFilterChanged(e.target.value);
             }}
+            tabindex='0'
           />
         )}
       </div>
-      <button type='submit'>Search</button>
+      <button tabindex='0' type='button' role='button' type='submit'>
+        Search
+      </button>
+      <button tabindex='0' type='button' role='button' onClick={handleReset}>
+        Reset
+      </button>
     </form>
   );
 };

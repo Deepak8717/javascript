@@ -38,6 +38,7 @@ module.exports = {
     publicPath: 'http://localhost:3000/dist/',
     hot: true,
     watchContentBase: true,
+    writeToDisk: true,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

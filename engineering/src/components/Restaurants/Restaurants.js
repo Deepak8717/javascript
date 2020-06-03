@@ -13,17 +13,26 @@ const Restaurants = ({
   const loadingMessage = <div>Loading Restaurants...</div>;
   const content = (
     <>
+      <div>
+        <h1>Restaurants using React+Redux</h1>
+        <p>
+          This application is built using custom Webpack Boilerplate, React,
+          Redux, Selectors, Redux Thunk with sample Test cases.
+        </p>
+      </div>
       <Form startLoadingRestaurants={startLoadingRestaurants} />
       {restaurants.length !== 0 ? (
         restaurants.restaurants.length === 0 ? (
-          'No restaurant found with the matching keyword.'
+          <div>No restaurant found with the matching keyword.</div>
         ) : (
-          restaurants.restaurants.map((i) => (
-            <Restaurant key={i.id} restaurant={i} />
-          ))
+          <div className='cards'>
+            {restaurants.restaurants.map((i) => (
+              <Restaurant key={i.id} restaurant={i} />
+            ))}
+          </div>
         )
       ) : (
-        <p>Enter a city to get restaurants.</p>
+        <div>Enter a city to get restaurants.</div>
       )}
     </>
   );
