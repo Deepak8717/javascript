@@ -1,88 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Internet</title>
+    <link
+      rel="icon"
+      href="https://image.flaticon.com/icons/svg/541/541509.svg"
+      type="image/svg"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dark Internet</title>
-  <link rel="icon" href="https://image.flaticon.com/icons/svg/541/541509.svg" type="image/svg" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-  <link rel="stylesheet" href="./style.css" />
-</head>
-
-<body>
-  <div class="container">
-    <div class="row">
-      <div class="col s12">
-        <div class="card hoverable">
-          <div class="card-content">
-            <h1 class="card-title">Dark Internet</h1>
-            <p>Share any mysterious links you know!</p>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="card hoverable">
+            <div class="card-content">
+              <h1 class="card-title">Dark Internet!</h1>
+              <p>Share any mysterious links you know!</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <form class="row" id="form">
-      <div class="col s12">
-        <input type="url" placeholder="Enter a Link" class="validate" id="url" />
-        <label for="url">Enter a URL</label>
+      <form class="row" id="form">
+        <div class="col s12">
+          <input
+            type="url"
+            placeholder="Enter a Link"
+            class="validate"
+            id="url"
+          />
+          <label for="url">Enter a URL</label>
+        </div>
+        <div class="col s12">
+          <button
+            class="aves-effect waves-light btn-large pulse light-blue darken-4"
+            type="submit"
+            name="action"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+      <div class="row">
+        <div class="col s12">
+          <div id="app" class="collection"></div>
+        </div>
       </div>
-      <div class="col s12">
-        <button class="aves-effect waves-light btn-large pulse light-blue darken-4" type="submit" name="action">
-          Submit
-        </button>
-      </div>
-    </form>
-    <div class="row">
-      <div class="col s12">
-        <div id="app" class="collection"></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s12">
-        <ul class="collapsible">
-          <li>
-            <div class="collapsible-header red lighten-3 black-text">
-              Explicit Content
-            </div>
-            <div class="collapsible-body">
-              <div class="collection" id="explicit"></div>
-            </div>
-          </li>
-        </ul>
+      <div class="row">
+        <div class="col s12">
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header red lighten-3 black-text">
+                Explicit Content
+              </div>
+              <div class="collapsible-body">
+                <div class="collection" id="explicit"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <h4></h4>
-      <p></p>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h4></h4>
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <a
+          href="#!"
+          class="modal-close waves-effect waves-green btn-flat"
+          id="agree"
+          >Agree</a
+        >
+      </div>
     </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="agree">Agree</a>
-    </div>
-  </div>
-  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
-  <script>
-    var firebaseConfig = {
-      apiKey: "AIzaSyBRQVgSWKfraP_E7RNg5E8fDhY1YkziDPs",
-      authDomain: "tiffin-f0b79.firebaseapp.com",
-      databaseURL: "https://tiffin-f0b79.firebaseio.com",
-      projectId: "tiffin-f0b79",
-      storageBucket: "tiffin-f0b79.appspot.com",
-      messagingSenderId: "207171153567",
-      appId: "1:207171153567:web:3145478b6c1dd9373e3caa",
-      measurementId: "G-P3TCDP745M"
-    };
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
-  <script src="./script.js"></script>
-</body>
-
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: 'AIzaSyBRQVgSWKfraP_E7RNg5E8fDhY1YkziDPs',
+        authDomain: 'tiffin-f0b79.firebaseapp.com',
+        databaseURL: 'https://tiffin-f0b79.firebaseio.com',
+        projectId: 'tiffin-f0b79',
+        storageBucket: 'tiffin-f0b79.appspot.com',
+        messagingSenderId: '207171153567',
+        appId: '1:207171153567:web:3145478b6c1dd9373e3caa',
+        measurementId: 'G-P3TCDP745M',
+      };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
 </html>
