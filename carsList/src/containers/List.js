@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Item from '../components/Item';
+import Data from '../Data.json';
 
 const List = () => {
   const [content, setContent] = useState({
     data: [],
-    loading: false,
+    loading: true,
     error: false,
   });
   const { data, loading, error } = content;
   useEffect(() => {
-    setContent({ ...data, loading: true });
-    (async () => {
-      const cars = await fetch('../public/Data.json');
-      const carsJSON = await cars.json();
-      return carsJSON;
-    })()
-      .then((d) => setContent({ ...data, data: d, loading: false }))
-      .catch((e) => {
-        console.log(e);
-        setContent({ ...data, error: true });
-      });
+    setContent({ ...data, loading: false, data: Data });
+    if (!data) {
+      setContent({ ...data, error: true });
+    }
+    // Do not need code below in webpack runtime
+    // (async () => {
+    //   const cars = await fetch(Data);
+    //   const carsJSON = await cars.json();
+    //   return carsJSON;
+    // })()
+    //   .then((d) => setContent({ ...data, data: d, loading: false }))
+    //   .catch((e) => {
+    //     console.log(e);
+    //     setContent({ ...data, error: true });
+    //   });
   }, []);
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error...</div>;
