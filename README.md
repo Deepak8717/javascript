@@ -101,6 +101,7 @@ Send me a PR if you notice any broken links or other underlying bug.
 
 ## React in Professional World
 
-| Project Title          | Project Link                                |
-| ---------------------- | ------------------------------------------- |
-| Bind Static Data to UI | [View Demo](https://cars-list.netlify.app/) |
+| Project Title              | Project Link                                    |
+| -------------------------- | ----------------------------------------------- |
+| Bind Static Data to UI     | [View Demo](https://cars-list.netlify.app/)     |
+| PWA with Styled Components | [View Demo](https://a-random-user.netlify.app/) |
