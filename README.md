@@ -98,3 +98,9 @@ Send me a PR if you notice any broken links or other underlying bug.
 | CRUD Operations using React Context       | [View Demo](https://react-context-crud.netlify.app)      |
 | Redux Basics                              | [View Demo](https://tpkahlon.github.io/javascript/redux) |
 | Engineering (Modern React+Redux Workflow) | [View Demo](https://bmo-engineering.netlify.app)         |
+
+## React in Professional World
+
+| Project Title          | Project Link                                |
+| ---------------------- | ------------------------------------------- |
+| Bind Static Data to UI | [View Demo](https://cars-list.netlify.app/) |
