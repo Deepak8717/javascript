@@ -1,0 +1,28 @@
+[{
+    "id": 1,
+    "title": "Civic",
+    "distributor": "Honda",
+    "amount": 5000,
+    "year": 2004,
+    "ranking": 1,
+    "image": "https://placekitten.com/400/400"
+  },
+  {
+    "id": 2,
+    "title": "Corolla",
+    "distributor": "Toyota",
+    "amount": 4000,
+    "year": 2006,
+    "ranking": 2,
+    "image": "https://placekitten.com/401/400"
+  },
+  {
+    "id": 3,
+    "title": "Accent",
+    "distributor": "Hyundai",
+    "amount": 5500,
+    "year": 2007,
+    "ranking": 3,
+    "image": "https://placekitten.com/403/400"
+  }
+]
