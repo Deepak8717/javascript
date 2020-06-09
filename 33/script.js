@@ -1,5 +1,5 @@
-// const URL = `https://cors-anywhere.herokuapp.com/https://www.betakit.com/feed/`;
-const URL = `./data.rss`;
+const URL = `https://cors-anywhere.herokuapp.com/https://www.betakit.com/feed/`;
+// const URL = `./data.rss`;
 const getData = () => {
   (async () => {
     const r = await fetch(URL);
