@@ -19,6 +19,7 @@ Send me a PR if you notice any broken links or other underlying bug.
 | Anti Chat                                  | [View Demo](https://tpkahlon.github.io/javascript/30)                    |
 | Basic Fetch API                            | [View Demo](https://tpkahlon.github.io/javascript/basic-fetch-api)       |
 | Basic Web Crawler                          | [View Demo](https://tpkahlon.github.io/javascript/16)                    |
+| BetaKit RSS Compiler                       | [View Demo](https://tpkahlon.github.io/javascript/33)                    |
 | Calculator                                 | [View Demo](https://tpkahlon.github.io/javascript/calculator)            |
 | Cat Me                                     | [View Demo](https://tpkahlon.github.io/javascript/cat-gallery)           |
 | Cat in Space                               | [View Demo](https://tpkahlon.github.io/javascript/32)                    |
