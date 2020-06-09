@@ -1,4 +1,4 @@
-const URL = `https://cors-anywhere.herokuapp.com/https://www.betakit.com/feed/`;
+const URL = `https://cors-unlimited.herokuapp.com/https://www.betakit.com/feed/`;
 // const URL = `./data.rss`;
 const getData = () => {
   (async () => {
