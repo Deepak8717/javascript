@@ -1,6 +1,8 @@
 async function user() {
   try {
-    const req = await fetch(`https://cors-anywhere.herokuapp.com/https://randomuser.me/api/`);
+    const req = await fetch(
+      `https://cors-unlimited.herokuapp.com/https://randomuser.me/api/`
+    );
     const json = await req.json();
     return json;
   } catch (err) {
@@ -11,33 +13,33 @@ async function user() {
 function ite(data) {
   let counter = 0;
   return {
-    next: function() {
+    next: function () {
       if (counter < data.length) {
         return {
           value: data[counter++],
-          done: false
+          done: false,
         };
       } else {
         return {
-          done: true
+          done: true,
         };
       }
-    }
+    },
   };
 }
 
 function handleData() {
   user()
-    .then(data => {
+    .then((data) => {
       const items = ite(data.results);
       const user = items.next().value;
       document.getElementById(
-        "user"
+        'user'
       ).innerHTML = `<div><img src="${user.picture.large}"><p>Name: ${user.name.title}. ${user.name.first} ${user.name.last}</p><p>Email: ${user.email}</p><p>DOB: ${user.dob.date}</p><p>Cell: ${user.cell}</p><p>Address: ${user.location.city}, ${user.location.state}, ${user.location.country}</p><p>UUID: ${user.login.uuid}</p></div>`;
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 }
 
-document.getElementById(`next`).addEventListener("click", handleData);
+document.getElementById(`next`).addEventListener('click', handleData);
 
-window.addEventListener("load", handleData);
+window.addEventListener('load', handleData);

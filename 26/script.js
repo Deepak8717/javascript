@@ -2,15 +2,15 @@ const app = document.getElementById(`app`);
 const explicit = document.getElementById(`explicit`);
 
 const database = firebase.database();
-const rootRef = database.ref("/messages");
+const rootRef = database.ref('/messages');
 
-const getHostname = url => {
+const getHostname = (url) => {
   return new URL(url).hostname;
 };
 
-const makeCall = async url => {
+const makeCall = async (url) => {
   try {
-    const req = await fetch(`https://cors-anywhere.herokuapp.com/${url}`);
+    const req = await fetch(`https://cors-unlimited.herokuapp.com/${url}`);
     const status = req.status;
     return status;
   } catch (err) {
@@ -18,7 +18,7 @@ const makeCall = async url => {
   }
 };
 
-const fetchCall = async url => {
+const fetchCall = async (url) => {
   try {
     const req = await fetch(`${url}`);
     const json = req.json();
@@ -28,44 +28,44 @@ const fetchCall = async url => {
   }
 };
 
-document.getElementById("form").addEventListener("submit", e => {
+document.getElementById('form').addEventListener('submit', (e) => {
   e.preventDefault();
   const inputValue = e.target[0].value;
   makeCall(inputValue)
-    .then(status => {
-      rootRef.on("value", snapshot => {
+    .then((status) => {
+      rootRef.on('value', (snapshot) => {
         if (snapshot.val() == null) {
           app.innerHTML = `<a href='#' class='collection-item none'>No links available yet.</a>`;
         } else {
           let isRepeated = _.map(snapshot.val(), (value, key) => {
             if (_.includes(value, inputValue)) {
-              let el = document.querySelector(".modal");
-              el.querySelector("h4").textContent = `Sorry!`;
+              let el = document.querySelector('.modal');
+              el.querySelector('h4').textContent = `Sorry!`;
               el.querySelector(
-                "p"
+                'p'
               ).textContent = `Interesting, Someone already posted this link!`;
               let instance = M.Modal.init(el, {
                 onCloseEnd: () => {
-                  document.querySelector("body").style.overflow = "auto";
-                }
+                  document.querySelector('body').style.overflow = 'auto';
+                },
               });
               instance.open();
               return key;
             } else {
               return;
             }
-          }).filter(el => el != null);
+          }).filter((el) => el != null);
           if (isRepeated.length === 0) {
-            if (!inputValue && inputValue.trim() === "") {
-              let el = document.querySelector(".modal");
-              el.querySelector("h4").textContent = `Error!`;
+            if (!inputValue && inputValue.trim() === '') {
+              let el = document.querySelector('.modal');
+              el.querySelector('h4').textContent = `Error!`;
               el.querySelector(
-                "p"
+                'p'
               ).textContent = `Please verify all information before proceeding!`;
               let instance = M.Modal.init(el, {
                 onCloseEnd: () => {
-                  document.querySelector("body").style.overflow = "auto";
-                }
+                  document.querySelector('body').style.overflow = 'auto';
+                },
               });
               instance.open();
               return;
@@ -75,34 +75,34 @@ document.getElementById("form").addEventListener("submit", e => {
               rootRef
                 .child(autoId)
                 .set({
-                  message: inputValue
+                  message: inputValue,
                 })
                 .then(() => {
-                  document.getElementById("form").reset();
-                  let el = document.querySelector(".modal");
-                  el.querySelector("h4").textContent = `Thank You!`;
+                  document.getElementById('form').reset();
+                  let el = document.querySelector('.modal');
+                  el.querySelector('h4').textContent = `Thank You!`;
                   el.querySelector(
-                    "p"
+                    'p'
                   ).textContent = `Your link has been successfully added!`;
                   let instance = M.Modal.init(el, {
                     onCloseEnd: () => {
-                      document.querySelector("body").style.overflow = "auto";
-                    }
+                      document.querySelector('body').style.overflow = 'auto';
+                    },
                   });
                   instance.open();
                 })
-                .catch(error => console.log(error));
+                .catch((error) => console.log(error));
             }
             if (status !== 200) {
-              let el = document.querySelector(".modal");
-              el.querySelector("h4").textContent = `Error!`;
+              let el = document.querySelector('.modal');
+              el.querySelector('h4').textContent = `Error!`;
               el.querySelector(
-                "p"
+                'p'
               ).textContent = `Please verify all information before proceeding!`;
               let instance = M.Modal.init(el, {
                 onCloseEnd: () => {
-                  document.querySelector("body").style.overflow = "auto";
-                }
+                  document.querySelector('body').style.overflow = 'auto';
+                },
               });
               instance.open();
               return;
@@ -111,59 +111,55 @@ document.getElementById("form").addEventListener("submit", e => {
         }
       });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
     });
 });
 
-const handleData = data => {
-  fetchCall("./data.json")
-    .then(sites => {
+const handleData = (data) => {
+  fetchCall('./data.json')
+    .then((sites) => {
       if (data.val() == null) {
         app.innerHTML = `<a href='#' class='collection-item none'>No links available yet.</a>`;
       } else {
-        const sortedList = _.sortBy(data.val(), i => i.message);
-        sortedList.forEach(i => {
-          const check = _.filter(sites, value => {
+        const sortedList = _.sortBy(data.val(), (i) => i.message);
+        sortedList.forEach((i) => {
+          const check = _.filter(sites, (value) => {
             return getHostname(i.message).includes(value.parent_domain);
           });
           if (check.length === 0) {
-            let link = document.createElement("a");
+            let link = document.createElement('a');
             link.classList.add(
-              "collection-item",
-              "light-blue-text",
-              "text-darken-4"
+              'collection-item',
+              'light-blue-text',
+              'text-darken-4'
             );
             link.textContent = `${i.message}`;
-            link.setAttribute("href", `${i.message}`);
-            link.setAttribute("target", `_blank`);
+            link.setAttribute('href', `${i.message}`);
+            link.setAttribute('target', `_blank`);
             app.appendChild(link);
           } else {
-            let link = document.createElement("a");
-            link.classList.add(
-              "collection-item",
-              "red-text",
-              "text-accent-4"
-            );
+            let link = document.createElement('a');
+            link.classList.add('collection-item', 'red-text', 'text-accent-4');
             link.textContent = `${i.message}`;
-            link.setAttribute("href", `${i.message}`);
-            link.setAttribute("target", `_blank`);
+            link.setAttribute('href', `${i.message}`);
+            link.setAttribute('target', `_blank`);
             explicit.appendChild(link);
           }
         });
-        document.querySelector(".none").style.display = `none`;
+        document.querySelector('.none').style.display = `none`;
       }
     })
-    .catch(err => console.log(err));
+    .catch((err) => console.log(err));
 };
 
-rootRef.on("value", data => {
+rootRef.on('value', (data) => {
   app.innerHTML = ``;
   explicit.innerHTML = ``;
   handleData(data);
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-  let elem = document.querySelectorAll(".collapsible");
+document.addEventListener('DOMContentLoaded', function () {
+  let elem = document.querySelectorAll('.collapsible');
   let instances = M.Collapsible.init(elem);
 });

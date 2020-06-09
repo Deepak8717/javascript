@@ -3,7 +3,7 @@ class News {
     async function handleGet() {
       try {
         let req = await fetch(url, {
-          mode: "cors"
+          mode: 'cors',
         });
         let text = await req.text();
         return text;
@@ -12,12 +12,12 @@ class News {
       }
     }
     handleGet(url)
-      .then(function(data) {
+      .then(function (data) {
         let parser = new DOMParser();
-        let doc = parser.parseFromString(data, "text/html");
+        let doc = parser.parseFromString(data, 'text/html');
         news.handleCountries(doc);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   }
@@ -25,7 +25,7 @@ class News {
     async function handleGet() {
       try {
         let req = await fetch(
-          `https://cors-anywhere.herokuapp.com/http://newsapi.org/v2/top-headlines?country=${code}&apiKey=63f86003bea64ef3bae5fca878aeb719`
+          `https://cors-unlimited.herokuapp.com/http://newsapi.org/v2/top-headlines?country=${code}&apiKey=63f86003bea64ef3bae5fca878aeb719`
         );
         let json = await req.json();
         return json;
@@ -34,10 +34,10 @@ class News {
       }
     }
     handleGet()
-      .then(function(data) {
+      .then(function (data) {
         news.handleBreakingNews(data);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   }
@@ -47,19 +47,22 @@ class News {
     let html = ``;
     let totalNews = `<p id="total">Total news: ${data.totalResults}</p><div></div>`;
     html += totalNews;
-    data.articles.forEach(function(element) {
+    data.articles.forEach(function (element) {
       html += `<div class="card">
                 <a class="card__link" href="${element.url}" target="_blank">
-                  <img class="card__thumb" src="${element.urlToImage || 'https://placekitten.com/400/400'}" alt="${
-        element.title
-      }">
+                  <img class="card__thumb" src="${
+                    element.urlToImage || 'https://placekitten.com/400/400'
+                  }" alt="${element.title}">
                 </a>
                 <header>${element.title}</header>
-                <article><p>Source: ${element.source.name ||
-                  "No source available."}</p><p><strong>Date: ${element.publishedAt ||
-        "No date available."}</strong></p><p>Tags: ${element.description ||
-        "No tags available."}</p></article>
-                <footer>${element.content || "No content available."}</footer>
+                <article><p>Source: ${
+                  element.source.name || 'No source available.'
+                }</p><p><strong>Date: ${
+        element.publishedAt || 'No date available.'
+      }</strong></p><p>Tags: ${
+        element.description || 'No tags available.'
+      }</p></article>
+                <footer>${element.content || 'No content available.'}</footer>
               </div>`;
     });
     news.innerHTML = html;
@@ -68,13 +71,13 @@ class News {
     let code = [];
     let name = [];
     let arr = [];
-    doc.querySelectorAll("kbd").forEach(function(i) {
+    doc.querySelectorAll('kbd').forEach(function (i) {
       code.push({ code: i.textContent.trim() });
     });
-    doc.querySelectorAll(".name.f3").forEach(function(i) {
+    doc.querySelectorAll('.name.f3').forEach(function (i) {
       name.push({ code: i.textContent.trim() });
     });
-    code.forEach(function(v, i) {
+    code.forEach(function (v, i) {
       let obj = {};
       obj.code = v.code;
       obj.country = name[i].code;
@@ -85,11 +88,11 @@ class News {
   handleSelect(arr) {
     const select = document.getElementById(`outlets`);
     let html = `<option selected disabled>Select your Country</option>`;
-    arr.forEach(function(item) {
+    arr.forEach(function (item) {
       html += `<option value="${item.code}">${item.country}</option>`;
     });
     select.innerHTML = html;
-    select.addEventListener("change", function(e) {
+    select.addEventListener('change', function (e) {
       news.handleChange(e);
     });
   }
@@ -101,5 +104,5 @@ class News {
 const news = new News();
 
 news.countries(
-  `https://cors-anywhere.herokuapp.com/https://newsapi.org/sources`
+  `https://cors-unlimited.herokuapp.com/https://newsapi.org/sources`
 );

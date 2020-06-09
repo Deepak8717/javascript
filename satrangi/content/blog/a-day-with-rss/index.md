@@ -24,7 +24,7 @@ Before we kickstart this simple project, we will keep few things in mind.
 - See [RSS feed](https://www.toronto.com/news-static/7345759-inside-toronto-rss/) for our project and visualize a tree structure in your mind. We will need to create a JSON file off from this page which is going to generate our application's menu. We will not hard-code them in our HTML file. Let's see how far we can go with making our simple application dynamic in nature from vanilla JavaScript standpoint.
 - As you inspect [RSS feed](https://www.toronto.com/news-static/7345759-inside-toronto-rss/), you will notice that their content, especially article descriptions have `<img>` and `<p>` tag stringified together. It is best time for us to try some regular expression exercise as well.
 - We will spend quite some time on DOM manipulation. Frameworks like `React`, `Vue` gives an extra edge to avoid dealing with DOM directly and save time on large scale development. For our simple application, dealing with DOM directly will allow us to solidify our learning on DOM manipulation concepts.
-- We will use [CORS Anywhere](https://cors-anywhere.herokuapp.com/) script since we need to make calls using `Fetch` API. It will take care of any cross-origin issues.
+- We will use [CORS Anywhere](https://cors-unlimited.herokuapp.com/) script since we need to make calls using `Fetch` API. It will take care of any cross-origin issues.
 - Lastly, we will use `Bootstrap` for layout and styles.
 
 ### Developing a JSON file
@@ -55,7 +55,7 @@ const app = () => {
   // ...project work...
 }
 
-app();
+app()
 ```
 
 ### Displaying a Static message
@@ -67,11 +67,11 @@ We will select the `#data` div from the `HTML` using its `id` attribute via `que
 We will use `window.onload` event handler to inject a message via `innerHTML` method.
 
 ```js
-const box = document.querySelector("#data");
+const box = document.querySelector("#data")
 
 window.onload = () => {
-  box.innerHTML = `<p>Some message...</p>`;
-};
+  box.innerHTML = `<p>Some message...</p>`
+}
 ```
 
 See reference links: [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector), [window.onload](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload), [innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML).
@@ -85,29 +85,29 @@ Following is the sample to make the necessary Fetch call to get the JSON. We dec
 ```js
 const getMenu = async () => {
   try {
-    let response = await fetch(`./menu.json`);
-    let data = await response.json();
-    return data;
+    let response = await fetch(`./menu.json`)
+    let data = await response.json()
+    return data
   } catch (err) {
-    return Promise.reject(new Error(err));
+    return Promise.reject(new Error(err))
   }
-};
+}
 ```
 
 Now, we will make another function value `handleMenu` to handle the called JSON file. Inside that, we will make a call to `getMenu` and then outputs the result to `console`.
 
 ```js
 const handleMenu = () => {
-  getMenu().then(data => console.log(data));
-};
+  getMenu().then((data) => console.log(data))
+}
 ```
 
 Once declared, we can trigger `handleMenu` when our `window` loads.
 
 ```js
 window.onload = () => {
-  handleMenu();
-};
+  handleMenu()
+}
 ```
 
 #### Repeat the Magic
@@ -125,54 +125,57 @@ We will create a `getCat` function value that is responsible for making a call t
 ```js
 const getCat = async () => {
   try {
-    let response = await fetch(`https://cors-anywhere.herokuapp.com/https://www.insidetoronto.com/rss/article?category=news`);
-    let data = await response.text();
-    return data;
+    let response = await fetch(
+      `https://cors-unlimited.herokuapp.com/https://www.insidetoronto.com/rss/article?category=news`
+    )
+    let data = await response.text()
+    return data
   } catch (err) {
-    return Promise.reject(new Error(err));
+    return Promise.reject(new Error(err))
   }
-};
+}
 ```
 
 Time to create a function value `handleData` to manage the handling of `getCat`.
 
 ```js
 const handleData = () => {
-  box.innerHTML = ``;
+  box.innerHTML = ``
   getCat()
-    .then(data => new window.DOMParser().parseFromString(data, "text/xml"))
-    .then(data => {
-      const items = data.querySelectorAll("item");
-      let html = ``;
-      items.forEach(el => {
-        const test = [...el.children];
-        const obj = {};
-        test.forEach(i => (obj[i.localName] = i.textContent));
+    .then((data) => new window.DOMParser().parseFromString(data, "text/xml"))
+    .then((data) => {
+      const items = data.querySelectorAll("item")
+      let html = ``
+      items.forEach((el) => {
+        const test = [...el.children]
+        const obj = {}
+        test.forEach((i) => (obj[i.localName] = i.textContent))
         let descObj =
           obj.description.match(/<\s*p[^>]*>(.*?)<\s*\/\s*p>/g) ||
-          "No description found.";
-        let desc = descObj[0].replace(/<\/?[^>]+(>|$)/g, "");
+          "No description found."
+        let desc = descObj[0].replace(/<\/?[^>]+(>|$)/g, "")
         const thumb = obj.description.match(/<img.*?src="(.*?)"[^\>]+>/g) || [
-          '<img src="https://placekitten.com/400/400" alt="No image for this news" />'
-        ];
+          '<img src="https://placekitten.com/400/400" alt="No image for this news" />',
+        ]
         html += `
         <div class="card mb-3 overflow-hidden">
         <div class="text-center bg-dark">${thumb[0]}</div>
           <div class="card-body">
             <h5 class="card-title">${obj.title}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">By ${obj.creator ||
-          "Santa Claus"} on ${obj.pubDate}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">By ${
+              obj.creator || "Santa Claus"
+            } on ${obj.pubDate}</h6>
             <p class="card-text">${desc}</p>
             <div><a href="${
-          obj.link
-          }" class="stretched-link btn btn-primary" target="_blank">Read</a></div>
+              obj.link
+            }" class="stretched-link btn btn-primary" target="_blank">Read</a></div>
           </div>
-        </div>`;
-      });
-      box.insertAdjacentHTML("beforeend", html);
+        </div>`
+      })
+      box.insertAdjacentHTML("beforeend", html)
     })
-    .catch(error => console.log(error));
-};
+    .catch((error) => console.log(error))
+}
 ```
 
 This code looks complicated so let us view it one step at a time.
@@ -191,46 +194,45 @@ This code looks complicated so let us view it one step at a time.
 Following the similar approach, we handle the logic inside `handleMenu` function value.
 
 ```js
-getMenu()
-.then(data => {
+getMenu().then((data) => {
   if (data === undefined || data.length === 0) {
-    return;
+    return
   }
-  let parentItem;
-  let dropdownItem;
+  let parentItem
+  let dropdownItem
   data
     .sort((a, b) => (a.key > b.key ? 1 : -1))
-    .map(i => {
+    .map((i) => {
       // DD
       if (i.children) {
         // Build DOM nodes...
-        mainDA.textContent = i.title;
-        mainDM.setAttribute("aria-labelledby", i.key);
-        mainDMI.setAttribute("data-key", i.key);
-        mainDMI.textContent = i.title;
+        mainDA.textContent = i.title
+        mainDM.setAttribute("aria-labelledby", i.key)
+        mainDMI.setAttribute("data-key", i.key)
+        mainDMI.textContent = i.title
         // Append DOM nodes
         i.children.map((j, index) => {
           // Build DOM nodes...
-          mainDMI.setAttribute("data-key", i.key);
-          mainDMI.setAttribute("data-subkey", j.key);
-          mainDMI.textContent = j.title;
-          mainDMI.addEventListener("click", e => handleSubmit(e));
+          mainDMI.setAttribute("data-key", i.key)
+          mainDMI.setAttribute("data-subkey", j.key)
+          mainDMI.textContent = j.title
+          mainDMI.addEventListener("click", (e) => handleSubmit(e))
           if (index === 0) {
             // For Dropdown separator
           } else {
             // ...
           }
-        });
-        mainDMI.addEventListener("click", e => handleSubmit(e));
+        })
+        mainDMI.addEventListener("click", (e) => handleSubmit(e))
       } else {
         // ...
-        mainA.setAttribute("data-key", i.key);
-        mainA.textContent = i.title;
+        mainA.setAttribute("data-key", i.key)
+        mainA.textContent = i.title
         // ...
-        mainA.addEventListener("click", e => handleSubmit(e));
+        mainA.addEventListener("click", (e) => handleSubmit(e))
       }
-    });
-  });
+    })
+})
 ```
 
 - In first line, we check whether menu data received is empty or not.

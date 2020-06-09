@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 const App = () => {
   let key = process.env.REACT_APP_KEY;
-  const main = document.getElementById("main");
-  const form = document.getElementById("form");
-  const heading = document.getElementById("heading");
-  const language = document.getElementById("language");
+  const main = document.getElementById('main');
+  const form = document.getElementById('form');
+  const heading = document.getElementById('heading');
+  const language = document.getElementById('language');
 
   const getLangs = async () => {
     try {
@@ -20,7 +20,7 @@ const App = () => {
   const getList = async (person) => {
     try {
       let response = await fetch(
-        `https://cors-anywhere.herokuapp.com/https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${person.range}&order=${person.filter}&q=happy%20birthday%20${person.age}%20${person.language}%20&safeSearch=strict&type=video&key=${key}`
+        `https://cors-unlimited.herokuapp.com/https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${person.range}&order=${person.filter}&q=happy%20birthday%20${person.age}%20${person.language}%20&safeSearch=strict&type=video&key=${key}`
       );
       let json = await response.json();
       return json;
@@ -33,8 +33,8 @@ const App = () => {
   const setDOM = (el, str) => (el.innerHTML = str);
 
   const makeOptionElement = (el, value, content) => {
-    let option = document.createElement("option");
-    option.setAttribute("value", value);
+    let option = document.createElement('option');
+    option.setAttribute('value', value);
     option.textContent = content;
     el.appendChild(option);
   };
@@ -47,7 +47,7 @@ const App = () => {
     setDOM(el, html);
   };
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     let person = { age: null, language: null };
     person.language = e.target[0].value;

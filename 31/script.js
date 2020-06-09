@@ -10,7 +10,7 @@ class Memes {
     this.isLoading = false;
   }
   async getMemes() {
-    const URL = `https://cors-anywhere.herokuapp.com/https://namo-memes.herokuapp.com/memes/latest/${this.count}`;
+    const URL = `https://cors-unlimited.herokuapp.com/https://namo-memes.herokuapp.com/memes/latest/${this.count}`;
     try {
       const response = await fetch(URL);
       const json = await response.json();
@@ -19,7 +19,7 @@ class Memes {
       } else {
         const data = json;
         const oldData = this.memes;
-        const revisedData = _.xorBy(data, oldData, "url");
+        const revisedData = _.xorBy(data, oldData, 'url');
         let total = [...oldData, ...revisedData];
         // total = total.sort((a, b) => (a.createdDate > b.createdDate ? -1 : 1));
         this.memes = total;
@@ -34,19 +34,19 @@ class Memes {
     let j = 2;
     this.memes.map((meme, index) => {
       if (j > 20) {
-        j = 2
-      };
+        j = 2;
+      }
       let range = Math.floor(Math.random() * 100);
       let randomClass =
         range < 1
-          ? "meme meme--fixed"
+          ? 'meme meme--fixed'
           : range < 20
-          ? "meme meme--tall"
+          ? 'meme meme--tall'
           : range < 40
-          ? "meme meme--big"
+          ? 'meme meme--big'
           : range < 60
-          ? "meme meme--wide"
-          : "meme";
+          ? 'meme meme--wide'
+          : 'meme';
       html += `<div class="${randomClass} animated fade animate-${j}s" key=${meme._id}><img class="meme__img animated fadeIn delay-30s" src="${meme.url}" alt="Meme number ${index}" /></div>`;
       j += 2;
     });
@@ -57,19 +57,19 @@ class Memes {
   }
   testImages() {
     document
-      .querySelectorAll("img")
+      .querySelectorAll('img')
       .forEach((image) =>
-        image.addEventListener("error", (e) =>
-          e.target.parentElement.classList.add("error")
+        image.addEventListener('error', (e) =>
+          e.target.parentElement.classList.add('error')
         )
       );
   }
   isLoadingMessage() {
     this.isLoading = !this.isLoading;
     if (this.isLoading) {
-      loading.classList.add("active");
+      loading.classList.add('active');
     } else {
-      loading.classList.remove("active");
+      loading.classList.remove('active');
     }
   }
   makeTenMemes() {
@@ -111,4 +111,4 @@ window.onscroll = () => {
   }
 };
 
-loadButton.addEventListener("click", next);
+loadButton.addEventListener('click', next);

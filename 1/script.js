@@ -1,23 +1,23 @@
 // Selectors
-const URL = `https://cors-anywhere.herokuapp.com/http://worldtimeapi.org/api/timezone`; // HACK = `https://cors-anywhere.herokuapp.com`;
-// const URL = `http://worldtimeapi.org/api/timezone`; // HACK = `https://cors-anywhere.herokuapp.com`;
-const app = document.getElementById("app");
-const select = document.querySelector("select");
+const URL = `https://cors-unlimited.herokuapp.com/http://worldtimeapi.org/api/timezone`; // HACK = `https://cors-unlimited.herokuapp.com`;
+// const URL = `http://worldtimeapi.org/api/timezone`; // HACK = `https://cors-unlimited.herokuapp.com`;
+const app = document.getElementById('app');
+const select = document.querySelector('select');
 
 // New Nodes
-const newEl = el => document.createElement(el);
+const newEl = (el) => document.createElement(el);
 const addCl = (el, name) => el.classList.add(name);
 const append = (el, child) => el.appendChild(child);
 const newHTML = (el, content) => (el.innerHTML = content);
 const setLSI = (key, val) => localStorage.setItem(key, JSON.stringify(val));
-const getLSI = key => JSON.parse(localStorage.getItem(key));
+const getLSI = (key) => JSON.parse(localStorage.getItem(key));
 
 // Setup DOM
 let selectBox = newEl(`div`);
 let content = newEl(`main`);
 append(app, selectBox);
 append(app, content);
-addCl(selectBox, "select");
+addCl(selectBox, 'select');
 
 // Async functions
 const getAllTimezones = async (url, location) => {
@@ -57,11 +57,11 @@ const getAllTimezones = async (url, location) => {
     let requestLocationJSON = await requestLocation.json();
 
     // Check if API returned an error
-    if (requestLocationJSON.hasOwnProperty("error")) {
+    if (requestLocationJSON.hasOwnProperty('error')) {
       throw new Error(`This location does not exist in the API.`);
       return;
     }
-    select.addEventListener("change", e => handleChange(e.target.value));
+    select.addEventListener('change', (e) => handleChange(e.target.value));
     return requestLocationJSON;
   } catch (err) {
     throw new Error(err);
@@ -74,7 +74,7 @@ const getCurrentTimezone = async (url, location) => {
     let requestLocation = await fetch(`${url}/${location}`);
     let requestLocationJSON = await requestLocation.json();
     // Check if API returned an error
-    if (requestLocationJSON.hasOwnProperty("error")) {
+    if (requestLocationJSON.hasOwnProperty('error')) {
       throw new Error(`This location does not exist in the API.`);
       return;
     }
@@ -85,7 +85,7 @@ const getCurrentTimezone = async (url, location) => {
 };
 
 // Display Error
-const handleError = error => {
+const handleError = (error) => {
   newHTML(selectBox, `<p>Sorry!</p></p>`);
   newHTML(
     content,
@@ -103,16 +103,16 @@ const handleDisplay = (content, data) => {
       <p>
         ${
           data.dst_from
-            ? moment(data.dst_from).format("LLLL")
-            : "Does not exist for this timezone."
+            ? moment(data.dst_from).format('LLLL')
+            : 'Does not exist for this timezone.'
         }
       </p>
       <h1>Daylight Saving Time ends</h1>
       <p>
         ${
           data.dst_until
-            ? moment(data.dst_until).format("LLLL")
-            : "Does not exist for this timezone."
+            ? moment(data.dst_until).format('LLLL')
+            : 'Does not exist for this timezone.'
         }
       </p>
     `
@@ -120,13 +120,13 @@ const handleDisplay = (content, data) => {
 };
 
 // Handle change
-const handleChange = e => {
+const handleChange = (e) => {
   getCurrentTimezone(URL, e)
-    .then(data => handleDisplay(content, data))
-    .catch(error => handleError(error));
+    .then((data) => handleDisplay(content, data))
+    .catch((error) => handleError(error));
 };
 
 // Handle all timezones
 getAllTimezones(URL)
-  .then(data => handleDisplay(content, data))
-  .catch(error => handleError(error));
+  .then((data) => handleDisplay(content, data))
+  .catch((error) => handleError(error));
