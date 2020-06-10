@@ -25,6 +25,7 @@ Send me a PR if you notice any broken links or other underlying bug.
 | Cat in Space                               | [View Demo](https://tpkahlon.github.io/javascript/32)                    |
 | Check Unicode of a String                  | [View Demo](https://tpkahlon.github.io/javascript/check-unicode)         |
 | Checkout page                              | [View Demo](https://tpkahlon.github.io/javascript/17)                    |
+| Color Picker                               | [View Demo](https://tpkahlon.github.io/javascript/34)                    |
 | Corona Virus Cases Tracker                 | [View Demo](https://tpkahlon.github.io/javascript/29)                    |
 | Dark Internet                              | [View Demo](https://tpkahlon.github.io/javascript/26)                    |
 | Daylight Saving Timezone                   | [View Demo](https://tpkahlon.github.io/javascript/1)                     |
