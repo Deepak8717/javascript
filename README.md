@@ -36,6 +36,7 @@ Send me a PR if you notice any broken links or other underlying bug.
 | Humans                                     | [View Demo](https://tpkahlon.github.io/javascript/27A)                   |
 | Iterators in JavaScript                    | [View Demo](https://tpkahlon.github.io/javascript/24)                    |
 | Local Library page using Object Prototypes | [View Demo](https://tpkahlon.github.io/javascript/19)                    |
+| Modal                                      | [View Demo](https://tpkahlon.github.io/javascript/39)                    |
 | NaMo Memes                                 | [View Demo](https://tpkahlon.github.io/javascript/31)                    |
 | News Fetch API                             | [View Demo](https://tpkahlon.github.io/javascript/news-fetch-api)        |
 | News                                       | [View Demo](https://tpkahlon.github.io/javascript/21)                    |
