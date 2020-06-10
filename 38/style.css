@@ -1,0 +1,47 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+* {
+  box-sizing: border-box;
+}
+
+* {
+  transition: all 0.2s ease;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+  font-family: sans-serif;
+  color: white;
+  background: black;
+  overflow: hidden;
+}
+
+#button {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+#banner {
+  transform: translateY(-100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
+  font-size: 3rem;
+  text-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 1);
+  color: white;
+  background: url(http://upload.wikimedia.org/wikipedia/commons/d/dd/Muybridge_race_horse_animated.gif)
+    no-repeat center center fixed;
+  background-size: cover;
+}
+
+#banner.show {
+  transform: translateY(0);
+}
