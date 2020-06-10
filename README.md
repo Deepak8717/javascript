@@ -44,6 +44,7 @@ Send me a PR if you notice any broken links or other underlying bug.
 | Radio Stations                             | [View Demo](https://tpkahlon.github.io/javascript/radio-app)             |
 | Random Text Generator                      | [View Demo](https://tpkahlon.github.io/javascript/random-text-generator) |
 | Regular Expressions                        | [View Demo](https://tpkahlon.github.io/javascript/22)                    |
+| Slider                                     | [View Demo](https://tpkahlon.github.io/javascript/36)                    |
 | Stars                                      | [View Demo](https://tpkahlon.github.io/javascript/stars)                 |
 | Toronto                                    | [View Demo](https://tpkahlon.github.io/javascript/toronto)               |
 | Wall Clock                                 | [View Demo](https://tpkahlon.github.io/javascript/25)                    |
