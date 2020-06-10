@@ -15,6 +15,7 @@ Send me a PR if you notice any broken links or other underlying bug.
 
 | Project Title                              | Project Link                                                             |
 | ------------------------------------------ | ------------------------------------------------------------------------ |
+| Accordion                                  | [View Demo](https://tpkahlon.github.io/javascript/40)                    |
 | Alarm                                      | [View Demo](https://tpkahlon.github.io/javascript/23)                    |
 | Anti Chat                                  | [View Demo](https://tpkahlon.github.io/javascript/30)                    |
 | Basic Fetch API                            | [View Demo](https://tpkahlon.github.io/javascript/basic-fetch-api)       |
