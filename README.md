@@ -27,6 +27,7 @@ Send me a PR if you notice any broken links or other underlying bug.
 | Checkout page                              | [View Demo](https://tpkahlon.github.io/javascript/17)                    |
 | Color Picker                               | [View Demo](https://tpkahlon.github.io/javascript/34)                    |
 | Corona Virus Cases Tracker                 | [View Demo](https://tpkahlon.github.io/javascript/29)                    |
+| Counter                                    | [View Demo](https://tpkahlon.github.io/javascript/35)                    |
 | Dark Internet                              | [View Demo](https://tpkahlon.github.io/javascript/26)                    |
 | Daylight Saving Timezone                   | [View Demo](https://tpkahlon.github.io/javascript/1)                     |
 | Dinky                                      | [View Demo](https://tpkahlon.github.io/javascript/dinky)                 |
