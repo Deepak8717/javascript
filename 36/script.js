@@ -4,9 +4,7 @@ const random = document.getElementById('random');
 const slide = document.getElementById('slide');
 
 const getUsers = async () => {
-  const r = await fetch(
-    `https://cors-unlimited.herokuapp.com/https://jsonplaceholder.typicode.com/users`
-  );
+  const r = await fetch(`https://jsonplaceholder.typicode.com/users`);
   const j = await r.json();
   return j;
 };
