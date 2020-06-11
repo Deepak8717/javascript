@@ -5,7 +5,8 @@ const slide = document.getElementById('slide');
 
 const getUsers = async () => {
   const r = await fetch(
-    `https://cors-unlimited.herokuapp.com/https://jsonplaceholder.typicode.com/users`
+    `./data.json`
+    // `https://cors-unlimited.herokuapp.com/https://jsonplaceholder.typicode.com/users`
   );
   const j = await r.json();
   return j;

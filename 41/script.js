@@ -2,7 +2,8 @@ const root = document.getElementById('root');
 
 const getData = async () => {
   const r = await fetch(
-    `https://cors-unlimited.herokuapp.com/https://jsonplaceholder.typicode.com/posts`
+    `./data.json`
+    //`https://cors-unlimited.herokuapp.com/https://jsonplaceholder.typicode.com/posts`
   );
   const j = await r.json();
   return j;

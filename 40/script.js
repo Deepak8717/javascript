@@ -3,7 +3,8 @@ const sign = document.getElementById('sign');
 
 const getData = async () => {
   const r = await fetch(
-    `https://cors-unlimited.herokuapp.com/https://jsonplaceholder.typicode.com/users/1/posts`
+    `./data.json`
+    //`https://cors-unlimited.herokuapp.com/https://jsonplaceholder.typicode.com/users/1/posts`
   );
   const j = await r.json();
   return j;
