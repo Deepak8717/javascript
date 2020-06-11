@@ -59,8 +59,8 @@ Send me a PR if you notice any broken links or other underlying bug.
 
 | Project Title                    | Project Link                                        |
 | -------------------------------- | --------------------------------------------------- |
-| Angular 💡                       | [View Demo](https://crudinangularjs.netlify.app)    |
-| Blog 👶                          | [View Demo](https://satrangi.netlify.app)           |
+| Angular                          | [View Demo](https://crudinangularjs.netlify.app)    |
+| Blog                             | [View Demo](https://satrangi.netlify.app)           |
 | Booster                          | [View Demo](https://boostmeup.netlify.app)          |
 | Boredom                          | [View Demo](https://boredom.netlify.app)            |
 | CDNJS                            | [View Demo](https://jscdn.netlify.app)              |
