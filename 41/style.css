@@ -1,0 +1,60 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+* {
+  box-sizing: border-box;
+}
+
+* {
+  transition: all 0.3s ease;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+  font-family: sans-serif;
+  color: white;
+  background: black;
+}
+
+#root {
+  margin: 1rem;
+}
+
+.tab-links {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tab-link {
+  color: inherit;
+  margin: 0 1rem 1rem 0;
+}
+
+.tab-link:hover,
+.tab-link:focus {
+  /* color: #666; */
+  cursor: pointer;
+}
+
+.tab-inner {
+  margin: 0 0 1rem;
+}
+
+.tab-inner:last-child {
+  margin: 0;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.active {
+  color: red;
+}
