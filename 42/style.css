@@ -1,0 +1,72 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+* {
+  box-sizing: border-box;
+}
+
+* {
+  transition: all 0.3s ease;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+  font-family: sans-serif;
+  color: white;
+  background: black;
+}
+
+#loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+section * {
+  position: relative;
+  z-index: 3;
+}
+
+section::before {
+  position: absolute;
+  content: '';
+  background: rgba(0, 0, 0, 0.75);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  object-fit: cover;
+}
+
+h1 {
+  text-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.8);
+}
