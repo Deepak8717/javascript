@@ -1,0 +1,76 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;523;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+* {
+  transition: all 0.3s ease;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Manrope', sans-serif;
+}
+
+body {
+  font-size: 1rem;
+  color: white;
+  background: black;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  list-style-type: none;
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.9);
+}
+
+details:hover,
+details:focus {
+  cursor: pointer;
+}
+
+h1 {
+  margin: 1rem 1rem 0;
+}
+
+.children li {
+  margin: 0.75rem 0 0;
+  padding: 1rem;
+}
+
+#root {
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 1rem;
+  min-height: calc(100vh - 2rem);
+}
+
+@media screen and (min-width: 40rem) {
+  #root {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media screen and (min-width: 70rem) {
+  #root {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
