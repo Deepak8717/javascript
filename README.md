@@ -38,6 +38,7 @@ Send me a PR if you notice any broken links or other underlying bug.
 | Iterators in JavaScript                    | [View Demo](https://tpkahlon.github.io/javascript/24)                    |
 | Load Video+Content                         | [View Demo](https://tpkahlon.github.io/javascript/42)                    |
 | Local Library page using Object Prototypes | [View Demo](https://tpkahlon.github.io/javascript/19)                    |
+| MDN Periodic Table                         | [View Demo](https://tpkahlon.github.io/javascript/43)                    |
 | Modal                                      | [View Demo](https://tpkahlon.github.io/javascript/39)                    |
 | NaMo Memes                                 | [View Demo](https://tpkahlon.github.io/javascript/31)                    |
 | News Fetch API                             | [View Demo](https://tpkahlon.github.io/javascript/news-fetch-api)        |
