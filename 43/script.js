@@ -18,7 +18,7 @@ getData()
     const doc = parser.parseFromString(d, 'text/html');
     const list = doc.querySelector('.quick-links > div > ol');
     const linkSettings = doc.querySelectorAll('a[href^="/en-US/"');
-    const listSettings = doc.querySelectorAll('li');
+    const listSettings = doc.querySelectorAll('.quick-links li');
     const nodeSettings = doc.querySelectorAll('.toggle');
     const detailsSettings = doc.querySelectorAll('details');
     linkSettings.forEach((i) => {
@@ -26,7 +26,12 @@ getData()
       i.setAttribute('href', `https://developer.mozilla.org${currentSrc}`);
       i.setAttribute('target', `_blank`);
     });
-    listSettings.forEach((i) => {
+    listSettings.forEach((i, index) => {
+      let newSpan = document.createElement('span');
+      newSpan.setAttribute('class', 'code');
+      i.appendChild(newSpan);
+      newSpan.innerHTML = index;
+
       i.style.backgroundColor = `rgb(${getRandom(0, 255)}, ${getRandom(
         0,
         255

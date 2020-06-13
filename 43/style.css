@@ -23,9 +23,12 @@ body {
   grid-template-rows: auto auto;
 }
 
-a {
+li a,
+summary {
+  display: block;
   color: inherit;
   text-decoration: none;
+  margin-right: 2.5rem;
 }
 
 ol {
@@ -34,6 +37,8 @@ ol {
 }
 
 li {
+  overflow: hidden;
+  position: relative;
   word-wrap: break-word;
   text-overflow: ellipsis;
   border-radius: 0.5rem;
@@ -56,6 +61,15 @@ h1 {
   padding: 1rem;
 }
 
+.code {
+  position: absolute;
+  top: 0;
+  right: .5rem;
+  font-weight: bold;
+  font-size: 2.6rem;
+  opacity: .3;
+}
+
 #root {
   margin: 1rem;
   display: grid;
@@ -72,5 +86,8 @@ h1 {
 @media screen and (min-width: 70rem) {
   #root {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .code {
+    font-size: 3rem;
   }
 }
