@@ -37,6 +37,9 @@ ol {
 }
 
 li {
+  font-size: 1rem;
+  font-weight: normal;
+  text-transform: none;
   overflow: hidden;
   position: relative;
   word-wrap: break-word;
@@ -45,6 +48,7 @@ li {
   padding: 1rem;
   list-style-type: none;
   text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 .2rem .1rem rgba(0, 0, 0, .4);
 }
 
 details:hover,
@@ -61,13 +65,20 @@ h1 {
   padding: 1rem;
 }
 
+.li-parent {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .code {
   position: absolute;
-  top: 0;
-  right: .5rem;
+  top: .2rem;
+  right: .2rem;
   font-weight: bold;
   font-size: 2.6rem;
-  opacity: .3;
+  opacity: .4;
+  line-height: .8;
 }
 
 #root {
@@ -83,11 +94,13 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
 @media screen and (min-width: 70rem) {
   #root {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+
   .code {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }

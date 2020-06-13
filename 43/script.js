@@ -17,6 +17,7 @@ getData()
     const parser = new DOMParser();
     const doc = parser.parseFromString(d, 'text/html');
     const list = doc.querySelector('.quick-links > div > ol');
+    const listNodes = doc.querySelectorAll('.quick-links > div > ol > li');
     const linkSettings = doc.querySelectorAll('a[href^="/en-US/"');
     const listSettings = doc.querySelectorAll('.quick-links li');
     const nodeSettings = doc.querySelectorAll('.toggle');
@@ -25,6 +26,9 @@ getData()
       const currentSrc = i.getAttribute('href');
       i.setAttribute('href', `https://developer.mozilla.org${currentSrc}`);
       i.setAttribute('target', `_blank`);
+    });
+    listNodes.forEach((i) => {
+      i.classList.add('li-parent')
     });
     listSettings.forEach((i, index) => {
       let newSpan = document.createElement('span');
