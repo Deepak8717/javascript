@@ -1,24 +1,10 @@
 import React from 'react';
 import { Accordion, Card } from 'react-bootstrap';
-import ClipboardJS from 'clipboard/dist/clipboard.min';
+import staticActions from './staticActions';
 
 const ItemWithoutChildren = ({ index, source, title }) => {
   const createMarkup = (source) => ({ __html: source });
-  document.querySelectorAll('code').forEach((i) => {
-    let newNode = document.createElement('button');
-    newNode.classList.add('btn', 'btn-secondary', 'btn-sm');
-    newNode.textContent = 'Copy';
-    i.insertAdjacentElement('beforebegin', newNode);
-    const button = i.parentElement.querySelector('button');
-    const clipboard = new ClipboardJS(button);
-    button.setAttribute('data-clipboard-text', i.textContent);
-    clipboard.on('success', (e) => {
-      e.trigger.parentElement.parentElement.parentElement
-        .querySelectorAll('td')
-        .forEach((i) => i.classList.remove('copied'));
-      e.trigger.parentElement.classList.toggle('copied');
-    });
-  });
+  staticActions();
   return (
     <Card bg='dark' text='light'>
       <Accordion.Toggle

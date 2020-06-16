@@ -22,7 +22,9 @@ const Header = () => {
           https://iptv-org.github.io/iptv/index.m3u to any player with support
           M3U-playlists.
         </p>
-        <p>Click/Touch a URL to copy.</p>
+        <p>
+          Click the <strong>Copy</strong> button to get the M3U URL.
+        </p>
         <ButtonGroup aria-label='Action buttons'>
           <Button
             variant='dark'
