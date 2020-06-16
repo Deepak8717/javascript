@@ -36,7 +36,7 @@ const Header = () => {
           </Button>
           <Button
             variant='secondary'
-            href='https://github.com/tpkahlon/javascript/tree/master/iptv'
+            href='https://github.com/tpkahlon/javascript/tree/master/iptv-org'
             target='_blank'
             rel='noopener noreferrer'
           >
