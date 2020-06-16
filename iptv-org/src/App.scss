@@ -1,0 +1,37 @@
+@import 'bootstrap/scss/bootstrap';
+
+table {
+  @extend .table;
+  @extend .table-hover;
+  @extend .table-striped;
+  @extend .table-bordered;
+  @extend .table-hover;
+  @extend .table-dark;
+  @extend .text-white;
+  @extend .table-sm;
+  margin: 0;
+  th,
+  td {
+    text-align: left;
+    padding: 0.5rem 1rem !important;
+  }
+}
+
+code {
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
+
+.copied {
+  background: black;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.jumbotron {
+  background: darken($gray-800, 15%) !important;
+}
