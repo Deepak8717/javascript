@@ -91,7 +91,7 @@ getData()
     document.querySelectorAll('li').forEach((i, index) => {
       let newSpan = document.createElement('span');
       newSpan.setAttribute('class', 'reading');
-      i.appendChild(newSpan);
+      i.insertAdjacentElement('afterbegin', newSpan);
       newSpan.innerHTML = `Reading Time: ${d[index].toFixed(2)} hours`;
     });
   })
