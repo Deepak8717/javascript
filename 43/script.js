@@ -1,5 +1,6 @@
 const root = document.getElementById('root');
 const book = document.getElementById('book');
+const total = document.getElementById('total');
 
 const getRandom = (min, max) => {
   return Math.ceil(Math.random() * (max - min) + min);
@@ -82,17 +83,25 @@ getData()
     return d.map((i) => {
       const parser = new DOMParser();
       const doc = parser.parseFromString(i, 'text/html');
-      const content =
-        doc.querySelector('body').textContent.length / (3 * 60 * 60);
+      const content = doc.querySelector('#content').textContent.trim().length;
       return content;
     });
   })
   .then((d) => {
+    total.textContent = `Total reading time required: ${(
+      d.reduce((a, b) => a + b, 0) /
+      (220 * 30)
+    ).toFixed(2)} hours`;
     document.querySelectorAll('li').forEach((i, index) => {
-      let newSpan = document.createElement('span');
-      newSpan.setAttribute('class', 'reading');
-      i.insertAdjacentElement('afterbegin', newSpan);
-      newSpan.innerHTML = `Reading Time: ${d[index].toFixed(2)} hours`;
+      if (i.querySelector('details') !== null) {
+      } else {
+        let newSpan = document.createElement('span');
+        newSpan.setAttribute('class', 'reading');
+        i.insertAdjacentElement('afterbegin', newSpan);
+        newSpan.innerHTML = `Reading Time: ${(d[index] / (220 * 30)).toFixed(
+          2
+        )} hours`;
+      }
     });
   })
   .catch((e) => console.log(e));

@@ -91,6 +91,11 @@ h1 {
   z-index: 1;
 }
 
+#total {
+  display: block;
+  font-size: 1rem;
+}
+
 #root {
   margin: 1rem;
   display: grid;
