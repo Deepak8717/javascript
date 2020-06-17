@@ -1,10 +1,9 @@
 import React from 'react';
-import { Jumbotron } from 'react-bootstrap';
 
 const Footer = () => {
   return (
-    <Jumbotron fluid className='m-0 text-muted rounded p-3'>
-      <p className='m-0'>
+    <div fluid className='m-0 text-muted p-3 bg-black'>
+      <p className='m-0 text-center'>
         Inspired by&nbsp;
         <a
           className='text-light text-decoration-none'
@@ -16,7 +15,7 @@ const Footer = () => {
         </a>
         .
       </p>
-    </Jumbotron>
+    </div>
   );
 };
 
