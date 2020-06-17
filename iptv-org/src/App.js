@@ -3,7 +3,6 @@ import mdParse from 'md-2-json';
 import Loading from './components/Loading';
 import ErrorMessage from './components/ErrorMessage';
 import Content from './components/Content';
-import Notification from './components/Notification';
 
 const App = () => {
   const [settings, setSettings] = useState({
@@ -30,12 +29,7 @@ const App = () => {
   const { error, loading, content } = settings;
   if (loading || content === null) return <Loading />;
   if (error) return <ErrorMessage />;
-  return (
-    <>
-      <Content settings={settings} setSettings={setSettings} />
-      <Notification settings={settings} setSettings={setSettings} />
-    </>
-  );
+  return <Content settings={settings} />;
 };
 
 export default App;

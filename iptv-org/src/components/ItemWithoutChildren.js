@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Accordion, Card } from 'react-bootstrap';
 import staticActions from './staticActions';
 
 const ItemWithoutChildren = ({ index, source, title }) => {
   const createMarkup = (source) => ({ __html: source });
-  staticActions();
+  useEffect(() => {
+    staticActions();
+  }, []);
   return (
     <Card bg='dark' text='light'>
       <Accordion.Toggle

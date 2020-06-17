@@ -4,7 +4,7 @@ import Item from './Item';
 import Header from './Header';
 import Footer from './Footer';
 
-const Content = ({ settings, setSettings }) => {
+const Content = ({ settings }) => {
   const { content } = settings;
   let data = [];
   let keys = [
@@ -41,8 +41,6 @@ const Content = ({ settings, setSettings }) => {
                     index={index}
                     source={i.text}
                     title={i.title}
-                    settings={settings}
-                    setSettings={setSettings}
                   />
                 ))}
             </Accordion>
