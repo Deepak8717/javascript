@@ -17,6 +17,16 @@ aside {
   right: 1rem;
 }
 
+table {
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+a:hover,
+a:focus {
+  cursor: pointer;
+}
+
 .bg-black {
   background: black;
 }
@@ -24,4 +34,15 @@ aside {
 .app {
   width: 100vw !important;
   height: 100vh !important;
+}
+
+.modal-dialog {
+  width: 98%;
+  height: 92%;
+  padding: 0;
+}
+
+.modal-content {
+  overflow: auto;
+  height: 99%;
 }

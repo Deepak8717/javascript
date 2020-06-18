@@ -1,14 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
-import { Form, Button, InputGroup, FormControl } from 'react-bootstrap';
+import {
+  Form,
+  Button,
+  InputGroup,
+  FormControl,
+  Modal,
+  Table,
+} from 'react-bootstrap';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { FaRegCopy } from 'react-icons/fa';
 
 const App = () => {
   const [channel, setChannel] = useState({
     keyword: '',
     url: null,
     toggle: false,
+    iptv: [],
   });
-  const { keyword, url, toggle } = channel;
+  const { keyword, url, toggle, iptv } = channel;
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const handleSubmit = (e) => {
     e.preventDefault();
     setChannel({
@@ -23,6 +37,58 @@ const App = () => {
   const handleToggle = () => {
     setChannel({ ...channel, toggle: !toggle });
   };
+
+  useEffect(() => {
+    (async () => {
+      const r = await fetch(
+        `https://raw.githubusercontent.com/iptv-org/iptv/master/index.m3u`
+      );
+      const t = await r.text();
+      return t;
+    })()
+      .then((d) => {
+        const codes = d
+          .split('#')
+          .map((i) => i.replace(/\n/gi, ''))
+          .map((i) => i.replace(/EXTINF:-1,/gi, ''))
+          .map((i) => i.match(/(?<=\/)(.*?)(?=\.)/, '$2'))
+          .filter((el) => el != null)
+          .map((i) => i[0])
+          .map((i) => i);
+        const urls = d
+          .split('#')
+          .map((i) => i.replace(/\n/gi, ''))
+          .map((i) => i.replace(/EXTINF:-1,/gi, ''))
+          .map((i) => i.match(/(?<=\/)(.*?)(?=\.)/, '$2'))
+          .filter((el) => el != null)
+          .map((i) => i[0])
+          .map(
+            (i) =>
+              `https://cors-unlimited.herokuapp.com/https://raw.githubusercontent.com/iptv-org/iptv/master/channels/${i}.m3u`
+          );
+        const promises = urls.map((url) => fetch(url).then((y) => y.text()));
+        Promise.all(promises).then((results) => {
+          const data = results
+            .map((i) => i.split('#'))
+            .map((i) => i.filter((j) => j !== ''))
+            .map((i) => i.filter((j) => (j.includes('EXTM3U') ? null : j)))
+            .map((i) => i.map((j) => j.split(',')))
+            .map((i) => i.map((j) => j[1]))
+            .map((i) => i.filter((j) => (typeof j === undefined ? null : j)))
+            .map((i) => i.map((j) => j.split('\n')))
+            .map((i, index) =>
+              i.map((j) => ({ title: j[0], url: j[1], country: codes[index] }))
+            );
+          localStorage.setItem('urls', JSON.stringify(data));
+          setChannel({
+            ...channel,
+            iptv: JSON.parse(localStorage.getItem('urls')),
+          });
+        });
+      })
+      .catch((e) => console.log(e));
+  }, []);
+
   return (
     <>
       <aside>
@@ -52,14 +118,11 @@ const App = () => {
         <div className='bg-black vh-100 vw-100 d-flex flex-column justify-content-center align-items-center text-white'>
           <p>Please enter a URL to watch!</p>
           <p>
-            Check available channels online at this address (Find M3U8 URL in
-            any of M3U files):{' '}
+            See available channels:{' '}
             <a
-              className='text-muted text-decoration-none font-weight-bold'
+              className='text-muted font-weight-bold'
               variant='link'
-              href='https://github.com/iptv-org/iptv/tree/master/channels'
-              target='_blank'
-              rel='noopener noreferrer'
+              onClick={handleShow}
             >
               Listing
             </a>
@@ -68,6 +131,60 @@ const App = () => {
       ) : (
         <ReactPlayer className='app' controls playing url={url} />
       )}
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Available M3U8 links from IPTV</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className='window'>
+          {iptv.length === 0 ? (
+            'Loading Channels...'
+          ) : (
+            <Table
+              variant='dark'
+              size='sm'
+              bordered
+              condensed
+              hover
+              striped
+              className='m-0'
+            >
+              <thead>
+                <tr>
+                  <td>Country</td>
+                  <td>Title</td>
+                  <td>URL</td>
+                </tr>
+              </thead>
+              <tbody>
+                {iptv.map((i, index) =>
+                  i.map((j) => {
+                    return (
+                      <tr key={index}>
+                        <td className='text-wrap text-uppercase'>
+                          {j.country}
+                        </td>
+                        <td className='text-wrap'>{j.title}</td>
+                        <td className='text-wrap'>
+                          <CopyToClipboard
+                            text={j.url}
+                            onCopy={() => alert('URL copied successfully!')}
+                          >
+                            <Button variant='dark'>
+                              <div className='d-flex justify-content-center align-items-center'>
+                                <FaRegCopy />
+                              </div>
+                            </Button>
+                          </CopyToClipboard>
+                        </td>
+                      </tr>
+                    );
+                  })
+                )}
+              </tbody>
+            </Table>
+          )}
+        </Modal.Body>
+      </Modal>
     </>
   );
 };
