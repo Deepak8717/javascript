@@ -52,11 +52,12 @@ const App = () => {
         <div className='bg-black vh-100 vw-100 d-flex flex-column justify-content-center align-items-center text-white'>
           <p>Please enter a URL to watch!</p>
           <p>
-            Check available channels online at this address:{' '}
+            Check available channels online at this address (Find M3U8 URL in
+            any of M3U files):{' '}
             <a
               className='text-muted text-decoration-none font-weight-bold'
               variant='link'
-              href='https://iptv-org.netlify.app'
+              href='https://github.com/iptv-org/iptv/tree/master/channels'
               target='_blank'
               rel='noopener noreferrer'
             >
