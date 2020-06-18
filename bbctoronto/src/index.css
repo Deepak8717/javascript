@@ -1,0 +1,15 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  background: black;
+}
+
+.app {
+  width: 100vw !important;
+  height: 100vh !important;
+}
