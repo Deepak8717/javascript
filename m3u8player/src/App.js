@@ -16,9 +16,8 @@ const App = () => {
     keyword: '',
     url: null,
     toggle: false,
-    iptv: [],
   });
-  const { keyword, url, toggle, iptv } = channel;
+  const { keyword, url, toggle } = channel;
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -80,14 +79,14 @@ const App = () => {
               i.map((j) => ({ title: j[0], url: j[1], country: codes[index] }))
             );
           localStorage.setItem('urls', JSON.stringify(data));
-          setChannel({
-            ...channel,
-            iptv: JSON.parse(localStorage.getItem('urls')),
-          });
         });
       })
       .catch((e) => console.log(e));
   }, []);
+
+  const urls = localStorage.getItem('urls')
+    ? JSON.parse(localStorage.getItem('urls'))
+    : [];
 
   return (
     <>
@@ -117,16 +116,14 @@ const App = () => {
       {url === null ? (
         <div className='bg-black vh-100 vw-100 d-flex flex-column justify-content-center align-items-center text-white'>
           <p>Please enter a URL to watch!</p>
-          <p>
-            See available channels:{' '}
-            <a
-              className='text-muted font-weight-bold'
-              variant='link'
-              onClick={handleShow}
-            >
-              Listing
-            </a>
-          </p>
+          <p>See available channels:</p>
+          <Button
+            className='text-muted font-weight-bold'
+            variant='dark'
+            onClick={handleShow}
+          >
+            Listing
+          </Button>
         </div>
       ) : (
         <ReactPlayer className='app' controls playing url={url} />
@@ -136,14 +133,13 @@ const App = () => {
           <Modal.Title>Available M3U8 links from IPTV</Modal.Title>
         </Modal.Header>
         <Modal.Body className='window'>
-          {iptv.length === 0 ? (
+          {urls.length === 0 ? (
             'Loading Channels...'
           ) : (
             <Table
               variant='dark'
               size='sm'
               bordered
-              condensed
               hover
               striped
               className='m-0'
@@ -156,30 +152,34 @@ const App = () => {
                 </tr>
               </thead>
               <tbody>
-                {iptv.map((i, index) =>
-                  i.map((j) => {
-                    return (
-                      <tr key={index}>
-                        <td className='text-wrap text-uppercase'>
-                          {j.country}
-                        </td>
-                        <td className='text-wrap'>{j.title}</td>
-                        <td className='text-wrap'>
-                          <CopyToClipboard
-                            text={j.url}
-                            onCopy={() => alert('URL copied successfully!')}
-                          >
-                            <Button variant='dark'>
-                              <div className='d-flex justify-content-center align-items-center'>
-                                <FaRegCopy />
-                              </div>
-                            </Button>
-                          </CopyToClipboard>
-                        </td>
-                      </tr>
-                    );
-                  })
-                )}
+                {urls.map((i, idx) => {
+                  return (
+                    <React.Fragment key={idx}>
+                      {i.map((j, index) => {
+                        return (
+                          <tr key={index}>
+                            <td className='text-wrap text-uppercase'>
+                              {j.country}
+                            </td>
+                            <td className='text-wrap'>{j.title}</td>
+                            <td className='text-wrap'>
+                              <CopyToClipboard
+                                text={j.url}
+                                onCopy={() => alert('URL copied successfully!')}
+                              >
+                                <Button variant='dark'>
+                                  <div className='d-flex justify-content-center align-items-center'>
+                                    <FaRegCopy />
+                                  </div>
+                                </Button>
+                              </CopyToClipboard>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </React.Fragment>
+                  );
+                })}
               </tbody>
             </Table>
           )}
