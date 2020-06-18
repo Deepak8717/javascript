@@ -10,6 +10,10 @@ html {
   background: black;
 }
 
+body {
+  background: black;
+}
+
 aside {
   display: flex;
   position: fixed;
@@ -49,6 +53,10 @@ a:focus {
   cursor: pointer;
 }
 
+.modal-title {
+  line-height: 1;
+}
+
 .modal-dialog,
 .modal-content {
   height: 80vh;
@@ -56,4 +64,13 @@ a:focus {
 
 .modal-body {
   overflow-y: scroll;
+}
+
+.close {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.close span {
+  color: white;
 }

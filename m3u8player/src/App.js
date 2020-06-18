@@ -156,11 +156,14 @@ const App = () => {
         </div>
       ) : (
         <>
-          <ReactPlayer className='app' controls playing url={url} />
+          <ReactPlayer className='app' playing controls url={url} />
         </>
       )}
-      <Modal show={show} onHide={handleClose} className='shadow-lg'>
-        <Modal.Header className='bg-dark text-white rounded-0' closeButton>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header
+          className='bg-dark text-white rounded-0 d-flex justify-content-between align-items-center'
+          closeButton
+        >
           <Modal.Title>Available Channels</Modal.Title>
         </Modal.Header>
         <Modal.Body className='bg-dark text-white p-0 rounded-0 '>
