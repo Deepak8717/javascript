@@ -6,8 +6,10 @@ import {
   InputGroup,
   FormControl,
   Modal,
+  Card,
   Table,
   ButtonGroup,
+  Accordion,
 } from 'react-bootstrap';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { FaRegCopy } from 'react-icons/fa';
@@ -50,11 +52,12 @@ const App = () => {
         const codes = d
           .split('#')
           .map((i) => i.replace(/\n/gi, ''))
-          .map((i) => i.replace(/EXTINF:-1,/gi, ''))
-          .map((i) => i.match(/(?<=\/)(.*?)(?=\.)/, '$2'))
-          .filter((el) => el != null)
+          .filter((i) => i !== '')
+          .filter((i) => (i.includes('EXTM3U') ? null : i))
+          .map((i) => i.split('channels'))
           .map((i) => i[0])
-          .map((i) => i);
+          .map((i) => i.split(','))
+          .map((i) => i[1]);
         const urls = d
           .split('#')
           .map((i) => i.replace(/\n/gi, ''))
@@ -135,59 +138,74 @@ const App = () => {
         <ReactPlayer className='app' controls playing url={url} />
       )}
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header className='bg-dark text-white' closeButton>
           <Modal.Title>Available M3U8 links from IPTV</Modal.Title>
         </Modal.Header>
-        <Modal.Body className='window'>
+        <Modal.Body className='bg-dark text-white'>
           {urls.length === 0 ? (
             'Loading Channels...'
           ) : (
-            <Table
-              variant='dark'
-              size='sm'
-              bordered
-              hover
-              striped
-              className='m-0'
-            >
-              <thead>
-                <tr>
-                  <td>Country</td>
-                  <td>Title</td>
-                  <td>URL</td>
-                </tr>
-              </thead>
-              <tbody>
-                {urls.map((i, idx) => {
-                  return (
-                    <React.Fragment key={idx}>
-                      {i.map((j, index) => {
-                        return (
-                          <tr key={index}>
-                            <td className='text-wrap text-uppercase'>
-                              {j.country}
-                            </td>
-                            <td className='text-wrap'>{j.title}</td>
-                            <td className='text-wrap'>
-                              <CopyToClipboard
-                                text={j.url}
-                                onCopy={() => alert('URL copied successfully!')}
-                              >
-                                <Button variant='dark'>
-                                  <div className='d-flex justify-content-center align-items-center'>
-                                    <FaRegCopy />
-                                  </div>
-                                </Button>
-                              </CopyToClipboard>
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </React.Fragment>
-                  );
-                })}
-              </tbody>
-            </Table>
+            <Accordion defaultActiveKey='0'>
+              {urls.map((i, idx) => {
+                return (
+                  <Card>
+                    <Accordion.Toggle
+                      className='bg-dark'
+                      variant='dark'
+                      as={Card.Header}
+                      eventKey={idx}
+                    >
+                      {i.length !== 0 ? i[0].country : 'Undefined'}
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey={idx}>
+                      <Card.Body className='bg-dark p-0'>
+                        <Table
+                          variant='dark'
+                          size='sm'
+                          bordered
+                          hover
+                          striped
+                          className='m-0'
+                        >
+                          <thead>
+                            <tr>
+                              <td className='px-3'>Title</td>
+                              <td className='px-3'>URL</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {i.map((j, id) => {
+                              return (
+                                <tr key={id}>
+                                  <td className='text-wrap px-3'>{j.title}</td>
+                                  <td className='text-wrap px-3'>
+                                    <CopyToClipboard
+                                      text={j.url}
+                                      onCopy={() =>
+                                        alert('URL copied successfully!')
+                                      }
+                                    >
+                                      <Button
+                                        variant='secondary'
+                                        className='shadow-lg'
+                                      >
+                                        <div className='d-flex justify-content-center align-items-center'>
+                                          <FaRegCopy />
+                                        </div>
+                                      </Button>
+                                    </CopyToClipboard>
+                                  </td>
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </Table>
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                );
+              })}
+            </Accordion>
           )}
         </Modal.Body>
       </Modal>
