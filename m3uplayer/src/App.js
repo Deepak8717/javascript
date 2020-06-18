@@ -49,8 +49,20 @@ const App = () => {
         </Button>
       </aside>
       {url === null ? (
-        <div className='bg-black vh-100 vw-100 d-flex justify-content-center align-items-center'>
-          <p className='text-white'>Please enter a URL to watch!</p>
+        <div className='bg-black vh-100 vw-100 d-flex flex-column justify-content-center align-items-center text-white'>
+          <p>Please enter a URL to watch!</p>
+          <p>
+            Check available channels online at this address:{' '}
+            <a
+              className='text-muted text-decoration-none font-weight-bold'
+              variant='link'
+              href='https://iptv-org.netlify.app'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Listing
+            </a>
+          </p>
         </div>
       ) : (
         <ReactPlayer className='app' controls playing url={url} />
