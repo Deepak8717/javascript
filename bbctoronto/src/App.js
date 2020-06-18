@@ -7,7 +7,7 @@ const App = () => {
       className='app'
       controls
       playing
-      url='http://start.agmediachandigarh.com/gaundapunjab/tv/playlist.m3u8'
+      url='https://cors-unlimited.herokuapp.com/http://start.agmediachandigarh.com/gaundapunjab/tv/playlist.m3u8'
     />
   );
 };
