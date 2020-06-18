@@ -7,6 +7,7 @@ import {
   FormControl,
   Modal,
   Table,
+  ButtonGroup,
 } from 'react-bootstrap';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { FaRegCopy } from 'react-icons/fa';
@@ -102,9 +103,18 @@ const App = () => {
                 placeholder='Enter M3U8 URL'
               />
               <InputGroup.Append>
-                <Button type='submit' variant='secondary'>
-                  Watch
-                </Button>
+                <ButtonGroup>
+                  <Button
+                    className='rounded-0'
+                    variant='dark'
+                    onClick={handleShow}
+                  >
+                    Listing
+                  </Button>
+                  <Button type='submit' variant='secondary'>
+                    Watch
+                  </Button>
+                </ButtonGroup>
               </InputGroup.Append>
             </InputGroup>
           </Form>
@@ -116,14 +126,10 @@ const App = () => {
       {url === null ? (
         <div className='bg-black vh-100 vw-100 d-flex flex-column justify-content-center align-items-center text-white'>
           <p>Please enter a URL to watch!</p>
-          <p>See available channels:</p>
-          <Button
-            className='text-muted font-weight-bold'
-            variant='dark'
-            onClick={handleShow}
-          >
-            Listing
-          </Button>
+          <p>
+            See available channels by pressing <strong>Listing</strong>{' '}
+            button...
+          </p>
         </div>
       ) : (
         <ReactPlayer className='app' controls playing url={url} />
