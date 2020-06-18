@@ -36,13 +36,10 @@ a:focus {
   height: 100vh !important;
 }
 
-.modal-dialog {
-  width: 98%;
-  height: 92%;
-  padding: 0;
+.input {
+  width: 50vw;
 }
 
-.modal-content {
-  overflow: auto;
-  height: 99%;
+.menu {
+  height: 2.375rem;
 }

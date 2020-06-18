@@ -12,15 +12,16 @@ import {
   Accordion,
 } from 'react-bootstrap';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { FaRegCopy } from 'react-icons/fa';
+import { FaRegCopy, FaListUl, FaPlayCircle, FaBars } from 'react-icons/fa';
 
 const App = () => {
   const [channel, setChannel] = useState({
     keyword: '',
     url: null,
     toggle: false,
+    urls: [],
   });
-  const { keyword, url, toggle } = channel;
+  const { keyword, url, toggle, urls } = channel;
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -30,6 +31,7 @@ const App = () => {
     setChannel({
       ...channel,
       url: `https://cors-unlimited.herokuapp.com/${keyword}`,
+      keyword: '',
     });
   };
   const handleChange = (e) => {
@@ -62,8 +64,11 @@ const App = () => {
           .split('#')
           .map((i) => i.replace(/\n/gi, ''))
           .map((i) => i.replace(/EXTINF:-1,/gi, ''))
-          .map((i) => i.match(/(?<=\/)(.*?)(?=\.)/, '$2'))
-          .filter((el) => el != null)
+          .filter((i) => i !== '')
+          .filter((i) => (i.includes('EXTM3U') ? null : i))
+          .map((i) => i.split('/'))
+          .map((i) => i[1])
+          .map((i) => i.split('.'))
           .map((i) => i[0])
           .map(
             (i) =>
@@ -82,22 +87,22 @@ const App = () => {
             .map((i, index) =>
               i.map((j) => ({ title: j[0], url: j[1], country: codes[index] }))
             );
-          localStorage.setItem('urls', JSON.stringify(data));
+          setChannel({
+            ...channel,
+            urls: data,
+          });
         });
       })
       .catch((e) => console.log(e));
+    // eslint-disable-next-line
   }, []);
-
-  const urls = localStorage.getItem('urls')
-    ? JSON.parse(localStorage.getItem('urls'))
-    : [];
 
   return (
     <>
       <aside>
         {!toggle && (
-          <Form onSubmit={handleSubmit}>
-            <InputGroup>
+          <Form className='d-flex justify-content-end' onSubmit={handleSubmit}>
+            <InputGroup className='input'>
               <FormControl
                 type='url'
                 name='keyword'
@@ -112,43 +117,53 @@ const App = () => {
                     variant='dark'
                     onClick={handleShow}
                   >
-                    Listing
+                    <div className='d-flex justify-content-center align-items-center'>
+                      <FaListUl />
+                    </div>
                   </Button>
                   <Button type='submit' variant='secondary'>
-                    Watch
+                    <div className='d-flex justify-content-center align-items-center'>
+                      <FaPlayCircle />
+                    </div>
                   </Button>
                 </ButtonGroup>
               </InputGroup.Append>
             </InputGroup>
           </Form>
         )}
-        <Button className='ml-3' variant='dark' onClick={handleToggle}>
-          {toggle ? 'Show' : 'Hide'}
+        <Button className='ml-3 menu' variant='dark' onClick={handleToggle}>
+          <div className='d-flex justify-content-center align-items-center'>
+            <FaBars />
+          </div>
         </Button>
       </aside>
       {url === null ? (
         <div className='bg-black vh-100 vw-100 d-flex flex-column justify-content-center align-items-center text-white'>
-          <p>Please enter a URL to watch!</p>
-          <p>
-            See available channels by pressing <strong>Listing</strong>{' '}
-            button...
-          </p>
+          <div className='mx-3 text-center'>
+            <p>Please enter a URL to watch!</p>
+            <p>
+              See available channels by pressing <strong>Listing</strong>{' '}
+              button...
+            </p>
+          </div>
         </div>
       ) : (
-        <ReactPlayer className='app' controls playing url={url} />
+        <>
+          <ReactPlayer className='app' controls playing url={url} />
+        </>
       )}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header className='bg-dark text-white' closeButton>
-          <Modal.Title>Available M3U8 links from IPTV</Modal.Title>
+          <Modal.Title>Available Channels</Modal.Title>
         </Modal.Header>
-        <Modal.Body className='bg-dark text-white'>
+        <Modal.Body className='bg-dark text-white p-0 rounded-0'>
           {urls.length === 0 ? (
             'Loading Channels...'
           ) : (
-            <Accordion defaultActiveKey='0'>
+            <Accordion defaultActiveKey='0' className='rounded-0'>
               {urls.map((i, idx) => {
                 return (
-                  <Card>
+                  <Card key={idx} className='rounded-0'>
                     <Accordion.Toggle
                       className='bg-dark'
                       variant='dark'
