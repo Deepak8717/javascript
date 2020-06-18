@@ -43,3 +43,17 @@ a:focus {
 .menu {
   height: 2.375rem;
 }
+
+.card:hover,
+.card:focus {
+  cursor: pointer;
+}
+
+.modal-dialog,
+.modal-content {
+  height: 80vh;
+}
+
+.modal-body {
+  overflow-y: scroll;
+}

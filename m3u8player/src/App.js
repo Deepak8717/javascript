@@ -41,6 +41,13 @@ const App = () => {
   const handleToggle = () => {
     setChannel({ ...channel, toggle: !toggle });
   };
+  const handlePlay = (currentUrl) => {
+    setChannel({
+      ...channel,
+      url: `https://cors-unlimited.herokuapp.com/${currentUrl}`,
+      keyword: '',
+    });
+  };
 
   useEffect(() => {
     (async () => {
@@ -152,18 +159,18 @@ const App = () => {
           <ReactPlayer className='app' controls playing url={url} />
         </>
       )}
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header className='bg-dark text-white' closeButton>
+      <Modal show={show} onHide={handleClose} className='shadow-lg'>
+        <Modal.Header className='bg-dark text-white rounded-0' closeButton>
           <Modal.Title>Available Channels</Modal.Title>
         </Modal.Header>
-        <Modal.Body className='bg-dark text-white p-0 rounded-0'>
+        <Modal.Body className='bg-dark text-white p-0 rounded-0 '>
           {urls.length === 0 ? (
-            'Loading Channels...'
+            <p className='pt-3 px-3'>Loading Channels...</p>
           ) : (
             <Accordion defaultActiveKey='0' className='rounded-0'>
               {urls.map((i, idx) => {
                 return (
-                  <Card key={idx} className='rounded-0'>
+                  <Card key={idx} className='rounded-0 border-0 shadow-lg'>
                     <Accordion.Toggle
                       className='bg-dark'
                       variant='dark'
@@ -177,38 +184,49 @@ const App = () => {
                         <Table
                           variant='dark'
                           size='sm'
-                          bordered
+                          //bordered
                           hover
                           striped
                           className='m-0'
                         >
                           <thead>
                             <tr>
-                              <td className='px-3'>Title</td>
-                              <td className='px-3'>URL</td>
+                              <td className='p-3'>Title</td>
+                              <td className='p-3'>URL</td>
                             </tr>
                           </thead>
                           <tbody>
                             {i.map((j, id) => {
                               return (
                                 <tr key={id}>
-                                  <td className='text-wrap px-3'>{j.title}</td>
-                                  <td className='text-wrap px-3'>
-                                    <CopyToClipboard
-                                      text={j.url}
-                                      onCopy={() =>
-                                        alert('URL copied successfully!')
-                                      }
-                                    >
+                                  <td className='text-wrap p-3'>{j.title}</td>
+                                  <td className='text-wrap p-3'>
+                                    <ButtonGroup>
                                       <Button
-                                        variant='secondary'
+                                        variant='dark'
                                         className='shadow-lg'
+                                        onClick={() => handlePlay(j.url)}
                                       >
                                         <div className='d-flex justify-content-center align-items-center'>
-                                          <FaRegCopy />
+                                          <FaPlayCircle />
                                         </div>
                                       </Button>
-                                    </CopyToClipboard>
+                                      <CopyToClipboard
+                                        text={j.url}
+                                        onCopy={() =>
+                                          alert('URL copied successfully!')
+                                        }
+                                      >
+                                        <Button
+                                          variant='secondary'
+                                          className='shadow-lg'
+                                        >
+                                          <div className='d-flex justify-content-center align-items-center'>
+                                            <FaRegCopy />
+                                          </div>
+                                        </Button>
+                                      </CopyToClipboard>
+                                    </ButtonGroup>
                                   </td>
                                 </tr>
                               );
