@@ -16,10 +16,10 @@ import { FaRegCopy, FaListUl, FaPlayCircle, FaBars } from 'react-icons/fa';
 
 const App = () => {
   const [channel, setChannel] = useState({
-    keyword: '',
     url: null,
-    toggle: false,
     urls: [],
+    keyword: '',
+    toggle: false,
   });
   const { keyword, url, toggle, urls } = channel;
 
@@ -155,9 +155,7 @@ const App = () => {
           </div>
         </div>
       ) : (
-        <>
-          <ReactPlayer className='app' playing controls url={url} />
-        </>
+        <ReactPlayer className='app' playing controls url={url} />
       )}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header
@@ -170,7 +168,7 @@ const App = () => {
           {urls.length === 0 ? (
             <p className='pt-3 px-3'>Loading Channels...</p>
           ) : (
-            <Accordion defaultActiveKey='0' className='rounded-0'>
+            <Accordion className='rounded-0'>
               {urls.map((i, idx) => {
                 return (
                   <Card key={idx} className='rounded-0 border-0 shadow-lg'>
@@ -187,7 +185,6 @@ const App = () => {
                         <Table
                           variant='dark'
                           size='sm'
-                          //bordered
                           hover
                           striped
                           className='m-0'
