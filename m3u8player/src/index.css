@@ -1,7 +1,12 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --font-family-sans-serif: 'Manrope', sans-serif;
 }
 
 html {
@@ -12,6 +17,7 @@ html {
 
 body {
   background: black;
+  font-family: var(--font-family-sans-serif) !important;
 }
 
 aside {
@@ -73,4 +79,31 @@ a:focus {
 
 .close span {
   color: white;
+}
+
+.banner {
+  background: transparent no-repeat
+    url('https://images.unsplash.com/flagged/photo-1574097656146-0b43b7660cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80')
+    center center/cover;
+  position: relative;
+}
+
+.banner__text {
+  position: relative;
+  z-index: 1;
+}
+
+aside {
+  z-index: 1;
+}
+
+.banner::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 0;
 }
