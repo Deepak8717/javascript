@@ -1,5 +1,5 @@
 {
-  "name": "m3uplayer",
+  "name": "m3u8-player",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,7 +11,6 @@
     "react-bootstrap": "^1.0.1",
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.1",
-    "react-hls": "^0.0.8",
     "react-icons": "^3.10.0",
     "react-player": "^2.3.1",
     "react-scripts": "3.4.1"
