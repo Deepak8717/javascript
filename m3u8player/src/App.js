@@ -57,7 +57,8 @@ const App = () => {
             .map((i) => i.map((j) => j.split('\n')))
             .map((i, index) =>
               i.map((j) => ({ title: j[0], url: j[1], country: codes[index] }))
-            );
+            )
+            .filter((i) => i.length !== 0);
           setChannel({
             ...channel,
             urls: data,
