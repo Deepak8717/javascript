@@ -22,7 +22,7 @@ const App = () => {
       return t;
     })()
       .then((d) => {
-        const codes = d
+        let codes = d
           .split('#')
           .map((i) => i.replace(/\n/gi, ''))
           .filter((i) => i !== '')
@@ -31,6 +31,7 @@ const App = () => {
           .map((i) => i[0])
           .map((i) => i.split(','))
           .map((i) => i[1]);
+        codes.unshift('Universal');
         const urls = d
           .split('#')
           .map((i) => i.replace(/\n/gi, ''))
@@ -45,6 +46,9 @@ const App = () => {
             (i) =>
               `https://cors-unlimited.herokuapp.com/https://raw.githubusercontent.com/iptv-org/iptv/master/channels/${i}.m3u`
           );
+        urls.unshift(
+          'https://cors-unlimited.herokuapp.com/https://raw.githubusercontent.com/iptv-org/iptv/master/channels/unsorted.m3u'
+        );
         const promises = urls.map((url) => fetch(url).then((y) => y.text()));
         Promise.all(promises).then((results) => {
           const data = results
@@ -58,7 +62,12 @@ const App = () => {
             .map((i, index) =>
               i.map((j) => ({ title: j[0], url: j[1], country: codes[index] }))
             )
-            .filter((i) => i.length !== 0);
+            .filter((i) => i.length !== 0)
+            .map((i) =>
+              i.sort((a, b) =>
+                a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1
+              )
+            );
           setChannel({
             ...channel,
             urls: data,
