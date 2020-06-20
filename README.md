@@ -54,6 +54,7 @@ Send me a PR if you notice any broken links or other underlying bug.
 | Stars                                      | [View Demo](https://tpkahlon.github.io/javascript/stars)                 |
 | Tabs                                       | [View Demo](https://tpkahlon.github.io/javascript/41)                    |
 | Toronto                                    | [View Demo](https://tpkahlon.github.io/javascript/toronto)               |
+| YouTube Playlist Duration Calculator       | [View Demo](https://tpkahlon.github.io/javascript/44)                    |
 | Wall Clock                                 | [View Demo](https://tpkahlon.github.io/javascript/25)                    |
 | Windows XP Screensaver                     | [View Demo](https://tpkahlon.github.io/javascript/15)                    |
 
