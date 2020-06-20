@@ -34,7 +34,13 @@ const makeImage = () => {
 };
 
 const getWord = () => {
-  return `${getCharacter()}${getCharacter()}${getCharacter()}${getCharacter()}${getCharacter()}${getCharacter()}`;
+  let newWord = ``;
+  let count = 0;
+  while (count < 6) {
+    newWord += getCharacter();
+    count++;
+  }
+  return newWord;
 };
 
 generate.addEventListener('click', () => makeImage());
