@@ -1,27 +1,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-// import Frame from './Frame';
 
 const Player = ({ url }) => {
-  // const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-  // const isMobile = () => {
-  //   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-  //     navigator.userAgent
-  //   );
-  // };
-  // const iframe = `
-  //   <iframe src="https://www.hlsplayer.net/" frameborder="no" allowtransparency="true" allowfullscreen="true">
-  //   </iframe>
-  // `;
-  /*
-    <>
-      {isMobile() ? (
-        <Frame iframe={iframe} />
-      ) : (
-        <ReactPlayer className='app' playing controls url={url} />
-      )}
-    </>
-  */
   return (
     <>
       {url === null ? (
