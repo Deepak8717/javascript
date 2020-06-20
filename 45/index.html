@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Captcha</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      href="https://image.flaticon.com/icons/svg/2219/2219225.svg"
+      type="image/svg"
+    />
+  </head>
+
+  <body class="bg-dark text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col col-12">
+          <h1 class="my-3">Captcha</h1>
+          <button id="generate" class="btn btn-primary mb-3">Generate</button>
+          <canvas class="d-none" id="captcha"></canvas>
+          <div class="d-block">
+            <img id="image" class="img-fluid rounded" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
