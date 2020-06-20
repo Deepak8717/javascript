@@ -1,18 +1,27 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import Frame from './Frame';
+// import Frame from './Frame';
 
 const Player = ({ url }) => {
   // const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-  const isMobile = () => {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent
-    );
-  };
-  const iframe = `
-    <iframe src="https://www.hlsplayer.net/" frameborder="no" allowtransparency="true" allowfullscreen="true">
-    </iframe>
-  `;
+  // const isMobile = () => {
+  //   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+  //     navigator.userAgent
+  //   );
+  // };
+  // const iframe = `
+  //   <iframe src="https://www.hlsplayer.net/" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  //   </iframe>
+  // `;
+  /*
+    <>
+      {isMobile() ? (
+        <Frame iframe={iframe} />
+      ) : (
+        <ReactPlayer className='app' playing controls url={url} />
+      )}
+    </>
+  */
   return (
     <>
       {url === null ? (
@@ -27,20 +36,14 @@ const Player = ({ url }) => {
               button...
             </p>
             <p>
-              Due to lack of support for HLS playback in Phones, I am using
-              third-party site to play the M3U8 URL on phones. Make sure to copy
-              the URL of channel you would like to play and add in the page.
+              Streams are compatible in Browsers running on Desktop/Laptop
+              environments. I am trying my best to figure out how to make
+              streams run on Phones.
             </p>
           </div>
         </div>
       ) : (
-        <>
-          {isMobile() ? (
-            <Frame iframe={iframe} />
-          ) : (
-            <ReactPlayer className='app' playing controls url={url} />
-          )}
-        </>
+        <ReactPlayer className='app' playing controls url={url} />
       )}
     </>
   );
