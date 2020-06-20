@@ -22,6 +22,7 @@ Send me a PR if you notice any broken links or other underlying bug.
 | Basic Web Crawler                          | [View Demo](https://tpkahlon.github.io/javascript/16)                    |
 | BetaKit RSS Compiler                       | [View Demo](https://tpkahlon.github.io/javascript/33)                    |
 | Calculator                                 | [View Demo](https://tpkahlon.github.io/javascript/calculator)            |
+| Captcha                                    | [View Demo](https://tpkahlon.github.io/javascript/45)                    |
 | Cat Me                                     | [View Demo](https://tpkahlon.github.io/javascript/cat-gallery)           |
 | Cat in Space                               | [View Demo](https://tpkahlon.github.io/javascript/32)                    |
 | Check Unicode of a String                  | [View Demo](https://tpkahlon.github.io/javascript/check-unicode)         |
