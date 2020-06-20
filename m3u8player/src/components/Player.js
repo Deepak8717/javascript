@@ -1,7 +1,18 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
+import Frame from './Frame';
 
 const Player = ({ url }) => {
+  // const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  const isMobile = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+  };
+  const iframe = `
+    <iframe src="https://www.hlsplayer.net/" frameborder="no" allowtransparency="true" allowfullscreen="true">
+    </iframe>
+  `;
   return (
     <>
       {url === null ? (
@@ -16,14 +27,20 @@ const Player = ({ url }) => {
               button...
             </p>
             <p>
-              HLS stream is not supported on iPhone and certain mobile devices.
-              Please make sure you use desktop/laptop browser to watch live
-              channels.
+              Due to lack of support for HLS playback in Phones, I am using
+              third-party site to play the M3U8 URL on phones. Make sure to copy
+              the URL of channel you would like to play and add in the page.
             </p>
           </div>
         </div>
       ) : (
-        <ReactPlayer className='app' playing controls url={url} />
+        <>
+          {isMobile() ? (
+            <Frame iframe={iframe} />
+          ) : (
+            <ReactPlayer className='app' playing controls url={url} />
+          )}
+        </>
       )}
     </>
   );

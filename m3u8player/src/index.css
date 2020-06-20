@@ -32,6 +32,15 @@ table {
   word-wrap: break-word;
 }
 
+aside {
+  z-index: 1;
+}
+
+iframe {
+  width: 100vw;
+  height: 100vh;
+}
+
 a:hover,
 a:focus {
   cursor: pointer;
@@ -90,10 +99,6 @@ a:focus {
 
 .banner__text {
   position: relative;
-  z-index: 1;
-}
-
-aside {
   z-index: 1;
 }
 
