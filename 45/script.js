@@ -30,11 +30,11 @@ const makeImage = () => {
   context.fillStyle = '#222';
   context.fillText(newWord, 150, 75);
   image.src = context.canvas.toDataURL();
-  return newWord;
+  return false;
 };
 
 const getWord = () => {
   return `${getCharacter()}${getCharacter()}${getCharacter()}${getCharacter()}${getCharacter()}${getCharacter()}`;
 };
 
-generate.addEventListener('click', () => (captcha.innerHTML = makeImage()));
+generate.addEventListener('click', () => makeImage());
