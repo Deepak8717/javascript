@@ -44,7 +44,6 @@ const App = () => {
             const currentUrl = i.slice(currentIndex);
             return currentUrl;
           });
-        console.log(badLinks);
         codes.unshift('Universal');
         const urls = primary
           .split('#')
