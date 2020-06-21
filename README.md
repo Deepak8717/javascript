@@ -83,8 +83,8 @@ Send me a PR if you notice any broken links or other underlying bug.
 | Hukamama                         | [View Demo](https://hukamnama.netlify.app/)         |
 | Indian Geography                 | [View Demo](https://indiangeography.netlify.app)    |
 | IPTV                             | [View Demo](https://iptv-org.netlify.app)           |
+| Jackal                           | [View Demo](https://jackal.netlify.app)             |
 | LearnYou                         | [View Demo](https://learnyou.netlify.app)           |
-| M3U8Player                       | [View Demo](https://m3u8player.netlify.app)         |
 | Multiple Images                  | [View Demo](https://multiple-images.netlify.app)    |
 | Numbers                          | [View Demo](https://numbersapi.netlify.app)         |
 | Radio Stations (Punjabi Edition) | [View Demo](https://japji.netlify.app)              |
