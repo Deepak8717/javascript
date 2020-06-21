@@ -39,6 +39,27 @@ const Player = ({ url }) => {
               this application to play stream as <strong>HLS</strong> stream is
               not widely supported on phones.
             </p>
+            <p>
+              This application endorse general content only. The database comes
+              from{' '}
+              <a
+                href='https://github.com/iptv-org/iptv'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <strong>IPTV</strong>
+              </a>
+              's repository. If a user notice any unwanted stream listed here,
+              please report the stream &nbsp;
+              <a
+                href='https://github.com/tpkahlon/javascript/pulls'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <strong>here</strong>
+              </a>
+              . Such stream will be taken down immediately.
+            </p>
           </div>
         </div>
       ) : (

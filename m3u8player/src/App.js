@@ -83,7 +83,8 @@ const App = () => {
             )
             .map((i) =>
               i.filter((j) => (badLinks.indexOf(j.url) === -1 ? j : false))
-            );
+            )
+            .map((i) => i.filter((j) => (j.title.includes('XXX') ? false : j)));
           // .map((i) =>
           //   i.map((j) => {
           //     console.log(badLinks.some((k) => k === j.url));
