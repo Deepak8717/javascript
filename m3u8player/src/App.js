@@ -14,15 +14,17 @@ const App = () => {
   const { keyword, url, toggle, urls } = channel;
 
   useEffect(() => {
-    (async () => {
-      const r = await fetch(
-        `https://raw.githubusercontent.com/iptv-org/iptv/master/index.m3u`
-      );
-      const t = await r.text();
-      return t;
-    })()
-      .then((d) => {
-        let codes = d
+    const mainUrls = [
+      `https://cors-unlimited.herokuapp.com/https://raw.githubusercontent.com/iptv-org/iptv/master/index.m3u`,
+      `https://cors-unlimited.herokuapp.com/https://iptv-org.github.io/iptv/categories/xxx.m3u`,
+    ];
+    const mainPromises = mainUrls.map(
+      async (url) => await fetch(url).then(async (y) => await y.text())
+    );
+    Promise.all(mainPromises)
+      .then((results) => {
+        const [primary, secondary] = results;
+        let codes = primary
           .split('#')
           .map((i) => i.replace(/\n/gi, ''))
           .filter((i) => i !== '')
@@ -31,8 +33,20 @@ const App = () => {
           .map((i) => i[0])
           .map((i) => i.split(','))
           .map((i) => i[1]);
+        let badLinks = secondary
+          .split('#')
+          .map((i) => i.replace(/\n/gi, ''))
+          .filter((i) => i !== '')
+          .filter((i) => (i.includes('EXTM3U') ? null : i))
+          .map((i) => i.split('group-title')[1])
+          .map((i) => {
+            const currentIndex = i.indexOf('http');
+            const currentUrl = i.slice(currentIndex);
+            return currentUrl;
+          });
+        console.log(badLinks);
         codes.unshift('Universal');
-        const urls = d
+        const urls = primary
           .split('#')
           .map((i) => i.replace(/\n/gi, ''))
           .map((i) => i.replace(/EXTINF:-1,/gi, ''))
@@ -67,7 +81,16 @@ const App = () => {
               i.sort((a, b) =>
                 a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1
               )
+            )
+            .map((i) =>
+              i.filter((j) => (badLinks.indexOf(j.url) === -1 ? j : false))
             );
+          // .map((i) =>
+          //   i.map((j) => {
+          //     console.log(badLinks.some((k) => k === j.url));
+          //     return j;
+          //   })
+          // );
           setChannel({
             ...channel,
             urls: data,
