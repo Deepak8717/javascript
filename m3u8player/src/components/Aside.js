@@ -7,7 +7,8 @@ import {
   FormControl,
   ButtonGroup,
 } from 'react-bootstrap';
-import { FaListUl, FaPlayCircle, FaBars } from 'react-icons/fa';
+import { FaListUl, FaPlayCircle } from 'react-icons/fa';
+import { BsArrowsFullscreen } from 'react-icons/bs';
 
 const Aside = ({ keyword, toggle, channel, setShow, setChannel }) => {
   const handleShow = () => setShow(true);
@@ -42,14 +43,14 @@ const Aside = ({ keyword, toggle, channel, setShow, setChannel }) => {
               <ButtonGroup>
                 <Button
                   className='rounded-0'
-                  variant='dark'
+                  variant='outline-light'
                   onClick={handleShow}
                 >
                   <Icon>
                     <FaListUl />
                   </Icon>
                 </Button>
-                <Button type='submit' variant='secondary'>
+                <Button type='submit' variant='outline-light'>
                   <Icon>
                     <FaPlayCircle />
                   </Icon>
@@ -59,9 +60,13 @@ const Aside = ({ keyword, toggle, channel, setShow, setChannel }) => {
           </InputGroup>
         </Form>
       )}
-      <Button className='ml-3 menu' variant='dark' onClick={handleToggle}>
+      <Button
+        className='ml-3 menu'
+        variant='outline-light'
+        onClick={handleToggle}
+      >
         <Icon>
-          <FaBars />
+          <BsArrowsFullscreen />
         </Icon>
       </Button>
     </aside>

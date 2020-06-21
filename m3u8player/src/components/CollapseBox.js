@@ -1,5 +1,7 @@
 import React from 'react';
 import Listing from './Listing';
+import Icon from './Icon';
+import { FaPlus } from 'react-icons/fa';
 import { Card, Accordion } from 'react-bootstrap';
 
 const CollapseBox = ({ urls, channel, setChannel }) => {
@@ -14,7 +16,16 @@ const CollapseBox = ({ urls, channel, setChannel }) => {
               as={Card.Header}
               eventKey={idx}
             >
-              {i.length !== 0 ? i[0].country : 'Undefined'}
+              {i.length !== 0 ? (
+                <div className='d-flex justify-content-lg-between align-items-center'>
+                  <span>{i[0].country}</span>
+                  <Icon>
+                    <FaPlus />
+                  </Icon>
+                </div>
+              ) : (
+                'Undefined'
+              )}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey={idx}>
               <Card.Body className='bg-dark p-0'>

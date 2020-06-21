@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
+import { FaListUl } from 'react-icons/fa';
+import { BsArrowsFullscreen } from 'react-icons/bs';
 
 const Player = ({ url }) => {
   return (
@@ -7,18 +9,35 @@ const Player = ({ url }) => {
       {url === null ? (
         <div className='banner vh-100 vw-100 d-flex flex-column justify-content-center align-items-center text-white'>
           <div className='banner__text mx-3 text-center'>
-            <h1>
-              Say No to Racism, Say Yes to Peace, Voice for Education to All...
-            </h1>
-            <p>Please enter a URL to watch!</p>
+            <h1 className='m-0 mb-3'>We've come a long way!</h1>
             <p>
-              See available channels by pressing <strong>Listing</strong>{' '}
-              button...
+              Enter M3U8 URL <em className='mx-1'>or</em> See available channels
+              by pressing{' '}
+              <span className='mx-1'>
+                <FaListUl />
+              </span>{' '}
+              button
             </p>
             <p>
-              Streams are compatible in Browsers running on Desktop/Laptop
-              environments. I am trying my best to figure out how to make
-              streams run on Phones.
+              Watch TV channel in theatre mode by pressing{' '}
+              <span className='mx-1'>
+                <BsArrowsFullscreen />
+              </span>{' '}
+              button
+            </p>
+            <p>
+              If you are using a phone, Copy channel link and{' '}
+              <a
+                href='https://www.hlsplayer.net/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <strong>open</strong>
+              </a>{' '}
+              this application to play the stream
+              <br />
+              because <strong>HLS</strong> stream is not supported on mobile
+              devices.
             </p>
           </div>
         </div>
