@@ -10,7 +10,7 @@ const Player = ({ url }) => {
         <div className='banner vh-100 vw-100 d-flex flex-column justify-content-center align-items-center text-white'>
           <div className='banner__text mx-3 text-center w-75'>
             <h1 className='m-0 mb-3'>
-              We've come a long way, <strong>IPTV</strong> for Web is here!
+              <strong>Jackal</strong> brings you IPTV for Web!
             </h1>
             <p>
               Enter M3U8 URL <em className='mx-1'>or</em> See available channels
@@ -36,8 +36,8 @@ const Player = ({ url }) => {
               >
                 <strong>open</strong>
               </a>{' '}
-              this application to play the stream because <strong>HLS</strong>{' '}
-              stream is not supported on mobile devices.
+              this application to play stream as <strong>HLS</strong> stream is
+              not widely supported on phones.
             </p>
           </div>
         </div>

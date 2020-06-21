@@ -92,7 +92,7 @@ a:focus {
 
 .banner {
   background: transparent no-repeat
-    url('https://images.unsplash.com/photo-1528928441742-b4ccac1bb04c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1859&q=80')
+    url('https://images.unsplash.com/photo-1500658374795-49d41946e9cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60')
     center center/cover;
   position: relative;
 }
