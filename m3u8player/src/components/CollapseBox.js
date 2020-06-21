@@ -17,7 +17,7 @@ const CollapseBox = ({ urls, channel, setChannel }) => {
               eventKey={idx}
             >
               {i.length !== 0 ? (
-                <div className='d-flex justify-content-lg-between align-items-center'>
+                <div className='d-flex justify-content-between align-items-center'>
                   <span>{i[0].country}</span>
                   <Icon>
                     <FaPlus />
