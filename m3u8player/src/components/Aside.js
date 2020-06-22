@@ -9,16 +9,26 @@ import {
 } from 'react-bootstrap';
 import { FaListUl, FaPlayCircle } from 'react-icons/fa';
 import { BsArrowsFullscreen } from 'react-icons/bs';
+import { isBrowser, isMobile } from 'react-device-detect';
 
 const Aside = ({ keyword, toggle, channel, setShow, setChannel }) => {
   const handleShow = () => setShow(true);
   const handleSubmit = (e) => {
     e.preventDefault();
-    setChannel({
-      ...channel,
-      url: `https://cors-unlimited.herokuapp.com/${keyword}`,
-      keyword: '',
-    });
+    if (isBrowser) {
+      setChannel({
+        ...channel,
+        url: `https://cors-unlimited.herokuapp.com/${keyword}`,
+        keyword: '',
+      });
+    }
+    if (isMobile) {
+      setChannel({
+        ...channel,
+        keyword: '',
+      });
+      window.open(keyword, '_blank');
+    }
   };
   const handleChange = (e) => {
     const { name, value } = e.target;

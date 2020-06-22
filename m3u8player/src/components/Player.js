@@ -27,18 +27,7 @@ const Player = ({ url }) => {
               </span>{' '}
               button
             </p>
-            <p>
-              If you are using a phone, Copy channel link and{' '}
-              <a
-                href='https://www.hlsplayer.net/'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <strong>open</strong>
-              </a>{' '}
-              this application to play stream as <strong>HLS</strong> stream is
-              not widely supported on phones.
-            </p>
+            <p>If you are using a phone, Stream will open in a new tab.</p>
             <p>
               This application endorse general content only. The database comes
               from{' '}

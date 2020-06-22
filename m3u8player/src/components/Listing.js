@@ -3,14 +3,20 @@ import Icon from './Icon';
 import { ButtonGroup, Button, Table } from 'react-bootstrap';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { FaRegCopy, FaPlayCircle } from 'react-icons/fa';
+import { isBrowser, isMobile } from 'react-device-detect';
 
 const Listing = ({ item, channel, setChannel }) => {
   const handlePlay = (currentUrl) => {
-    setChannel({
-      ...channel,
-      url: `https://cors-unlimited.herokuapp.com/${currentUrl}`,
-      keyword: '',
-    });
+    if (isBrowser) {
+      setChannel({
+        ...channel,
+        url: `https://cors-unlimited.herokuapp.com/${currentUrl}`,
+        keyword: '',
+      });
+    }
+    if (isMobile) {
+      window.open(currentUrl, '_blank');
+    }
   };
   return (
     <Table variant='dark' size='sm' hover striped className='m-0'>
