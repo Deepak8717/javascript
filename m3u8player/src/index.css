@@ -81,6 +81,10 @@ a:focus {
   overflow-y: scroll;
 }
 
+.modal-header {
+  min-height: 4rem;
+}
+
 .close {
   padding-top: 0 !important;
   padding-bottom: 0 !important;

@@ -19,11 +19,15 @@ const Listing = ({ item, channel, setChannel }) => {
     }
   };
   return (
-    <Table variant='dark' size='sm' hover striped className='m-0'>
+    <Table variant='light' size='sm' hover striped className='m-0'>
       <thead>
         <tr>
-          <td className='p-3'>Title</td>
-          <td className='p-3'>URL</td>
+          <td className='p-3'>
+            <strong>Channel</strong>
+          </td>
+          <td className='p-3'>
+            <strong>Controls</strong>
+          </td>
         </tr>
       </thead>
       <tbody>
@@ -31,7 +35,9 @@ const Listing = ({ item, channel, setChannel }) => {
           const { title, url } = j;
           return (
             <tr key={id}>
-              <td className='text-wrap p-3'>{title}</td>
+              <td className='text-wrap p-3 d-flex align-items-center'>
+                {title}
+              </td>
               <td className='text-wrap p-3'>
                 <ButtonGroup>
                   <Button
