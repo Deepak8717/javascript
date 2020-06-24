@@ -1,6 +1,11 @@
 import ClipboardJS from 'clipboard/dist/clipboard.min';
 
 const staticActions = () => {
+  document.querySelectorAll('td').forEach((x) => {
+    if (x.textContent.trim() === 'XXX') {
+      x.parentElement.style.display = 'none';
+    }
+  });
   const timer = setTimeout(() => {
     document.querySelectorAll('code').forEach((i) => {
       let newNode = document.createElement('button');
