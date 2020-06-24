@@ -103,6 +103,15 @@ const index = () => {
           </ListGroup.Item>
           <ListGroup.Item className='shadow' action>
             <a
+              href='https://github.com/snipsnapdev/snipsnap'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              SnipSnap
+            </a>
+          </ListGroup.Item>
+          <ListGroup.Item className='shadow' action>
+            <a
               href='http://vscode-hacks.herokuapp.com/'
               target='_blank'
               rel='noopener noreferrer'
