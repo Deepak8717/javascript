@@ -1,17 +1,40 @@
 # JavaScript
 
-JavaScript Experiences (#JSXP) allows you to get familiar with various JavaScript concepts through small straight-forward projects built using Vanilla JavaScript or Create React App. Fork/Clone the repository and kick off your journey of understanding JavaScript.
+## Theory
 
-- [Visit Page](https://jsxp.netlify.app)
+<details>
+  <summary>Introduction to JS</summary>
 
-## Current Additions
+- JS was created at Mozilla. Mozilla standardized JS under **ECMAScript**.
 
-- _1.0.1_ / Added Disqus plugin to receive user feedback
-- _1.0.0_ / Added React Bootstrap, ClassNames, React Icons, React Google Analytics, React Helmet, ContentFul
+- ECMAScript 2015 / ES6 is supported by all web browsers.
 
-Send me a PR if you notice any broken links or other underlying bug.
+- If Java was Toronto, then JS is Delhi. They are entirely different languages with different nature.
 
-## Vanilla JavaScript
+- If JS was Delhi, it may resemble in parts with Scheme language (if it was Bangalore) or Self language (if it was Mumbai). However, JS is in itself a standalone, general purpose programming language.
+
+- **Core** JS API is able to process data types. I/O execution is dependent on _Host_.
+
+- **Browser** present host environment to write programs that interact via DOM API to perform DOM manipulation, execute I/O operations through embedded devices, display result in HTML/CSS format and much more
+
+- **Node** present host environment to write programs that interact via OS based API to perform network calls, run shell scripts, read or write system files and much more
+
+### Reference
+
+[JavaScript: The Definitive Guide, 7th Edition](https://www.oreilly.com/library/view/javascript-the-definitive/9781491952016/)
+
+</details>
+
+## Projects
+
+### Gatsby
+
+| Project Title | Project Link                              |
+| ------------- | ----------------------------------------- |
+| JSXP          | [View Demo](https://jsxp.netlify.app)     |
+| Blog          | [View Demo](https://satrangi.netlify.app) |
+
+### Vanilla JavaScript
 
 | Project Title                              | Project Link                                                             |
 | ------------------------------------------ | ------------------------------------------------------------------------ |
@@ -59,12 +82,11 @@ Send me a PR if you notice any broken links or other underlying bug.
 | Wall Clock                                 | [View Demo](https://tpkahlon.github.io/javascript/25)                    |
 | Windows XP Screensaver                     | [View Demo](https://tpkahlon.github.io/javascript/15)                    |
 
-## React
+### React
 
 | Project Title                    | Project Link                                        |
 | -------------------------------- | --------------------------------------------------- |
 | Angular                          | [View Demo](https://crudinangularjs.netlify.app)    |
-| Blog                             | [View Demo](https://satrangi.netlify.app)           |
 | Booster                          | [View Demo](https://boostmeup.netlify.app)          |
 | Boredom                          | [View Demo](https://boredom.netlify.app)            |
 | CDNJS                            | [View Demo](https://jscdn.netlify.app)              |
@@ -107,7 +129,7 @@ Send me a PR if you notice any broken links or other underlying bug.
 | Web Jokes (Random)               | [View Demo](https://morejokes.netlify.app)          |
 | YouTube Channel API              | [View Demo](https://jaanmahal.netlify.app)          |
 
-## Redux
+### Redux
 
 | Project Title                             | Project Link                                             |
 | ----------------------------------------- | -------------------------------------------------------- |
@@ -115,7 +137,7 @@ Send me a PR if you notice any broken links or other underlying bug.
 | Redux Basics                              | [View Demo](https://tpkahlon.github.io/javascript/redux) |
 | Engineering (Modern React+Redux Workflow) | [View Demo](https://bmo-engineering.netlify.app)         |
 
-## React in Professional World
+### React in Professional World
 
 | Project Title              | Project Link                                    |
 | -------------------------- | ----------------------------------------------- |
