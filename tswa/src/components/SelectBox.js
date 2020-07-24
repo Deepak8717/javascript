@@ -16,7 +16,7 @@ const SelectBox = ({ data, handleChange }) => {
     <Form>
       <Form.Group controlId='character'>
         <Form.Label className='text-center w-100'>
-          See
+          See&nbsp;
           <strong>Films</strong>
           {' '}
           of featured Character:
