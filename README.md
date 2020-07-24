@@ -143,3 +143,4 @@
 | -------------------------- | ----------------------------------------------- |
 | Bind Static Data to UI     | [View Demo](https://cars-list.netlify.app/)     |
 | PWA with Styled Components | [View Demo](https://a-random-user.netlify.app/) |
+| The Star Wars API          | [View Demo](https://tswa.netlify.app/)          |
