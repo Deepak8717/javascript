@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../containers/Loading';
+import { startFetchCharacter } from '../store/actions'
 
 const CharacterList = () => {
-    const onSelected = () => {};
-    const characters = useSelector(state => state.characters);
-    const loading = useSelector(state => state.loading);
+    const dispatch = useDispatch();
+    const characters = useSelector(state => state.characters.characters);
+    const loading = useSelector(state => state.characters.loading);
     
     if (loading) {
         return <Loading/>;
@@ -30,7 +31,7 @@ const CharacterList = () => {
                     {' '}
           of featured Character:
         </Form.Label>
-                <Form.Control as='select' custom onChange={onSelected}>
+                <Form.Control as='select' custom onChange={(e) => dispatch(startFetchCharacter(e.target.value))}>
                     {defaultOption}
                     {optionsList}
                 </Form.Control>

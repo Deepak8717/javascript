@@ -1,32 +1,31 @@
-import { types } from './actions';
+import { types} from '../store/actions'
 
 const defaultState = {
-    films: [],
-    characters: [],
-    lastMovie: '',
-    currentCharacter: '',
-    currentCharacterIndex: '',
-    error: false,
-    loading: true
+    loading: false,
+    movies: [],
+    filter: {
+        query: '',
+        genre: ''
+    }
 };
 
 function reducer(state = defaultState, action) {
     switch (action.type) {
-        case types.START_FETCH_CHARACTERS:
+        case types.START_FETCH_MOVIES:
             return {
                 ...state,
-                characters: [],
+                movies: [],
                 loading: true,
                 error: false
             };
-        case types.END_FETCH_CHARACTERS:
+        case types.END_FETCH_MOVIES:
             return {
                 ...state,
-                characters: action.payload,
+                movies: action.payload,
                 loading: false,
                 error: false
             };
-        case types.ERROR_FETCH_CHARACTERS:
+        case types.ERROR_FETCH_MOVIES:
             return {
                 ...state,
                 loading: false,

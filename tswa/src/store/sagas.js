@@ -1,6 +1,8 @@
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
+import { call, put, select, all, takeEvery, takeLatest } from 'redux-saga/effects'
 import Api from '../api/SwapiApi';
-import { types, endFetchCharacters, errorFetchCharacters } from './actions';
+import { types, endFetchCharacters, errorFetchCharacters, endFetchCharacter } from './actions';
+
+const getCharacters = state => state.characters.characters;
 
 function* fetchCharacters(action) {
    try {
@@ -11,8 +13,25 @@ function* fetchCharacters(action) {
    }
 }
 
+function* fetchCharacter(action) {
+   try {
+      const characters = yield select(getCharacters);
+      const currentCharacter = characters[action.payload];
+
+      const releases = yield all(currentCharacter.films.map(filmId => call(Api.getFilm, filmId)));
+      const sortedReleases = releases.sort((a, b) =>
+         a.date > b.date ? -1 : 1
+      );
+      const lastMovie = sortedReleases[0];
+      yield put(endFetchCharacter(releases, lastMovie));
+   } catch (e) {
+      yield put(errorFetchCharacters(e));
+   }
+}
+
 function* saga() {
-  yield takeLatest(types.START_FETCH_CHARACTERS, fetchCharacters);
+   yield takeLatest(types.START_FETCH_CHARACTERS, fetchCharacters);
+   yield takeLatest(types.START_FETCH_CHARACTER, fetchCharacter);
 }
 
 export default saga;
