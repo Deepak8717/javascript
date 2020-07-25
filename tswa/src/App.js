@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Loading from './containers/Loading';
 import ErrorMessage from './containers/ErrorMessage';
 import AppWrapper from './containers/AppWrapper';
+import { useDispatch } from 'react-redux';
+import SwapiApi from './api/SwapiApi';
+import CharacterList from './components/CharacterList';
+import { startFetchCharacters, endFetchCharacters, errorFetchCharacters } from './store/actions';
 
-const App = () => {
+const App1 = () => {
   const [data, setData] = useState({
     films: [],
     characters: [],
@@ -81,5 +85,18 @@ const App = () => {
     <AppWrapper data={data} setData={setData} handleChange={handleChange} />
   );
 };
+
+function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(startFetchCharacters());
+    // SwapiApi.getCharacters()
+    //   .then(data => dispatch(endFetchCharacters(data)))
+    //   .catch(error => dispatch(errorFetchCharacters(error)));
+  }, []);
+
+  return <CharacterList />;
+}
 
 export default App;
