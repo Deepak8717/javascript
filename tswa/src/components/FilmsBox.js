@@ -1,8 +1,10 @@
+/* eslint-disable react/no-array-index-key */
+
 import React from 'react';
 import { useSelector } from 'react-redux';
 
 const FilmsBox = () => {
-  const charactersState = useSelector(state => state.characters);
+  const charactersState = useSelector((state) => state.characters);
   const { films, currentCharacter } = charactersState;
   if (currentCharacter === '' || films.length === 0) return <></>;
   const filmsList = films.map((i, index) => <div key={index}>{i.title}</div>);

@@ -1,8 +1,10 @@
+/* eslint-disable camelcase */
+
 import React from 'react';
 import { useSelector } from 'react-redux';
 
 const LastMovieBox = () => {
-  const charactersState = useSelector(state => state.characters);
+  const charactersState = useSelector((state) => state.characters);
   const { lastMovie, currentCharacter } = charactersState;
   const { title, release_date } = lastMovie;
   if (currentCharacter === '' || lastMovie === '') return <></>;

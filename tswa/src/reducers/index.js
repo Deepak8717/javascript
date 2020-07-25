@@ -4,5 +4,5 @@ import characters from './characters';
 
 export default combineReducers({
   // movies,
-  characters
+  characters,
 });

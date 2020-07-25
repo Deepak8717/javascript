@@ -7,30 +7,30 @@ const defaultState = {
   currentCharacter: '',
   currentCharacterIndex: '',
   error: false,
-  loading: true
+  loading: true,
 };
 
-function reducer(state = defaultState, action) {
+const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case types.START_FETCH_CHARACTERS:
       return {
         ...state,
         characters: [],
         loading: true,
-        error: false
+        error: false,
       };
     case types.END_FETCH_CHARACTERS:
       return {
         ...state,
         characters: action.payload,
         loading: false,
-        error: false
+        error: false,
       };
     case types.ERROR_FETCH_CHARACTERS:
       return {
         ...state,
         loading: false,
-        error: true
+        error: true,
       };
     case types.START_FETCH_CHARACTER:
       return {
@@ -38,7 +38,7 @@ function reducer(state = defaultState, action) {
         loading: true,
         error: false,
         currentCharacterIndex: action.payload.characterIndex,
-        currentCharacter: action.payload.characterName
+        currentCharacter: action.payload.characterName,
       };
     case types.END_FETCH_CHARACTER:
       return {
@@ -46,7 +46,7 @@ function reducer(state = defaultState, action) {
         loading: false,
         error: false,
         lastMovie: action.payload.latestMovie,
-        films: action.payload.movies
+        films: action.payload.movies,
       };
     default:
       return state;
