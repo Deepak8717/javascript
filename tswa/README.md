@@ -16,11 +16,14 @@
 
 Older commits will show you how to solve the problem with basic hooks.
 
-Recent commits with the advice of [@sarngru](https://github.com/sarngru) shows how a Redux structure can be implemented to solve same problem. Case will show how to manage states, middleware and handling of network requests.
-
 - `App` component holds all universal states
 - Children components of the `App` component inherit universal states
 - Usage of React Hooks, `useEffect`, `useState` concepts
+
+Recent commits with the advice of [@sarngru](https://github.com/sarngru) shows how a Redux structure can be implemented to solve same problem. Case will show how to manage states, middleware and handling of network requests.
+
+- Elimination of passing states from parent to child components
+- Usage of React, React Redux, Redux Saga
 
 ## Examples
 
