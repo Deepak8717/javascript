@@ -1,11 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-const LastMovieBox = () => {
-  const charactersState = useSelector(state => state.characters);
-  const { lastMovie, currentCharacter } = charactersState;
+const LastMovieBox = ({ lastMovie }) => {
+  if (!lastMovie) return null;
   const { title, release_date } = lastMovie;
-  if (currentCharacter === '' || lastMovie === '') return <></>;
   return (
     <div className='text-center'>
       <h4>Name / Year of their last film:</h4>

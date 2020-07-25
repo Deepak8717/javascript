@@ -10,7 +10,8 @@ async function getCharacters() {
     const { data: { next, results } } = await axios.get(nextUrl);
     results.forEach(element => {
       const films = element.films.map(f => Number(f.replace(`http://swapi.dev/api/films/`, '').replace('/', '')))
-      people.push({ ...element, films });
+      const id = element.url.replace('http://swapi.dev/api/people/', '').replace('/','');
+      people.push({ ...element, films, id });
     });
     nextUrl = next;
   }

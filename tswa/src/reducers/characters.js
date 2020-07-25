@@ -4,8 +4,7 @@ const defaultState = {
   films: [],
   characters: [],
   lastMovie: '',
-  currentCharacter: '',
-  currentCharacterIndex: '',
+  currentCharacter: null,
   error: false,
   loading: true
 };
@@ -37,8 +36,6 @@ function reducer(state = defaultState, action) {
         ...state,
         loading: true,
         error: false,
-        currentCharacterIndex: action.payload.characterIndex,
-        currentCharacter: action.payload.characterName
       };
     case types.END_FETCH_CHARACTER:
       return {
@@ -46,7 +43,8 @@ function reducer(state = defaultState, action) {
         loading: false,
         error: false,
         lastMovie: action.payload.latestMovie,
-        films: action.payload.movies
+        films: action.payload.movies,
+        currentCharacter: action.payload.currentCharacter
       };
     default:
       return state;

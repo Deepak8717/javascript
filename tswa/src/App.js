@@ -7,7 +7,6 @@ const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(startFetchCharacters());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return <AppWrapper />;
 }

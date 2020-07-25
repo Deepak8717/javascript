@@ -13,16 +13,17 @@ function* fetchCharacters(action) {
   }
 }
 
-function* fetchCharacter(action) {
+function* fetchCharacter({ payload: currentCharacterId }) {
   try {
     const characters = yield select(getCharacters);
-    const currentCharacter = characters[action.payload.characterIndex];
+    const currentCharacter = characters.find(c => c.id == currentCharacterId );
+    
     const releases = yield all(currentCharacter.films.map(filmId => call(Api.getFilm, filmId)));
     const sortedReleases = releases.sort((a, b) =>
       a.date > b.date ? -1 : 1
     );
     const lastMovie = sortedReleases[0];
-    yield put(endFetchCharacter(releases, lastMovie));
+    yield put(endFetchCharacter(currentCharacter, releases, lastMovie));
   } catch (e) {
     yield put(errorFetchCharacters(e));
   }

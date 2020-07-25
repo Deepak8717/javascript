@@ -21,12 +21,12 @@ export function errorFetchCharacters(error) {
   return { type: types.ERROR_FETCH_CHARACTERS, payload: error }
 }
 
-export function startFetchCharacter(characterIndex, characterName) {
-  return { type: types.START_FETCH_CHARACTER, payload: { characterIndex, characterName } }
+export function startFetchCharacter(characterId) {
+  return { type: types.START_FETCH_CHARACTER, payload: characterId }
 }
 
-export function endFetchCharacter(movies, latestMovie) {
-  return { type: types.END_FETCH_CHARACTER, payload: { movies, latestMovie } }
+export function endFetchCharacter( currentCharacter, movies, latestMovie) {
+  return { type: types.END_FETCH_CHARACTER, payload: { currentCharacter, movies, latestMovie } }
 }
 
 export function startFetchMovies() {
