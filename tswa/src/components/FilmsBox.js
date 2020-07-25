@@ -1,9 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
-const FilmsBox = ({ data }) => {
-  const { films, currentCharacter } = data;
-  if (currentCharacter === '') return <></>;
+const FilmsBox = () => {
+  const charactersState = useSelector(state => state.characters);
+  const { films, currentCharacter } = charactersState;
+  if (currentCharacter === '' || films.length === 0) return <></>;
+  const filmsList = films.map((i, index) => <div key={index}>{i.title}</div>);
   return (
     <div className='text-center my-3'>
       <h4>
@@ -15,17 +17,9 @@ const FilmsBox = ({ data }) => {
           </span>
         )}
       </h4>
-      <div>{films}</div>
+      {filmsList}
     </div>
   );
-};
-
-FilmsBox.defaultProps = {
-  data: {},
-};
-
-FilmsBox.propTypes = {
-  data: PropTypes.instanceOf(Object),
 };
 
 export default FilmsBox;
