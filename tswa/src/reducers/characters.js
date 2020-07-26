@@ -6,7 +6,7 @@ const defaultState = {
   lastMovie: '',
   currentCharacter: null,
   error: false,
-  loading: true
+  loading: true,
 };
 
 function reducer(state = defaultState, action) {
@@ -16,20 +16,20 @@ function reducer(state = defaultState, action) {
         ...state,
         characters: [],
         loading: true,
-        error: false
+        error: false,
       };
     case types.END_FETCH_CHARACTERS:
       return {
         ...state,
         characters: action.payload,
         loading: false,
-        error: false
+        error: false,
       };
     case types.ERROR_FETCH_CHARACTERS:
       return {
         ...state,
         loading: false,
-        error: true
+        error: true,
       };
     case types.START_FETCH_CHARACTER:
       return {
@@ -44,11 +44,11 @@ function reducer(state = defaultState, action) {
         error: false,
         lastMovie: action.payload.latestMovie,
         films: action.payload.movies,
-        currentCharacter: action.payload.currentCharacter
+        currentCharacter: action.payload.currentCharacter,
       };
     default:
       return state;
   }
-};
+}
 
 export default reducer;

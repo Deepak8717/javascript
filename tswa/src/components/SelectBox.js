@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
+
 import React from 'react';
 import { Form } from 'react-bootstrap';
-import Loading from './Loading';
 
 const SelectBox = ({ currentCharacterId, characters, onCharacterSelected }) => {
   return (
@@ -12,7 +13,12 @@ const SelectBox = ({ currentCharacterId, characters, onCharacterSelected }) => {
           {' '}
           of featured Character:
         </Form.Label>
-        <Form.Control as='select' value={currentCharacterId} custom onChange={(e) => onCharacterSelected(e.target.value)}>
+        <Form.Control
+          as='select'
+          value={currentCharacterId}
+          custom
+          onChange={(e) => onCharacterSelected(e.target.value)}
+        >
           <option value=''>Select a Character</option>
           {characters.map(({ id, name }) => {
             return (

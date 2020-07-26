@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
+
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 const FilmsBox = ({ films, currentCharacterName }) => {
   if (!currentCharacterName) return null;
@@ -7,15 +8,15 @@ const FilmsBox = ({ films, currentCharacterName }) => {
   return (
     <div className='text-center my-3'>
       <h4>
-          <span>
-            <em>{currentCharacterName}</em>
-            {' '}
-            featured in:
-          </span>
+        <span>
+          <em>{currentCharacterName}</em>
+          {' '}
+          featured in:
+        </span>
       </h4>
-      {
-        films.map(({ title }) => <div key={title}>{title}</div>)
-      }
+      {films.map(({ title }) => (
+        <div key={title}>{title}</div>
+      ))}
     </div>
   );
 };
