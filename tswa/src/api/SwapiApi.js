@@ -21,7 +21,7 @@ const getCharacters = async () => {
 };
 
 const getFilm = async (filmId) => {
-  const { data } = await axios.get(`/films/${filmId}`);
+  const { data } = await axios.get(`/films/${filmId}/`);
   return data;
 };
 

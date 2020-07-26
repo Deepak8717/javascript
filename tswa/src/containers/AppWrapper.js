@@ -20,7 +20,7 @@ const AppWrapper = () => {
     <div className='vh-100 d-flex align-items-center justify-content-center'>
       <Container>
         <Row>
-          <Col xs={{ offset: 4, span: 4 }}>
+          <Col xs={{ offset: 2, span: 8 }}>
             <SelectBox
               characters={characters}
               currentCharacterId={currentCharacter?.id}
