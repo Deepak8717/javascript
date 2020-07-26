@@ -7,7 +7,7 @@ axios.defaults.headers['Content-Type'] = 'application/json';
 
 const getCharacters = async () => {
   const people = [];
-  let nextUrl = '/people';
+  let nextUrl = '/people/';
   while (nextUrl) {
     const { data: { next, results } } = await axios.get(nextUrl);
     results.forEach(element => {
