@@ -1,9 +1,11 @@
+/* eslint-disable no-await-in-loop */
+
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://swapi.dev/api';
 axios.defaults.headers['Content-Type'] = 'application/json';
 
-async function getCharacters() {
+const getCharacters = async () => {
   const people = [];
   let nextUrl = '/people';
   while (nextUrl) {
@@ -16,14 +18,14 @@ async function getCharacters() {
     nextUrl = next;
   }
   return people;
-}
+};
 
-async function getFilm(filmId) {
+const getFilm = async (filmId) => {
   const { data } = await axios.get(`/films/${filmId}`);
   return data;
-}
+};
 
 export default {
   getCharacters,
-  getFilm
+  getFilm,
 };

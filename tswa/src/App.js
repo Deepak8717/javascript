@@ -10,6 +10,6 @@ const App = () => {
     // eslint-disable-next-line
   }, []);
   return <AppWrapper />;
-}
+};
 
 export default App;

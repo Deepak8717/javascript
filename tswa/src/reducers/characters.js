@@ -9,7 +9,7 @@ const defaultState = {
   loading: true,
 };
 
-function reducer(state = defaultState, action) {
+const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case types.START_FETCH_CHARACTERS:
       return {
