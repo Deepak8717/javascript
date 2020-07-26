@@ -1,28 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
-const LastMovieBox = ({ data }) => {
-  const { lastMovie, currentCharacter } = data;
-  if (currentCharacter === '') return <></>;
+const LastMovieBox = ({ lastMovie }) => {
+  if (!lastMovie) return null;
+  const { title, release_date } = lastMovie;
   return (
     <div className='text-center'>
       <h4>Name / Year of their last film:</h4>
       <div>
-        {lastMovie.title}
+        {title}
         {' '}
-        /
-        {lastMovie.date}
+        /&nbsp;
+        {release_date}
       </div>
     </div>
   );
-};
-
-LastMovieBox.defaultProps = {
-  data: {},
-};
-
-LastMovieBox.propTypes = {
-  data: PropTypes.instanceOf(Object),
 };
 
 export default LastMovieBox;

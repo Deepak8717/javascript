@@ -1,17 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
+import Loading from './Loading';
 
-const SelectBox = ({ data, handleChange }) => {
-  const { characters } = data;
-  const defaultOption = <option value=''>Select a Character</option>;
-  const optionsList = characters.map((i, index) => {
-    return (
-      <option key={i.created} value={index}>
-        {i.name}
-      </option>
-    );
-  });
+const SelectBox = ({ currentCharacterId, characters, onCharacterSelected }) => {
   return (
     <Form>
       <Form.Group controlId='character'>
@@ -21,23 +12,19 @@ const SelectBox = ({ data, handleChange }) => {
           {' '}
           of featured Character:
         </Form.Label>
-        <Form.Control as='select' custom onChange={handleChange}>
-          {defaultOption}
-          {optionsList}
+        <Form.Control as='select' value={currentCharacterId} custom onChange={(e) => onCharacterSelected(e.target.value)}>
+          <option value=''>Select a Character</option>
+          {characters.map(({ id, name }) => {
+            return (
+              <option key={id} value={id}>
+                {name}
+              </option>
+            );
+          })}
         </Form.Control>
       </Form.Group>
     </Form>
   );
-};
-
-SelectBox.defaultProps = {
-  data: {},
-  handleChange: () => {},
-};
-
-SelectBox.propTypes = {
-  data: PropTypes.instanceOf(Object),
-  handleChange: PropTypes.func,
 };
 
 export default SelectBox;

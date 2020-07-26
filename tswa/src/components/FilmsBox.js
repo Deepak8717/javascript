@@ -1,31 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
-const FilmsBox = ({ data }) => {
-  const { films, currentCharacter } = data;
-  if (currentCharacter === '') return <></>;
+const FilmsBox = ({ films, currentCharacterName }) => {
+  if (!currentCharacterName) return null;
+
   return (
     <div className='text-center my-3'>
       <h4>
-        {currentCharacter && (
           <span>
-            <em>{currentCharacter}</em>
+            <em>{currentCharacterName}</em>
             {' '}
             featured in:
           </span>
-        )}
       </h4>
-      <div>{films}</div>
+      {
+        films.map(({ title }) => <div key={title}>{title}</div>)
+      }
     </div>
   );
-};
-
-FilmsBox.defaultProps = {
-  data: {},
-};
-
-FilmsBox.propTypes = {
-  data: PropTypes.instanceOf(Object),
 };
 
 export default FilmsBox;
