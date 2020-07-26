@@ -15,7 +15,7 @@ const getCharacters = async () => {
       const id = element.url.replace('http://swapi.dev/api/people/', '').replace('/','');
       people.push({ ...element, films, id });
     });
-    nextUrl = next;
+    nextUrl = next === null ? null : next.replace(`http`, `https`);
   }
   return people;
 };
