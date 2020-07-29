@@ -66,6 +66,6 @@ hit.addEventListener('click', () => {
         break;
     }
     score += stroke;
-    scoreBoard.textContent = score;
+    scoreBoard.innerHTML = `<div class="jumbotron text-dark m-0">${score}</div>`;;
   }
 });
