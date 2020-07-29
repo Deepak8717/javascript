@@ -33,8 +33,8 @@ const AppWrapper = () => {
         <Row>
           <Col>
             <FilmsBox
-              currentCharacterName={currentCharacterName}
               films={films}
+              currentCharacterName={currentCharacterName}
             />
           </Col>
         </Row>
