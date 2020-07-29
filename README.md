@@ -75,6 +75,7 @@
 | Regular Expressions                        | [View Demo](https://tpkahlon.github.io/javascript/22)                    |
 | Shutter Menu                               | [View Demo](https://tpkahlon.github.io/javascript/38)                    |
 | Slider                                     | [View Demo](https://tpkahlon.github.io/javascript/36)                    |
+| Solo Cricket                               | [View Demo](https://tpkahlon.github.io/javascript/46)                    |
 | Stars                                      | [View Demo](https://tpkahlon.github.io/javascript/stars)                 |
 | Tabs                                       | [View Demo](https://tpkahlon.github.io/javascript/41)                    |
 | Toronto                                    | [View Demo](https://tpkahlon.github.io/javascript/toronto)               |
