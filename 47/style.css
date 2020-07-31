@@ -171,5 +171,5 @@ button {
 .menu #language,
 .menu #reset,
 .menu #mode {
-  display: none;
+  display: none !important;
 }
