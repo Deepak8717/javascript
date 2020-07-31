@@ -94,6 +94,7 @@ article {
 
 .buttons {
   position: fixed;
+  z-index: 2;
   top: 1rem;
   right: 1rem;
   display: flex;
@@ -106,4 +107,47 @@ button {
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
+}
+
+.language-form {
+  display: none;
+  position: relative;
+}
+
+.language .language-form::before {
+  position: absolute;
+  content: '';
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .75);
+  z-index: 1;
+}
+
+.language .language-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.language .language-list {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 1rem;
+}
+
+.language .language-button {
+  position: relative;
+  z-index: 2;
+  border-radius: .25rem;
+  padding: .25rem;
+  font-size: 1rem;
 }
