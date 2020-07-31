@@ -56,6 +56,7 @@
 | Dark Internet                              | [View Demo](https://tpkahlon.github.io/javascript/26)                    |
 | Daylight Saving Timezone                   | [View Demo](https://tpkahlon.github.io/javascript/1)                     |
 | Dinky                                      | [View Demo](https://tpkahlon.github.io/javascript/dinky)                 |
+| Eye Examination                            | [View Demo](https://tpkahlon.github.io/javascript/47)                    |
 | Editable Text page                         | [View Demo](https://tpkahlon.github.io/javascript/18)                    |
 | Functions                                  | [View Demo](https://tpkahlon.github.io/javascript/functions)             |
 | Humans                                     | [View Demo](https://tpkahlon.github.io/javascript/27A)                   |
