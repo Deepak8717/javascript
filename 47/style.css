@@ -1,0 +1,103 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@font-face {
+  font-family: 'Optician-Sans';
+  src: URL('./Optician-Sans.ttf') format('truetype');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  transition: all 1s ease;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Optician-Sans', sans-serif;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+article {
+  line-height: 0.75;
+  margin: 0 0.75rem;
+}
+
+.one {
+  font-size: 12rem;
+}
+
+.two {
+  font-size: 7rem;
+}
+
+.three {
+  font-size: 6rem;
+}
+
+.four {
+  font-size: 5rem;
+}
+
+.five {
+  font-size: 4rem;
+}
+
+.six {
+  font-size: 3rem;
+}
+
+.seven {
+  font-size: 2rem;
+}
+
+.eight-1 {
+  font-size: 1.75rem;
+}
+
+.eight-2 {
+  font-size: 1.5rem;
+}
+
+.eight-3 {
+  font-size: 1.25rem;
+}
+
+.eight-4 {
+  font-size: 1rem;
+}
+
+.mode {
+  color: #eee;
+  background: #222;
+}
+
+#mode {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
