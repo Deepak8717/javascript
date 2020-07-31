@@ -109,6 +109,12 @@ reset.addEventListener('click', () => {
   changeLanguage(currentLanguage);
 });
 
+// Menu
+const menu = document.getElementById('menu');
+menu.addEventListener('click', () => {
+  document.body.classList.toggle('menu');
+});
+
 // English
 const english = document.getElementById('english');
 english.addEventListener('click', () => {

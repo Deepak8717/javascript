@@ -148,6 +148,28 @@ button {
   position: relative;
   z-index: 2;
   border-radius: .25rem;
-  padding: .25rem;
   font-size: 1rem;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+  background: white;
+  color: black;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+.menu #numbers,
+.menu #english,
+.menu #language,
+.menu #reset,
+.menu #mode {
+  display: none;
 }
