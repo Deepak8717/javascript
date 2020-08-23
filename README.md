@@ -27,6 +27,12 @@
 
 ## Projects
 
+### freeCodeCamp
+
+| Project Title                                           | Project Link                                                                                     |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| JavaScript Algorithms and Data Structures Certification | [View Demo](https://www.youtube.com/watch?v=i_0D6452HZg&list=PLUwWRchG-odq30zS-__AmZQQAcHzpBXaB) |
+
 ### Gatsby
 
 | Project Title | Project Link                              |
