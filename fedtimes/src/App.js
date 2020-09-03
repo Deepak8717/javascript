@@ -45,7 +45,9 @@ const App = () => {
         <a rel='noopener noreferrer' target='_blank' href={url}>
           {title}
         </a>
-        <span className={text}>{emoji}</span>
+        <span role='img' className={text} aria-label={resource}>
+          {emoji}
+        </span>
       </div>
     );
   });
