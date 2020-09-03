@@ -1,0 +1,58 @@
+@import './Styles/Variables.scss';
+
+.app {
+  color: $white;
+  background: $black;
+  min-height: 100vh;
+  align-content: flex-start;
+  display: grid;
+  grid-gap: 2rem;
+  margin: 0 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.8rem 0.2rem rgba(255, 255, 255, 0.25);
+  @media (min-width: 50rem) {
+    max-width: 50rem;
+    margin: auto;
+  }
+}
+
+.appWrapper {
+  padding: 1rem 0;
+  background-image: $pattern;
+}
+
+.resource {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &:hover,
+  &:focus {
+    color: darken($white, 20%);
+  }
+}
+
+.text {
+  margin: 0 0 0 1rem;
+}
+
+.menuList {
+  list-style-type: none;
+  background: $black;
+  margin: 1rem;
+  padding: 0;
+  display: grid;
+  grid-gap: 1rem;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(4, auto);
+}
+
+.menuItem {
+  color: $white;
+
+  &:focus {
+    font-weight: bold;
+    color: darken($white, 25%);
+  }
+}

@@ -103,6 +103,7 @@
 | CWC19 Team Directory             | [View Demo](https://cwctd.netlify.app)              |
 | Dog Breeds                       | [View Demo](https://breedsofdogs.netlify.app)       |
 | Events in Toronto                | [View Demo](https://eventsto.netlify.app)           |
+| FEDTimes                         | [View Demo](https://fedtimes.netlify.app)           |
 | Festivals in Toronto             | [View Demo](https://festivalsto.netlify.app)        |
 | FreeCodeCamp Full Curriculum     | [View Demo](https://fccfc.netlify.app)              |
 | Gindeed                          | [View Demo](https://gindeed.netlify.app)            |
