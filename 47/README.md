@@ -7,3 +7,5 @@ Huge thanks for creators to allow usage of [Optician Sans](https://github.com/an
 3 Supported Languages: Hindi, Punjabi, Vietnamese
 
 Add menu toggle
+
+Disable zoom pinch on iOS devices
