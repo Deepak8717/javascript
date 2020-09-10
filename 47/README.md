@@ -10,4 +10,4 @@ Add menu toggle
 
 Disable zoom pinch on iOS devices
 
-Disable double tap on iOS devices
+Disable double tap on iOS devices and squash related bug
