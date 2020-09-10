@@ -9,3 +9,5 @@ Huge thanks for creators to allow usage of [Optician Sans](https://github.com/an
 Add menu toggle
 
 Disable zoom pinch on iOS devices
+
+Disable double tap on iOS devices
