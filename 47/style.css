@@ -12,6 +12,7 @@
 }
 
 * {
+  touch-action: manipulation;
   transition: all 1s ease;
 }
 
