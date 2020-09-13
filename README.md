@@ -89,6 +89,7 @@
 | YouTube Playlist Duration Calculator       | [View Demo](https://tpkahlon.github.io/javascript/44)                    |
 | Wall Clock                                 | [View Demo](https://tpkahlon.github.io/javascript/25)                    |
 | Windows XP Screensaver                     | [View Demo](https://tpkahlon.github.io/javascript/15)                    |
+| Word Shuffler                              | [View Demo](https://tpkahlon.github.io/javascript/48)                    |
 
 ### React
 
