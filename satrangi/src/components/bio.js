@@ -50,45 +50,9 @@ function Bio() {
             >
               <a
                 style={{ margin: `0 .5rem .5rem 0` }}
-                href={`https://behance.net/${social.behance}`}
-              >
-                Behance
-              </a>
-              <a
-                style={{ margin: `0 .5rem .5rem 0` }}
-                href={`https://dev.to/${social.devto}`}
-              >
-                DevTO
-              </a>
-              <a
-                style={{ margin: `0 .5rem .5rem 0` }}
                 href={`https://github.com/${social.github}`}
               >
                 Github
-              </a>
-              <a
-                style={{ margin: `0 .5rem .5rem 0` }}
-                href={`https://codepen.io/${social.codepen}`}
-              >
-                CodePen
-              </a>
-              <a
-                style={{ margin: `0 .5rem .5rem 0` }}
-                href={`https://linkedin.com/in/${social.linkedin}`}
-              >
-                LinkedIn
-              </a>
-              <a
-                style={{ margin: `0 .5rem .5rem 0` }}
-                href={`https://${social.portfolio}`}
-              >
-                Portfolio
-              </a>
-              <a
-                style={{ margin: `0 .5rem .5rem 0` }}
-                href={`https://twitter.com/${social.twitter}`}
-              >
-                Twitter
               </a>
             </nav>
           </>
@@ -111,13 +75,7 @@ const bioQuery = graphql`
       siteMetadata {
         author
         social {
-          behance
-          devto
           github
-          linkedin
-          codepen
-          portfolio
-          twitter
         }
       }
     }

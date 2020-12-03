@@ -5,13 +5,7 @@ module.exports = {
     description: `Learning JavaScript one step at a time.`,
     siteUrl: `https://boring-kepler-b13f18.netlify.com/`,
     social: {
-      twitter: `kahlontej`,
       github: `tpkahlon`,
-      behance: `tpkahlon`,
-      devto: `tpkahlon`,
-      linkedin: `tpkahlon`,
-      codepen: `tpkahlon`,
-      portfolio: `lucid-hopper-f9ed06.netlify.com`,
     },
   },
   plugins: [
