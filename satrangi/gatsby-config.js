@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Satrangi`,
-    author: `Tej Kahlon`,
-    description: `Learning JavaScript one step at a time.`,
-    siteUrl: `https://boring-kepler-b13f18.netlify.com/`,
+    author: `Tej`,
+    description: `Tej's blog`,
+    siteUrl: `https://satrangi.netlify.app/`,
     social: {
       github: `tpkahlon`,
     },
@@ -67,12 +67,5 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
   ],
 }

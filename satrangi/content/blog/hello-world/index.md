@@ -1,13 +1,11 @@
 ---
-title: Hello World
-date: 2019-06-05 04:55
-description: A new beginning...
+title: 3, 2, 1, All Set
+date: 2020-12-10 02:00
+description: 3, 2, 1, All Set
 ---
 
 Hello Beautiful Humans,
 
-This is my first post running using `Gatsby` and `Gatsby Starter Blog` template.
+I revamped my blog in final month of 2020.
 
-Special thanks to [Dave Ceddia](https://daveceddia.com).
-
-You can read more about how to setup a blog using Gatsby using Dave's *(Start a Blog in 2019 with Gatsby.js and Netlify)* at the following link: [View Article](https://daveceddia.com/start-blog-gatsby-netlify/).
+This is the my first markdown file written for blog.
