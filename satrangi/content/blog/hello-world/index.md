@@ -1,7 +1,7 @@
 ---
 title: 3, 2, 1, All Set
 date: 2020-12-10 02:00
-description: 3, 2, 1, All Set
+description: My first Markdown file on this blog
 ---
 
 Hello Beautiful Humans,
