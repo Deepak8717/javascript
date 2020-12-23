@@ -67,6 +67,7 @@
 | Functions                                  | [View Demo](https://tpkahlon.github.io/javascript/functions)             |
 | Humans                                     | [View Demo](https://tpkahlon.github.io/javascript/27A)                   |
 | Iterators in JavaScript                    | [View Demo](https://tpkahlon.github.io/javascript/24)                    |
+| Keep me company                            | [View Demo](https://tpkahlon.github.io/javascript/49)                    |
 | Load Video+Content                         | [View Demo](https://tpkahlon.github.io/javascript/42)                    |
 | Local Library page using Object Prototypes | [View Demo](https://tpkahlon.github.io/javascript/19)                    |
 | MDN Periodic Table                         | [View Demo](https://tpkahlon.github.io/javascript/43)                    |
