@@ -12,7 +12,7 @@ form.addEventListener("submit", (e) => {
   let years = [];
   const dob = dayjs(input).year();
   const thirties = dob + 30;
-  content += `<h1 class="m-0 mb-3">Plan your 30s</h1><p class="m-0">If you are a parent or a teacher, you can fork this repository to revise table with your customized milestones.</p><table class="mt-3 table table-striped table-dark table-hover table-bordered"><thead><tr><th>Milestone</th><th>Year</th></tr></thead>`;
+  content += `<h1 class="m-0 my-3">Plan your 30s</h1><p class="m-0">If you are a parent or a teacher, you can fork this repository to revise table with your customized milestones.</p><table class="mt-3 table table-striped table-dark table-hover table-bordered"><thead><tr><th>Milestone</th><th>Year</th></tr></thead>`;
   for (let i = dob; i <= thirties; i++) {
     if (
       i !== dob + 12 &&
