@@ -16,12 +16,26 @@
   </head>
 
   <body>
-    <div id="app">
-      <form id="form"
-      >
-        <label class="form-label" for="date">Choose your Date of Birth</label>
-        <input class="form-control" id="date" type="date" placeholder="Choose Date of Birth" required>
-        <button class="btn btn-success mt-3" type="submit">Go</button>
+    <div id="app" class="px-3">
+      <form id="form">
+        <h1>Plan your 30s</h1>
+        <p>
+          A helpful guide for kids wishing to foresee their future and plan
+          accordingly!
+        </p>
+        <div class="bg-secondary p-3 rounded">
+          <label class="form-label" for="date"
+            >Choose/Enter your Date of Birth e.g. 2013/04/23</label
+          >
+          <input
+            class="form-control"
+            id="date"
+            type="date"
+            placeholder="Date of Birth"
+            required
+          />
+          <button class="btn btn-success mt-3" type="submit">Go</button>
+        </div>
       </form>
       <div id="html"></div>
     </div>
