@@ -77,6 +77,7 @@
 | News                                       | [View Demo](https://tpkahlon.github.io/javascript/21)                    |
 | One Month Weather Tracker                  | [View Demo](https://tpkahlon.github.io/javascript/3)                     |
 | PetBar                                     | [View Demo](https://tpkahlon.github.io/javascript/37)                    |
+| Plan your 30s                              | [View Demo](https://tpkahlon.github.io/javascript/50)                    |
 | Program Structure                          | [View Demo](https://tpkahlon.github.io/javascript/program-structure)     |
 | Radio Stations                             | [View Demo](https://tpkahlon.github.io/javascript/radio-app)             |
 | Random Text Generator                      | [View Demo](https://tpkahlon.github.io/javascript/random-text-generator) |
