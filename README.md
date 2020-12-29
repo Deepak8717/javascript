@@ -168,7 +168,10 @@
 
 ### Next
 
-| Project Title | Project Link                               |
-| ------------- | ------------------------------------------ |
-| NoFrills      | [View Demo](https://nofrills.vercel.app)   |
-| TTC Subway    | [View Demo](https://ttc-subway.vercel.app) |
+| Project Title | Project Link                                 |
+| ------------- | -------------------------------------------- |
+| Browsers List | [View Demo](https://browserslist.vercel.app) |
+| Honda Canada  | [View Demo](https://honda-canada.vercel.app) |
+| Indians       | [View Demo](https://indians.vercel.app)      |
+| NoFrills      | [View Demo](https://nofrills.vercel.app)     |
+| TTC Subway    | [View Demo](https://ttc-subway.vercel.app)   |

@@ -1,0 +1,35 @@
+@import 'variables';
+
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: minmax(0, 1fr);
+  figcaption {
+    opacity: 0;
+  }
+  @media #{$md} {
+    figcaption {
+      opacity: 1;
+    }
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @media #{$lg} {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  @media #{$xl} {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.gridGallery {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  @media #{$md} {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  @media #{$lg} {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  @media #{$xl} {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
