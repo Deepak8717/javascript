@@ -83,7 +83,7 @@ export default function Home() {
             <div
               className="line line--3"
               onClick={() =>
-                handleClick(3, "https://youtu.be/cTUf4N6-P50?t=38")
+                handleClick(3, "https://youtu.be/cTUf4N6-P50?t=67")
               }
             >
               3<span>EB</span>
