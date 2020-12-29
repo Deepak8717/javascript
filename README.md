@@ -166,6 +166,7 @@
 
 ### Next
 
-| Project Title      | Project Link                                        |
-| ------------------ | --------------------------------------------------- |
-| TTC Subway | [View Demo](https://ttc-subway.vercel.app) |
+| Project Title | Project Link                               |
+| ------------- | ------------------------------------------ |
+| NoFrills      | [View Demo](https://nofrills.vercel.app)   |
+| TTC Subway    | [View Demo](https://ttc-subway.vercel.app) |
