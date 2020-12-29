@@ -1,0 +1,126 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  font-size: 1rem;
+  color: white;
+  background: black;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 1rem;
+  margin: 1rem 0;
+}
+
+@media (min-width: 40rem) {
+  nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 70rem) {
+  nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+section {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+a {
+  display: inline-block;
+  color: white;
+  transition: all 0.4s ease;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: grey;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1rem;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  min-height: 2rem;
+  color: white;
+  background: black;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 0.25rem solid white;
+}
+
+header h1 {
+  font-size: revert;
+}
+
+footer {
+  margin: 0 0 1rem;
+}
+
+main {
+  margin: 1rem 0;
+}
+
+main {
+  padding: 0 1rem;
+}
+
+span:first-child {
+  margin-right: 0.5rem;
+}
+
+aside {
+  display: flex;
+}
+
+button:last-child {
+  margin-left: 0.5rem;
+}
+
+img {
+  border-radius: 50%;
+}
+
+section > div {
+  margin-left: 1rem;
+}
+
+section a {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}

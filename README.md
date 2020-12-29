@@ -102,6 +102,8 @@
 | Boredom                          | [View Demo](https://boredom.netlify.app)            |
 | BB API                           | [View Demo](https://bbapi.netlify.app)              |
 | CDNJS                            | [View Demo](https://jscdn.netlify.app)              |
+| CSS Tricks Authors               | [View Demo](http://tiny.cc/csstricksauthors)        |
+| CSS Tricks                       | [View Demo](http://tiny.cc/csstricks)               |
 | CWC19                            | [View Demo](https://crudwithcwc19.netlify.app)      |
 | CWC19 Team Directory             | [View Demo](https://cwctd.netlify.app)              |
 | Dog Breeds                       | [View Demo](https://breedsofdogs.netlify.app)       |
