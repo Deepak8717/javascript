@@ -43,11 +43,11 @@ const Content = ({ data }) => {
       <div className="corner">
         <a
           className="github-button"
-          href="https://github.com/tpkahlon/nofrills"
+          href="https://github.com/tpkahlon/javascript"
           data-color-scheme="no-preference: dark; light: dark; dark: dark;"
           data-icon="octicon-star"
           data-show-count="true"
-          aria-label="Star tpkahlon/nofrills on GitHub"
+          aria-label="Star tpkahlon/javascript on GitHub"
         >
           Star
         </a>
