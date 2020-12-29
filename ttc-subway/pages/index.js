@@ -30,10 +30,10 @@ export default function Home() {
           <aside>
             <a
               className="github-button"
-              href="https://github.com/tpkahlon/ttc-subway"
+              href="https://github.com/tpkahlon/javascript"
               data-color-scheme="no-preference: light; light: light; dark: dark;"
               data-show-count="true"
-              aria-label="Star tpkahlon/ttc-subway on GitHub"
+              aria-label="Star tpkahlon/javascript on GitHub"
             >
               Star
             </a>
@@ -44,53 +44,71 @@ export default function Home() {
             of subway line to get a digital, front/rear view. This application
             may be useful for accessibility purposes. It is recommended to
             buffer/sync entire video on your device before starting the trip.
+            Source code for this application is located in{" "}
+            <code>ttc-subway</code> folder.
           </p>
           <div className="lines">
             <div
               className="line line--1"
-              onClick={() => handleClick(1, "https://youtu.be/hiARDxmAWi8?t=12")}
+              onClick={() =>
+                handleClick(1, "https://youtu.be/hiARDxmAWi8?t=12")
+              }
             >
               1<span>NB</span>
             </div>
             <div
               className="line line--1"
-              onClick={() => handleClick(1, "https://youtu.be/fksb0X8z9Cs?t=57")}
+              onClick={() =>
+                handleClick(1, "https://youtu.be/fksb0X8z9Cs?t=57")
+              }
             >
               1<span>SB</span>
             </div>
             <div
               className="line line--2"
-              onClick={() => handleClick(2, "https://youtu.be/sZEJRygO0jE?t=53")}
+              onClick={() =>
+                handleClick(2, "https://youtu.be/sZEJRygO0jE?t=53")
+              }
             >
               2<span>EB</span>
             </div>
             <div
               className="line line--2"
-              onClick={() => handleClick(2, "https://youtu.be/8lQOHmEQ8FQ?t=34")}
+              onClick={() =>
+                handleClick(2, "https://youtu.be/8lQOHmEQ8FQ?t=34")
+              }
             >
               2<span>WB</span>
             </div>
             <div
               className="line line--3"
-              onClick={() => handleClick(3, "https://youtu.be/cTUf4N6-P50?t=38")}
+              onClick={() =>
+                handleClick(3, "https://youtu.be/cTUf4N6-P50?t=38")
+              }
             >
               3<span>EB</span>
             </div>
             <div
               className="line line--3"
-              onClick={() => handleClick(3, "https://youtu.be/kQjK8tHTqnE?t=32")}
+              onClick={() =>
+                handleClick(3, "https://youtu.be/kQjK8tHTqnE?t=32")
+              }
             >
               3<span>WB</span>
             </div>
             <div
               className="line line--4"
-              onClick={() => handleClick(4, "https://youtu.be/4zEF7aYgCv0?t=57")}
+              onClick={() =>
+                handleClick(4, "https://youtu.be/4zEF7aYgCv0?t=57")
+              }
             >
               4<span>EB</span>
             </div>
             <div
               className="line line--4"
-              onClick={() => handleClick(4, "https://youtu.be/qCQWeUktbp4?t=58")}
+              onClick={() =>
+                handleClick(4, "https://youtu.be/qCQWeUktbp4?t=58")
+              }
             >
               4<span>WB</span>
             </div>
