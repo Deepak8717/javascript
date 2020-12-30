@@ -67,7 +67,7 @@ export default function Home() {
             <div
               className="line line--2"
               onClick={() =>
-                handleClick(2, "https://youtu.be/sZEJRygO0jE?t=53")
+                handleClick(2, "https://youtu.be/8lQOHmEQ8FQ?t=34")
               }
             >
               2<span>EB</span>
@@ -75,7 +75,7 @@ export default function Home() {
             <div
               className="line line--2"
               onClick={() =>
-                handleClick(2, "https://youtu.be/8lQOHmEQ8FQ?t=34")
+                handleClick(2, "https://youtu.be/pu-WSiXf3ng?t=16")
               }
             >
               2<span>WB</span>
