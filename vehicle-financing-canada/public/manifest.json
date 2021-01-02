@@ -1,0 +1,25 @@
+{
+  "short_name": "Vehicle Financing Canada",
+  "name": "Vehicle Financing Canada",
+  "icons": [
+    {
+      "src": "https://image.shutterstock.com/image-vector/canada-leaf-260nw-672447307.jpg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "https://image.shutterstock.com/image-vector/canada-leaf-260nw-672447307.jpg",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://image.shutterstock.com/image-vector/canada-leaf-260nw-672447307.jpg",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

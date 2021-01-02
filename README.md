@@ -95,54 +95,55 @@
 
 ### React
 
-| Project Title                    | Project Link                                        |
-| -------------------------------- | --------------------------------------------------- |
-| Angular                          | [View Demo](https://crudinangularjs.netlify.app)    |
-| Booster                          | [View Demo](https://boostmeup.netlify.app)          |
-| Boredom                          | [View Demo](https://boredom.netlify.app)            |
-| BB API                           | [View Demo](https://bbapi.netlify.app)              |
-| CDNJS                            | [View Demo](https://jscdn.netlify.app)              |
-| CSS Tricks Authors               | [View Demo](http://tiny.cc/csstricksauthors)        |
-| CSS Tricks                       | [View Demo](http://tiny.cc/csstricks)               |
-| CWC19                            | [View Demo](https://crudwithcwc19.netlify.app)      |
-| CWC19 Team Directory             | [View Demo](https://cwctd.netlify.app)              |
-| Dog Breeds                       | [View Demo](https://breedsofdogs.netlify.app)       |
-| Events in Toronto                | [View Demo](https://eventsto.netlify.app)           |
-| FEDTimes                         | [View Demo](https://fedtimes.netlify.app)           |
-| Festivals in Toronto             | [View Demo](https://festivalsto.netlify.app)        |
-| FreeCodeCamp Full Curriculum     | [View Demo](https://fccfc.netlify.app)              |
-| Gindeed                          | [View Demo](https://gindeed.netlify.app)            |
-| GitUD                            | [View Demo](https://gitud.netlify.app)              |
-| Gyaan                            | [View Demo](https://gyaan.netlify.app)              |
-| HackerNews                       | [View Demo](https://top10hackernews.netlify.app)    |
-| Happy Birthday Playlist Tracker  | [View Demo](https://hbdsongs.netlify.app)           |
-| Harvard Art Museum               | [View Demo](https://harvard-art-museum.netlify.app) |
-| Hukamama                         | [View Demo](https://hukamnama.netlify.app/)         |
-| Indian Geography                 | [View Demo](https://indiangeography.netlify.app)    |
-| IPTV                             | [View Demo](https://iptv-org.netlify.app)           |
-| Jackal                           | [View Demo](https://jackal.netlify.app)             |
-| LearnYou                         | [View Demo](https://learnyou.netlify.app)           |
-| Multiple Images                  | [View Demo](https://multiple-images.netlify.app)    |
-| Numbers                          | [View Demo](https://numbersapi.netlify.app)         |
-| Radio Stations (Punjabi Edition) | [View Demo](https://japji.netlify.app)              |
-| Radio Stations (Toronto Edition) | [View Demo](https://radioto.netlify.app)            |
-| Reminder                         | [View Demo](https://myreminders.netlify.app)        |
-| Sikh Gurus                       | [View Demo](https://sikhism.netlify.app)            |
-| Singers                          | [View Demo](https://punjabitopten.netlify.app)      |
-| Stations in Toronto              | [View Demo](https://stationsto.netlify.app)         |
-| Surnames                         | [View Demo](https://surnames.netlify.app)           |
-| TTC                              | [View Demo](https://ttcinc.netlify.app)             |
-| TV Channel Employees             | [View Demo](https://crudwithemployees.netlify.app)  |
-| TV Series                        | [View Demo](https://tvshowsapi.netlify.app/)        |
-| TikTok                           | [View Demo](https://tiktoks.netlify.app)            |
-| University List                  | [View Demo](https://universities.netlify.app)       |
-| WWE Superstars                   | [View Demo](https://wwestars.netlify.app)           |
-| Waste Wizard                     | [View Demo](https://wasteto.netlify.app)            |
-| Watch a Live TV                  | [View Demo](https://bbctoronto.netlify.app)         |
-| Weather                          | [View Demo](https://monthlyweather.netlify.app)     |
-| Web Jokes (Norris)               | [View Demo](https://jokesbychucknorris.netlify.app) |
-| Web Jokes (Random)               | [View Demo](https://morejokes.netlify.app)          |
-| YouTube Channel API              | [View Demo](https://jaanmahal.netlify.app)          |
+| Project Title                    | Project Link                                              |
+| -------------------------------- | --------------------------------------------------------- |
+| Angular                          | [View Demo](https://crudinangularjs.netlify.app)          |
+| Booster                          | [View Demo](https://boostmeup.netlify.app)                |
+| Boredom                          | [View Demo](https://boredom.netlify.app)                  |
+| BB API                           | [View Demo](https://bbapi.netlify.app)                    |
+| CDNJS                            | [View Demo](https://jscdn.netlify.app)                    |
+| CSS Tricks Authors               | [View Demo](http://tiny.cc/csstricksauthors)              |
+| CSS Tricks                       | [View Demo](http://tiny.cc/csstricks)                     |
+| CWC19                            | [View Demo](https://crudwithcwc19.netlify.app)            |
+| CWC19 Team Directory             | [View Demo](https://cwctd.netlify.app)                    |
+| Dog Breeds                       | [View Demo](https://breedsofdogs.netlify.app)             |
+| Events in Toronto                | [View Demo](https://eventsto.netlify.app)                 |
+| FEDTimes                         | [View Demo](https://fedtimes.netlify.app)                 |
+| Festivals in Toronto             | [View Demo](https://festivalsto.netlify.app)              |
+| FreeCodeCamp Full Curriculum     | [View Demo](https://fccfc.netlify.app)                    |
+| Gindeed                          | [View Demo](https://gindeed.netlify.app)                  |
+| GitUD                            | [View Demo](https://gitud.netlify.app)                    |
+| Gyaan                            | [View Demo](https://gyaan.netlify.app)                    |
+| HackerNews                       | [View Demo](https://top10hackernews.netlify.app)          |
+| Happy Birthday Playlist Tracker  | [View Demo](https://hbdsongs.netlify.app)                 |
+| Harvard Art Museum               | [View Demo](https://harvard-art-museum.netlify.app)       |
+| Hukamama                         | [View Demo](https://hukamnama.netlify.app/)               |
+| Indian Geography                 | [View Demo](https://indiangeography.netlify.app)          |
+| IPTV                             | [View Demo](https://iptv-org.netlify.app)                 |
+| Jackal                           | [View Demo](https://jackal.netlify.app)                   |
+| LearnYou                         | [View Demo](https://learnyou.netlify.app)                 |
+| Multiple Images                  | [View Demo](https://multiple-images.netlify.app)          |
+| Numbers                          | [View Demo](https://numbersapi.netlify.app)               |
+| Radio Stations (Punjabi Edition) | [View Demo](https://japji.netlify.app)                    |
+| Radio Stations (Toronto Edition) | [View Demo](https://radioto.netlify.app)                  |
+| Reminder                         | [View Demo](https://myreminders.netlify.app)              |
+| Sikh Gurus                       | [View Demo](https://sikhism.netlify.app)                  |
+| Singers                          | [View Demo](https://punjabitopten.netlify.app)            |
+| Stations in Toronto              | [View Demo](https://stationsto.netlify.app)               |
+| Surnames                         | [View Demo](https://surnames.netlify.app)                 |
+| TTC                              | [View Demo](https://ttcinc.netlify.app)                   |
+| TV Channel Employees             | [View Demo](https://crudwithemployees.netlify.app)        |
+| TV Series                        | [View Demo](https://tvshowsapi.netlify.app/)              |
+| TikTok                           | [View Demo](https://tiktoks.netlify.app)                  |
+| University List                  | [View Demo](https://universities.netlify.app)             |
+| Vehicle Financing Canada         | [View Demo](https://vehicle-financing-canada.netlify.app) |
+| WWE Superstars                   | [View Demo](https://wwestars.netlify.app)                 |
+| Waste Wizard                     | [View Demo](https://wasteto.netlify.app)                  |
+| Watch a Live TV                  | [View Demo](https://bbctoronto.netlify.app)               |
+| Weather                          | [View Demo](https://monthlyweather.netlify.app)           |
+| Web Jokes (Norris)               | [View Demo](https://jokesbychucknorris.netlify.app)       |
+| Web Jokes (Random)               | [View Demo](https://morejokes.netlify.app)                |
+| YouTube Channel API              | [View Demo](https://jaanmahal.netlify.app)                |
 
 ### Context API
 
