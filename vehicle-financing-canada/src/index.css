@@ -47,8 +47,16 @@ button {
   margin: 1rem 0 0;
 }
 
+h1 {
+  margin: 1rem 0;
+}
+
 table {
-  margin: auto;
+  margin: 0 auto 1rem;
+}
+
+td {
+  padding: 0.5rem;
 }
 
 @media (min-width: 40rem) {

@@ -11,6 +11,7 @@ const App = () => {
     gstPrice: null,
     fuelPrice: null,
     ppsaPrice: null,
+    interest: null,
     total: null,
   });
   const {
@@ -22,6 +23,7 @@ const App = () => {
     gstPrice,
     fuelPrice,
     ppsaPrice,
+    interest,
     total,
   } = data;
   const handleChange = (e) => {
@@ -193,6 +195,17 @@ const App = () => {
             <span>&#9432;</span>
           </a>
         </div>
+        <div>
+          <label htmlFor="interest">Interest (%):</label>
+          <input
+            name="interest"
+            id="interest"
+            type="number"
+            placeholder="6.49"
+            onChange={handleChange}
+            step="0.01"
+          />
+        </div>
         <button type="submit">Calculate</button>
       </form>
       {total !== null && (
@@ -204,48 +217,169 @@ const App = () => {
                 <th>Terms</th>
                 <th>Monthly</th>
                 <th>Biweekly</th>
+                <th>Weekly</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>1 year</td>
-                <td>${(total / 12).toFixed(2)}</td>
-                <td>${(total / 12 / 2).toFixed(2)}</td>
+                <td>
+                  ${(total / 12 + ((total / 12) * interest) / 100).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 12 + ((total / 12) * interest) / 100) /
+                    2.17
+                  ).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 12 + ((total / 12) * interest) / 100) /
+                    4.17
+                  ).toFixed(2)}
+                </td>
               </tr>
               <tr>
                 <td>2 years</td>
-                <td>${(total / 24).toFixed(2)}</td>
-                <td>${(total / 24 / 2).toFixed(2)}</td>
+                <td>
+                  ${(total / 24 + ((total / 24) * interest) / 100).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 24 + ((total / 24) * interest) / 100) /
+                    2.17
+                  ).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 24 + ((total / 24) * interest) / 100) /
+                    4.17
+                  ).toFixed(2)}
+                </td>
               </tr>
               <tr>
                 <td>3 years</td>
-                <td>${(total / 36).toFixed(2)}</td>
-                <td>${(total / 36 / 2).toFixed(2)}</td>
+                <td>
+                  ${(total / 36 + ((total / 36) * interest) / 100).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 36 + ((total / 36) * interest) / 100) /
+                    2.17
+                  ).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 36 + ((total / 36) * interest) / 100) /
+                    4.17
+                  ).toFixed(2)}
+                </td>
               </tr>
               <tr>
                 <td>4 years</td>
-                <td>${(total / 48).toFixed(2)}</td>
-                <td>${(total / 48 / 2).toFixed(2)}</td>
+                <td>
+                  ${(total / 48 + ((total / 48) * interest) / 100).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 48 + ((total / 48) * interest) / 100) /
+                    2.17
+                  ).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 48 + ((total / 48) * interest) / 100) /
+                    4.17
+                  ).toFixed(2)}
+                </td>
               </tr>
               <tr>
                 <td>5 years</td>
-                <td>${(total / 60).toFixed(2)}</td>
-                <td>${(total / 60 / 2).toFixed(2)}</td>
+                <td>
+                  ${(total / 60 + ((total / 60) * interest) / 100).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 60 + ((total / 60) * interest) / 100) /
+                    2.17
+                  ).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 60 + ((total / 60) * interest) / 100) /
+                    4.17
+                  ).toFixed(2)}
+                </td>
               </tr>
               <tr>
                 <td>6 years</td>
-                <td>${(total / 72).toFixed(2)}</td>
-                <td>${(total / 72 / 2).toFixed(2)}</td>
+                <td>
+                  ${(total / 72 + ((total / 72) * interest) / 100).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 72 + ((total / 72) * interest) / 100) /
+                    2.17
+                  ).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 72 + ((total / 72) * interest) / 100) /
+                    4.17
+                  ).toFixed(2)}
+                </td>
               </tr>
               <tr>
                 <td>7 years</td>
-                <td>${(total / 84).toFixed(2)}</td>
-                <td>${(total / 84 / 2).toFixed(2)}</td>
+                <td>
+                  ${(total / 84 + ((total / 84) * interest) / 100).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 84 + ((total / 84) * interest) / 100) /
+                    2.17
+                  ).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 84 + ((total / 84) * interest) / 100) /
+                    4.17
+                  ).toFixed(2)}
+                </td>
               </tr>
               <tr>
                 <td>8 years</td>
-                <td>${(total / 96).toFixed(2)}</td>
-                <td>${(total / 96 / 2).toFixed(2)}</td>
+                <td>
+                  ${(total / 96 + ((total / 96) * interest) / 100).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 96 + ((total / 96) * interest) / 100) /
+                    2.17
+                  ).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 96 + ((total / 96) * interest) / 100) /
+                    4.17
+                  ).toFixed(2)}
+                </td>
               </tr>
             </tbody>
           </table>
