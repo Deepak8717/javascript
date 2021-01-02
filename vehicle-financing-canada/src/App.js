@@ -54,8 +54,8 @@ const App = () => {
       <p>
         In the current market, default OMVIC is $10, SecureGuard fee is
         optional, PST is 8%, GST is 5%, fuel cost rough estimate is $50, PPSA is
-        $85. I have left these fields open to adjustments considering variant
-        future market rate variation. Check&nbsp;
+        $85. I have left these fields open to adjustments considering future
+        market rate changes. Check&nbsp;
         <a
           href="https://gem.cbc.ca/media/marketplace/season-45/episode-8/38e815a-00d5c4d9cd5"
           target="_blank"
