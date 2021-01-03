@@ -140,40 +140,14 @@ const App = () => {
           />
         </div>
         <div>
-          <a
-            href="https://www.omvic.on.ca/portal/DealersSalespersons/FAQ/TransactionFee.aspx"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: "none" }}
-          >
-            <span>&#9432;</span>
-          </a>
-          <label htmlFor="omvicPrice">OMVIC ($):</label>
+          <label htmlFor="interest">Interest (%):</label>
           <input
-            name="omvicPrice"
-            id="omvicPrice"
-            value={omvicPrice}
+            name="interest"
+            id="interest"
+            value={interest}
             type="number"
-            placeholder="10"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <a
-            href="https://forums.redflagdeals.com/ride-green-secured-fees-dealership-2313187/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: "none" }}
-          >
-            <span>&#9432;</span>
-          </a>
-          <label htmlFor="secureGuard">SecureGuard Registration ($):</label>
-          <input
-            name="secureGuard"
-            id="secureGuard"
-            value={secureGuard}
-            type="number"
-            placeholder="0"
+            placeholder="6.49"
+            step="0.01"
             onChange={handleChange}
           />
         </div>
@@ -216,13 +190,21 @@ const App = () => {
           />
         </div>
         <div>
-          <label htmlFor="fuelPrice">Fuel (including G.S.T, $):</label>
+          <a
+            href="https://www.omvic.on.ca/portal/DealersSalespersons/FAQ/TransactionFee.aspx"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <span>&#9432;</span>
+          </a>
+          <label htmlFor="omvicPrice">OMVIC ($):</label>
           <input
-            name="fuelPrice"
-            id="fuelPrice"
-            value={fuelPrice}
+            name="omvicPrice"
+            id="omvicPrice"
+            value={omvicPrice}
             type="number"
-            placeholder="50"
+            placeholder="10"
             onChange={handleChange}
           />
         </div>
@@ -246,14 +228,32 @@ const App = () => {
           />
         </div>
         <div>
-          <label htmlFor="interest">Interest (%):</label>
+          <a
+            href="https://forums.redflagdeals.com/ride-green-secured-fees-dealership-2313187/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <span>&#9432;</span>
+          </a>
+          <label htmlFor="secureGuard">SecureGuard Registration ($):</label>
           <input
-            name="interest"
-            id="interest"
-            value={interest}
+            name="secureGuard"
+            id="secureGuard"
+            value={secureGuard}
             type="number"
-            placeholder="6.49"
-            step="0.01"
+            placeholder="0"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="fuelPrice">Fuel including G.S.T. ($):</label>
+          <input
+            name="fuelPrice"
+            id="fuelPrice"
+            value={fuelPrice}
+            type="number"
+            placeholder="50"
             onChange={handleChange}
           />
         </div>
