@@ -12,7 +12,7 @@ const App = () => {
     fuelPrice: "",
     ppsaPrice: "",
     interest: "",
-    total: null,
+    total: "",
   };
   const [data, setData] = useState(initialState);
   const {
@@ -51,14 +51,16 @@ const App = () => {
   };
   const handleAutofill = (e) => {
     e.preventDefault();
-    setData({
-      ...data,
-      omvicPrice: 10,
-      secureGuard: 0,
-      pstPrice: 8,
-      gstPrice: 5,
-      fuelPrice: 50,
-      ppsaPrice: 85,
+    setData((prevData) => {
+      return {
+        ...prevData,
+        omvicPrice: 10,
+        secureGuard: 0,
+        pstPrice: 8,
+        gstPrice: 5,
+        fuelPrice: 50,
+        ppsaPrice: 85,
+      };
     });
   };
   const handleReset = (e) => {
@@ -97,7 +99,7 @@ const App = () => {
           <input
             name="salesPrice"
             id="salesPrice"
-            value={salesPrice.toString()}
+            value={salesPrice}
             type="number"
             placeholder="12000"
             onChange={handleChange}
@@ -108,7 +110,7 @@ const App = () => {
           <input
             name="downPayment"
             id="downPayment"
-            value={downPayment.toString()}
+            value={downPayment}
             type="number"
             placeholder="4000"
             onChange={handleChange}
@@ -127,7 +129,7 @@ const App = () => {
           <input
             name="omvicPrice"
             id="omvicPrice"
-            value={omvicPrice.toString()}
+            value={omvicPrice}
             type="number"
             placeholder="10"
             onChange={handleChange}
@@ -146,7 +148,7 @@ const App = () => {
           <input
             name="secureGuard"
             id="secureGuard"
-            value={secureGuard.toString()}
+            value={secureGuard}
             type="number"
             placeholder="0"
             onChange={handleChange}
@@ -165,7 +167,7 @@ const App = () => {
           <input
             name="pstPrice"
             id="pstPrice"
-            value={pstPrice.toString()}
+            value={pstPrice}
             type="number"
             placeholder="8"
             onChange={handleChange}
@@ -184,7 +186,7 @@ const App = () => {
           <input
             name="gstPrice"
             id="gstPrice"
-            value={gstPrice.toString()}
+            value={gstPrice}
             type="number"
             placeholder="5"
             onChange={handleChange}
@@ -195,7 +197,7 @@ const App = () => {
           <input
             name="fuelPrice"
             id="fuelPrice"
-            value={fuelPrice.toString()}
+            value={fuelPrice}
             type="number"
             placeholder="50"
             onChange={handleChange}
@@ -214,7 +216,7 @@ const App = () => {
           <input
             name="ppsaPrice"
             id="ppsaPrice"
-            value={ppsaPrice.toString()}
+            value={ppsaPrice}
             type="number"
             placeholder="85"
             onChange={handleChange}
@@ -225,11 +227,11 @@ const App = () => {
           <input
             name="interest"
             id="interest"
-            value={interest.toString()}
+            value={interest}
             type="number"
             placeholder="6.49"
-            onChange={handleChange}
             step="0.01"
+            onChange={handleChange}
           />
         </div>
         <div>
@@ -240,7 +242,7 @@ const App = () => {
       </form>
       {total !== null && (
         <>
-          <h2>Principal amount: ${total}</h2>
+          <h2>Total amount to be financed: ${total.toFixed(2)}</h2>
           <table>
             <thead>
               <tr>
@@ -248,6 +250,15 @@ const App = () => {
                 <th>Monthly</th>
                 <th>Biweekly</th>
                 <th>Weekly</th>
+                <th>
+                  Financed
+                  <br />
+                  Amount
+                  <br />
+                  +
+                  <br />
+                  Interest
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -270,6 +281,13 @@ const App = () => {
                     4.17
                   ).toFixed(2)}
                 </td>
+                <td>
+                  $
+                  {(
+                    (total / 12 + ((total / 12) * interest) / 100) *
+                    12
+                  ).toFixed(2)}
+                </td>
               </tr>
               <tr>
                 <td>2 years</td>
@@ -288,6 +306,13 @@ const App = () => {
                   {(
                     (total / 24 + ((total / 24) * interest) / 100) /
                     4.17
+                  ).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 24 + ((total / 24) * interest) / 100) *
+                    24
                   ).toFixed(2)}
                 </td>
               </tr>
@@ -310,6 +335,13 @@ const App = () => {
                     4.17
                   ).toFixed(2)}
                 </td>
+                <td>
+                  $
+                  {(
+                    (total / 36 + ((total / 36) * interest) / 100) *
+                    36
+                  ).toFixed(2)}
+                </td>
               </tr>
               <tr>
                 <td>4 years</td>
@@ -328,6 +360,13 @@ const App = () => {
                   {(
                     (total / 48 + ((total / 48) * interest) / 100) /
                     4.17
+                  ).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 48 + ((total / 48) * interest) / 100) *
+                    48
                   ).toFixed(2)}
                 </td>
               </tr>
@@ -350,6 +389,13 @@ const App = () => {
                     4.17
                   ).toFixed(2)}
                 </td>
+                <td>
+                  $
+                  {(
+                    (total / 60 + ((total / 60) * interest) / 100) *
+                    60
+                  ).toFixed(2)}
+                </td>
               </tr>
               <tr>
                 <td>6 years</td>
@@ -368,6 +414,13 @@ const App = () => {
                   {(
                     (total / 72 + ((total / 72) * interest) / 100) /
                     4.17
+                  ).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 72 + ((total / 72) * interest) / 100) *
+                    72
                   ).toFixed(2)}
                 </td>
               </tr>
@@ -390,6 +443,13 @@ const App = () => {
                     4.17
                   ).toFixed(2)}
                 </td>
+                <td>
+                  $
+                  {(
+                    (total / 84 + ((total / 84) * interest) / 100) *
+                    84
+                  ).toFixed(2)}
+                </td>
               </tr>
               <tr>
                 <td>8 years</td>
@@ -408,6 +468,13 @@ const App = () => {
                   {(
                     (total / 96 + ((total / 96) * interest) / 100) /
                     4.17
+                  ).toFixed(2)}
+                </td>
+                <td>
+                  $
+                  {(
+                    (total / 96 + ((total / 96) * interest) / 100) *
+                    96
                   ).toFixed(2)}
                 </td>
               </tr>
