@@ -36,6 +36,24 @@ const App = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (
+      salesPrice === "" ||
+      downPayment === "" ||
+      omvicPrice === "" ||
+      secureGuard === "" ||
+      pstPrice === "" ||
+      gstPrice === "" ||
+      fuelPrice === "" ||
+      ppsaPrice === "" ||
+      interest === ""
+    ) {
+      alert("Please enter all details in the form to proceed.");
+      return;
+    }
+    if (salesPrice <= downPayment) {
+      alert("Down payment cannot exceed Sales price.");
+      return;
+    }
     setData({
       ...data,
       total:
@@ -94,6 +112,11 @@ const App = () => {
         .
       </p>
       <form onSubmit={handleSubmit}>
+        <div>
+          <button type="submit">Calculate</button>
+          <button onClick={handleAutofill}>Auto Fill</button>
+          <button onClick={handleReset}>Reset</button>
+        </div>
         <div>
           <label htmlFor="salesPrice">Sales Price ($):</label>
           <input
@@ -234,15 +257,10 @@ const App = () => {
             onChange={handleChange}
           />
         </div>
-        <div>
-          <button type="submit">Calculate</button>
-          <button onClick={handleAutofill}>Auto Fill</button>
-          <button onClick={handleReset}>Reset</button>
-        </div>
       </form>
       {total !== "" && (
         <>
-          <h2>Total amount to be financed: ${total}</h2>
+          <h2>Total amount to be financed: ${total.toFixed(2)}</h2>
           <table>
             <thead>
               <tr>
