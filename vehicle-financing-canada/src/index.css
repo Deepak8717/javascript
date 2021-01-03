@@ -18,7 +18,7 @@ a {
 }
 
 body {
-  margin: 1rem 0;
+  margin: 1rem auto;
   padding: 0 1rem;
   display: flex;
   justify-content: center;
@@ -52,7 +52,7 @@ h1 {
 }
 
 table {
-  margin: 0 auto 1rem;
+  margin: 0 auto;
 }
 
 td {
@@ -61,7 +61,6 @@ td {
 
 @media (min-width: 40rem) {
   body {
-    margin: auto;
     max-width: 40rem;
   }
   label {
