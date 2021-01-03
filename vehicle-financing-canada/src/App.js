@@ -240,9 +240,9 @@ const App = () => {
           <button onClick={handleReset}>Reset</button>
         </div>
       </form>
-      {total !== null && (
+      {total !== "" && (
         <>
-          <h2>Total amount to be financed: ${total.toFixed(2)}</h2>
+          <h2>Total amount to be financed: ${total}</h2>
           <table>
             <thead>
               <tr>
