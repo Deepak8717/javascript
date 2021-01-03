@@ -74,20 +74,20 @@ const App = () => {
         $85. I have left these fields open to adjustments considering future
         market rate changes. Check&nbsp;
         <a
+          href="https://github.com/tpkahlon/javascript"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          here&nbsp;
+        </a>
+        to get awareness of possible auto scheme scams during purchase. If you
+        have suggestions for improvement, please create a pull request{" "}
+        <a
           href="https://gem.cbc.ca/media/marketplace/season-45/episode-8/38e815a-00d5c4d9cd5"
           target="_blank"
           rel="noopener noreferrer"
         >
           this
-        </a>{" "}
-        to get awareness of possible auto scheme scams during purchase. If you
-        have suggestions for improvement, please create a pull request{" "}
-        <a
-          href="https://github.com/tpkahlon/javascript"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          here
         </a>
         .
       </p>
@@ -115,6 +115,14 @@ const App = () => {
           />
         </div>
         <div>
+          <a
+            href="https://www.omvic.on.ca/portal/DealersSalespersons/FAQ/TransactionFee.aspx"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <span>&#9432;</span>
+          </a>
           <label htmlFor="omvicPrice">OMVIC ($):</label>
           <input
             name="omvicPrice"
@@ -124,16 +132,16 @@ const App = () => {
             placeholder="10"
             onChange={handleChange}
           />
+        </div>
+        <div>
           <a
-            href="https://www.omvic.on.ca/portal/DealersSalespersons/FAQ/TransactionFee.aspx"
+            href="https://forums.redflagdeals.com/ride-green-secured-fees-dealership-2313187/"
             target="_blank"
             rel="noopener noreferrer"
             style={{ textDecoration: "none" }}
           >
             <span>&#9432;</span>
           </a>
-        </div>
-        <div>
           <label htmlFor="secureGuard">SecureGuard Registration ($):</label>
           <input
             name="secureGuard"
@@ -143,16 +151,16 @@ const App = () => {
             placeholder="0"
             onChange={handleChange}
           />
+        </div>
+        <div>
           <a
-            href="https://forums.redflagdeals.com/ride-green-secured-fees-dealership-2313187/"
+            href="https://www.retailcouncil.org/resources/quick-facts/sales-tax-rates-by-province/"
             target="_blank"
             rel="noopener noreferrer"
             style={{ textDecoration: "none" }}
           >
             <span>&#9432;</span>
           </a>
-        </div>
-        <div>
           <label htmlFor="pstPrice">P.S.T (%):</label>
           <input
             name="pstPrice"
@@ -162,16 +170,16 @@ const App = () => {
             placeholder="8"
             onChange={handleChange}
           />
+        </div>
+        <div>
           <a
-            href="https://www.retailcouncil.org/resources/quick-facts/sales-tax-rates-by-province/"
+            href="https://turbotax.intuit.ca/tips/tax-tip-do-you-have-to-pay-taxes-on-used-cars-in-british-columbia-canada-156"
             target="_blank"
             rel="noopener noreferrer"
             style={{ textDecoration: "none" }}
           >
             <span>&#9432;</span>
           </a>
-        </div>
-        <div>
           <label htmlFor="gstPrice">G.S.T (%):</label>
           <input
             name="gstPrice"
@@ -181,14 +189,6 @@ const App = () => {
             placeholder="5"
             onChange={handleChange}
           />
-          <a
-            href="https://turbotax.intuit.ca/tips/tax-tip-do-you-have-to-pay-taxes-on-used-cars-in-british-columbia-canada-156"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: "none" }}
-          >
-            <span>&#9432;</span>
-          </a>
         </div>
         <div>
           <label htmlFor="fuelPrice">Fuel (including G.S.T, $):</label>
@@ -202,6 +202,14 @@ const App = () => {
           />
         </div>
         <div>
+          <a
+            href="https://en.wikipedia.org/wiki/Personal_Property_Security_Act_(Canada)"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <span>&#9432;</span>
+          </a>
           <label htmlFor="ppsaPrice">P.P.S.A ($):</label>
           <input
             name="ppsaPrice"
@@ -211,14 +219,6 @@ const App = () => {
             placeholder="85"
             onChange={handleChange}
           />
-          <a
-            href="https://en.wikipedia.org/wiki/Personal_Property_Security_Act_(Canada)"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: "none" }}
-          >
-            <span>&#9432;</span>
-          </a>
         </div>
         <div>
           <label htmlFor="interest">Interest (%):</label>
