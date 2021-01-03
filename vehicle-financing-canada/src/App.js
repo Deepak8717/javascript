@@ -2,18 +2,19 @@ import "./index.css";
 import React, { useState } from "react";
 
 const App = () => {
-  const [data, setData] = useState({
-    salesPrice: null,
-    downPayment: null,
-    omvicPrice: null,
-    secureGuard: null,
-    pstPrice: null,
-    gstPrice: null,
-    fuelPrice: null,
-    ppsaPrice: null,
-    interest: null,
+  const initialState = {
+    salesPrice: "",
+    downPayment: "",
+    omvicPrice: "",
+    secureGuard: "",
+    pstPrice: "",
+    gstPrice: "",
+    fuelPrice: "",
+    ppsaPrice: "",
+    interest: "",
     total: null,
-  });
+  };
+  const [data, setData] = useState(initialState);
   const {
     salesPrice,
     downPayment,
@@ -48,6 +49,22 @@ const App = () => {
         downPayment,
     });
   };
+  const handleAutofill = (e) => {
+    e.preventDefault();
+    setData({
+      ...data,
+      omvicPrice: 10,
+      secureGuard: 0,
+      pstPrice: 8,
+      gstPrice: 5,
+      fuelPrice: 50,
+      ppsaPrice: 85,
+    });
+  };
+  const handleReset = (e) => {
+    e.preventDefault();
+    setData(initialState);
+  };
   return (
     <>
       <h1>Vehicle Financing Canada</h1>
@@ -80,6 +97,7 @@ const App = () => {
           <input
             name="salesPrice"
             id="salesPrice"
+            value={salesPrice.toString()}
             type="number"
             placeholder="12000"
             onChange={handleChange}
@@ -90,6 +108,7 @@ const App = () => {
           <input
             name="downPayment"
             id="downPayment"
+            value={downPayment.toString()}
             type="number"
             placeholder="4000"
             onChange={handleChange}
@@ -100,6 +119,7 @@ const App = () => {
           <input
             name="omvicPrice"
             id="omvicPrice"
+            value={omvicPrice.toString()}
             type="number"
             placeholder="10"
             onChange={handleChange}
@@ -118,6 +138,7 @@ const App = () => {
           <input
             name="secureGuard"
             id="secureGuard"
+            value={secureGuard.toString()}
             type="number"
             placeholder="0"
             onChange={handleChange}
@@ -136,6 +157,7 @@ const App = () => {
           <input
             name="pstPrice"
             id="pstPrice"
+            value={pstPrice.toString()}
             type="number"
             placeholder="8"
             onChange={handleChange}
@@ -154,6 +176,7 @@ const App = () => {
           <input
             name="gstPrice"
             id="gstPrice"
+            value={gstPrice.toString()}
             type="number"
             placeholder="5"
             onChange={handleChange}
@@ -172,6 +195,7 @@ const App = () => {
           <input
             name="fuelPrice"
             id="fuelPrice"
+            value={fuelPrice.toString()}
             type="number"
             placeholder="50"
             onChange={handleChange}
@@ -182,6 +206,7 @@ const App = () => {
           <input
             name="ppsaPrice"
             id="ppsaPrice"
+            value={ppsaPrice.toString()}
             type="number"
             placeholder="85"
             onChange={handleChange}
@@ -200,13 +225,18 @@ const App = () => {
           <input
             name="interest"
             id="interest"
+            value={interest.toString()}
             type="number"
             placeholder="6.49"
             onChange={handleChange}
             step="0.01"
           />
         </div>
-        <button type="submit">Calculate</button>
+        <div>
+          <button type="submit">Calculate</button>
+          <button onClick={handleAutofill}>Auto Fill</button>
+          <button onClick={handleReset}>Reset</button>
+        </div>
       </form>
       {total !== null && (
         <>
