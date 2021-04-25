@@ -1,37 +1,6 @@
-# JavaScript 😇
+# JavaScript
 
-## Theory
-
-<details>
-  <summary>Introduction to JS</summary>
-
-- JS was created at Mozilla. Mozilla standardized JS under **ECMAScript**.
-
-- ECMAScript 2015 / ES6 is supported by all web browsers.
-
-- If Java was Toronto, then JS is Delhi. They are entirely different languages with different nature.
-
-- If JS was Delhi, it may resemble in parts with Scheme language (if it was Bangalore) or Self language (if it was Mumbai). However, JS is in itself a standalone, general purpose programming language.
-
-- **Core** JS API is able to process data types. I/O execution is dependent on _Host_.
-
-- **Browser** present host environment to write programs that interact via DOM API to perform DOM manipulation, execute I/O operations through embedded devices, display result in HTML/CSS format and much more
-
-- **Node** present host environment to write programs that interact via OS based API to perform network calls, run shell scripts, read or write system files and much more
-
-### Reference
-
-[JavaScript: The Definitive Guide, 7th Edition](https://www.oreilly.com/library/view/javascript-the-definitive/9781491952016/)
-
-</details>
-
-## Projects
-
-### freeCodeCamp
-
-| Project Title                                           | Project Link                                                                          |
-| ------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| JavaScript Algorithms and Data Structures Certification | [View Demo](https://www.youtube.com/playlist?list=PLUwWRchG-odq30zS-__AmZQQAcHzpBXaB) |
+NOTE: SOME PROJECTS USE FETCH CALL TO GET A RESOURCE FROM THE INTERNET. FETCH CALL MAY BREAK THE APPLICATION AS I USED HTTP://CORS-UNLIMITED.HEROKUAPP.COM URL IN SOME INSTANCES. THIS HEROKU INSTANCE HAS LIMITED USAGE AND TURNS OFF AUTOMATICALLY AFTER 500 CALLS. IN SUCH CASE, CLONE THIS REPOSITORY LOCALLY AND TEST PROJECTS.
 
 ### Gatsby
 
