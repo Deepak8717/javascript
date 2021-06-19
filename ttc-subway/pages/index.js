@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
-import list from "./list";
+import list from "../common/list";
 
 export default function Home() {
   const [data, setData] = useState({
@@ -52,6 +52,7 @@ export default function Home() {
             {list.map(({ line, direction, video }, idx) => {
               return (
                 <div
+                  key={idx}
                   className={`line line--${line}`}
                   onClick={() => handleClick(line, video)}
                 >
