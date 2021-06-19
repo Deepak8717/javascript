@@ -39,6 +39,14 @@ export default function Home() {
               Star
             </a>
           </aside>
+          <a
+            className="promotion"
+            href="https://ttc-streetcar.surge.sh"
+            target="__blank"
+            rel="noopener noreferrer"
+          >
+            Check out TTC Streetcar
+          </a>
           <h1>Please pick your line of choice:</h1>
           <p>
             This application allow rider/user who are present in middle blocks

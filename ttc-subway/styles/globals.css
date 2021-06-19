@@ -104,3 +104,11 @@ span {
 .line--4 {
   background: #a12169;
 }
+
+.promotion {
+  position: absolute;
+  text-decoration: none;
+  top: 1rem;
+  left: 1rem;
+  color: white;
+}
