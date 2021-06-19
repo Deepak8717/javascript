@@ -57,6 +57,7 @@ h1 {
 }
 
 p {
+  line-height: 1.5;
   max-width: 30rem;
   margin: 1.25rem 0 2rem;
 }
@@ -106,7 +107,7 @@ span {
 }
 
 .promotion {
-  position: absolute;
+  position: fixed;
   text-decoration: none;
   top: 1rem;
   left: 1rem;
