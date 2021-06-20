@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>TTC Bus</title>
+        <title>TTC Buses</title>
         <link
           rel="icon"
           href="https://upload.wikimedia.org/wikipedia/commons/8/87/TTC.svg"
@@ -63,7 +63,7 @@ export default function Home() {
             This application may be useful for accessibility purposes. It is
             recommended to buffer/sync entire video on your device before
             starting the trip. Source code for this application is located in{" "}
-            <code>ttc-bus</code> folder.
+            <code>ttc-buses</code> folder.
           </p>
           <div className="lines">
             {list.map(({ type, line, direction, video }, idx) => {
