@@ -500,8 +500,16 @@ const list = [
     direction: "Southbound",
     video: "https://youtu.be/1F4coqRwFmk?t=60",
   },
-  // { line: 67, direction: "Northbound", video: "https://youtu.be/test?t=35" },
-  // { line: 67, direction: "Southbound", video: "https://youtu.be/test?t=35" },
+  {
+    line: 67,
+    direction: "Northbound",
+    video: "https://youtu.be/Xsnw39ccLzM?t=27",
+  },
+  {
+    line: 67,
+    direction: "Southbound",
+    video: "https://youtu.be/eApsFFkzI9s?t=30",
+  },
   // { line: 68, direction: "Northbound", video: "https://youtu.be/test?t=35" },
   // { line: 68, direction: "Southbound", video: "https://youtu.be/test?t=35" },
   // { line: 69, direction: "Northbound", video: "https://youtu.be/test?t=35" },
