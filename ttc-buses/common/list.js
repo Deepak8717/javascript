@@ -169,8 +169,16 @@ const list = [
     video: "https://youtu.be/Rqd5J0ae0XQ?t=33",
   },
   { line: 25, direction: "Southbound", video: "https://youtu.be/wK7I3Oa-Boo" },
-  { line: 26, direction: "Eastbound", video: "https://youtu.be/test?t=35" },
-  { line: 26, direction: "Westbound", video: "https://youtu.be/test?t=35" },
+  {
+    line: 26,
+    direction: "Eastbound",
+    video: "https://youtu.be/O81Ju6ZqMI4?t=12",
+  },
+  {
+    line: 26,
+    direction: "Westbound",
+    video: "https://youtu.be/GLBPIV2tVEo?t=21",
+  },
   { line: 28, direction: "Eastbound", video: "https://youtu.be/test?t=35" },
   { line: 28, direction: "Westbound", video: "https://youtu.be/test?t=35" },
   { line: 29, direction: "Northbound", video: "https://youtu.be/test?t=35" },
