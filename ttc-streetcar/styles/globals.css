@@ -109,4 +109,9 @@ span {
   top: 1rem;
   left: 1rem;
   color: white;
+  display: flex;
+}
+
+.promotion a {
+  color: inherit;
 }

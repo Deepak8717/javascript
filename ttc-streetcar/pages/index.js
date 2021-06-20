@@ -39,14 +39,24 @@ export default function Home() {
               Star
             </a>
           </aside>
-          <a
-            className="promotion"
-            href="https://ttc-subway.vercel.app"
-            target="__blank"
-            rel="noopener noreferrer"
-          >
-            Check out TTC Subway
-          </a>
+          <span className="promotion">
+            Check out &nbsp;
+            <a
+              href="https://ttc-subway.vercel.app"
+              target="__blank"
+              rel="noopener noreferrer"
+            >
+              Subway
+            </a>
+            &nbsp;/&nbsp;
+            <a
+              href="https://ttc-buses.surge.sh"
+              target="__blank"
+              rel="noopener noreferrer"
+            >
+              Buses
+            </a>
+          </span>
           <h1>Please pick your streetcar of choice:</h1>
           <p>
             This application allow rider/user to take a virtual ride in street
