@@ -1,0 +1,125 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color: silver;
+  background: rgba(0,0,0,0.9);
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+}
+
+body:after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  opacity: 0.15;
+  bottom: 0;
+  right: 0;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent
+    url("https://torontostoreys.com/wp-content/uploads/2018/07/flickr-subway-1.jpg")
+    no-repeat center/cover;
+}
+
+main {
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 3rem;
+}
+
+@media screen and (min-width: 1100px) {
+  main {
+    padding-top: 1rem;
+  }
+}
+
+aside {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  line-height: 1.5;
+  max-width: 30rem;
+  margin: 1.25rem 0 2rem;
+}
+
+span {
+  font-size: 1rem;
+  font-weight: normal;
+  display: block;
+}
+
+.lines {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  align-content: center;
+}
+
+@media screen and (min-width: 1100px) {
+  .lines {
+    grid-template-columns: repeat(4, auto);
+  }
+}
+
+.line {
+  font-weight: bold;
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  color: black;
+  background: #ff0000;
+}
+
+.line--express {
+  background: #00a651;
+}
+
+.line--dt {
+  background: green;
+}
+
+.line:hover {
+  cursor: pointer;
+  background: white;
+}
+
+.promotion {
+  position: fixed;
+  text-decoration: none;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  color: white;
+}
+
+.promotion a {
+  color: inherit;
+}
