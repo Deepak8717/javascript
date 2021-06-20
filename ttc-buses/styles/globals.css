@@ -106,6 +106,12 @@ span {
   background: green;
 }
 
+.line--disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  background: grey;
+}
+
 .line:hover {
   cursor: pointer;
   background: white;

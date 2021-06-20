@@ -66,7 +66,7 @@ export default function Home() {
             <code>ttc-buses</code> folder.
           </p>
           <div className="lines">
-            {list.map(({ type, line, direction, video }, idx) => {
+            {list.map(({ type, line, direction, video, disabled }, idx) => {
               return (
                 <div
                   key={idx}
@@ -75,6 +75,8 @@ export default function Home() {
                       ? "line line--express"
                       : type === "dt"
                       ? "line line--dt"
+                      : disabled
+                      ? "line line--disabled"
                       : "line"
                   }
                   onClick={() => handleClick(line, video)}
