@@ -1236,18 +1236,18 @@ const list = [
   //   direction: "Westbound",
   //   video: "https://youtu.be/test?t=35",
   // },
-  // {
-  //   type: "express",
-  //   line: 900,
-  //   direction: "Northbound",
-  //   video: "https://youtu.be/test?t=35",
-  // },
-  // {
-  //   type: "express",
-  //   line: 900,
-  //   direction: "Southbound",
-  //   video: "https://youtu.be/test?t=35",
-  // },
+  {
+    type: "express",
+    line: 900,
+    direction: "Northbound",
+    video: "https://youtu.be/rlK4OrAWJwI?t=15",
+  },
+  {
+    type: "express",
+    line: 900,
+    direction: "Southbound",
+    video: "https://youtu.be/7mPmDXEk4eE?t=35",
+  },
   // {
   //   type: "express",
   //   line: 902,
