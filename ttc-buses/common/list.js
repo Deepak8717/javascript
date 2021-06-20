@@ -723,8 +723,16 @@ const list = [
     direction: "Westbound",
     video: "https://youtu.be/g8-PLeosjss?t=30",
   },
-  // { line: 95, direction: "Eastbound", video: "https://youtu.be/test?t=35" },
-  // { line: 95, direction: "Westbound", video: "https://youtu.be/test?t=35" },
+  {
+    line: 95,
+    direction: "Eastbound",
+    video: "https://youtu.be/lxaPq8JZ7bg?t=29",
+  },
+  {
+    line: 95,
+    direction: "Westbound",
+    video: "https://youtu.be/n5GXPN-trJo?t=30",
+  },
   // { line: 96, direction: "Eastbound", video: "https://youtu.be/test?t=35" },
   // { line: 96, direction: "Westbound", video: "https://youtu.be/test?t=35" },
   // { line: 97, direction: "Northbound", video: "https://youtu.be/test?t=35" },
